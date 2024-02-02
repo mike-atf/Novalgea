@@ -16,6 +16,10 @@
 		FA56B6542B6D3C62003ED5FF /* NovalgeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6532B6D3C62003ED5FF /* NovalgeaTests.swift */; };
 		FA56B65E2B6D3C62003ED5FF /* NovalgeaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B65D2B6D3C62003ED5FF /* NovalgeaUITests.swift */; };
 		FA56B6602B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B65F2B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift */; };
+		FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B66C2B6D3EC6003ED5FF /* Dose.swift */; };
+		FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6702B6D4D95003ED5FF /* UserText.swift */; };
+		FA56B6742B6D509A003ED5FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA56B6732B6D509A003ED5FF /* StoreKit.framework */; };
+		FA56B6782B6D527C003ED5FF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -50,6 +54,10 @@
 		FA56B6592B6D3C62003ED5FF /* NovalgeaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovalgeaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56B65D2B6D3C62003ED5FF /* NovalgeaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaUITests.swift; sourceTree = "<group>"; };
 		FA56B65F2B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		FA56B66C2B6D3EC6003ED5FF /* Dose.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dose.swift; sourceTree = "<group>"; };
+		FA56B6702B6D4D95003ED5FF /* UserText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserText.swift; sourceTree = "<group>"; };
+		FA56B6732B6D509A003ED5FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA56B6742B6D509A003ED5FF /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -80,10 +89,12 @@
 		FA56B62F2B6D3C60003ED5FF = {
 			isa = PBXGroup;
 			children = (
+				FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */,
 				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
 				FA56B6522B6D3C62003ED5FF /* NovalgeaTests */,
 				FA56B65C2B6D3C62003ED5FF /* NovalgeaUITests */,
 				FA56B6392B6D3C60003ED5FF /* Products */,
+				FA56B6722B6D509A003ED5FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,11 +114,13 @@
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
 				FA56B63D2B6D3C60003ED5FF /* Persistence.swift */,
 				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
+				FA56B66C2B6D3EC6003ED5FF /* Dose.swift */,
 				FA56B6442B6D3C61003ED5FF /* Assets.xcassets */,
 				FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */,
 				FA56B64A2B6D3C61003ED5FF /* Info.plist */,
 				FA56B63F2B6D3C60003ED5FF /* Novalgea.xcdatamodeld */,
 				FA56B6472B6D3C61003ED5FF /* Preview Content */,
+				FA56B6702B6D4D95003ED5FF /* UserText.swift */,
 			);
 			path = Novalgea;
 			sourceTree = "<group>";
@@ -137,6 +150,14 @@
 			path = NovalgeaUITests;
 			sourceTree = "<group>";
 		};
+		FA56B6722B6D509A003ED5FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B6732B6D509A003ED5FF /* StoreKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,6 +168,7 @@
 				FA56B6342B6D3C60003ED5FF /* Sources */,
 				FA56B6352B6D3C60003ED5FF /* Frameworks */,
 				FA56B6362B6D3C60003ED5FF /* Resources */,
+				FA56B6792B6D593B003ED5FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -223,6 +245,7 @@
 			knownRegions = (
 				en,
 				Base,
+				de,
 			);
 			mainGroup = FA56B62F2B6D3C60003ED5FF;
 			productRefGroup = FA56B6392B6D3C60003ED5FF /* Products */;
@@ -243,6 +266,7 @@
 			files = (
 				FA56B6492B6D3C61003ED5FF /* Preview Assets.xcassets in Resources */,
 				FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */,
+				FA56B6782B6D527C003ED5FF /* Localizable.xcstrings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,6 +286,26 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		FA56B6792B6D593B003ED5FF /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FA56B6342B6D3C60003ED5FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -269,8 +313,10 @@
 			files = (
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
 				FA56B6412B6D3C60003ED5FF /* Novalgea.xcdatamodeld in Sources */,
+				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
 				FA56B63E2B6D3C60003ED5FF /* Persistence.swift in Sources */,
+				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -359,7 +405,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -414,7 +462,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -435,6 +485,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Novalgea/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Novalgea;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -443,8 +495,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
@@ -474,6 +526,8 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Novalgea/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = Novalgea;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.healthcare-fitness";
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
@@ -482,8 +536,8 @@
 				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortraitUpsideDown";
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
