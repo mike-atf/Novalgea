@@ -1,0 +1,647 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */; };
+		FA56B63E2B6D3C60003ED5FF /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B63D2B6D3C60003ED5FF /* Persistence.swift */; };
+		FA56B6412B6D3C60003ED5FF /* Novalgea.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FA56B63F2B6D3C60003ED5FF /* Novalgea.xcdatamodeld */; };
+		FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6422B6D3C60003ED5FF /* ContentView.swift */; };
+		FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6442B6D3C61003ED5FF /* Assets.xcassets */; };
+		FA56B6492B6D3C61003ED5FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6482B6D3C61003ED5FF /* Preview Assets.xcassets */; };
+		FA56B6542B6D3C62003ED5FF /* NovalgeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6532B6D3C62003ED5FF /* NovalgeaTests.swift */; };
+		FA56B65E2B6D3C62003ED5FF /* NovalgeaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B65D2B6D3C62003ED5FF /* NovalgeaUITests.swift */; };
+		FA56B6602B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B65F2B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		FA56B6502B6D3C62003ED5FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA56B6302B6D3C60003ED5FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA56B6372B6D3C60003ED5FF;
+			remoteInfo = Novalgea;
+		};
+		FA56B65A2B6D3C62003ED5FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FA56B6302B6D3C60003ED5FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FA56B6372B6D3C60003ED5FF;
+			remoteInfo = Novalgea;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		FA56B6382B6D3C60003ED5FF /* Novalgea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Novalgea.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaApp.swift; sourceTree = "<group>"; };
+		FA56B63D2B6D3C60003ED5FF /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		FA56B6402B6D3C60003ED5FF /* Novalgea.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Novalgea.xcdatamodel; sourceTree = "<group>"; };
+		FA56B6422B6D3C60003ED5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		FA56B6442B6D3C61003ED5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Novalgea.entitlements; sourceTree = "<group>"; };
+		FA56B6482B6D3C61003ED5FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FA56B64A2B6D3C61003ED5FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FA56B64F2B6D3C62003ED5FF /* NovalgeaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovalgeaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA56B6532B6D3C62003ED5FF /* NovalgeaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaTests.swift; sourceTree = "<group>"; };
+		FA56B6592B6D3C62003ED5FF /* NovalgeaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NovalgeaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		FA56B65D2B6D3C62003ED5FF /* NovalgeaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaUITests.swift; sourceTree = "<group>"; };
+		FA56B65F2B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		FA56B6352B6D3C60003ED5FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B64C2B6D3C62003ED5FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B6562B6D3C62003ED5FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		FA56B62F2B6D3C60003ED5FF = {
+			isa = PBXGroup;
+			children = (
+				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
+				FA56B6522B6D3C62003ED5FF /* NovalgeaTests */,
+				FA56B65C2B6D3C62003ED5FF /* NovalgeaUITests */,
+				FA56B6392B6D3C60003ED5FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		FA56B6392B6D3C60003ED5FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B6382B6D3C60003ED5FF /* Novalgea.app */,
+				FA56B64F2B6D3C62003ED5FF /* NovalgeaTests.xctest */,
+				FA56B6592B6D3C62003ED5FF /* NovalgeaUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		FA56B63A2B6D3C60003ED5FF /* Novalgea */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
+				FA56B63D2B6D3C60003ED5FF /* Persistence.swift */,
+				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
+				FA56B6442B6D3C61003ED5FF /* Assets.xcassets */,
+				FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */,
+				FA56B64A2B6D3C61003ED5FF /* Info.plist */,
+				FA56B63F2B6D3C60003ED5FF /* Novalgea.xcdatamodeld */,
+				FA56B6472B6D3C61003ED5FF /* Preview Content */,
+			);
+			path = Novalgea;
+			sourceTree = "<group>";
+		};
+		FA56B6472B6D3C61003ED5FF /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B6482B6D3C61003ED5FF /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		FA56B6522B6D3C62003ED5FF /* NovalgeaTests */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B6532B6D3C62003ED5FF /* NovalgeaTests.swift */,
+			);
+			path = NovalgeaTests;
+			sourceTree = "<group>";
+		};
+		FA56B65C2B6D3C62003ED5FF /* NovalgeaUITests */ = {
+			isa = PBXGroup;
+			children = (
+				FA56B65D2B6D3C62003ED5FF /* NovalgeaUITests.swift */,
+				FA56B65F2B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift */,
+			);
+			path = NovalgeaUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		FA56B6372B6D3C60003ED5FF /* Novalgea */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA56B6632B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "Novalgea" */;
+			buildPhases = (
+				FA56B6342B6D3C60003ED5FF /* Sources */,
+				FA56B6352B6D3C60003ED5FF /* Frameworks */,
+				FA56B6362B6D3C60003ED5FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Novalgea;
+			productName = Novalgea;
+			productReference = FA56B6382B6D3C60003ED5FF /* Novalgea.app */;
+			productType = "com.apple.product-type.application";
+		};
+		FA56B64E2B6D3C62003ED5FF /* NovalgeaTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA56B6662B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "NovalgeaTests" */;
+			buildPhases = (
+				FA56B64B2B6D3C62003ED5FF /* Sources */,
+				FA56B64C2B6D3C62003ED5FF /* Frameworks */,
+				FA56B64D2B6D3C62003ED5FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA56B6512B6D3C62003ED5FF /* PBXTargetDependency */,
+			);
+			name = NovalgeaTests;
+			productName = NovalgeaTests;
+			productReference = FA56B64F2B6D3C62003ED5FF /* NovalgeaTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		FA56B6582B6D3C62003ED5FF /* NovalgeaUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FA56B6692B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "NovalgeaUITests" */;
+			buildPhases = (
+				FA56B6552B6D3C62003ED5FF /* Sources */,
+				FA56B6562B6D3C62003ED5FF /* Frameworks */,
+				FA56B6572B6D3C62003ED5FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				FA56B65B2B6D3C62003ED5FF /* PBXTargetDependency */,
+			);
+			name = NovalgeaUITests;
+			productName = NovalgeaUITests;
+			productReference = FA56B6592B6D3C62003ED5FF /* NovalgeaUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		FA56B6302B6D3C60003ED5FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1510;
+				LastUpgradeCheck = 1510;
+				TargetAttributes = {
+					FA56B6372B6D3C60003ED5FF = {
+						CreatedOnToolsVersion = 15.1;
+					};
+					FA56B64E2B6D3C62003ED5FF = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = FA56B6372B6D3C60003ED5FF;
+					};
+					FA56B6582B6D3C62003ED5FF = {
+						CreatedOnToolsVersion = 15.1;
+						TestTargetID = FA56B6372B6D3C60003ED5FF;
+					};
+				};
+			};
+			buildConfigurationList = FA56B6332B6D3C60003ED5FF /* Build configuration list for PBXProject "Novalgea" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = FA56B62F2B6D3C60003ED5FF;
+			productRefGroup = FA56B6392B6D3C60003ED5FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				FA56B6372B6D3C60003ED5FF /* Novalgea */,
+				FA56B64E2B6D3C62003ED5FF /* NovalgeaTests */,
+				FA56B6582B6D3C62003ED5FF /* NovalgeaUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		FA56B6362B6D3C60003ED5FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56B6492B6D3C61003ED5FF /* Preview Assets.xcassets in Resources */,
+				FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B64D2B6D3C62003ED5FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B6572B6D3C62003ED5FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		FA56B6342B6D3C60003ED5FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
+				FA56B6412B6D3C60003ED5FF /* Novalgea.xcdatamodeld in Sources */,
+				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
+				FA56B63E2B6D3C60003ED5FF /* Persistence.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B64B2B6D3C62003ED5FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56B6542B6D3C62003ED5FF /* NovalgeaTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FA56B6552B6D3C62003ED5FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FA56B6602B6D3C62003ED5FF /* NovalgeaUITestsLaunchTests.swift in Sources */,
+				FA56B65E2B6D3C62003ED5FF /* NovalgeaUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		FA56B6512B6D3C62003ED5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA56B6372B6D3C60003ED5FF /* Novalgea */;
+			targetProxy = FA56B6502B6D3C62003ED5FF /* PBXContainerItemProxy */;
+		};
+		FA56B65B2B6D3C62003ED5FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FA56B6372B6D3C60003ED5FF /* Novalgea */;
+			targetProxy = FA56B65A2B6D3C62003ED5FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		FA56B6612B6D3C62003ED5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		FA56B6622B6D3C62003ED5FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+			};
+			name = Release;
+		};
+		FA56B6642B6D3C62003ED5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Novalgea/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.Novalgea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FA56B6652B6D3C62003ED5FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				ENABLE_HARDENED_RUNTIME = YES;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Novalgea/Info.plist;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
+				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
+				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
+				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.Novalgea;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		FA56B6672B6D3C62003ED5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.NovalgeaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Novalgea.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Novalgea";
+			};
+			name = Debug;
+		};
+		FA56B6682B6D3C62003ED5FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.NovalgeaTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Novalgea.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/Novalgea";
+			};
+			name = Release;
+		};
+		FA56B66A2B6D3C62003ED5FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.NovalgeaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Novalgea;
+			};
+			name = Debug;
+		};
+		FA56B66B2B6D3C62003ED5FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 9T25ACNCQ7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				MACOSX_DEPLOYMENT_TARGET = 14.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = co.uk.apptoolfactory.NovalgeaUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = auto;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = Novalgea;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		FA56B6332B6D3C60003ED5FF /* Build configuration list for PBXProject "Novalgea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA56B6612B6D3C62003ED5FF /* Debug */,
+				FA56B6622B6D3C62003ED5FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA56B6632B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "Novalgea" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA56B6642B6D3C62003ED5FF /* Debug */,
+				FA56B6652B6D3C62003ED5FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA56B6662B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "NovalgeaTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA56B6672B6D3C62003ED5FF /* Debug */,
+				FA56B6682B6D3C62003ED5FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FA56B6692B6D3C62003ED5FF /* Build configuration list for PBXNativeTarget "NovalgeaUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FA56B66A2B6D3C62003ED5FF /* Debug */,
+				FA56B66B2B6D3C62003ED5FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FA56B63F2B6D3C60003ED5FF /* Novalgea.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FA56B6402B6D3C60003ED5FF /* Novalgea.xcdatamodel */,
+			);
+			currentVersion = FA56B6402B6D3C60003ED5FF /* Novalgea.xcdatamodel */;
+			path = Novalgea.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = FA56B6302B6D3C60003ED5FF /* Project object */;
+}
