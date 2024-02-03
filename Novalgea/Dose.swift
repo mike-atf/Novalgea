@@ -7,7 +7,19 @@
 
 import Foundation
 
-class Dose: Codable {
+public class Dose: NSObject, NSCoding {
+    
+    public func encode(with coder: NSCoder) {
+        coder.encode(Double.self, forKey: "value")
+        coder.encode(DoseUnit.self, forKey: "unit")
+    }
+    
+    public required convenience init?(coder: NSCoder) {
+        let unit = coder.decodeObject(forKey: "unit") as! DoseUnit
+        let value = coder.decodeDouble(forKey: "value")
+        self.init(unit: unit, value: value)
+    }
+    
         
     var unit: DoseUnit
     var value: Double
@@ -18,11 +30,12 @@ class Dose: Codable {
         self.value = value
     }
     
+    
     func userText(long: Bool) -> String {
         
         var unitText = String()
         
-        var formatter = NumberFormatter()
+        let formatter = NumberFormatter()
         formatter.numberStyle = .decimal
         formatter.maximumFractionDigits = 1
         
@@ -80,13 +93,13 @@ class Dose: Codable {
     
 }
 
-enum DoseUnit: Codable {
-    case ml
-    case drops
-    case mg
-    case µg
-    case mcg
-    case gram
-    case portion
-    case mcg_h
+enum DoseUnit: String, Codable {
+    case ml = "ml"
+    case drops = "drops"
+    case mg = "mg"
+    case µg = "µg"
+    case mcg = "mcg"
+    case gram = "gram"
+    case portion = "portion"
+    case mcg_h = "mcg/h"
 }

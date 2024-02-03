@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct UserText {
+class UserText {
     
-    func term(english: String) -> String {
+    class func term(english: String) -> String {
         
         return NSLocalizedString(english, comment: "")
         

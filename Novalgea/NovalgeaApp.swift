@@ -18,3 +18,18 @@ struct NovalgeaApp: App {
         }
     }
 }
+
+public let defaultSymptom = NSLocalizedString("defaultSymptom", comment: "")
+
+
+enum User_Default_Keys: String {
+    case lastLaunchedVersion = "LastLaunchedVersion"
+    case selectedSymptom = "SelectedScore"
+    case exerciseType = "exerciseType"
+    case exerciseMetric = "exerciseMetric"
+    case exerciseTarget = "exerciseTarget"
+    case exerciseFrequency = "exerciseFrequency"
+    case eventsNotShown = "eventsNotShown" // contains names of medsNotShown!
+    case cloudBackupIsOn = "iCloudBackUpsOn"
+}
+

@@ -7,21 +7,6 @@
     "-" : {
 
     },
-    "(Build %@)" : {
-
-    },
-    "%" : {
-
-    },
-    "%@" : {
-
-    },
-    "%@ statistics.pdf" : {
-
-    },
-    "%@:" : {
-
-    },
     "1 day" : {
       "comment" : "MARK: - simple",
       "extractionState" : "manual",
@@ -143,6 +128,7 @@
       }
     },
     "ABFInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -158,14 +144,9 @@
         }
       }
     },
-    "Add Event" : {
-
-    },
-    "Add Medicine" : {
-
-    },
     "Alert.forExercises" : {
       "comment" : "MARK: - sectioned.Alert",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -182,6 +163,7 @@
       }
     },
     "Alert.lackingPerm" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -198,6 +180,7 @@
       }
     },
     "Alert.medOverlap" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -214,6 +197,7 @@
       }
     },
     "Alert.medOverlap_1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -230,6 +214,7 @@
       }
     },
     "Alert.medOverlap_2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -246,6 +231,7 @@
       }
     },
     "Alert.noRemTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -262,6 +248,7 @@
       }
     },
     "Alert.notificPermissions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -278,6 +265,7 @@
       }
     },
     "Alert.notifMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -294,6 +282,7 @@
       }
     },
     "Alert.notifOff" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -310,6 +299,7 @@
       }
     },
     "Alert.notifPermission2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -326,6 +316,7 @@
       }
     },
     "Alert.noTreatedSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -342,6 +333,7 @@
       }
     },
     "Alert.odMEssage_1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -358,6 +350,7 @@
       }
     },
     "Alert.odTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -374,6 +367,7 @@
       }
     },
     "Alert.switchedOff" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -390,6 +384,7 @@
       }
     },
     "Alert.trS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -406,6 +401,7 @@
       }
     },
     "Alert.ttM" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -439,6 +435,7 @@
       }
     },
     "Alerts.notificationPermissionMissing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -455,6 +452,7 @@
       }
     },
     "Alerts.notificationsPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -471,6 +469,7 @@
       }
     },
     "Alerts.stopReminders" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -487,6 +486,7 @@
       }
     },
     "Alerts.switchedOff" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -502,13 +502,8 @@
         }
       }
     },
-    "Alogea %@ Statistics" : {
-
-    },
-    "Alogea Store" : {
-
-    },
     "An error has occurred" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -518,10 +513,8 @@
         }
       }
     },
-    "App version" : {
-
-    },
     "Auto-delete >10" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -537,10 +530,8 @@
         }
       }
     },
-    "Average" : {
-
-    },
     "AverageSymptomVAS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -557,6 +548,7 @@
       }
     },
     "Back up now" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -567,6 +559,7 @@
       }
     },
     "Backup and Restore" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -577,6 +570,7 @@
       }
     },
     "Backup files" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -604,6 +598,7 @@
       }
     },
     "Backup to iCloud" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -614,6 +609,7 @@
       }
     },
     "Backup.archiveError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -630,6 +626,7 @@
       }
     },
     "Backup.backupsOnDevice" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -646,6 +643,7 @@
       }
     },
     "Backup.complete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -662,6 +660,7 @@
       }
     },
     "Backup.dateError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -678,6 +677,7 @@
       }
     },
     "Backup.deleteError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -694,6 +694,7 @@
       }
     },
     "Backup.fileError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -710,6 +711,7 @@
       }
     },
     "Backup.fileReadError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -726,6 +728,7 @@
       }
     },
     "Backup.iniCloud.Off" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -742,6 +745,7 @@
       }
     },
     "Backup.iniCloud.On" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -758,6 +762,7 @@
       }
     },
     "Backup.loadError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -774,6 +779,7 @@
       }
     },
     "Backup.nowPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -790,6 +796,7 @@
       }
     },
     "Backup.proceed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -806,6 +813,7 @@
       }
     },
     "Backup.readError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -822,6 +830,7 @@
       }
     },
     "Backup.restore.Message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -838,6 +847,7 @@
       }
     },
     "Backup.restorePrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -854,6 +864,7 @@
       }
     },
     "Backup.successMsg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -870,6 +881,7 @@
       }
     },
     "Can't backup to iCloud" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -880,6 +892,7 @@
       }
     },
     "Can't backup to iCloud - message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -896,6 +909,7 @@
       }
     },
     "Cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -906,6 +920,7 @@
       }
     },
     "CantMakePayments" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -922,6 +937,7 @@
       }
     },
     "category" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -966,6 +982,7 @@
       }
     },
     "Change password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -976,6 +993,7 @@
       }
     },
     "Change the symptom name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -992,6 +1010,7 @@
       }
     },
     "Close" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1002,6 +1021,7 @@
       }
     },
     "Contact us" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1012,6 +1032,7 @@
       }
     },
     "Count" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1022,6 +1043,7 @@
       }
     },
     "CSVInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1038,6 +1060,7 @@
       }
     },
     "Date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1048,6 +1071,7 @@
       }
     },
     "Date of latest record" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1058,6 +1082,7 @@
       }
     },
     "Date of newest record" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1073,10 +1098,25 @@
         }
       }
     },
-    "Delete symptom " : {
-
+    "defaultSymptom" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Schmerz Intensität"
+          }
+        },
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Pain intensity"
+          }
+        }
+      }
     },
     "delete with all related events" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1093,6 +1133,7 @@
       }
     },
     "delete with all related exercises" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1109,6 +1150,7 @@
       }
     },
     "delete with all related ratings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1125,6 +1167,7 @@
       }
     },
     "Dialog.afterTaking" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1141,6 +1184,7 @@
       }
     },
     "Dialog.deleteEvent" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1157,6 +1201,7 @@
       }
     },
     "Dialog.deleteRecords" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1173,6 +1218,7 @@
       }
     },
     "Dialog.export" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1189,6 +1235,7 @@
       }
     },
     "Dialog.howWas" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1205,6 +1252,7 @@
       }
     },
     "Dialog.importMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1221,6 +1269,7 @@
       }
     },
     "Dialog.importTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1237,6 +1286,7 @@
       }
     },
     "Dialog.multDelete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1253,6 +1303,7 @@
       }
     },
     "Dialog.multDelete2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1269,6 +1320,7 @@
       }
     },
     "Dialog.multDelete3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1285,6 +1337,7 @@
       }
     },
     "Dialog.multRename" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1301,6 +1354,7 @@
       }
     },
     "Dialog.multRename1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1317,6 +1371,7 @@
       }
     },
     "Dialog.multRename2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1333,6 +1388,7 @@
       }
     },
     "Dialog.pleaseNote" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1366,6 +1422,7 @@
       }
     },
     "Dialog.proceed.anyway" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1382,6 +1439,7 @@
       }
     },
     "Dialog.ratingAlert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1398,6 +1456,7 @@
       }
     },
     "Dialog.rename" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1414,6 +1473,7 @@
       }
     },
     "Dialog.rowTapPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1430,6 +1490,7 @@
       }
     },
     "Dialog.switchOn" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1446,6 +1507,7 @@
       }
     },
     "Dialog.threeTapPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1462,6 +1524,7 @@
       }
     },
     "Dialog.timeToTake" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1580,6 +1643,7 @@
       }
     },
     "DiaryDetailView.sectionText1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1596,6 +1660,7 @@
       }
     },
     "DiaryDetailView.sectionText2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1611,10 +1676,8 @@
         }
       }
     },
-    "Diarypage.userPrompt" : {
-
-    },
     "DiaryPage.userPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1631,6 +1694,7 @@
       }
     },
     "DiaryView.barButtonTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1647,6 +1711,7 @@
       }
     },
     "DiaryView.category" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1663,6 +1728,7 @@
       }
     },
     "DiaryView.categoryPlaceholder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1696,6 +1762,7 @@
       }
     },
     "DiaryView.newCategory" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1712,6 +1779,7 @@
       }
     },
     "DiaryView.newCategory.add" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1762,6 +1830,7 @@
       }
     },
     "DiaryView.placeholder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1777,10 +1846,8 @@
         }
       }
     },
-    "Dismiss" : {
-
-    },
     "Done" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1824,10 +1891,8 @@
         }
       }
     },
-    "Doses" : {
-
-    },
     "EDC.notificationError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1844,6 +1909,7 @@
       }
     },
     "Edit categories" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1854,6 +1920,7 @@
       }
     },
     "Edit event categories" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1870,6 +1937,7 @@
       }
     },
     "Edit exercise categories" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1886,6 +1954,7 @@
       }
     },
     "Edit Record Categories" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1896,6 +1965,7 @@
       }
     },
     "Edit symptom names" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1912,6 +1982,7 @@
       }
     },
     "Enabled" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1921,10 +1992,8 @@
         }
       }
     },
-    "End" : {
-
-    },
     "Ended on" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1935,6 +2004,7 @@
       }
     },
     "Enter password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1944,10 +2014,8 @@
         }
       }
     },
-    "Enter your password" : {
-
-    },
     "Errors.backupErrorMessage1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1964,6 +2032,7 @@
       }
     },
     "Errors.backupErrorMessage2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1980,6 +2049,7 @@
       }
     },
     "Errors.backupErrorMessage3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1996,6 +2066,7 @@
       }
     },
     "Errors.backupErrorMessage4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2012,6 +2083,7 @@
       }
     },
     "Errors.backupErrorMessage5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2028,6 +2100,7 @@
       }
     },
     "Errors.backupErrorMessage6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2044,6 +2117,7 @@
       }
     },
     "Errors.backups.failure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2060,6 +2134,7 @@
       }
     },
     "Errors.backups.failureMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2093,6 +2168,7 @@
       }
     },
     "Errors.coderMissing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2109,6 +2185,7 @@
       }
     },
     "Errors.CoreData.fetchError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2125,6 +2202,7 @@
       }
     },
     "Errors.CoreData.frcChangeError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2141,6 +2219,7 @@
       }
     },
     "Errors.CoreData.saveError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2157,6 +2236,7 @@
       }
     },
     "Errors.CoreData.stackSaveError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2207,6 +2287,7 @@
       }
     },
     "Errors.dict.load" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2223,6 +2304,7 @@
       }
     },
     "Errors.exercise.bellSound1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2239,6 +2321,7 @@
       }
     },
     "Errors.exercise.loadStepData" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2255,6 +2338,7 @@
       }
     },
     "Errors.exercise.noDistance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2271,6 +2355,7 @@
       }
     },
     "Errors.exercise.noStepcounter" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2287,6 +2372,7 @@
       }
     },
     "Errors.exportError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2303,6 +2389,7 @@
       }
     },
     "Errors.exportSaveFailure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2319,6 +2406,7 @@
       }
     },
     "Errors.fatal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2335,6 +2423,7 @@
       }
     },
     "Errors.general.sorry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2351,6 +2440,7 @@
       }
     },
     "Errors.general.sorryError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2367,6 +2457,7 @@
       }
     },
     "Errors.iCloudSignin" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2383,6 +2474,7 @@
       }
     },
     "Errors.import" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2399,6 +2491,7 @@
       }
     },
     "Errors.import.wrongFile" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2415,6 +2508,7 @@
       }
     },
     "Errors.importErrors" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2431,6 +2525,7 @@
       }
     },
     "Errors.importErrors.meds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2447,6 +2542,7 @@
       }
     },
     "Errors.importErrors.symptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2463,6 +2559,7 @@
       }
     },
     "Errors.meds.archiveDateError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2479,6 +2576,7 @@
       }
     },
     "Errors.missing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2495,6 +2593,7 @@
       }
     },
     "Errors.multIDs" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2511,6 +2610,7 @@
       }
     },
     "Errors.net.loading" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2527,6 +2627,7 @@
       }
     },
     "Errors.noDocFolder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2543,6 +2644,7 @@
       }
     },
     "Errors.noVisVC" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2559,6 +2661,7 @@
       }
     },
     "Errors.onlineDict.access" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2575,6 +2678,7 @@
       }
     },
     "Errors.problem" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2591,6 +2695,7 @@
       }
     },
     "Errors.reminders.msg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2607,6 +2712,7 @@
       }
     },
     "Errors.reminders.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2657,6 +2763,7 @@
       }
     },
     "Errors.restoreErrorMessage1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2673,6 +2780,7 @@
       }
     },
     "Errors.restoreErrorMessage2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2689,6 +2797,7 @@
       }
     },
     "Errors.restoreErrorMessage3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2705,6 +2814,7 @@
       }
     },
     "Errors.restoreMed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2721,6 +2831,7 @@
       }
     },
     "Errors.restoreSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2737,6 +2848,7 @@
       }
     },
     "Errors.rwCoder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2753,6 +2865,7 @@
       }
     },
     "Errors.saveError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2769,6 +2882,7 @@
       }
     },
     "Errors.sympBackupError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2785,6 +2899,7 @@
       }
     },
     "Errors.unableToSched" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2801,6 +2916,7 @@
       }
     },
     "Errors.vcMissing" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2817,6 +2933,7 @@
       }
     },
     "EULA.accepted" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2833,6 +2950,7 @@
       }
     },
     "EULA.dataSec" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2849,6 +2967,7 @@
       }
     },
     "EULA.declined" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2865,6 +2984,7 @@
       }
     },
     "EULA.declinedMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2881,6 +3001,7 @@
       }
     },
     "EULA.declinedTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2897,6 +3018,7 @@
       }
     },
     "EULA.erase" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2913,6 +3035,7 @@
       }
     },
     "EULA.eraseMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2929,6 +3052,7 @@
       }
     },
     "EULA.eraseQuestion" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2945,6 +3069,7 @@
       }
     },
     "EULA.exportErase" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2961,6 +3086,7 @@
       }
     },
     "EULA.general" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2977,6 +3103,7 @@
       }
     },
     "EULA.general.consent" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -2993,6 +3120,7 @@
       }
     },
     "EULA.general.def" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3009,6 +3137,7 @@
       }
     },
     "EULA.general.export" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3025,6 +3154,7 @@
       }
     },
     "EULA.general.extServ" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3041,6 +3171,7 @@
       }
     },
     "EULA.general.jurisdiction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3057,6 +3188,7 @@
       }
     },
     "EULA.general.license" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3073,6 +3205,7 @@
       }
     },
     "EULA.general.limLiabil" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3089,6 +3222,7 @@
       }
     },
     "EULA.general.scope" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3105,6 +3239,7 @@
       }
     },
     "EULA.general.termination" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3121,6 +3256,7 @@
       }
     },
     "EULA.general.warranty" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3137,6 +3273,7 @@
       }
     },
     "EULA.important" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3153,6 +3290,7 @@
       }
     },
     "EULA.privacy" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3169,6 +3307,7 @@
       }
     },
     "EULA.prompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3185,6 +3324,7 @@
       }
     },
     "EULA.purposeLimits" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3201,6 +3341,7 @@
       }
     },
     "EULA.quit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3217,6 +3358,7 @@
       }
     },
     "EULA.reconsider" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3233,6 +3375,7 @@
       }
     },
     "EULA.specific" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3249,6 +3392,7 @@
       }
     },
     "EULA.tou.dialog1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3265,6 +3409,7 @@
       }
     },
     "EventCategoryChoser.newCategory" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3281,6 +3426,7 @@
       }
     },
     "EventDisplayChoser.instructions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3297,6 +3443,7 @@
       }
     },
     "Events" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3307,6 +3454,7 @@
       }
     },
     "Events.missingName" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3323,6 +3471,7 @@
       }
     },
     "Events.unnamed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3356,6 +3505,7 @@
       }
     },
     "Exercfise.halfWayMessage.body" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3372,6 +3522,7 @@
       }
     },
     "Exercise.chartLegend1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3388,6 +3539,7 @@
       }
     },
     "Exercise.chartLegend2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3404,6 +3556,7 @@
       }
     },
     "Exercise.chartLegend3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3420,6 +3573,7 @@
       }
     },
     "Exercise.cycling" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3436,6 +3590,7 @@
       }
     },
     "Exercise.distance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3452,6 +3607,7 @@
       }
     },
     "Exercise.finishMessage.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3468,6 +3624,7 @@
       }
     },
     "Exercise.finishPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3484,6 +3641,7 @@
       }
     },
     "Exercise.genericType" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3499,10 +3657,8 @@
         }
       }
     },
-    "Exercise.halfWayMessage.body" : {
-
-    },
     "Exercise.halfWayMessage.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3519,6 +3675,7 @@
       }
     },
     "Exercise.helpMessage1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3535,6 +3692,7 @@
       }
     },
     "Exercise.helpMessage2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3551,6 +3709,7 @@
       }
     },
     "Exercise.helpMessage3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3567,6 +3726,7 @@
       }
     },
     "Exercise.helpMessage4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3583,6 +3743,7 @@
       }
     },
     "Exercise.helpMessage5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3599,6 +3760,7 @@
       }
     },
     "Exercise.helpMessage6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3615,6 +3777,7 @@
       }
     },
     "Exercise.hydro" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3631,6 +3794,7 @@
       }
     },
     "Exercise.instructionsMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3647,6 +3811,7 @@
       }
     },
     "Exercise.kayaking" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3663,6 +3828,7 @@
       }
     },
     "Exercise.label1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3679,6 +3845,7 @@
       }
     },
     "Exercise.meters" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3695,6 +3862,7 @@
       }
     },
     "Exercise.metric" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3711,6 +3879,7 @@
       }
     },
     "Exercise.minutes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3727,6 +3896,7 @@
       }
     },
     "Exercise.physio" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3743,6 +3913,7 @@
       }
     },
     "Exercise.pilates" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3759,6 +3930,7 @@
       }
     },
     "Exercise.running" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3775,6 +3947,7 @@
       }
     },
     "Exercise.savedMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3791,6 +3964,7 @@
       }
     },
     "Exercise.segmentCtl1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3807,6 +3981,7 @@
       }
     },
     "Exercise.segmentCtl2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3823,6 +3998,7 @@
       }
     },
     "Exercise.segmentCtl3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3839,6 +4015,7 @@
       }
     },
     "Exercise.segmentCtl4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3855,6 +4032,7 @@
       }
     },
     "Exercise.settings.bd" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3871,6 +4049,7 @@
       }
     },
     "Exercise.settings.distance" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3887,6 +4066,7 @@
       }
     },
     "Exercise.settings.fourDaily" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3903,6 +4083,7 @@
       }
     },
     "Exercise.settings.header2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3919,6 +4100,7 @@
       }
     },
     "Exercise.settings.header3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3935,6 +4117,7 @@
       }
     },
     "Exercise.settings.header4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3951,6 +4134,7 @@
       }
     },
     "Exercise.settings.header5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3967,6 +4151,7 @@
       }
     },
     "Exercise.settings.od" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3983,6 +4168,7 @@
       }
     },
     "Exercise.settings.otherDay" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -3999,6 +4185,7 @@
       }
     },
     "Exercise.settings.steps" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4015,6 +4202,7 @@
       }
     },
     "Exercise.settings.tds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4031,6 +4219,7 @@
       }
     },
     "Exercise.settings.threeDaily" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4047,6 +4236,7 @@
       }
     },
     "Exercise.settings.time" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4063,6 +4253,7 @@
       }
     },
     "Exercise.settings.weekly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4079,6 +4270,7 @@
       }
     },
     "Exercise.spinning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4095,6 +4287,7 @@
       }
     },
     "Exercise.steps" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4111,6 +4304,7 @@
       }
     },
     "Exercise.stretching" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4127,6 +4321,7 @@
       }
     },
     "Exercise.swimming" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4143,6 +4338,7 @@
       }
     },
     "Exercise.taiChi" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4159,6 +4355,7 @@
       }
     },
     "Exercise.type" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4175,6 +4372,7 @@
       }
     },
     "Exercise.walking" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4191,6 +4389,7 @@
       }
     },
     "Exercise.yoga" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4224,6 +4423,7 @@
       }
     },
     "Expansion store" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4234,6 +4434,7 @@
       }
     },
     "Export as Backup file" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4244,6 +4445,7 @@
       }
     },
     "Export as CSV" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4259,10 +4461,8 @@
         }
       }
     },
-    "Export list.pdf" : {
-
-    },
     "Export options" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4273,6 +4473,7 @@
       }
     },
     "Export your diary" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4283,6 +4484,7 @@
       }
     },
     "For medicines you take regularly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4293,6 +4495,7 @@
       }
     },
     "Frequency, Times & Doses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4303,6 +4506,7 @@
       }
     },
     "General.1hago" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4319,6 +4523,7 @@
       }
     },
     "General.2hago" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4335,6 +4540,7 @@
       }
     },
     "General.4hago" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4351,6 +4557,7 @@
       }
     },
     "General.30mago" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4368,6 +4575,7 @@
     },
     "General.a" : {
       "comment" : "for after",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4384,6 +4592,7 @@
       }
     },
     "General.abfInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4400,6 +4609,7 @@
       }
     },
     "General.addNew" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4467,6 +4677,7 @@
       }
     },
     "General.and" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4483,6 +4694,7 @@
       }
     },
     "General.at" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4516,6 +4728,7 @@
       }
     },
     "General.avg.small" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4533,6 +4746,7 @@
     },
     "General.b" : {
       "comment" : "for before",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4549,6 +4763,7 @@
       }
     },
     "General.back" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4566,6 +4781,7 @@
     },
     "General.baseLine" : {
       "comment" : "caution - is part of a search condition in DoseTitration2.onDisappear",
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4599,6 +4815,7 @@
       }
     },
     "General.benefit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4615,6 +4832,7 @@
       }
     },
     "General.cancel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4631,6 +4849,7 @@
       }
     },
     "General.cancelTitration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4647,6 +4866,7 @@
       }
     },
     "General.cantChangeMinMax" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4663,6 +4883,7 @@
       }
     },
     "General.changeCat" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4679,6 +4900,7 @@
       }
     },
     "General.changeDetails" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4695,6 +4917,7 @@
       }
     },
     "General.changeEvery" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4711,6 +4934,7 @@
       }
     },
     "General.close" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4727,6 +4951,7 @@
       }
     },
     "General.complete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4743,6 +4968,7 @@
       }
     },
     "General.csvInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4759,6 +4985,7 @@
       }
     },
     "General.date" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4792,6 +5019,7 @@
       }
     },
     "General.days" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4808,6 +5036,7 @@
       }
     },
     "General.defaultSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4817,13 +5046,14 @@
         },
         "en" : {
           "stringUnit" : {
-            "state" : "translated",
+            "state" : "needs_review",
             "value" : "Pain intensity"
           }
         }
       }
     },
     "General.delete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4840,6 +5070,7 @@
       }
     },
     "General.diaryEntries" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4856,6 +5087,7 @@
       }
     },
     "General.diaryEntry" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4872,6 +5104,7 @@
       }
     },
     "General.dismiss" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4887,10 +5120,8 @@
         }
       }
     },
-    "General.dose" : {
-
-    },
     "General.doses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4907,6 +5138,7 @@
       }
     },
     "General.doseTitration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4940,6 +5172,7 @@
       }
     },
     "General.email" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4956,6 +5189,7 @@
       }
     },
     "General.end" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4972,6 +5206,7 @@
       }
     },
     "General.endDate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -4988,6 +5223,7 @@
       }
     },
     "General.event" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5004,6 +5240,7 @@
       }
     },
     "General.events" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5020,6 +5257,7 @@
       }
     },
     "General.events.small" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5036,6 +5274,7 @@
       }
     },
     "General.eventsList" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5052,6 +5291,7 @@
       }
     },
     "General.every" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5068,6 +5308,7 @@
       }
     },
     "General.exercises" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5084,6 +5325,7 @@
       }
     },
     "General.expoFile.name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5100,6 +5342,7 @@
       }
     },
     "General.exportABF" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5127,6 +5370,7 @@
       }
     },
     "General.exportCSV" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5143,6 +5387,7 @@
       }
     },
     "General.exportImage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5176,6 +5421,7 @@
       }
     },
     "General.finalStep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5192,6 +5438,7 @@
       }
     },
     "General.from" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5208,6 +5455,7 @@
       }
     },
     "General.good" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5224,6 +5472,7 @@
       }
     },
     "General.green" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5240,6 +5489,7 @@
       }
     },
     "General.hours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5256,6 +5506,7 @@
       }
     },
     "General.impactOf" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5272,6 +5523,7 @@
       }
     },
     "General.in" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5288,6 +5540,7 @@
       }
     },
     "General.increment" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5304,6 +5557,7 @@
       }
     },
     "General.incrementTime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5320,6 +5574,7 @@
       }
     },
     "General.indefinitely" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5336,6 +5591,7 @@
       }
     },
     "General.listOfMedicines" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5352,6 +5608,7 @@
       }
     },
     "General.medAlertViewTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5385,6 +5642,7 @@
       }
     },
     "General.medicines" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5401,6 +5659,7 @@
       }
     },
     "General.medsOptional" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5417,6 +5676,7 @@
       }
     },
     "General.minimal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5433,6 +5693,7 @@
       }
     },
     "General.moderate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5449,6 +5710,7 @@
       }
     },
     "General.months" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5465,6 +5727,7 @@
       }
     },
     "General.name" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5481,6 +5744,7 @@
       }
     },
     "General.newSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5497,6 +5761,7 @@
       }
     },
     "General.next" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5530,6 +5795,7 @@
       }
     },
     "General.no" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5580,6 +5846,7 @@
       }
     },
     "General.none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5596,6 +5863,7 @@
       }
     },
     "General.noRatings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5612,6 +5880,7 @@
       }
     },
     "General.noStop" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5628,6 +5897,7 @@
       }
     },
     "General.now" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5644,6 +5914,7 @@
       }
     },
     "General.of" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5660,6 +5931,7 @@
       }
     },
     "General.ok" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5676,6 +5948,7 @@
       }
     },
     "General.only" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5692,6 +5965,7 @@
       }
     },
     "General.or" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5708,6 +5982,7 @@
       }
     },
     "General.orange" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5724,6 +5999,7 @@
       }
     },
     "General.othTime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5740,6 +6016,7 @@
       }
     },
     "General.placeholder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5756,6 +6033,7 @@
       }
     },
     "General.print" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5783,6 +6061,7 @@
       }
     },
     "General.red" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5799,6 +6078,7 @@
       }
     },
     "General.relatedRatings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -5809,6 +6089,7 @@
       }
     },
     "General.reminders" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5842,6 +6123,7 @@
       }
     },
     "General.rename" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5858,6 +6140,7 @@
       }
     },
     "General.save" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5874,6 +6157,7 @@
       }
     },
     "General.saveChanges" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5890,6 +6174,7 @@
       }
     },
     "General.saveDoseTitration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5923,6 +6208,7 @@
       }
     },
     "General.searchBar" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5939,6 +6225,7 @@
       }
     },
     "General.select" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5955,6 +6242,7 @@
       }
     },
     "General.separator" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -5971,6 +6259,7 @@
       }
     },
     "General.show" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6004,6 +6293,7 @@
       }
     },
     "General.showHide" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6020,6 +6310,7 @@
       }
     },
     "General.since" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6035,10 +6326,8 @@
         }
       }
     },
-    "General.sorry" : {
-
-    },
     "General.start&endDate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6055,6 +6344,7 @@
       }
     },
     "General.startDate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6071,6 +6361,7 @@
       }
     },
     "General.started" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6087,6 +6378,7 @@
       }
     },
     "General.startingRegime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6120,6 +6412,7 @@
       }
     },
     "General.step" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6136,6 +6429,7 @@
       }
     },
     "General.stop" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6152,6 +6446,7 @@
       }
     },
     "General.strong" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6168,6 +6463,7 @@
       }
     },
     "General.successfully" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6201,6 +6497,7 @@
       }
     },
     "General.switchOn" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6217,6 +6514,7 @@
       }
     },
     "General.symptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6233,6 +6531,7 @@
       }
     },
     "General.targetRegime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6249,6 +6548,7 @@
       }
     },
     "General.timeMonitored" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6265,6 +6565,7 @@
       }
     },
     "General.titrationResult" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6281,6 +6582,7 @@
       }
     },
     "General.together" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6297,6 +6599,7 @@
       }
     },
     "General.treated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6313,6 +6616,7 @@
       }
     },
     "General.treatedRatings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6329,6 +6633,7 @@
       }
     },
     "General.treatedWithMed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6345,6 +6650,7 @@
       }
     },
     "General.treatment" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6361,6 +6667,7 @@
       }
     },
     "General.treatments" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6377,6 +6684,7 @@
       }
     },
     "General.unknown" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6393,6 +6701,7 @@
       }
     },
     "General.unnamedSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6426,6 +6735,7 @@
       }
     },
     "General.untreated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6442,6 +6752,7 @@
       }
     },
     "General.untreatedRatings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6475,6 +6786,7 @@
       }
     },
     "General.weeks" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6491,6 +6803,7 @@
       }
     },
     "General.with" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6524,6 +6837,7 @@
       }
     },
     "General.yes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6539,10 +6853,8 @@
         }
       }
     },
-    "Generic.events" : {
-
-    },
     "GraphContainer.instructions_1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6559,6 +6871,7 @@
       }
     },
     "GraphContainer.instructions_2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6575,6 +6888,7 @@
       }
     },
     "Help & support" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6585,6 +6899,7 @@
       }
     },
     "Help.completeManual" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6601,6 +6916,7 @@
       }
     },
     "Help.contactSupport" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6617,6 +6933,7 @@
       }
     },
     "Help.emailPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6633,6 +6950,7 @@
       }
     },
     "Help.error.mail1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6649,6 +6967,7 @@
       }
     },
     "Help.error.mail2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6665,6 +6984,7 @@
       }
     },
     "Help.errorLogInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6681,6 +7001,7 @@
       }
     },
     "Help.faq" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6697,6 +7018,7 @@
       }
     },
     "Help.internetReq" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6713,6 +7035,7 @@
       }
     },
     "Help.logEnd" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6729,6 +7052,7 @@
       }
     },
     "Help.logMailIntro1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6745,6 +7069,7 @@
       }
     },
     "Help.logMailIntro2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6761,6 +7086,7 @@
       }
     },
     "Help.logMailSubject" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6777,6 +7103,7 @@
       }
     },
     "Help.logStart" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6793,6 +7120,7 @@
       }
     },
     "Help.mailIntro1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6809,6 +7137,7 @@
       }
     },
     "Help.mailIntro2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6825,6 +7154,7 @@
       }
     },
     "Help.mailSubject" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6841,6 +7171,7 @@
       }
     },
     "Help.manual" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6857,6 +7188,7 @@
       }
     },
     "Help.suppOptions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6873,6 +7205,7 @@
       }
     },
     "Help.supportMsg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6889,6 +7222,7 @@
       }
     },
     "Help.tutMsg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6905,6 +7239,7 @@
       }
     },
     "Help.tutorial" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6921,6 +7256,7 @@
       }
     },
     "Help.tutorial.header" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6937,6 +7273,7 @@
       }
     },
     "Help.webSupport" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6952,10 +7289,8 @@
         }
       }
     },
-    "iCloud" : {
-
-    },
     "Keep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6965,10 +7300,8 @@
         }
       }
     },
-    "Local" : {
-
-    },
     "Login protection" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -6996,6 +7329,7 @@
       }
     },
     "Main.infoPopOverText0.0" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7012,6 +7346,7 @@
       }
     },
     "Main.infoPopOverText0.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7028,6 +7363,7 @@
       }
     },
     "Main.infoPopOverText1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7044,6 +7380,7 @@
       }
     },
     "Main.infoPopOverText1.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7060,6 +7397,7 @@
       }
     },
     "Main.infoPopOverText1.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7076,6 +7414,7 @@
       }
     },
     "Main.infoPopOverText2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7109,6 +7448,7 @@
       }
     },
     "Main.infoPopOverText3.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7125,6 +7465,7 @@
       }
     },
     "Main.infoPopOverText3.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7141,6 +7482,7 @@
       }
     },
     "Main.infoPopOverText4.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7157,6 +7499,7 @@
       }
     },
     "Main.infoPopOverText4.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7173,6 +7516,7 @@
       }
     },
     "Main.instructionsText1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7189,6 +7533,7 @@
       }
     },
     "Main.medReminder" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7205,6 +7550,7 @@
       }
     },
     "Main.popOverHeaderTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7221,6 +7567,7 @@
       }
     },
     "Main.printHeader" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7237,6 +7584,7 @@
       }
     },
     "Main.stats.noMed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7253,6 +7601,7 @@
       }
     },
     "Main.stats.withMeds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7269,6 +7618,7 @@
       }
     },
     "Main.stats.withMultMeds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7285,6 +7635,7 @@
       }
     },
     "Main.stats.woMeds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7301,6 +7652,7 @@
       }
     },
     "Med.perDay" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7316,10 +7668,8 @@
         }
       }
     },
-    "Med.wow" : {
-
-    },
     "MedAlert.doseAlert.maxTablet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7336,6 +7686,7 @@
       }
     },
     "MedAlert.doseAlert.message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7352,6 +7703,7 @@
       }
     },
     "MedAlert.doseAlert.msg2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7368,6 +7720,7 @@
       }
     },
     "MedAlert.doseAlert.msg3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7384,6 +7737,7 @@
       }
     },
     "MedAlert.doseAlert.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7434,6 +7788,7 @@
       }
     },
     "MedAlert.evaluationRem1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7450,6 +7805,7 @@
       }
     },
     "MedAlert.evaluationRem2a" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7466,6 +7822,7 @@
       }
     },
     "MedAlert.evaluationRem2b" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7482,6 +7839,7 @@
       }
     },
     "MedAlert.evaluationRem3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7498,6 +7856,7 @@
       }
     },
     "MedAlert.header" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7514,6 +7873,7 @@
       }
     },
     "MedAlert.intensityAlert1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7530,6 +7890,7 @@
       }
     },
     "MedAlert.intensityAlert2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7546,6 +7907,7 @@
       }
     },
     "MedAlert.intensityAlert3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7562,6 +7924,7 @@
       }
     },
     "MedAlert.intensityAlert4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7578,6 +7941,7 @@
       }
     },
     "MedAlert.intensityAlert5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7594,6 +7958,7 @@
       }
     },
     "MedAlert.intensityAlert6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7610,6 +7975,7 @@
       }
     },
     "MedAlert.longTermAlert1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7626,6 +7992,7 @@
       }
     },
     "MedAlert.longTermAlert2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7642,6 +8009,7 @@
       }
     },
     "MedAlert.longTermAlert3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7658,6 +8026,7 @@
       }
     },
     "MedAlert.longTermAlert4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7674,6 +8043,7 @@
       }
     },
     "MedAlert.longTermAlert5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7690,6 +8060,7 @@
       }
     },
     "MedAlert.longTermAlert6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7706,6 +8077,7 @@
       }
     },
     "MedAlert.overlap1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7722,6 +8094,7 @@
       }
     },
     "MedAlert.overlap2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7738,6 +8111,7 @@
       }
     },
     "MedAlert.overlap3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7754,6 +8128,7 @@
       }
     },
     "MedAlert.overlap4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7770,6 +8145,7 @@
       }
     },
     "MedAlert.ratingsAlertP1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7803,6 +8179,7 @@
       }
     },
     "MedAlert.ratingsAlertP2Low" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7819,6 +8196,7 @@
       }
     },
     "MedAlert.ratingsAlertP2Severe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7835,6 +8213,7 @@
       }
     },
     "MedAlert.ratingsAlertP3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7851,6 +8230,7 @@
       }
     },
     "MedAlert.ratingsAlertP4High" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7867,6 +8247,7 @@
       }
     },
     "MedAlert.ratingsAlertP4Low" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7883,6 +8264,7 @@
       }
     },
     "MedAlert.reminder.noSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7899,6 +8281,7 @@
       }
     },
     "MedAlert.reminder.rating.internal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7915,6 +8298,7 @@
       }
     },
     "MedAlert.reminder.rating.system" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7931,6 +8315,7 @@
       }
     },
     "MedAlert.reminder.taking.internal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7947,6 +8332,7 @@
       }
     },
     "MedAlert.reminder.taking.system" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7980,6 +8366,7 @@
       }
     },
     "MedAlert.stopInfo1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -7996,6 +8383,7 @@
       }
     },
     "MedAlert.stopInfo2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8012,6 +8400,7 @@
       }
     },
     "MedAlert.stopTaking" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8044,10 +8433,8 @@
         }
       }
     },
-    "medicine name,substances,classes,treated symptoms,doses,doseUnit,frequency,start date,time,end date,time,notes,side effects,effectiveness\n" : {
-
-    },
     "Medicine reminders" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8058,6 +8445,7 @@
       }
     },
     "Medicines" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8068,6 +8456,7 @@
       }
     },
     "Meds.1hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8084,6 +8473,7 @@
       }
     },
     "Meds.1wk" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8100,6 +8490,7 @@
       }
     },
     "Meds.2hours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8116,6 +8507,7 @@
       }
     },
     "Meds.2hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8132,6 +8524,7 @@
       }
     },
     "Meds.3d" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8148,6 +8541,7 @@
       }
     },
     "Meds.3hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8164,6 +8558,7 @@
       }
     },
     "Meds.4d" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8180,6 +8575,7 @@
       }
     },
     "Meds.4hours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8196,6 +8592,7 @@
       }
     },
     "Meds.4hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8212,6 +8609,7 @@
       }
     },
     "Meds.6hours" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8228,6 +8626,7 @@
       }
     },
     "Meds.6hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8244,6 +8643,7 @@
       }
     },
     "Meds.8hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8260,6 +8660,7 @@
       }
     },
     "Meds.12hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8276,6 +8677,7 @@
       }
     },
     "Meds.24hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8292,6 +8694,7 @@
       }
     },
     "Meds.48hr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8308,6 +8711,7 @@
       }
     },
     "Meds.archiveError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8324,6 +8728,7 @@
       }
     },
     "Meds.bd" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8340,6 +8745,7 @@
       }
     },
     "Meds.class" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8373,6 +8779,7 @@
       }
     },
     "Meds.combDoses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8389,6 +8796,7 @@
       }
     },
     "Meds.combinedAction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8421,6 +8829,7 @@
       }
     },
     "Meds.deleteMessage" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8488,6 +8897,7 @@
       }
     },
     "Meds.discontinued" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8504,6 +8914,7 @@
       }
     },
     "Meds.discontinued.brief" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8520,6 +8931,7 @@
       }
     },
     "Meds.dosagePlanError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8536,6 +8948,7 @@
       }
     },
     "Meds.dosagePlanError2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8552,6 +8965,7 @@
       }
     },
     "Meds.dose" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8568,6 +8982,7 @@
       }
     },
     "Meds.doseChange" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8584,6 +8999,7 @@
       }
     },
     "Meds.doseError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8600,6 +9016,7 @@
       }
     },
     "Meds.doseIncr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8616,6 +9033,7 @@
       }
     },
     "Meds.doseIncreaseScheme" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8632,6 +9050,7 @@
       }
     },
     "Meds.dosePlan" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8648,6 +9067,7 @@
       }
     },
     "Meds.doses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8664,6 +9084,7 @@
       }
     },
     "Meds.doses.incr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8680,6 +9101,7 @@
       }
     },
     "Meds.doses.target" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8696,6 +9118,7 @@
       }
     },
     "Meds.doses&Times" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8712,6 +9135,7 @@
       }
     },
     "Meds.doseUnit" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8762,6 +9186,7 @@
       }
     },
     "Meds.effect.good" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8778,6 +9203,7 @@
       }
     },
     "Meds.effect.minimal" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8794,6 +9220,7 @@
       }
     },
     "Meds.effect.moderate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8810,6 +9237,7 @@
       }
     },
     "Meds.effect.none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8826,6 +9254,7 @@
       }
     },
     "Meds.effectDuration" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8842,6 +9271,7 @@
       }
     },
     "Meds.effectivenessTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8858,6 +9288,7 @@
       }
     },
     "Meds.endDate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8874,6 +9305,7 @@
       }
     },
     "Meds.endedSince" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8890,6 +9322,7 @@
       }
     },
     "Meds.enterDosePrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8906,6 +9339,7 @@
       }
     },
     "Meds.enterPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8922,6 +9356,7 @@
       }
     },
     "Meds.errors.inconsistency" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8938,6 +9373,7 @@
       }
     },
     "Meds.errors.inconsistency.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8954,6 +9390,7 @@
       }
     },
     "Meds.errors.missingCase" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8970,6 +9407,7 @@
       }
     },
     "Meds.errors.missingCase_2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -8986,6 +9424,7 @@
       }
     },
     "Meds.errors.rowActionError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9002,6 +9441,7 @@
       }
     },
     "Meds.evaluation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9018,6 +9458,7 @@
       }
     },
     "Meds.expansionPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9034,6 +9475,7 @@
       }
     },
     "Meds.expansionPrompt_3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9050,6 +9492,7 @@
       }
     },
     "Meds.expansionsPrompt_2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9066,6 +9509,7 @@
       }
     },
     "Meds.expansionsPrompt_4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9082,6 +9526,7 @@
       }
     },
     "Meds.exportTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9098,6 +9543,7 @@
       }
     },
     "Meds.fourDays" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9114,6 +9560,7 @@
       }
     },
     "Meds.frcChangeError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9130,6 +9577,7 @@
       }
     },
     "Meds.frcChangeError_M" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9146,6 +9594,7 @@
       }
     },
     "Meds.freqAndTime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9162,6 +9611,7 @@
       }
     },
     "Meds.freqPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9178,6 +9628,7 @@
       }
     },
     "Meds.grams" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9194,6 +9645,7 @@
       }
     },
     "Meds.hourly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9210,6 +9662,7 @@
       }
     },
     "Meds.importedFrom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9226,6 +9679,7 @@
       }
     },
     "Meds.incr.footerInfo1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9242,6 +9696,7 @@
       }
     },
     "Meds.incr.footerInfo2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9258,6 +9713,7 @@
       }
     },
     "Meds.incrDays" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9274,6 +9730,7 @@
       }
     },
     "Meds.increasePLanInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9290,6 +9747,7 @@
       }
     },
     "Meds.increasePlanInfo2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9306,6 +9764,7 @@
       }
     },
     "Meds.increaseRegimeText" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9322,6 +9781,7 @@
       }
     },
     "Meds.increaseText_1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9338,6 +9798,7 @@
       }
     },
     "Meds.incrWeeks" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9354,6 +9815,7 @@
       }
     },
     "Meds.ingredients" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9370,6 +9832,7 @@
       }
     },
     "Meds.instructions" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9386,6 +9849,7 @@
       }
     },
     "Meds.isCurrentError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9402,6 +9866,7 @@
       }
     },
     "Meds.keepTapping" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9418,6 +9883,7 @@
       }
     },
     "Meds.lessThanOD" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9451,6 +9917,7 @@
       }
     },
     "Meds.mcgh" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9467,6 +9934,7 @@
       }
     },
     "Meds.medicinesList" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9500,6 +9968,7 @@
       }
     },
     "Meds.mgPer" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9533,6 +10002,7 @@
       }
     },
     "Meds.missingID" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9582,6 +10052,7 @@
       }
     },
     "Meds.noEnd" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9598,6 +10069,7 @@
       }
     },
     "Meds.noMG" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9614,6 +10086,7 @@
       }
     },
     "Meds.noneSel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9630,6 +10103,7 @@
       }
     },
     "Meds.noNotes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9646,6 +10120,7 @@
       }
     },
     "Meds.noTaken" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9662,6 +10137,7 @@
       }
     },
     "Meds.notes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9678,6 +10154,7 @@
       }
     },
     "Meds.notesPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9694,6 +10171,7 @@
       }
     },
     "Meds.notRated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9710,6 +10188,7 @@
       }
     },
     "Meds.noUsed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9726,6 +10205,7 @@
       }
     },
     "Meds.numberOf" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9742,6 +10222,7 @@
       }
     },
     "Meds.od" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9758,6 +10239,7 @@
       }
     },
     "Meds.otherDay" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9774,6 +10256,7 @@
       }
     },
     "Meds.patch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9790,6 +10273,7 @@
       }
     },
     "Meds.patches" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9806,6 +10290,7 @@
       }
     },
     "Meds.planned" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9839,6 +10324,7 @@
       }
     },
     "Meds.print.list" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9855,6 +10341,7 @@
       }
     },
     "Meds.printHeader" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9871,6 +10358,7 @@
       }
     },
     "Meds.prnTerm" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9887,6 +10375,7 @@
       }
     },
     "Meds.prompt2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9903,6 +10392,7 @@
       }
     },
     "Meds.pw" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9919,6 +10409,7 @@
       }
     },
     "Meds.rateEffect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9935,6 +10426,7 @@
       }
     },
     "Meds.rateSideEffects" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9951,6 +10443,7 @@
       }
     },
     "Meds.rateSymptom" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9967,6 +10460,7 @@
       }
     },
     "Meds.ratingInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9983,6 +10477,7 @@
       }
     },
     "Meds.ratingMTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -9999,6 +10494,7 @@
       }
     },
     "Meds.ratingPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10015,6 +10511,7 @@
       }
     },
     "Meds.remindMe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10031,6 +10528,7 @@
       }
     },
     "Meds.remindMeRate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10047,6 +10545,7 @@
       }
     },
     "Meds.remindMeTake" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10063,6 +10562,7 @@
       }
     },
     "Meds.remindMeToTake" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10079,6 +10579,7 @@
       }
     },
     "Meds.remInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10095,6 +10596,7 @@
       }
     },
     "Meds.remPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10111,6 +10613,7 @@
       }
     },
     "Meds.schedulingError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10127,6 +10630,7 @@
       }
     },
     "Meds.se" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10143,6 +10647,7 @@
       }
     },
     "Meds.selectedSymptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10159,6 +10664,7 @@
       }
     },
     "Meds.selectEffect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10175,6 +10681,7 @@
       }
     },
     "Meds.selectPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10191,6 +10698,7 @@
       }
     },
     "Meds.selectPrompt2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10218,6 +10726,7 @@
       }
     },
     "Meds.sideEffect.moderate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10228,6 +10737,7 @@
       }
     },
     "Meds.sideEffect.none" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10238,6 +10748,7 @@
       }
     },
     "Meds.sideEffect.strong" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10292,6 +10803,7 @@
       }
     },
     "Meds.since" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10308,6 +10820,7 @@
       }
     },
     "Meds.startIn" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10341,6 +10854,7 @@
       }
     },
     "Meds.stoppedOn" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10357,6 +10871,7 @@
       }
     },
     "Meds.storageError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10407,6 +10922,7 @@
       }
     },
     "Meds.symptTreated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10423,6 +10939,7 @@
       }
     },
     "Meds.tablet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10439,6 +10956,7 @@
       }
     },
     "Meds.tablets" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10455,6 +10973,7 @@
       }
     },
     "Meds.tabletsError" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10471,6 +10990,7 @@
       }
     },
     "Meds.takenFor" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10487,6 +11007,7 @@
       }
     },
     "Meds.takenSince" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10503,6 +11024,7 @@
       }
     },
     "Meds.takeReg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10519,6 +11041,7 @@
       }
     },
     "Meds.takeReg," : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10535,6 +11058,7 @@
       }
     },
     "Meds.tapInstruction" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10551,6 +11075,7 @@
       }
     },
     "Meds.targetFreq" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10567,6 +11092,7 @@
       }
     },
     "Meds.tds" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10583,6 +11109,7 @@
       }
     },
     "Meds.threeDays" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10599,6 +11126,7 @@
       }
     },
     "Meds.timePrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10615,6 +11143,7 @@
       }
     },
     "Meds.timeToIncr" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10631,6 +11160,7 @@
       }
     },
     "Meds.treatedSymptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10647,6 +11177,7 @@
       }
     },
     "Meds.weekly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10663,6 +11194,7 @@
       }
     },
     "Meds.whenNeeded," : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10695,13 +11227,8 @@
         }
       }
     },
-    "mmYY" : {
-
-    },
-    "Month" : {
-
-    },
     "Name, Dates & Symptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10734,10 +11261,8 @@
         }
       }
     },
-    "No alerts for\n (medicine.name)" : {
-
-    },
     "Notes" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10748,6 +11273,7 @@
       }
     },
     "Notif.exRem" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10764,6 +11290,7 @@
       }
     },
     "Notif.ratingRem" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10780,6 +11307,7 @@
       }
     },
     "Notif.timeFor" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10795,7 +11323,11 @@
         }
       }
     },
+    "Novalgea" : {
+
+    },
     "Off" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10805,16 +11337,8 @@
         }
       }
     },
-    "OK" : {
-
-    },
-    "Online manual" : {
-
-    },
-    "Open Mail" : {
-
-    },
     "Open Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10825,6 +11349,7 @@
       }
     },
     "Password" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10852,6 +11377,7 @@
       }
     },
     "Preparing new backup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10861,13 +11387,8 @@
         }
       }
     },
-    "proportion" : {
-
-    },
-    "Proportion" : {
-
-    },
     "Rate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10895,6 +11416,7 @@
       }
     },
     "Rating.mild" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10911,6 +11433,7 @@
       }
     },
     "Rating.moderate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10944,6 +11467,7 @@
       }
     },
     "Rating.severe" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10960,6 +11484,7 @@
       }
     },
     "Ratings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10970,6 +11495,7 @@
       }
     },
     "Ratingwords.all" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10986,6 +11512,7 @@
       }
     },
     "RecordCount" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11000,9 +11527,6 @@
           }
         }
       }
-    },
-    "Records: %lld" : {
-
     },
     "Reminder.doseIncreasePrompt" : {
       "extractionState" : "manual",
@@ -11090,6 +11614,7 @@
       }
     },
     "Reports.causation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11106,6 +11631,7 @@
       }
     },
     "Reports.detail.m0Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11122,6 +11648,7 @@
       }
     },
     "Reports.detail.s0Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11138,6 +11665,7 @@
       }
     },
     "Reports.detail.s1Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11154,6 +11682,7 @@
       }
     },
     "Reports.detail.s2Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11170,6 +11699,7 @@
       }
     },
     "Reports.durationTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11203,6 +11733,7 @@
       }
     },
     "Reports.infoText.detail.m0" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11219,6 +11750,7 @@
       }
     },
     "Reports.infoText.detail.s0" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11235,6 +11767,7 @@
       }
     },
     "Reports.infoText.detail.s1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11251,6 +11784,7 @@
       }
     },
     "Reports.infoText.detail.s2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11267,6 +11801,7 @@
       }
     },
     "Reports.last4weeks" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11283,6 +11818,7 @@
       }
     },
     "Reports.lastWeek" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11299,6 +11835,7 @@
       }
     },
     "Reports.list.s0Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11315,6 +11852,7 @@
       }
     },
     "Reports.list.s1Info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11331,6 +11869,7 @@
       }
     },
     "Reports.med.symptom.header" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11347,6 +11886,7 @@
       }
     },
     "Reports.med.symptom.help1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11363,6 +11903,7 @@
       }
     },
     "Reports.medRep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11379,6 +11920,7 @@
       }
     },
     "Reports.noCausation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11395,6 +11937,7 @@
       }
     },
     "Reports.printTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11428,6 +11971,7 @@
       }
     },
     "Reports.symRep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11443,13 +11987,8 @@
         }
       }
     },
-    "Required password" : {
-
-    },
-    "Restore diary data from %@?" : {
-
-    },
     "RestoreFailure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11466,6 +12005,7 @@
       }
     },
     "RestoreFailureMessage1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11482,6 +12022,7 @@
       }
     },
     "RestoreFailureMessage2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11498,6 +12039,7 @@
       }
     },
     "RestoreFailureMessage3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11531,6 +12073,7 @@
       }
     },
     "RestoreSuccess" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11547,6 +12090,7 @@
       }
     },
     "RestoreSuccessMessage1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11563,6 +12107,7 @@
       }
     },
     "RestoreSuccessMessage2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11579,6 +12124,7 @@
       }
     },
     "RestoreSuccessMessage3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11595,6 +12141,7 @@
       }
     },
     "RestoreSuccessMessage4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11611,6 +12158,7 @@
       }
     },
     "RestoreWarning" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11627,6 +12175,7 @@
       }
     },
     "Safety" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11637,6 +12186,7 @@
       }
     },
     "Security.bIDnotEnrolled" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11653,6 +12203,7 @@
       }
     },
     "Security.bIDunavailable" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11686,6 +12237,7 @@
       }
     },
     "Security.confirm" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11702,6 +12254,7 @@
       }
     },
     "Security.create" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11718,6 +12271,7 @@
       }
     },
     "Security.faceID" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11734,6 +12288,7 @@
       }
     },
     "Security.idFailure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11750,6 +12305,7 @@
       }
     },
     "Security.idPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11766,6 +12322,7 @@
       }
     },
     "Security.loginFailure.Message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11782,6 +12339,7 @@
       }
     },
     "Security.loginFailure.Title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11798,6 +12356,7 @@
       }
     },
     "Security.loginPropmt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11814,6 +12373,7 @@
       }
     },
     "Security.newPW" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11830,6 +12390,7 @@
       }
     },
     "Security.nobioID" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11846,6 +12407,7 @@
       }
     },
     "Security.noExceeded" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11862,6 +12424,7 @@
       }
     },
     "Security.noLaunch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11878,6 +12441,7 @@
       }
     },
     "Security.noMatch" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11894,6 +12458,7 @@
       }
     },
     "Security.pwInfo" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11910,6 +12475,7 @@
       }
     },
     "Security.pwPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11926,6 +12492,7 @@
       }
     },
     "Security.repeatPW" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11942,6 +12509,7 @@
       }
     },
     "Security.success" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11958,6 +12526,7 @@
       }
     },
     "Security.touchID" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11990,10 +12559,8 @@
         }
       }
     },
-    "Select" : {
-
-    },
     "Select an edit option" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12004,6 +12571,7 @@
       }
     },
     "Select an option" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12031,6 +12599,7 @@
       }
     },
     "Select or add or a medicine" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -12052,6 +12621,7 @@
       }
     },
     "Settings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12062,6 +12632,7 @@
       }
     },
     "Settings.backupSuccess" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12078,6 +12649,7 @@
       }
     },
     "Settings.eventTypeFooter1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12094,6 +12666,7 @@
       }
     },
     "Settings.eventTypeFooter2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12110,6 +12683,7 @@
       }
     },
     "Settings.eventTypeHeader1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12126,6 +12700,7 @@
       }
     },
     "Settings.eventTypeHeader2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12142,6 +12717,7 @@
       }
     },
     "Settings.eventTypeHeader3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12158,6 +12734,7 @@
       }
     },
     "Settings.header1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12174,6 +12751,7 @@
       }
     },
     "Settings.header2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12190,6 +12768,7 @@
       }
     },
     "Settings.header3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12206,6 +12785,7 @@
       }
     },
     "Settings.header4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12222,6 +12802,7 @@
       }
     },
     "Settings.header5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12238,6 +12819,7 @@
       }
     },
     "Settings.header6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12254,6 +12836,7 @@
       }
     },
     "Settings.header7" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12270,6 +12853,7 @@
       }
     },
     "Settings.header8" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12286,6 +12870,7 @@
       }
     },
     "Settings.iCloudoff.delete" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12302,6 +12887,7 @@
       }
     },
     "Settings.iCloudoff.keep" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12318,6 +12904,7 @@
       }
     },
     "Settings.iCloudoff.msg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12334,6 +12921,7 @@
       }
     },
     "Settings.iCloudoff.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12350,6 +12938,7 @@
       }
     },
     "Settings.selectEntries" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12366,6 +12955,7 @@
       }
     },
     "Side effects" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12382,6 +12972,7 @@
       }
     },
     "Started" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12392,6 +12983,7 @@
       }
     },
     "Starting on" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12402,6 +12994,7 @@
       }
     },
     "Starting schedule" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12412,6 +13005,7 @@
       }
     },
     "StatC.title4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12428,6 +13022,7 @@
       }
     },
     "StatC.title5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12444,6 +13039,7 @@
       }
     },
     "Stats" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12471,6 +13067,7 @@
       }
     },
     "Stats.avgPerMonth" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12521,6 +13118,7 @@
       }
     },
     "Stats.changesAfterEvents" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12537,6 +13135,7 @@
       }
     },
     "Stats.correlation" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12553,6 +13152,7 @@
       }
     },
     "Stats.correlation.brief" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12569,6 +13169,7 @@
       }
     },
     "Stats.countChartTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12585,6 +13186,7 @@
       }
     },
     "Stats.dosePerMonth" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12601,6 +13203,7 @@
       }
     },
     "Stats.dosesPerWeekday" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12617,6 +13220,7 @@
       }
     },
     "Stats.doseTimeOfDay" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12633,6 +13237,7 @@
       }
     },
     "Stats.duringEffect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12666,6 +13271,7 @@
       }
     },
     "Stats.effectiveness" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12682,6 +13288,7 @@
       }
     },
     "Stats.effectRating" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12698,6 +13305,7 @@
       }
     },
     "Stats.effectTrend" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12714,6 +13322,7 @@
       }
     },
     "Stats.efficiencyScore.doseRed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12730,6 +13339,7 @@
       }
     },
     "Stats.efficiencyScore.incMild" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12746,6 +13356,7 @@
       }
     },
     "Stats.efficiencyScore.meanRed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12762,6 +13373,7 @@
       }
     },
     "Stats.efficiencyScore.para1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12778,6 +13390,7 @@
       }
     },
     "Stats.efficiencyScore.para2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12794,6 +13407,7 @@
       }
     },
     "Stats.efficiencyScore.redSev" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12810,6 +13424,7 @@
       }
     },
     "Stats.efficiencyScore.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12826,6 +13441,7 @@
       }
     },
     "Stats.event.subTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12842,6 +13458,7 @@
       }
     },
     "Stats.eventImpact" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12857,10 +13474,8 @@
         }
       }
     },
-    "Stats.events.info1" : {
-
-    },
     "Stats.exerciseImpact" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12877,6 +13492,7 @@
       }
     },
     "Stats.impactOn" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12893,6 +13509,7 @@
       }
     },
     "Stats.important" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12909,6 +13526,7 @@
       }
     },
     "Stats.infoText1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12925,6 +13543,7 @@
       }
     },
     "Stats.infoText2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12941,6 +13560,7 @@
       }
     },
     "Stats.infoText3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12957,6 +13577,7 @@
       }
     },
     "Stats.infoText4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12973,6 +13594,7 @@
       }
     },
     "Stats.infoText5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12989,6 +13611,7 @@
       }
     },
     "Stats.infoText6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13005,6 +13628,7 @@
       }
     },
     "Stats.intensityPropChanges" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13021,6 +13645,7 @@
       }
     },
     "Stats.intensityPropEvents" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13037,6 +13662,7 @@
       }
     },
     "Stats.intensityPropExercise" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13053,6 +13679,7 @@
       }
     },
     "Stats.intensityPropTreatment" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13103,6 +13730,7 @@
       }
     },
     "Stats.mildProp" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13119,6 +13747,7 @@
       }
     },
     "Stats.mildSev" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13135,6 +13764,7 @@
       }
     },
     "Stats.mildSevChange" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13151,6 +13781,7 @@
       }
     },
     "Stats.moderate" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13167,6 +13798,7 @@
       }
     },
     "Stats.monthly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13199,16 +13831,8 @@
         }
       }
     },
-    "Stats.multMeds.info1" : {
-
-    },
-    "Stats.multMeds.info2" : {
-
-    },
-    "Stats.multMeds.info3" : {
-
-    },
     "Stats.na" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13225,6 +13849,7 @@
       }
     },
     "Stats.naYet" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13258,6 +13883,7 @@
       }
     },
     "Stats.noData" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13291,6 +13917,7 @@
       }
     },
     "Stats.noRatings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13307,6 +13934,7 @@
       }
     },
     "Stats.perWeek" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13391,6 +14019,7 @@
       }
     },
     "Stats.rateChangeChartName" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13407,6 +14036,7 @@
       }
     },
     "Stats.rateChangeChartName.subtitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13423,6 +14053,7 @@
       }
     },
     "Stats.rateChangeChartName.subtitle2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13439,6 +14070,7 @@
       }
     },
     "Stats.ratings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13455,6 +14087,7 @@
       }
     },
     "Stats.recentAvg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13471,6 +14104,7 @@
       }
     },
     "Stats.redRem" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13487,6 +14121,7 @@
       }
     },
     "Stats.seRating" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13503,6 +14138,7 @@
       }
     },
     "Stats.severeProp" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13517,15 +14153,6 @@
           }
         }
       }
-    },
-    "Stats.singleMed.info1" : {
-
-    },
-    "Stats.singleMed.info2" : {
-
-    },
-    "Stats.singleMed.info3" : {
-
     },
     "Stats.statDetails" : {
       "extractionState" : "manual",
@@ -13545,6 +14172,7 @@
       }
     },
     "Stats.statistics" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13561,6 +14189,7 @@
       }
     },
     "Stats.strong" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13576,13 +14205,8 @@
         }
       }
     },
-    "Stats.symptom.info1" : {
-
-    },
-    "Stats.symptom.info2" : {
-
-    },
     "Stats.symptomRed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13599,6 +14223,7 @@
       }
     },
     "Stats.symptomRed.brief" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13768,6 +14393,7 @@
       }
     },
     "Stats.timesOfDay" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13784,6 +14410,7 @@
       }
     },
     "Stats.timeSpan" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13800,6 +14427,7 @@
       }
     },
     "Stats.totalAvg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13816,6 +14444,7 @@
       }
     },
     "Stats.totalDoses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13832,6 +14461,7 @@
       }
     },
     "Stats.treatedSymptoms" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13848,6 +14478,7 @@
       }
     },
     "Stats.treatedWith" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13864,6 +14495,7 @@
       }
     },
     "Stats.treatmentEffectOnVAS" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13880,6 +14512,7 @@
       }
     },
     "Stats.treatmentTime" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13896,6 +14529,7 @@
       }
     },
     "Stats.trendTile.subTitle1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13912,6 +14546,7 @@
       }
     },
     "Stats.trendTile.subTitle2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13928,6 +14563,7 @@
       }
     },
     "Stats.vasChangeAfterDoses" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13944,6 +14580,7 @@
       }
     },
     "Stats.weak" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13977,6 +14614,7 @@
       }
     },
     "Stats.weekdays" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -13993,6 +14631,7 @@
       }
     },
     "Stats.weekly" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14094,6 +14733,7 @@
       }
     },
     "StatsC.title1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14110,6 +14750,7 @@
       }
     },
     "StatsC.title2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14126,6 +14767,7 @@
       }
     },
     "StatsC.title3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14176,6 +14818,7 @@
       }
     },
     "StatsDetailVC.avgRatingChange" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14192,6 +14835,7 @@
       }
     },
     "StatsDetailVC.ch2subTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14225,6 +14869,7 @@
       }
     },
     "StatsDetailVC.dnChart.subTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14258,6 +14903,7 @@
       }
     },
     "StatsDetailVC.dnChartTitle" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14274,6 +14920,7 @@
       }
     },
     "StatsDetailVC.header" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14290,6 +14937,7 @@
       }
     },
     "StatsDetailVC.noMin" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14306,6 +14954,7 @@
       }
     },
     "StatsDetailVC.noMinMax" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14322,6 +14971,7 @@
       }
     },
     "StatsDetailVC.symptomTitleLabel" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14338,6 +14988,7 @@
       }
     },
     "StatsObject.noMedEffect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14354,6 +15005,7 @@
       }
     },
     "StatsObject.woMed" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14370,6 +15022,7 @@
       }
     },
     "Store.description.CPE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14386,6 +15039,7 @@
       }
     },
     "Store.description.PME" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14402,6 +15056,7 @@
       }
     },
     "Store.description.USE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14418,6 +15073,7 @@
       }
     },
     "Store.dialogMsg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14434,6 +15090,7 @@
       }
     },
     "Store.erro.info" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14450,6 +15107,7 @@
       }
     },
     "Store.error.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14466,6 +15124,7 @@
       }
     },
     "Store.error.acctStgs" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14482,6 +15141,7 @@
       }
     },
     "Store.error.appStore" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14498,6 +15158,7 @@
       }
     },
     "Store.error.asMsg" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14514,6 +15175,7 @@
       }
     },
     "Store.error.cantConnect" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14530,6 +15192,7 @@
       }
     },
     "Store.error.expUnavailable" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14546,6 +15209,7 @@
       }
     },
     "Store.error.noNetWork" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14562,6 +15226,7 @@
       }
     },
     "Store.expansions.CCPE" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14578,6 +15243,7 @@
       }
     },
     "Store.expansions.PME" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14611,6 +15277,7 @@
       }
     },
     "Store.expPrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14627,6 +15294,7 @@
       }
     },
     "Store.freeVAlert" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14660,6 +15328,7 @@
       }
     },
     "Store.medPurchasePrompt" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14676,6 +15345,7 @@
       }
     },
     "Store.medPurchasePrompt2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14692,6 +15362,7 @@
       }
     },
     "Store.purchased" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14708,6 +15379,7 @@
       }
     },
     "Store.restore" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14758,6 +15430,7 @@
       }
     },
     "Store.taError.message" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14774,6 +15447,7 @@
       }
     },
     "Store.taError.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14790,6 +15464,7 @@
       }
     },
     "Store.taFailure" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14823,6 +15498,7 @@
       }
     },
     "Store.thankYou" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14838,13 +15514,11 @@
         }
       }
     },
-    "Support page" : {
-
-    },
     "Symptom" : {
 
     },
     "Symptom reminders" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14855,6 +15529,7 @@
       }
     },
     "Symptom.averageTreated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14871,6 +15546,7 @@
       }
     },
     "Symptom.averageUntreated" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14904,6 +15580,7 @@
       }
     },
     "Target schedule" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14914,6 +15591,7 @@
       }
     },
     "Terms of use" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14922,9 +15600,6 @@
           }
         }
       }
-    },
-    "The latest safety backup contain your old diary data.\nYou can delete this if you don't need to restore this later." : {
-
     },
     "To" : {
       "extractionState" : "manual",
@@ -14944,6 +15619,7 @@
       }
     },
     "Trend.description.fail" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14960,6 +15636,7 @@
       }
     },
     "Trend.description.improving" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14976,6 +15653,7 @@
       }
     },
     "Trend.description.less" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -14992,6 +15670,7 @@
       }
     },
     "Trend.description.lost" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15008,6 +15687,7 @@
       }
     },
     "Trend.description.stable" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15024,6 +15704,7 @@
       }
     },
     "Tutorial.intro.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15040,6 +15721,7 @@
       }
     },
     "Tutorial.intro.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15056,6 +15738,7 @@
       }
     },
     "Tutorial.intro.3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15072,6 +15755,7 @@
       }
     },
     "Tutorial.intro.4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15088,6 +15772,7 @@
       }
     },
     "Tutorial.intro.5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15104,6 +15789,7 @@
       }
     },
     "Tutorial.intro.6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15120,6 +15806,7 @@
       }
     },
     "Tutorial.intro.7" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15136,6 +15823,7 @@
       }
     },
     "Tutorial.intro.8" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15152,6 +15840,7 @@
       }
     },
     "Tutorial.intro.9" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15185,6 +15874,7 @@
       }
     },
     "Tutorial.title1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15201,6 +15891,7 @@
       }
     },
     "Tutorial.title2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15217,6 +15908,7 @@
       }
     },
     "Tutorial.title3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15233,6 +15925,7 @@
       }
     },
     "Tutorial.title4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15249,6 +15942,7 @@
       }
     },
     "Tutorial.title5" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15265,6 +15959,7 @@
       }
     },
     "Tutorial.title6" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15281,6 +15976,7 @@
       }
     },
     "Tutorial.title7" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15297,6 +15993,7 @@
       }
     },
     "Tutorial.title8" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15313,6 +16010,7 @@
       }
     },
     "Tutorial.title9" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15329,6 +16027,7 @@
       }
     },
     "Update.32.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15345,6 +16044,7 @@
       }
     },
     "Update.32.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15361,6 +16061,7 @@
       }
     },
     "Update.32.3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15377,6 +16078,7 @@
       }
     },
     "Update.33.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15393,6 +16095,7 @@
       }
     },
     "Update.33.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15409,6 +16112,7 @@
       }
     },
     "Update.33.3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15425,6 +16129,7 @@
       }
     },
     "Update.33.4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15441,6 +16146,7 @@
       }
     },
     "Update.34.1" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15457,6 +16163,7 @@
       }
     },
     "Update.34.2" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15473,6 +16180,7 @@
       }
     },
     "Update.34.2.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15489,6 +16197,7 @@
       }
     },
     "Update.34.3" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -15499,6 +16208,7 @@
       }
     },
     "Update.34.3.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15515,6 +16225,7 @@
       }
     },
     "Update.34.4" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -15525,6 +16236,7 @@
       }
     },
     "Update.34.4.title" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -15535,6 +16247,7 @@
       }
     },
     "Update.intro" : {
+      "extractionState" : "stale",
       "localizations" : {
         "en" : {
           "stringUnit" : {
@@ -15544,16 +16257,8 @@
         }
       }
     },
-    "Use Face or Touch ID" : {
-
-    },
-    "Web support options" : {
-
-    },
-    "Weekday" : {
-
-    },
     "will be renamed to" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15580,10 +16285,8 @@
         }
       }
     },
-    "Year" : {
-
-    },
     "Your iCloud account is inaccessible" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {

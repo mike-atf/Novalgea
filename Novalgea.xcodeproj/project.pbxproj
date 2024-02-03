@@ -20,6 +20,21 @@
 		FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6702B6D4D95003ED5FF /* UserText.swift */; };
 		FA56B6742B6D509A003ED5FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA56B6732B6D509A003ED5FF /* StoreKit.framework */; };
 		FA56B6782B6D527C003ED5FF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */; };
+		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
+		FABEBF0E2B6E97E3007AE48C /* InternalError+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF002B6E97E3007AE48C /* InternalError+CoreDataClass.swift */; };
+		FABEBF0F2B6E97E3007AE48C /* InternalError+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF012B6E97E3007AE48C /* InternalError+CoreDataProperties.swift */; };
+		FABEBF102B6E97E3007AE48C /* DiaryEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF022B6E97E3007AE48C /* DiaryEvent+CoreDataClass.swift */; };
+		FABEBF112B6E97E3007AE48C /* DiaryEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF032B6E97E3007AE48C /* DiaryEvent+CoreDataProperties.swift */; };
+		FABEBF122B6E97E3007AE48C /* Medicine+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF042B6E97E3007AE48C /* Medicine+CoreDataClass.swift */; };
+		FABEBF132B6E97E3007AE48C /* Medicine+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF052B6E97E3007AE48C /* Medicine+CoreDataProperties.swift */; };
+		FABEBF142B6E97E3007AE48C /* PRNMedEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF062B6E97E3007AE48C /* PRNMedEvent+CoreDataClass.swift */; };
+		FABEBF152B6E97E3007AE48C /* PRNMedEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF072B6E97E3007AE48C /* PRNMedEvent+CoreDataProperties.swift */; };
+		FABEBF162B6E97E3007AE48C /* ExerciseEvent+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF082B6E97E3007AE48C /* ExerciseEvent+CoreDataClass.swift */; };
+		FABEBF172B6E97E3007AE48C /* ExerciseEvent+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF092B6E97E3007AE48C /* ExerciseEvent+CoreDataProperties.swift */; };
+		FABEBF182B6E97E3007AE48C /* Symptom+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF0A2B6E97E3007AE48C /* Symptom+CoreDataClass.swift */; };
+		FABEBF192B6E97E3007AE48C /* Symptom+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF0B2B6E97E3007AE48C /* Symptom+CoreDataProperties.swift */; };
+		FABEBF1A2B6E97E3007AE48C /* Rating+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF0C2B6E97E3007AE48C /* Rating+CoreDataClass.swift */; };
+		FABEBF1B2B6E97E3007AE48C /* Rating+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBF0D2B6E97E3007AE48C /* Rating+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -58,6 +73,21 @@
 		FA56B6702B6D4D95003ED5FF /* UserText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserText.swift; sourceTree = "<group>"; };
 		FA56B6732B6D509A003ED5FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		FABEBF002B6E97E3007AE48C /* InternalError+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InternalError+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF012B6E97E3007AE48C /* InternalError+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "InternalError+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF022B6E97E3007AE48C /* DiaryEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF032B6E97E3007AE48C /* DiaryEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DiaryEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF042B6E97E3007AE48C /* Medicine+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medicine+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF052B6E97E3007AE48C /* Medicine+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Medicine+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF062B6E97E3007AE48C /* PRNMedEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PRNMedEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF072B6E97E3007AE48C /* PRNMedEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "PRNMedEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF082B6E97E3007AE48C /* ExerciseEvent+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseEvent+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF092B6E97E3007AE48C /* ExerciseEvent+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ExerciseEvent+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF0A2B6E97E3007AE48C /* Symptom+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Symptom+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF0B2B6E97E3007AE48C /* Symptom+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Symptom+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		FABEBF0C2B6E97E3007AE48C /* Rating+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rating+CoreDataClass.swift"; sourceTree = "<group>"; };
+		FABEBF0D2B6E97E3007AE48C /* Rating+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Rating+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +119,8 @@
 		FA56B62F2B6D3C60003ED5FF = {
 			isa = PBXGroup;
 			children = (
+				FABEBF1C2B6E9868007AE48C /* Model files */,
+				FABEBEFF2B6E954E007AE48C /* Manager */,
 				FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */,
 				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
 				FA56B6522B6D3C62003ED5FF /* NovalgeaTests */,
@@ -158,6 +190,35 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FABEBEFF2B6E954E007AE48C /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		FABEBF1C2B6E9868007AE48C /* Model files */ = {
+			isa = PBXGroup;
+			children = (
+				FABEBF002B6E97E3007AE48C /* InternalError+CoreDataClass.swift */,
+				FABEBF012B6E97E3007AE48C /* InternalError+CoreDataProperties.swift */,
+				FABEBF022B6E97E3007AE48C /* DiaryEvent+CoreDataClass.swift */,
+				FABEBF032B6E97E3007AE48C /* DiaryEvent+CoreDataProperties.swift */,
+				FABEBF042B6E97E3007AE48C /* Medicine+CoreDataClass.swift */,
+				FABEBF052B6E97E3007AE48C /* Medicine+CoreDataProperties.swift */,
+				FABEBF062B6E97E3007AE48C /* PRNMedEvent+CoreDataClass.swift */,
+				FABEBF072B6E97E3007AE48C /* PRNMedEvent+CoreDataProperties.swift */,
+				FABEBF082B6E97E3007AE48C /* ExerciseEvent+CoreDataClass.swift */,
+				FABEBF092B6E97E3007AE48C /* ExerciseEvent+CoreDataProperties.swift */,
+				FABEBF0A2B6E97E3007AE48C /* Symptom+CoreDataClass.swift */,
+				FABEBF0B2B6E97E3007AE48C /* Symptom+CoreDataProperties.swift */,
+				FABEBF0C2B6E97E3007AE48C /* Rating+CoreDataClass.swift */,
+				FABEBF0D2B6E97E3007AE48C /* Rating+CoreDataProperties.swift */,
+			);
+			path = "Model files";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -168,7 +229,6 @@
 				FA56B6342B6D3C60003ED5FF /* Sources */,
 				FA56B6352B6D3C60003ED5FF /* Frameworks */,
 				FA56B6362B6D3C60003ED5FF /* Resources */,
-				FA56B6792B6D593B003ED5FF /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -286,36 +346,31 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		FA56B6792B6D593B003ED5FF /* ShellScript */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-			);
-			outputFileListPaths = (
-			);
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nbuildNumber=$(/usr/libexec/PlistBuddy -c \"Print CFBundleVersion\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\")\nbuildNumber=$(($buildNumber + 1))\n/usr/libexec/PlistBuddy -c \"Set :CFBundleVersion $buildNumber\" \"${PROJECT_DIR}/${INFOPLIST_FILE}\"\n";
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		FA56B6342B6D3C60003ED5FF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FABEBF132B6E97E3007AE48C /* Medicine+CoreDataProperties.swift in Sources */,
+				FABEBF102B6E97E3007AE48C /* DiaryEvent+CoreDataClass.swift in Sources */,
+				FABEBF172B6E97E3007AE48C /* ExerciseEvent+CoreDataProperties.swift in Sources */,
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
+				FABEBF1B2B6E97E3007AE48C /* Rating+CoreDataProperties.swift in Sources */,
 				FA56B6412B6D3C60003ED5FF /* Novalgea.xcdatamodeld in Sources */,
+				FABEBF142B6E97E3007AE48C /* PRNMedEvent+CoreDataClass.swift in Sources */,
+				FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */,
+				FABEBF182B6E97E3007AE48C /* Symptom+CoreDataClass.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
+				FABEBF0F2B6E97E3007AE48C /* InternalError+CoreDataProperties.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
+				FABEBF152B6E97E3007AE48C /* PRNMedEvent+CoreDataProperties.swift in Sources */,
+				FABEBF112B6E97E3007AE48C /* DiaryEvent+CoreDataProperties.swift in Sources */,
+				FABEBF0E2B6E97E3007AE48C /* InternalError+CoreDataClass.swift in Sources */,
+				FABEBF122B6E97E3007AE48C /* Medicine+CoreDataClass.swift in Sources */,
 				FA56B63E2B6D3C60003ED5FF /* Persistence.swift in Sources */,
+				FABEBF162B6E97E3007AE48C /* ExerciseEvent+CoreDataClass.swift in Sources */,
+				FABEBF192B6E97E3007AE48C /* Symptom+CoreDataProperties.swift in Sources */,
+				FABEBF1A2B6E97E3007AE48C /* Rating+CoreDataClass.swift in Sources */,
 				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -390,7 +445,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -453,7 +508,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -478,7 +533,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -519,7 +574,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -559,7 +614,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -582,7 +637,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -604,7 +659,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -626,7 +681,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;

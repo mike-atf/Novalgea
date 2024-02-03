@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23D56" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="DiaryEvent" representedClassName=".DiaryEvent" syncable="YES" codeGenerationType="class">
+    <entity name="DiaryEvent" representedClassName=".DiaryEvent" syncable="YES">
         <attribute name="category" optional="YES" attributeType="String"/>
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -9,7 +9,7 @@
         <relationship name="relatedRatings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rating" inverseName="relatedDiaryEvents" inverseEntity="Rating"/>
         <relationship name="relatedSymptoms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptom" inverseName="diaryEvents" inverseEntity="Symptom"/>
     </entity>
-    <entity name="ExerciseEvent" representedClassName=".ExerciseEvent" syncable="YES" codeGenerationType="class">
+    <entity name="ExerciseEvent" representedClassName=".ExerciseEvent" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="exerciseName" optional="YES" attributeType="String"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
@@ -18,7 +18,15 @@
         <attribute name="value" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <relationship name="relatedRatings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rating" inverseName="relatedExerciseEvents" inverseEntity="Rating"/>
     </entity>
-    <entity name="Medicine" representedClassName=".Medicine" syncable="YES" codeGenerationType="class">
+    <entity name="InternalError" representedClassName="InternalError" syncable="YES">
+        <attribute name="appError" optional="YES" attributeType="String"/>
+        <attribute name="count" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dates" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Date]"/>
+        <attribute name="file" optional="YES" attributeType="String"/>
+        <attribute name="function" optional="YES" attributeType="String"/>
+        <attribute name="osError" optional="YES" attributeType="String"/>
+    </entity>
+    <entity name="Medicine" representedClassName=".Medicine" syncable="YES">
         <attribute name="alerts" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[String]"/>
         <attribute name="creatingDevice" optional="YES" attributeType="String"/>
         <attribute name="currentStatus" optional="YES" attributeType="String"/>
@@ -43,14 +51,14 @@
         <relationship name="prnMedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PRNMedEvent" inverseName="medicine" inverseEntity="PRNMedEvent"/>
         <relationship name="treatedSymptoms" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Symptom" inverseName="treatingMeds" inverseEntity="Symptom"/>
     </entity>
-    <entity name="PRNMedEvent" representedClassName=".PRNMedEvent" syncable="YES" codeGenerationType="class">
+    <entity name="PRNMedEvent" representedClassName=".PRNMedEvent" syncable="YES">
         <attribute name="endDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="startDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
         <relationship name="medicine" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Medicine" inverseName="prnMedEvents" inverseEntity="Medicine"/>
         <relationship name="relatedRatings" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Rating" inverseName="relatedPRNMedEvents" inverseEntity="Rating"/>
     </entity>
-    <entity name="Rating" representedClassName=".Rating" syncable="YES" codeGenerationType="class">
+    <entity name="Rating" representedClassName=".Rating" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="note" optional="YES" attributeType="String"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
@@ -60,7 +68,7 @@
         <relationship name="relatedExerciseEvents" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="ExerciseEvent" inverseName="relatedRatings" inverseEntity="ExerciseEvent"/>
         <relationship name="relatedPRNMedEvents" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="PRNMedEvent" inverseName="relatedRatings" inverseEntity="PRNMedEvent"/>
     </entity>
-    <entity name="Symptom" representedClassName=".Symptom" syncable="YES" codeGenerationType="class">
+    <entity name="Symptom" representedClassName=".Symptom" syncable="YES">
         <attribute name="averages" optional="YES" attributeType="Transformable" valueTransformerName="NSSecureUnarchiveFromData" customClassName="[Double]"/>
         <attribute name="creatingDevice" optional="YES" attributeType="String"/>
         <attribute name="maxVAS" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
