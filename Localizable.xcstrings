@@ -8813,6 +8813,7 @@
       }
     },
     "Meds.current" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -10036,6 +10037,7 @@
       }
     },
     "Meds.newMedicine" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11322,9 +11324,6 @@
           }
         }
       }
-    },
-    "Novalgea" : {
-
     },
     "Off" : {
       "extractionState" : "stale",
@@ -15513,9 +15512,6 @@
           }
         }
       }
-    },
-    "Symptom" : {
-
     },
     "Symptom reminders" : {
       "extractionState" : "stale",

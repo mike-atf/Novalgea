@@ -11,21 +11,21 @@ public class Dose: NSObject, NSCoding {
     
     public func encode(with coder: NSCoder) {
         coder.encode(Double.self, forKey: "value")
-        coder.encode(DoseUnit.self, forKey: "unit")
+        coder.encode(String.self, forKey: "unit")
     }
     
     public required convenience init?(coder: NSCoder) {
-        let unit = coder.decodeObject(forKey: "unit") as! DoseUnit
+        let unit = coder.decodeObject(forKey: "unit") as! String
         let value = coder.decodeDouble(forKey: "value")
         self.init(unit: unit, value: value)
     }
     
         
-    var unit: DoseUnit
+    var unit: String
     var value: Double
     var id = UUID().uuidString
     
-    init(unit: DoseUnit, value: Double) {
+    init(unit: String, value: Double) {
         self.unit = unit
         self.value = value
     }
@@ -40,51 +40,57 @@ public class Dose: NSObject, NSCoding {
         formatter.maximumFractionDigits = 1
         
         switch self.unit {
-        case .ml:
+        case "ml":
             if self.value <= 1 {
                 unitText = long ? "milli-liter" : "ml"
             } else  {
                 unitText = long ? "milli-liters" : "ml"
             }
-        case .drops:
+        case "drops":
             if self.value <= 1 {
                 unitText = "drop"
             } else  {
                 unitText = "drops"
             }
 
-        case .mg:
+        case "mg":
             if self.value <= 1 {
                 unitText = long ? "milligram" : "mg"
             } else  {
                 unitText = long ? "milligrams" : "mg"
             }
-        case .µg:
+        case "µg":
             if self.value <= 1 {
                 unitText = long ? "microgram" : "mcg"
             } else  {
                 unitText = long ? "micrograms" : "mcg"
             }
-        case .mcg:
+        case "mcg":
             if self.value <= 1 {
                 unitText = long ? "microgram" : "mcg"
             } else  {
                 unitText = long ? "micrograms" : "mcg"
             }
-        case .gram:
+        case "gram":
             if self.value <= 1 {
                 unitText = "gram"
             } else  {
                 unitText = "grams"
             }
-        case .portion:
+        case "portion":
             if self.value <= 1 {
                 unitText = "portion"
             } else  {
                 unitText = "portions"
             }
-        case .mcg_h:
+        case "mcg_h":
             unitText = long ? "mcg per hour" : "mcg/h"
+        default:
+            if self.value <= 1 {
+                unitText = long ? "milligram" : "mg"
+            } else  {
+                unitText = long ? "milligrams" : "mg"
+            }
        }
         
         return (formatter.string(from: self.value as NSNumber) ?? "-") + " " + unitText

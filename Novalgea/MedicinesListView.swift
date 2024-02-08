@@ -1,14 +1,14 @@
 //
-//  ContentView.swift
+//  MedicinesListView.swift
 //  Novalgea
 //
-//  Created by aDev on 02/02/2024.
+//  Created by aDev on 08/02/2024.
 //
 
 import SwiftUI
 import SwiftData
 
-struct ContentView: View {
+struct MedicinesListView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query
@@ -30,6 +30,5 @@ struct ContentView: View {
 }
 
 #Preview {
-    
-    ContentView().modelContainer(Medicine.preview)
+    MedicinesListView().modelContainer(Medicine.preview)
 }
