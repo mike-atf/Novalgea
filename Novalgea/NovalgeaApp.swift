@@ -15,7 +15,7 @@ struct NovalgeaApp: App {
         WindowGroup {
             ContentView()
         }
-        .modelContainer(for: Medicine.self, isUndoEnabled: true) //Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, Symptom.self, InternalError.self
+        .modelContainer(for: [Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, Symptom.self, InternalError.self], isUndoEnabled: true)
     }
 }
 

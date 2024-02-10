@@ -7,7 +7,7 @@
 
 import SwiftUI
 import SwiftData
-
+    
 struct ContentView: View {
     
     @Environment(\.modelContext) private var modelContext
@@ -17,12 +17,14 @@ struct ContentView: View {
     var body: some View {
         List {
             ForEach(medicines) { medicine in
-                VStack {
+                VStack(alignment: .leading) {
+
                     HStack {
                         Text(medicine.name)
+                        Spacer()
                         Text(medicine.startDate.formatted())
                     }
-                    Text(medicine.currentStatus)
+                    Text(medicine.currentStatus).font(.footnote)
                 }
             }
         }
@@ -31,5 +33,5 @@ struct ContentView: View {
 
 #Preview {
     
-    ContentView().modelContainer(Medicine.preview)
+    ContentView().modelContainer(DataController.previewContainer)
 }

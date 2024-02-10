@@ -10,31 +10,32 @@ import Foundation
 import SwiftData
 
 
-//@Model
-//final class DiaryEvent: Identifiable {
-//    
-//    var category: String
-//    var date: Date
-//    var endDate: Date?
-//    var notes: String
-//    var uuid: UUID
-//    @Relationship(inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
-//    @Relationship(inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
+@Model
+final class DiaryEvent: Identifiable {
     
-//    public init(date: Date?, category: String) {
-//        self.date = date ?? .now
-//        self.category = category
-//        self.notes = ""
-//        self.uuid = UUID()
-//    }
-//}
-//
-//extension DiaryEvent {
-//    
-//    static var preview: DiaryEvent {
-//        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: "Default event category")
-//            
-//    }
-//
-//}
+    var category: String = "Category"
+    var date: Date = Date()
+    var endDate: Date?
+    var notes: String = ""
+    var uuid: UUID = UUID()
+    
+    @Relationship(deleteRule: .cascade, inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
+    @Relationship(inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
+    
+    public init(date: Date?, category: String, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = []) { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
+        self.date = date ?? .now
+        self.category = category
+        self.notes = ""
+        self.relatedRatings = relatedRatings
+    }
+}
+
+extension DiaryEvent {
+    
+    static var preview: DiaryEvent {
+        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: "Default event category")
+            
+    }
+
+}
 

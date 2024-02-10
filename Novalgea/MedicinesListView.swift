@@ -17,12 +17,13 @@ struct MedicinesListView: View {
     var body: some View {
         List {
             ForEach(medicines) { medicine in
-                VStack {
+                VStack(alignment: .leading) {
                     HStack {
                         Text(medicine.name)
+                        Spacer()
                         Text(medicine.startDate.formatted())
                     }
-                    Text(medicine.currentStatus)
+                    Text(medicine.currentStatus).font(.footnote)
                 }
             }
         }
@@ -30,5 +31,5 @@ struct MedicinesListView: View {
 }
 
 #Preview {
-    MedicinesListView().modelContainer(Medicine.preview)
+    MedicinesListView().modelContainer(DataController.previewContainer)
 }
