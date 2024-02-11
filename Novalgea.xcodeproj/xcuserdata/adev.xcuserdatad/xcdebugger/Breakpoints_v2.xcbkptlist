@@ -7,17 +7,49 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "81DF2276-1591-46DE-B916-6D2239B6E060"
-            shouldBeEnabled = "No"
+            uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Manager/DataController.swift"
+            filePath = "Manager/ErrorManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "58"
-            endingLineNumber = "58"
-            landmarkName = "DataController"
-            landmarkType = "3">
+            startingLineNumber = "70"
+            endingLineNumber = "70"
+            landmarkName = "addError(error:container:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b5adeb285edcb579"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "5808">
+               </Location>
+               <Location
+                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b4d6959fcd792e64"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError, container: SwiftData.ModelContainer) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "70"
+                  endingLineNumber = "70"
+                  offsetFromSymbolStart = "6200">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

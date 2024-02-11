@@ -14,6 +14,9 @@
 		FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F82B6FF0FB00B2C622 /* Symptom.swift */; };
 		FA1425FF2B6FF0FB00B2C622 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F32B6FF0FB00B2C622 /* Medicine.swift */; };
 		FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F72B6FF0FB00B2C622 /* InternalError.swift */; };
+		FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3742B7929C300BA5956 /* ErrorsListView.swift */; };
+		FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */; };
+		FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */; };
 		FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */; };
 		FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6422B6D3C60003ED5FF /* ContentView.swift */; };
 		FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6442B6D3C61003ED5FF /* Assets.xcassets */; };
@@ -55,6 +58,9 @@
 		FA1425F72B6FF0FB00B2C622 /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 		FA1425F82B6FF0FB00B2C622 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
 		FA1425F92B6FF0FB00B2C622 /* PRNMedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRNMedEvent.swift; sourceTree = "<group>"; };
+		FA29F3742B7929C300BA5956 /* ErrorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsListView.swift; sourceTree = "<group>"; };
+		FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetailView.swift; sourceTree = "<group>"; };
+		FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainerPreview.swift; sourceTree = "<group>"; };
 		FA56B6382B6D3C60003ED5FF /* Novalgea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Novalgea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaApp.swift; sourceTree = "<group>"; };
 		FA56B6422B6D3C60003ED5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -138,6 +144,8 @@
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
 				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
 				FAB7DC082B752CBE009793CF /* MedicinesListView.swift */,
+				FA29F3742B7929C300BA5956 /* ErrorsListView.swift */,
+				FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */,
 				FA56B66C2B6D3EC6003ED5FF /* Dose.swift */,
 				FA56B6442B6D3C61003ED5FF /* Assets.xcassets */,
 				FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */,
@@ -184,6 +192,7 @@
 		FABEBEFF2B6E954E007AE48C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */,
 				FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */,
 				FA8606712B73DFEE00C52D81 /* DataController.swift */,
 			);
@@ -254,7 +263,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1510;
-				LastUpgradeCheck = 1510;
+				LastUpgradeCheck = 1520;
 				TargetAttributes = {
 					FA56B6372B6D3C60003ED5FF = {
 						CreatedOnToolsVersion = 15.1;
@@ -323,6 +332,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA1425FA2B6FF0FB00B2C622 /* ExerciseEvent.swift in Sources */,
+				FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */,
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
 				FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */,
 				FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */,
@@ -330,11 +340,13 @@
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
 				FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */,
 				FA1425FB2B6FF0FB00B2C622 /* PRNMedEvent.swift in Sources */,
+				FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
 				FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */,
+				FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */,
 				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +389,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -406,6 +419,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
@@ -440,6 +454,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
@@ -469,6 +484,7 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -499,6 +515,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -542,6 +559,7 @@
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -583,6 +601,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -606,6 +625,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -628,6 +648,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
@@ -650,6 +671,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 2;
+				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 17.2;

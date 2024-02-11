@@ -7,6 +7,9 @@
     "-" : {
 
     },
+    "%lld" : {
+
+    },
     "1 day" : {
       "comment" : "MARK: - simple",
       "extractionState" : "manual",
@@ -2013,6 +2016,9 @@
           }
         }
       }
+    },
+    "Errors" : {
+
     },
     "Errors.backupErrorMessage1" : {
       "extractionState" : "stale",
@@ -8455,6 +8461,9 @@
         }
       }
     },
+    "Medicines you create will appear here." : {
+
+    },
     "Meds.1hr" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11262,6 +11271,9 @@
           }
         }
       }
+    },
+    "No Medicines" : {
+
     },
     "Notes" : {
       "extractionState" : "stale",

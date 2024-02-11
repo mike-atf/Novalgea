@@ -11,10 +11,12 @@ import SwiftData
 @main
 struct NovalgeaApp: App {
     
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ErrorsListView()
         }
+//        .modelContainer(DataController.samplesContainer)
         .modelContainer(for: [Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, Symptom.self, InternalError.self], isUndoEnabled: true)
     }
 }

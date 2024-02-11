@@ -14,19 +14,52 @@ struct MedicinesListView: View {
     @Query
     var medicines: [Medicine]
     
+    @State private var selection: Medicine?
+
+    
     var body: some View {
-        List {
-            ForEach(medicines) { medicine in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Text(medicine.name)
-                        Spacer()
-                        Text(medicine.startDate.formatted())
+        NavigationSplitView {
+            List {
+                ForEach(medicines) { medicine in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Text(medicine.name)
+                            Spacer()
+                            Text(medicine.startDate.formatted())
+                        }
+                        Text(medicine.currentStatus).font(.footnote)
                     }
-                    Text(medicine.currentStatus).font(.footnote)
+                }
+            }
+            .overlay {
+                if medicines.isEmpty {
+                    ContentUnavailableView {
+                        Label("No Medicines", systemImage: "pills.circle.fill")
+                    } description: {
+                        Text("Medicines you create will appear here.")
+                    }
+                }
+            }
+            .toolbar {
+                Button {
+                    addError()
+                } label: {
+                    Label("Errors", systemImage: "ladybug.circle")
                 }
             }
         }
+        detail: {
+            if let selection = selection {
+                NavigationStack {
+
+                }
+            }
+        }
+    }
+    
+    @MainActor private func addError() {
+        let newError =  InternalError(file: "MedicinesListView", function: "addError", appError: "addd test error")
+        ErrorManager.addError(error: newError, container: modelContext.container)
     }
 }
 

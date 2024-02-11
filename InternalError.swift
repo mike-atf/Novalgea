@@ -6,7 +6,7 @@
 //
 //
 
-import Foundation
+import SwiftUI
 import SwiftData
 
 
@@ -28,13 +28,27 @@ import SwiftData
         self.appError = appError
     }
     
-    convenience init(error: IntError) {
-        self.init(file: error.file, function: error.function, appError: error.appError ?? "no app error", osError: error.appError ?? "no app error")
+    public func datesText() -> String {
+        var text = String()
+        for date in dates {
+            text.append(date.formatted(date: .abbreviated, time: .shortened)+"\n")
+        }
+        return text
     }
-    
 }
 
 extension InternalError {
+    
+    @MainActor
+    static var previewContainer: ModelContainer {
+        let container = try! ModelContainer(for: InternalError.self,
+                                            configurations: ModelConfiguration(isStoredInMemoryOnly: true))
+        
+        container.mainContext.insert(InternalError(file: "a file", function: "a function", appError: "a sample error"))
+        
+        return container
+    }
+
     
     static var preview: InternalError {
         
