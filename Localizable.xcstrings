@@ -147,6 +147,9 @@
         }
       }
     },
+    "Add trip" : {
+
+    },
     "Alert.forExercises" : {
       "comment" : "MARK: - sectioned.Alert",
       "extractionState" : "stale",
@@ -6893,6 +6896,9 @@
         }
       }
     },
+    "Hello, World!" : {
+
+    },
     "Help & support" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -7294,6 +7300,9 @@
           }
         }
       }
+    },
+    "Internal errors will be listed here." : {
+
     },
     "Keep" : {
       "extractionState" : "stale",
@@ -11272,6 +11281,9 @@
         }
       }
     },
+    "No Errors" : {
+
+    },
     "No Medicines" : {
 
     },
@@ -12964,6 +12976,9 @@
           }
         }
       }
+    },
+    "Show dates (%lld)" : {
+
     },
     "Side effects" : {
       "extractionState" : "stale",

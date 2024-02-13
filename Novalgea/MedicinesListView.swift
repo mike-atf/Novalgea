@@ -11,10 +11,16 @@ import SwiftData
 struct MedicinesListView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @Query
+    @Query(sort: \Medicine.currentStatus, animation: .default)
     var medicines: [Medicine]
     
+    /// without a sectioned Query available so far use 3 @Query arrsays
+    /// 1. @query filtering current
+    /// 2. @Query filtering ended
+    /// 3. @Query filtering coming
+    
     @State private var selection: Medicine?
+    @State private var showAddMedicine = false
 
     
     var body: some View {
@@ -41,12 +47,20 @@ struct MedicinesListView: View {
                 }
             }
             .toolbar {
+                Spacer()
                 Button {
-                    addError()
+                    showAddMedicine = true
                 } label: {
-                    Label("Errors", systemImage: "ladybug.circle")
+                    Label("Add trip", systemImage: "plus")
                 }
             }
+            .sheet(isPresented: $showAddMedicine) {
+                NavigationStack {
+                    NewMedicineView()
+                }
+                .presentationDetents([.medium, .large])
+            }
+
         }
         detail: {
             if let selection = selection {
@@ -57,9 +71,9 @@ struct MedicinesListView: View {
         }
     }
     
-    @MainActor private func addError() {
-        let newError =  InternalError(file: "MedicinesListView", function: "addError", appError: "addd test error")
-        ErrorManager.addError(error: newError, container: modelContext.container)
+    @MainActor private func addMedicine() {
+        let newMedicine =  Medicine(dose: Dose(unit: "mg", value1: 0))
+        modelContext.insert(newMedicine)
     }
 }
 

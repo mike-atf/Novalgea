@@ -9,22 +9,6 @@ import SwiftUI
 import SwiftData
 import OSLog
 
-//struct IntError: Codable {
-//    
-//    var date: Date
-//    var file: String
-//    var function: String
-//    var osError: String?
-//    var appError: String?
-//    
-//    init(file: String, function: String, osError: String?, appError: String?) {
-//        self.date = Date()
-//        self.file = file
-//        self.function = function
-//        self.osError = osError
-//        self.appError = appError
-//    }
-//}
 
 @MainActor
 class ErrorManager {

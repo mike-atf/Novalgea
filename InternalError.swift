@@ -19,11 +19,11 @@ import SwiftData
     var osError: String?
     
     
-    public init(file: String, function: String, appError: String, osError: String?=nil) {
-        self.dates = [Date()]
+    public init(file: String, function: String, appError: String, osError: String?=nil, count: Int64?=1, dates:[Date]?=nil) {
+        self.dates = dates ?? [Date()]
         self.file = file
         self.function = function
-        self.count = 1
+        self.count = count ?? 1
         self.osError = osError
         self.appError = appError
     }
@@ -45,14 +45,15 @@ extension InternalError {
                                             configurations: ModelConfiguration(isStoredInMemoryOnly: true))
         
         container.mainContext.insert(InternalError(file: "a file", function: "a function", appError: "a sample error"))
-        
+        container.mainContext.insert(InternalError(file: "a file", function: "a function", appError: "a sample error"))
+
         return container
     }
 
     
     static var preview: InternalError {
         
-        InternalError(file: "Sample error file", function: "Sample error function", appError: "sample app error")
+        InternalError(file: "Sample error file", function: "Sample error function", appError: "sample app error", count: 2, dates: [Date.now, Date.now.addingTimeInterval(-24*3600)])
     }
 
 }

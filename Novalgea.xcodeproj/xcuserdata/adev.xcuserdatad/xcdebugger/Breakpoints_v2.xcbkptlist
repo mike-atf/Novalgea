@@ -14,8 +14,8 @@
             filePath = "Manager/ErrorManager.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "70"
-            endingLineNumber = "70"
+            startingLineNumber = "54"
+            endingLineNumber = "54"
             landmarkName = "addError(error:container:)"
             landmarkType = "7">
             <Locations>
@@ -47,6 +47,21 @@
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
                   endingLineNumber = "70"
+                  offsetFromSymbolStart = "6200">
+               </Location>
+               <Location
+                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b4d6959fcd792c54"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError, container: SwiftData.ModelContainer) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "54"
+                  endingLineNumber = "54"
                   offsetFromSymbolStart = "6200">
                </Location>
             </Locations>

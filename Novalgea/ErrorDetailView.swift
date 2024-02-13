@@ -9,21 +9,61 @@ import SwiftUI
 
 struct ErrorDetailView: View {
     
-    var error: InternalError
+    @Binding var error: InternalError
+    
+    @State var showDates: Bool = false
     
     var body: some View {
         
-        NavigationLink(value: error) {
-            VStack(alignment: .leading) {
-                Text(error.appError)
-                Text(error.osError ?? "OS: -")
-                Text("\(error.count)")
+            List {
+                if error.dates.count < 2 {
+                    HStack {
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text("File:").font(.title)
+                                Text("\(error.file)")
+                            }
+                            HStack {
+                                Text("Function:").font(.title2)
+                                Text("\(error.function)")
+                            }
+                            Divider()
+                            Text(error.appError)
+                            Divider()
+                            Text(error.osError ?? "OS: -")
+                            Divider()
+                            Text(error.dates.first!.formatted(date: .abbreviated, time: .shortened))
+                        }
+                    }
+                }
+                else {
+                    NavigationLink(destination: ErrorDatesView(dates: error.dates)) {
+                        HStack {
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text("File:").font(.title2)
+                                    Text("\(error.file)")
+                                }
+                                HStack {
+                                    Text("Function:").font(.title2)
+                                    Text("\(error.function)")
+                                }
+                                Divider()
+                                Text(error.appError)
+                                Divider()
+                                Text(error.osError ?? "OS: -")
+                                Divider()
+                                Text("\(error.count) error dates")
+                            }
+                        }
+                    }
+                }
             }
-        }
+            .navigationTitle("Details")
     }
 }
 
 #Preview {
     ModelContainerPreview(DataController.inMemoryContainer) {
-        ErrorDetailView(error: InternalError.preview)
+        ErrorDetailView(error: .constant(InternalError.preview))
     }}
