@@ -8,13 +8,17 @@
 import SwiftUI
 
 struct NewMedicineView: View {
+    
+    var medicine: Medicine
+    
     var body: some View {
         NewMedicineForm {
-            Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            Text(medicine.name)
+            Text(medicine.startDate.formatted(date: .abbreviated, time: .shortened))
         }
     }
 }
 
 #Preview {
-    NewMedicineView()
+    NewMedicineView(medicine: (Medicine.preview))
 }

@@ -18,8 +18,8 @@ import SwiftData
     
     @Relationship(inverse: \Rating.relatedPRNMedEvents) var relatedRatings: [Rating]?
     
-    init(endDate: Date? = nil, startDate: Date? = nil, uuid: UUID = UUID(), medicine: Medicine, relatedRatings: [Rating]? = []) {
-        self.startDate = startDate ?? .now
+    init(endDate: Date? = nil, startDate: Date = .now, uuid: UUID = UUID(), medicine: Medicine, relatedRatings: [Rating]? = []) {
+        self.startDate = startDate
         self.endDate = endDate ?? .now.addingTimeInterval(medicine.effectDuration)
         self.uuid = uuid
         self.medicine = medicine
@@ -32,7 +32,7 @@ extension PRNMedEvent {
     static var preview: PRNMedEvent {
         
         let rndName = ["Paracetamol", "Codeine phosphate", "Naproxen", "Buprenorphine", "Nefopam", "Amitriptyline", "Diazepam", "Ibuprofen", "Gabapentin", "Placebo"].randomElement()!
-        let rndMedicine =  Medicine(name: rndName, dose: Dose(unit: "mg", value1: 100.0))
+        let rndMedicine =  Medicine(name: rndName,doses: [Dose(unit: "mg", value1: 1000)])
         return PRNMedEvent(medicine: rndMedicine)
     }
 

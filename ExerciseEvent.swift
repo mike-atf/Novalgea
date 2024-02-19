@@ -20,9 +20,9 @@ import SwiftData
     
     @Relationship(inverse: \Rating.relatedExerciseEvents) var relatedRatings: [Rating]?
     
-    public init(exercise: String, date: Date?, unit: String, value: Double) {
+    public init(exercise: String, date: Date = .now, unit: String, value: Double) {
         self.exerciseName = exercise
-        self.startDate = date ?? .now
+        self.startDate = date
         self.unit = unit
         self.value = value
     }

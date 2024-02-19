@@ -7,7 +7,13 @@
     "-" : {
 
     },
+    "%@" : {
+
+    },
     "%lld" : {
+
+    },
+    "%lld error dates" : {
 
     },
     "1 day" : {
@@ -146,6 +152,12 @@
           }
         }
       }
+    },
+    "Add event" : {
+
+    },
+    "Add records to diary" : {
+
     },
     "Add trip" : {
 
@@ -768,7 +780,6 @@
       }
     },
     "Backup.loadError" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -925,6 +936,9 @@
         }
       }
     },
+    "Cancel import" : {
+
+    },
     "CantMakePayments" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1065,6 +1079,9 @@
         }
       }
     },
+    "Current" : {
+
+    },
     "Date" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1103,6 +1120,9 @@
           }
         }
       }
+    },
+    "Dates" : {
+
     },
     "defaultSymptom" : {
       "extractionState" : "manual",
@@ -1171,6 +1191,9 @@
           }
         }
       }
+    },
+    "Details" : {
+
     },
     "Dialog.afterTaking" : {
       "extractionState" : "stale",
@@ -1897,6 +1920,9 @@
         }
       }
     },
+    "drugs:" : {
+
+    },
     "EDC.notificationError" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2019,6 +2045,9 @@
           }
         }
       }
+    },
+    "Error List" : {
+
     },
     "Errors" : {
 
@@ -3462,6 +3491,9 @@
         }
       }
     },
+    "events:" : {
+
+    },
     "Events.missingName" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4492,6 +4524,9 @@
         }
       }
     },
+    "File:" : {
+
+    },
     "For medicines you take regularly" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4513,6 +4548,9 @@
           }
         }
       }
+    },
+    "Function:" : {
+
     },
     "General.1hago" : {
       "extractionState" : "stale",
@@ -6896,9 +6934,6 @@
         }
       }
     },
-    "Hello, World!" : {
-
-    },
     "Help & support" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -7300,6 +7335,15 @@
           }
         }
       }
+    },
+    "Import" : {
+
+    },
+    "Import diary data" : {
+
+    },
+    "Import options" : {
+
     },
     "Internal errors will be listed here." : {
 
@@ -8447,6 +8491,9 @@
           }
         }
       }
+    },
+    "Medicine" : {
+
     },
     "Medicine reminders" : {
       "extractionState" : "stale",
@@ -11284,7 +11331,13 @@
     "No Errors" : {
 
     },
+    "No Events" : {
+
+    },
     "No Medicines" : {
+
+    },
+    "No Ratings" : {
 
     },
     "Notes" : {
@@ -11360,6 +11413,9 @@
         }
       }
     },
+    "Open Diary file" : {
+
+    },
     "Open Settings" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11400,7 +11456,6 @@
       }
     },
     "Preparing new backup" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11420,6 +11475,9 @@
           }
         }
       }
+    },
+    "Rating" : {
+
     },
     "Rating.high" : {
       "extractionState" : "manual",
@@ -11507,7 +11565,6 @@
       }
     },
     "Ratings" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11635,6 +11692,9 @@
           }
         }
       }
+    },
+    "Replace current diary" : {
+
     },
     "Reports.causation" : {
       "extractionState" : "stale",
@@ -12976,9 +13036,6 @@
           }
         }
       }
-    },
-    "Show dates (%lld)" : {
-
     },
     "Side effects" : {
       "extractionState" : "stale",
@@ -15585,6 +15642,9 @@
         }
       }
     },
+    "symptoms:" : {
+
+    },
     "Tap on backup to restore" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -16049,6 +16109,17 @@
         }
       }
     },
+    "unspecific side effect" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "de" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "unspezifische Nebenwirkung"
+          }
+        }
+      }
+    },
     "Update.32.1" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -16308,6 +16379,9 @@
         }
       }
     },
+    "Your diary events will appear here." : {
+
+    },
     "Your iCloud account is inaccessible" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -16324,6 +16398,9 @@
           }
         }
       }
+    },
+    "Your ratings will appear here." : {
+
     }
   },
   "version" : "1.0"

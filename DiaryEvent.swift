@@ -10,8 +10,7 @@ import Foundation
 import SwiftData
 
 
-@Model
-final class DiaryEvent: Identifiable {
+@Model final class DiaryEvent: Identifiable {
     
     var category: String = "Category"
     var date: Date = Date()
@@ -19,13 +18,13 @@ final class DiaryEvent: Identifiable {
     var notes: String = ""
     var uuid: UUID = UUID()
     
-    @Relationship(deleteRule: .cascade, inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
+    @Relationship(deleteRule: .nullify, inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
     @Relationship(inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
     
-    public init(date: Date?, category: String, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = []) { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
+    public init(date: Date?, category: String, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = [], notes: String = "") { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
         self.date = date ?? .now
         self.category = category
-        self.notes = ""
+        self.notes = notes
         self.relatedRatings = relatedRatings
     }
 }

@@ -11,17 +11,18 @@ import SwiftData
 
 
 @Model class Rating: Identifiable  {
+    
     var date: Date = Date()
-    var note: String?
-    var uuid: UUID = UUID()
     var vas: Double = 0.0
     var ratedSymptom: Symptom?
-    
+    var note: String?
+    var uuid: UUID = UUID()
+
     var relatedDiaryEvents: [DiaryEvent]? = []
     var relatedExerciseEvents: ExerciseEvent?
     var relatedPRNMedEvents: [PRNMedEvent]?
     
-    init(date: Date? = nil, note: String? = nil, uuid: UUID = UUID(), vas: Double, ratedSymptom: Symptom, relatedDiaryEvents: [DiaryEvent]? = [], relatedExerciseEvents: ExerciseEvent? = nil, relatedPRNMedEvents: [PRNMedEvent]? = []) {
+    init(vas: Double, ratedSymptom: Symptom, date: Date? = nil, note: String? = nil, uuid: UUID = UUID(), relatedDiaryEvents: [DiaryEvent]? = [], relatedExerciseEvents: ExerciseEvent? = nil, relatedPRNMedEvents: [PRNMedEvent]? = []) {
         // the relatedDiaryEvents: [DiaryEvent]? = [] (not = nil) is essential to prevent preview crashes!
         self.date = date ?? .now
         self.note = note
@@ -38,7 +39,7 @@ extension Rating {
     
     static var preview: Rating {
         
-        Rating(vas: Double.random(in: 0...10), ratedSymptom: Symptom(creatingDevice: "Local device", name: "Default symptom"))
+        Rating(vas: 5.5, ratedSymptom: Symptom(name: "Sample symptom", type: "Symptom", creatingDevice: "Sample device"))
     }
 
 }

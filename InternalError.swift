@@ -10,7 +10,7 @@ import SwiftUI
 import SwiftData
 
 
-@Model class InternalError: Identifiable  {
+@Model class InternalError: Identifiable, Error  {
     var appError: String = ""
     var count: Int64 = 0
     @Attribute(.transformable(by: "NSSecureUnarchiveFromData")) var dates: [Date] = [Date.now]

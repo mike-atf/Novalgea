@@ -7,33 +7,44 @@
 
 import Foundation
 
-public class Dose: NSObject, NSCoding {
+struct Dose { //: NSObject, NSCoding
     
-    public func encode(with coder: NSCoder) {
-        coder.encode(Double.self, forKey: "value1")
-        coder.encode(Double?.self, forKey: "value2")
-        coder.encode(String.self, forKey: "unit")
-    }
+//    public func encode(with coder: NSCoder) {
+//        coder.encode(Double.self, forKey: "value1")
+//        coder.encode(Double?.self, forKey: "value2")
+//        coder.encode(String.self, forKey: "unit")
+//        coder.encode(Date.self, forKey: "time")
+//        coder.encode(Bool.self, forKey: "reminderIsOn")
+//   }
+//    
+//    public required convenience init?(coder: NSCoder) {
+//        let time = coder.decodeObject(forKey: "time") as! Date
+//        let reminderisOn = coder.decodeBool(forKey: "reminderIsOn")
+//        let unit = coder.decodeObject(forKey: "unit") as! String
+//        let value1 = coder.decodeDouble(forKey: "value1")
+//        let value2 = coder.decodeDouble(forKey: "value2")
+//        self.init(time: time, reminderIsOn: reminderisOn ,unit: unit, value1: value1, value2: value2)
+//    }
     
-    public required convenience init?(coder: NSCoder) {
-        let unit = coder.decodeObject(forKey: "unit") as! String
-        let value1 = coder.decodeDouble(forKey: "value1")
-        let value2 = coder.decodeDouble(forKey: "value2")
-        self.init(unit: unit, value1: value1, value2: value2)
-    }
-    
-        
+    var time: Date
+    var reminderIsOn: Bool
     var unit: String
     var value1: Double
     var value2: Double?
     var id = UUID().uuidString
     
-    init(unit: String, value1: Double, value2: Double?=nil) {
+    init(time: Date = .now, reminderIsOn: Bool = true ,unit: String, value1: Double, value2: Double?=nil) {
+        self.time = time
+        self.reminderIsOn = reminderIsOn
         self.unit = unit
         self.value1 = value1
         self.value2 = value2
     }
     
+    public func convertToData() -> Data? {
+        
+        return try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: false)
+    }
     
     func userText(long: Bool) -> String {
         

@@ -12,8 +12,14 @@
 		FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F62B6FF0FB00B2C622 /* Rating.swift */; };
 		FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */; };
 		FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F82B6FF0FB00B2C622 /* Symptom.swift */; };
-		FA1425FF2B6FF0FB00B2C622 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F32B6FF0FB00B2C622 /* Medicine.swift */; };
 		FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1425F72B6FF0FB00B2C622 /* InternalError.swift */; };
+		FA27CB1B2B7D09A400D2FB7B /* AlogeaBackupDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB1A2B7D09A400D2FB7B /* AlogeaBackupDocument.swift */; };
+		FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */; };
+		FA27CB3E2B7E374300D2FB7B /* Alogea_Event.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB3D2B7E374300D2FB7B /* Alogea_Event.swift */; };
+		FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB3F2B7E37F600D2FB7B /* Alogea_Drug.swift */; };
+		FA27CB422B7E389E00D2FB7B /* Algea_RecordType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */; };
+		FA27CB442B7E997F00D2FB7B /* ReviewDates.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */; };
+		FA27CB482B7F961C00D2FB7B /* Extension String Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */; };
 		FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3742B7929C300BA5956 /* ErrorsListView.swift */; };
 		FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */; };
 		FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */; };
@@ -31,6 +37,11 @@
 		FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6702B6D4D95003ED5FF /* UserText.swift */; };
 		FA56B6742B6D509A003ED5FF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FA56B6732B6D509A003ED5FF /* StoreKit.framework */; };
 		FA56B6782B6D527C003ED5FF /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */; };
+		FA6FBC3E2B8284DC007F0946 /* DiaryEventsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */; };
+		FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC3F2B82A684007F0946 /* RatingsListView.swift */; };
+		FA6FBC422B836097007F0946 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC412B836097007F0946 /* Medicine.swift */; };
+		FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC432B836235007F0946 /* Extension Data.swift */; };
+		FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC452B8367E5007F0946 /* Extension Doses.swift */; };
 		FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8606712B73DFEE00C52D81 /* DataController.swift */; };
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
@@ -54,13 +65,19 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		FA1425F32B6FF0FB00B2C622 /* Medicine.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 		FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEvent.swift; sourceTree = "<group>"; };
 		FA1425F52B6FF0FB00B2C622 /* ExerciseEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExerciseEvent.swift; sourceTree = "<group>"; };
 		FA1425F62B6FF0FB00B2C622 /* Rating.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rating.swift; sourceTree = "<group>"; };
 		FA1425F72B6FF0FB00B2C622 /* InternalError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalError.swift; sourceTree = "<group>"; };
 		FA1425F82B6FF0FB00B2C622 /* Symptom.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Symptom.swift; sourceTree = "<group>"; };
 		FA1425F92B6FF0FB00B2C622 /* PRNMedEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PRNMedEvent.swift; sourceTree = "<group>"; };
+		FA27CB1A2B7D09A400D2FB7B /* AlogeaBackupDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlogeaBackupDocument.swift; sourceTree = "<group>"; };
+		FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlogeaFileImportView.swift; sourceTree = "<group>"; };
+		FA27CB3D2B7E374300D2FB7B /* Alogea_Event.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alogea_Event.swift; sourceTree = "<group>"; };
+		FA27CB3F2B7E37F600D2FB7B /* Alogea_Drug.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alogea_Drug.swift; sourceTree = "<group>"; };
+		FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Algea_RecordType.swift; sourceTree = "<group>"; };
+		FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewDates.swift; sourceTree = "<group>"; };
+		FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension String Array.swift"; sourceTree = "<group>"; };
 		FA29F3742B7929C300BA5956 /* ErrorsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorsListView.swift; sourceTree = "<group>"; };
 		FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDetailView.swift; sourceTree = "<group>"; };
 		FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ModelContainerPreview.swift; sourceTree = "<group>"; };
@@ -83,6 +100,11 @@
 		FA56B6702B6D4D95003ED5FF /* UserText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserText.swift; sourceTree = "<group>"; };
 		FA56B6732B6D509A003ED5FF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
+		FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiaryEventsListView.swift; sourceTree = "<group>"; };
+		FA6FBC3F2B82A684007F0946 /* RatingsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsListView.swift; sourceTree = "<group>"; };
+		FA6FBC412B836097007F0946 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
+		FA6FBC432B836235007F0946 /* Extension Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Data.swift"; sourceTree = "<group>"; };
+		FA6FBC452B8367E5007F0946 /* Extension Doses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Doses.swift"; sourceTree = "<group>"; };
 		FA8606712B73DFEE00C52D81 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
@@ -114,16 +136,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FA43FB982B7BF5AD007A9638 /* ErrorViews */ = {
+			isa = PBXGroup;
+			children = (
+				FA29F3742B7929C300BA5956 /* ErrorsListView.swift */,
+				FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */,
+				FA43FB962B7BB039007A9638 /* ErrorDatesView.swift */,
+			);
+			path = ErrorViews;
+			sourceTree = "<group>";
+		};
 		FA56B62F2B6D3C60003ED5FF = {
 			isa = PBXGroup;
 			children = (
 				FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */,
 				FA1425F52B6FF0FB00B2C622 /* ExerciseEvent.swift */,
 				FA1425F72B6FF0FB00B2C622 /* InternalError.swift */,
-				FA1425F32B6FF0FB00B2C622 /* Medicine.swift */,
 				FA1425F92B6FF0FB00B2C622 /* PRNMedEvent.swift */,
+				FA6FBC412B836097007F0946 /* Medicine.swift */,
 				FA1425F62B6FF0FB00B2C622 /* Rating.swift */,
 				FA1425F82B6FF0FB00B2C622 /* Symptom.swift */,
+				FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */,
 				FABEBEFF2B6E954E007AE48C /* Manager */,
 				FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */,
 				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
@@ -148,19 +181,27 @@
 			isa = PBXGroup;
 			children = (
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
+				FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */,
 				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
 				FAB7DC082B752CBE009793CF /* MedicinesListView.swift */,
+				FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */,
+				FA6FBC3F2B82A684007F0946 /* RatingsListView.swift */,
 				FA43FB942B7AA0C5007A9638 /* NewMedicineView.swift */,
 				FA43FB922B7AA077007A9638 /* UIHelper.swift */,
-				FA29F3742B7929C300BA5956 /* ErrorsListView.swift */,
-				FA29F3762B79327E00BA5956 /* ErrorDetailView.swift */,
-				FA43FB962B7BB039007A9638 /* ErrorDatesView.swift */,
+				FA43FB982B7BF5AD007A9638 /* ErrorViews */,
 				FA56B66C2B6D3EC6003ED5FF /* Dose.swift */,
 				FA56B6442B6D3C61003ED5FF /* Assets.xcassets */,
 				FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */,
 				FA56B64A2B6D3C61003ED5FF /* Info.plist */,
 				FA56B6472B6D3C61003ED5FF /* Preview Content */,
 				FA56B6702B6D4D95003ED5FF /* UserText.swift */,
+				FA6FBC432B836235007F0946 /* Extension Data.swift */,
+				FA6FBC452B8367E5007F0946 /* Extension Doses.swift */,
+				FA27CB1A2B7D09A400D2FB7B /* AlogeaBackupDocument.swift */,
+				FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */,
+				FA27CB3D2B7E374300D2FB7B /* Alogea_Event.swift */,
+				FA27CB3F2B7E37F600D2FB7B /* Alogea_Drug.swift */,
+				FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */,
 			);
 			path = Novalgea;
 			sourceTree = "<group>";
@@ -342,23 +383,34 @@
 			files = (
 				FA1425FA2B6FF0FB00B2C622 /* ExerciseEvent.swift in Sources */,
 				FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */,
+				FA27CB442B7E997F00D2FB7B /* ReviewDates.swift in Sources */,
+				FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */,
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
 				FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */,
+				FA27CB482B7F961C00D2FB7B /* Extension String Array.swift in Sources */,
+				FA27CB422B7E389E00D2FB7B /* Algea_RecordType.swift in Sources */,
+				FA6FBC422B836097007F0946 /* Medicine.swift in Sources */,
 				FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */,
 				FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */,
 				FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */,
-				FA1425FF2B6FF0FB00B2C622 /* Medicine.swift in Sources */,
+				FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */,
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
+				FA27CB1B2B7D09A400D2FB7B /* AlogeaBackupDocument.swift in Sources */,
 				FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */,
 				FA1425FB2B6FF0FB00B2C622 /* PRNMedEvent.swift in Sources */,
 				FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */,
+				FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
 				FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */,
+				FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
 				FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */,
+				FA6FBC3E2B8284DC007F0946 /* DiaryEventsListView.swift in Sources */,
 				FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */,
+				FA27CB3E2B7E374300D2FB7B /* Alogea_Event.swift in Sources */,
+				FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */,
 				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
