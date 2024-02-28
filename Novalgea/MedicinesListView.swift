@@ -15,17 +15,17 @@ struct MedicinesListView: View {
     @Query(sort: \Medicine.currentStatus, animation: .default)
     var medicines: [Medicine]
     
-//    @Query(filter: #Predicate<Medicine> { medicine in
-//        medicine.currentStatus == "Current"
-//    }, sort: \Medicine.startDate, order: .reverse) var currentMedicines: [Medicine]
-//    
-//    @Query(filter: #Predicate<Medicine> { medicine in
-//        medicine.currentStatus == "Discontinued"
-//    }, sort: \Medicine.startDate, order: .reverse) var endedMedicines: [Medicine]
-//
-//    @Query(filter: #Predicate<Medicine> { medicine in
-//        medicine.currentStatus == "Planned"
-//    }, sort: \Medicine.startDate, order: .reverse) var plannedMedicines: [Medicine]
+    @Query(filter: #Predicate<Medicine> { medicine in
+        medicine.currentStatus == "Current"
+    }, sort: \Medicine.startDate, order: .reverse) var currentMedicines: [Medicine]
+    
+    @Query(filter: #Predicate<Medicine> { medicine in
+        medicine.currentStatus == "Discontinued"
+    }, sort: \Medicine.startDate, order: .reverse) var endedMedicines: [Medicine]
+
+    @Query(filter: #Predicate<Medicine> { medicine in
+        medicine.currentStatus == "Planned"
+    }, sort: \Medicine.startDate, order: .reverse) var plannedMedicines: [Medicine]
 
 
     
@@ -42,7 +42,10 @@ struct MedicinesListView: View {
         NavigationSplitView {
             List {
                 Section {
-                    ForEach(medicines) { medicine in
+//                    if currentMedicines.count > 0 {
+//                        Text("Current").font(.title).bold()
+//                    }
+                    ForEach(currentMedicines) { medicine in
                         VStack(alignment: .leading) {
                             HStack {
                                 Text(medicine.name)
@@ -52,34 +55,48 @@ struct MedicinesListView: View {
                             Text(medicine.currentStatus).font(.footnote)
                         }
                     }
+                } header: { 
+                    if currentMedicines.count > 0 {
+                        Text("Current")
+                    }
                 }
-                
-//                Section {
-//                    ForEach(plannedMedicines) { medicine in
-//                        VStack(alignment: .leading) {
-//                            HStack {
-//                                Text(medicine.name)
-//                                Spacer()
-//                                Text(medicine.startDate.formatted())
-//                            }
-//                            Text(medicine.currentStatus).font(.footnote)
-//                        }
-//                    }
-//                }.navigationTitle("Planned")
-//
-//                Section {
-//                    ForEach(endedMedicines) { medicine in
-//                        VStack(alignment: .leading) {
-//                            HStack {
-//                                Text(medicine.name)
-//                                Spacer()
-//                                Text(medicine.startDate.formatted())
-//                            }
-//                            Text(medicine.currentStatus).font(.footnote)
-//                        }
-//                    }
-//                }
-                
+                .headerProminence(.increased)
+
+                Section {
+                    ForEach(plannedMedicines) { medicine in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(medicine.name)
+                                Spacer()
+                                Text(medicine.startDate.formatted())
+                            }
+                            Text(medicine.currentStatus).font(.footnote)
+                        }
+                    }
+                } header: {
+                    if plannedMedicines.count > 0 {
+                        Text("Planned")
+                    }
+                }
+                    .headerProminence(.increased)
+
+                Section {
+                    ForEach(endedMedicines) { medicine in
+                        VStack(alignment: .leading) {
+                            HStack {
+                                Text(medicine.name)
+                                Spacer()
+                                Text(medicine.startDate.formatted())
+                            }
+                            Text(medicine.currentStatus).font(.footnote)
+                        }
+                    }
+                } header: { 
+                    if endedMedicines.count > 0 {
+                        Text("Discontinued")
+                    }
+                }
+                .headerProminence(.increased)
 
             }
             .overlay {
@@ -100,13 +117,6 @@ struct MedicinesListView: View {
                     Label("Add trip", systemImage: "plus")
                 }
             }
-//            .sheet(isPresented: $showAddMedicine) {
-//                NavigationStack {
-//                    NewMedicineView(medicine: selection!)
-//                }
-//                .presentationDetents([.medium, .large])
-//            }
-
         }
         detail: {
             if selection != nil {

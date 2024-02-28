@@ -163,5 +163,23 @@ class Alogea_Drug {
         }
 
     }
+    
+    public func dosesText() -> String {
+
+        if let dosesArray = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSArray.self, NSNumber.self], from: self.doses as Data) as? [[Double]] {
+            
+            let max = dosesArray.compactMap{ doseArray in
+                return doseArray.reduce(0 , +)
+            }.max() ?? 0
+            let min = dosesArray.compactMap{ doseArray in
+                return doseArray.reduce(0 , +)
+            }.min() ?? 0
+            
+            return "\(min) - \(max) \(self.doseUnit)"
+            
+        } else {
+            return UserText.term(e: "no dose")
+        }
+    }
 
 }

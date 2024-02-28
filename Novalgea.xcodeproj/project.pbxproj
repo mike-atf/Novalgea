@@ -43,8 +43,15 @@
 		FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC432B836235007F0946 /* Extension Data.swift */; };
 		FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC452B8367E5007F0946 /* Extension Doses.swift */; };
 		FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8606712B73DFEE00C52D81 /* DataController.swift */; };
+		FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF32B8E3937003802A4 /* ImportView.swift */; };
+		FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF52B8E4832003802A4 /* AppDelegate.swift */; };
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
+		FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */; };
+		FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A12B877B6500E942E8 /* ExportView.swift */; };
+		FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A52B879B2000E942E8 /* BackupManager.swift */; };
+		FAFD67112B8F4F2D00BC2EA7 /* Extension UTType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */; };
+		FAFD67132B8F509500BC2EA7 /* Userdefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -106,8 +113,15 @@
 		FA6FBC432B836235007F0946 /* Extension Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Data.swift"; sourceTree = "<group>"; };
 		FA6FBC452B8367E5007F0946 /* Extension Doses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Doses.swift"; sourceTree = "<group>"; };
 		FA8606712B73DFEE00C52D81 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
+		FA975AF32B8E3937003802A4 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
+		FA975AF52B8E4832003802A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProgressView.swift; sourceTree = "<group>"; };
+		FAE888A12B877B6500E942E8 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
+		FAE888A52B879B2000E942E8 /* BackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupManager.swift; sourceTree = "<group>"; };
+		FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension UTType.swift"; path = "Extension/Extension UTType.swift"; sourceTree = "<group>"; };
+		FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdefaults.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -149,16 +163,14 @@
 		FA56B62F2B6D3C60003ED5FF = {
 			isa = PBXGroup;
 			children = (
-				FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */,
-				FA1425F52B6FF0FB00B2C622 /* ExerciseEvent.swift */,
-				FA1425F72B6FF0FB00B2C622 /* InternalError.swift */,
-				FA1425F92B6FF0FB00B2C622 /* PRNMedEvent.swift */,
-				FA6FBC412B836097007F0946 /* Medicine.swift */,
-				FA1425F62B6FF0FB00B2C622 /* Rating.swift */,
-				FA1425F82B6FF0FB00B2C622 /* Symptom.swift */,
-				FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */,
-				FABEBEFF2B6E954E007AE48C /* Manager */,
+				FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */,
 				FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */,
+				FAE8889D2B877ACE00E942E8 /* Models */,
+				FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */,
+				FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */,
+				FAE8889E2B877AE400E942E8 /* Models Alogea */,
+				FABEBEFF2B6E954E007AE48C /* Manager */,
+				FAE8889C2B877AA000E942E8 /* Extension */,
 				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
 				FA56B6522B6D3C62003ED5FF /* NovalgeaTests */,
 				FA56B65C2B6D3C62003ED5FF /* NovalgeaUITests */,
@@ -181,7 +193,11 @@
 			isa = PBXGroup;
 			children = (
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
+				FA975AF52B8E4832003802A4 /* AppDelegate.swift */,
+				FAE888A12B877B6500E942E8 /* ExportView.swift */,
+				FA975AF32B8E3937003802A4 /* ImportView.swift */,
 				FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */,
+				FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */,
 				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
 				FAB7DC082B752CBE009793CF /* MedicinesListView.swift */,
 				FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */,
@@ -194,14 +210,6 @@
 				FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */,
 				FA56B64A2B6D3C61003ED5FF /* Info.plist */,
 				FA56B6472B6D3C61003ED5FF /* Preview Content */,
-				FA56B6702B6D4D95003ED5FF /* UserText.swift */,
-				FA6FBC432B836235007F0946 /* Extension Data.swift */,
-				FA6FBC452B8367E5007F0946 /* Extension Doses.swift */,
-				FA27CB1A2B7D09A400D2FB7B /* AlogeaBackupDocument.swift */,
-				FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */,
-				FA27CB3D2B7E374300D2FB7B /* Alogea_Event.swift */,
-				FA27CB3F2B7E37F600D2FB7B /* Alogea_Drug.swift */,
-				FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */,
 			);
 			path = Novalgea;
 			sourceTree = "<group>";
@@ -242,11 +250,48 @@
 		FABEBEFF2B6E954E007AE48C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FAE888A52B879B2000E942E8 /* BackupManager.swift */,
 				FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */,
 				FA8606712B73DFEE00C52D81 /* DataController.swift */,
 				FA29F3782B796FEA00BA5956 /* ModelContainerPreview.swift */,
+				FA56B6702B6D4D95003ED5FF /* UserText.swift */,
+				FA27CB1A2B7D09A400D2FB7B /* AlogeaBackupDocument.swift */,
 			);
 			path = Manager;
+			sourceTree = "<group>";
+		};
+		FAE8889C2B877AA000E942E8 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				FA6FBC452B8367E5007F0946 /* Extension Doses.swift */,
+				FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */,
+				FA6FBC432B836235007F0946 /* Extension Data.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		FAE8889D2B877ACE00E942E8 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FA1425F92B6FF0FB00B2C622 /* PRNMedEvent.swift */,
+				FA6FBC412B836097007F0946 /* Medicine.swift */,
+				FA1425F62B6FF0FB00B2C622 /* Rating.swift */,
+				FA1425F82B6FF0FB00B2C622 /* Symptom.swift */,
+				FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */,
+				FA1425F52B6FF0FB00B2C622 /* ExerciseEvent.swift */,
+				FA1425F72B6FF0FB00B2C622 /* InternalError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FAE8889E2B877AE400E942E8 /* Models Alogea */ = {
+			isa = PBXGroup;
+			children = (
+				FA27CB3D2B7E374300D2FB7B /* Alogea_Event.swift */,
+				FA27CB3F2B7E37F600D2FB7B /* Alogea_Drug.swift */,
+				FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */,
+			);
+			path = "Models Alogea";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -385,6 +430,7 @@
 				FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */,
 				FA27CB442B7E997F00D2FB7B /* ReviewDates.swift in Sources */,
 				FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */,
+				FAFD67132B8F509500BC2EA7 /* Userdefaults.swift in Sources */,
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
 				FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */,
 				FA27CB482B7F961C00D2FB7B /* Extension String Array.swift in Sources */,
@@ -393,23 +439,29 @@
 				FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */,
 				FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */,
 				FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */,
+				FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */,
 				FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */,
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
 				FA27CB1B2B7D09A400D2FB7B /* AlogeaBackupDocument.swift in Sources */,
+				FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */,
 				FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */,
 				FA1425FB2B6FF0FB00B2C622 /* PRNMedEvent.swift in Sources */,
 				FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */,
 				FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
 				FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */,
+				FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */,
 				FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */,
+				FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
+				FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */,
 				FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */,
 				FA6FBC3E2B8284DC007F0946 /* DiaryEventsListView.swift in Sources */,
 				FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */,
 				FA27CB3E2B7E374300D2FB7B /* Alogea_Event.swift in Sources */,
+				FAFD67112B8F4F2D00BC2EA7 /* Extension UTType.swift in Sources */,
 				FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */,
 				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
 			);

@@ -42,6 +42,7 @@ class ErrorManager {
                 let first = matchingErrors.first
                 first!.count += 1
                 first?.dates.append(Date.now)
+                first?.maxDate = first!.dates.max()!
                 logger.info("\("duplicate error found and count increased")")
             }
             else {

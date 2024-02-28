@@ -12,11 +12,8 @@ import SwiftUI
 import SwiftData
 import OSLog
 
-protocol ImportDelegate {
-    func progressUpdate(progress: Double)
-}
 
-class AlogeaBackupDocument: UIDocument {
+@Observable class AlogeaBackupDocument: UIDocument {
     
     var eventsDictionaryData: Data?
     var drugsDictionaryData: Data?
@@ -24,9 +21,9 @@ class AlogeaBackupDocument: UIDocument {
     
     let logger = Logger()
     
-    var events: [Alogea_Event]?
-    var drugs: [Alogea_Drug]?
-    var recordTypes: [Alogea_RecordType]?
+    var events = [Alogea_Event]()
+    var drugs = [Alogea_Drug]()
+    var recordTypes = [Alogea_RecordType]()
     
     override func handleError(_ error: Error, userInteractionPermitted: Bool) {
         logger.error("Alogea backup file error: \(error.localizedDescription)")
@@ -70,14 +67,6 @@ class AlogeaBackupDocument: UIDocument {
         
     }
     
-    func unarchiveObject(data: Data?) throws -> Any? {
-        
-        guard data != nil else {
-            throw InternalError(file: "AlogeaBackupDocument", function: "unarchiveObject()", appError: "nil object passed for un-archiving")
-        }
-        
-        return try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data!)
-    }
     
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         
@@ -88,7 +77,7 @@ class AlogeaBackupDocument: UIDocument {
             throw InternalError(file: "AlogeaBackupDocument", function: "load()", appError: NSLocalizedString("Backup.loadError", comment: ""))
         }
         
-        dictionaries = try unarchiveObject(data: dictionariesData) as? [String : Data]
+        dictionaries = try? NSKeyedUnarchiver.unarchivedDictionary(ofKeyClass: NSString.self, objectClass: NSData.self, from: dictionariesData!) as? [String : Data]
         
         guard dictionaries != nil else {
             throw InternalError(file: "AlogeaBackupDocument", function: "load()", appError: NSLocalizedString("Backup.loadError", comment: ""))
@@ -101,18 +90,21 @@ class AlogeaBackupDocument: UIDocument {
     
     //MARK: - data extraction
     
+    /// returns in date desecending order
     public func extractDataFromFile(container: ModelContainer) async {
         
         do {
-            events = try extractEvents(container: container)
-            drugs = try extractDrugs(container: container)
-            recordTypes = try extractRecordTypes(container: container)
+            // arrays are returned in date descending order
+            events = try extractEvents(container: container) ?? [Alogea_Event]()
+            drugs = try extractDrugs(container: container) ?? [Alogea_Drug]()
+            recordTypes = try extractRecordTypes(container: container) ?? [Alogea_RecordType]()
         } catch {
             let interror = InternalError(file: "AlogeaBackupDocument", function: "swiftDataFromAlogeaDiary", appError: "error extracting Alogea events from data", osError: error.localizedDescription)
             ErrorManager.addError(error: interror, container: container)
         }
     }
     
+    /// returns in date desecending order
     public func extractEvents(container: ModelContainer) throws -> [Alogea_Event]? {
         
         guard let archivedEventsData = eventsDictionaryData else {
@@ -148,10 +140,15 @@ class AlogeaBackupDocument: UIDocument {
             }
         }
         
-        return unarchivedEvents
+        return unarchivedEvents.sorted { e1, e2 in
+            if e2.date < e1.date { return true }
+            else { return false }
+        }
         
     }
     
+    
+    /// returns in date descending oder
     public func extractDrugs(container: ModelContainer) throws -> [Alogea_Drug]? {
         
         guard let archivedEventsData = drugsDictionaryData else {
@@ -187,10 +184,14 @@ class AlogeaBackupDocument: UIDocument {
             }
         }
         
-        return unarchivedDrugs
+        return unarchivedDrugs.sorted { e1, e2 in
+            if e2.startDate < e1.startDate { return true }
+            else { return false }
+        }
         
     }
     
+    /// returns in date descending oder
     public func extractRecordTypes(container: ModelContainer) throws -> [Alogea_RecordType]? {
         
         guard let archivedEventsData = recordTypesDictionaryData else {
@@ -226,51 +227,42 @@ class AlogeaBackupDocument: UIDocument {
             }
         }
         
-        return unarchivedRecordTypes
+        return unarchivedRecordTypes.sorted { e1, e2 in
+            if e2.dateCreated < e1.dateCreated { return true }
+            else { return false }
+        }
         
     }
     
     //MARK: - import extracted data
     
-    public func importAlogeaRecords(replaceCurrentRecords: Bool, container: ModelContainer, delegate: ImportDelegate) async throws {
+    public func importAlogeaRecords(container: ModelContainer) async throws {
         
-        let context = container.mainContext // do NOT use ModelContext(container)! object inserted into this ontext won't be persisted
-        
-        if replaceCurrentRecords {
-            try context.delete(model: DiaryEvent.self)
-            try context.delete(model: ExerciseEvent.self)
-            try context.delete(model: Medicine.self)
-            try context.delete(model: PRNMedEvent.self)
-            try context.delete(model: Rating.self)
-            try context.delete(model: Symptom.self)
-        }
-        
-        DispatchQueue.main.async {
-            delegate.progressUpdate(progress: 0.2)
-        }
+        let context = container.mainContext // do NOT use ModelContext(container)! object inserted into this context won't be persisted
 
         let fetchDescriptorS = FetchDescriptor<Symptom>(sortBy: [SortDescriptor(\Symptom.name)])
         var existingSymptoms = try? context.fetch(fetchDescriptorS)
         
-        for symptom in recordTypes ?? [] {
+        for symptom in recordTypes {
             if existingSymptoms?.count ?? 0 < 1 {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term(english: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term(e: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
                 
             } else if !(existingSymptoms!.compactMap { $0.name }.contains(symptom.name)) {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term(english: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term(e: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
             }
+//            completedTasks += 1.0
         }
         
-        DispatchQueue.main.async {
-            delegate.progressUpdate(progress: 0.3)
-        }
+//        DispatchQueue.main.async {
+//            delegate.progressUpdate(completedTasks: self.completedTasks)
+//        }
 
         
-        for drug in drugs ?? [] {
+        for drug in drugs {
             let newMedicine = Medicine(name: "Sample medicine",doses: [Dose(unit: "mg", value1: 1000)])
             context.insert(newMedicine)
             
@@ -283,7 +275,33 @@ class AlogeaBackupDocument: UIDocument {
             newMedicine.currentStatus = currentComponents.first ?? "Current"
             newMedicine.isRegular = drug.regularly
             newMedicine.notes = drug.notes
-            newMedicine.effect = drug.effectiveness
+            
+            if let effect = drug.effectiveness {
+                var vas: Double = 0
+                
+                switch effect {
+                    // TODO: - test this for correct function in translations
+                case UserText.term(e: "General.none"):
+                    vas = 0
+                case UserText.term(e: "General.minimal"):
+                    vas = 2.0
+                case UserText.term(e: "General.moderate"):
+                    vas = 4.0
+                case UserText.term(e: "General.good"):
+                    vas = 7.0
+                default:
+                    let ierror = InternalError(file: "Alogea backup Document", function: "importAlogeaRecords", appError: "unrecognised Alogea Medicine effect term encountered and ignored")
+                    ErrorManager.addError(error: ierror, container: container)
+                }
+                
+                let treatmentDuration = (newMedicine.endDate ?? .now).timeIntervalSince(newMedicine.startDate)
+                let ratingDate1 = newMedicine.startDate.addingTimeInterval(treatmentDuration / 2)
+                let ratingDate2 = newMedicine.endDate ?? .now.addingTimeInterval(-24*3600)
+                let effectRating1 = Rating(vas: vas, ratedSymptom: nil, date: ratingDate1, ratedMedicine: newMedicine)
+                let effectRating2 = Rating(vas: vas, ratedSymptom: nil, date: ratingDate2 ,ratedMedicine: newMedicine)
+                context.insert(effectRating1)
+                context.insert(effectRating2)
+            }
             
             if let doses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSNumber.self, from: drug.doses as Data) as? [[Double]] {
                 
@@ -339,7 +357,7 @@ class AlogeaBackupDocument: UIDocument {
                             }
                             else  {
                                 // no existing symptom - create new
-                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term(english: "Symptom"), creatingDevice: UIDevice.current.name)
+                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term(e: "Symptom"), creatingDevice: UIDevice.current.name)
                                 treatedSymptoms.append(newSymptom)
                                 existingSymptoms?.append(newSymptom)
                             }
@@ -348,7 +366,7 @@ class AlogeaBackupDocument: UIDocument {
                     else {
                         // no existing symptoms - create new
                         for symptom in unarchivedSymptoms {
-                            let newSymptom = Symptom(name: symptom, type: UserText.term(english: "Symptom"), creatingDevice: UIDevice.current.name)
+                            let newSymptom = Symptom(name: symptom, type: UserText.term(e: "Symptom"), creatingDevice: UIDevice.current.name)
                             treatedSymptoms.append(newSymptom)
                             existingSymptoms?.append(newSymptom)
                         }
@@ -391,23 +409,25 @@ class AlogeaBackupDocument: UIDocument {
                     var sideEffects = [Symptom]()
                     for sideEffect in unarchivedSideEffects {
                         // no existing symptom - create new
-                        let newSE = Symptom(name: UserText.term(english: "Unspecified side effect"), type: UserText.term(english: "Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
+                        let newSE = Symptom(name: UserText.term(e: "Unspecified side effect of ") + drug.name, type: UserText.term(e: "Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
                         // the side effect is 'reversely' added the the new Medicine by including it in the RelationShip causingMeds in this SideEffect-Symptom; this should create a reverse RelationShip in new medicine adding the SideEffect-Symptom
                         var vas: Double
                         switch sideEffect {
-                        case UserText.term(english: "Meds.sideEffect.none"):
+                        case UserText.term(e: "Meds.sideEffect.none"):
                             vas = 0.0
-                        case UserText.term(english: "Meds.sideEffect.minimal"):
+                        case UserText.term(e: "Meds.sideEffect.minimal"):
                             vas = 1.5
-                        case UserText.term(english: "Meds.sideEffect.moderate"):
+                        case UserText.term(e: "Meds.sideEffect.moderate"):
                             vas = 5.0
-                        case UserText.term(english: "Meds.sideEffect.strong"):
+                        case UserText.term(e: "Meds.sideEffect.strong"):
                             vas = 8.0
                         default:
                             vas = 0.0
                        }
-                        let newRating = Rating(vas: vas, ratedSymptom: newSE,date: drug.startDate.addingTimeInterval(3*24*3600))
-                        context.insert(newRating)
+                        let newRating1 = Rating(vas: vas, ratedSymptom: newSE,date: drug.startDate.addingTimeInterval(3*24*3600))
+                        let newRating2 = Rating(vas: vas, ratedSymptom: newSE,date: (drug.endDate ?? .now))
+                        context.insert(newRating1)
+                        context.insert(newRating2)
                         sideEffects.append(newSE)
                     }
                 }
@@ -423,17 +443,18 @@ class AlogeaBackupDocument: UIDocument {
                     newMedicine.reviewDates = ReviewDates(proposedReviewDate: proposedReviewDate, proposedStopDate: proposedStopDate, nextMildSevereReviewDate: nextMildSevereReviewDate, nextOverdoseCheckDate: nextOverdoseCheckDate, nextEffectCheckDate: nextEffectCheckDate).convertToData()
                 }
             }
+//            completedTasks += 1.0
         }
+        
+//        DispatchQueue.main.async { [self] in
+//            delegate.progressUpdate(completedTasks: completedTasks)
+//        }
 
-        DispatchQueue.main.async {
-            delegate.progressUpdate(progress: 0.6)
-        }
-                
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
         let existingMedicines = try? context.fetch(fetchDescriptorM)
         
 
-        for event in events ?? [] {
+        for event in events {
             
             switch event.type {
             case "Score Event":
@@ -445,7 +466,7 @@ class AlogeaBackupDocument: UIDocument {
                     }).first!
                 }
                 else {
-                    let newSymptom = Symptom(name: event.name, type: UserText.term(english: "Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                    let newSymptom = Symptom(name: event.name, type: UserText.term(e: "Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                     context.insert(newSymptom)
                     context.insert(newSymptom)
                     existingSymptoms?.append(newSymptom)
@@ -480,6 +501,10 @@ class AlogeaBackupDocument: UIDocument {
                 let ierror = InternalError(file: "Alogea Backup Document", function: "importAlogeaRecords()", appError: "unexpcted imported event type: \(event.type)")
                 context.insert(ierror)
             }
+//            completedTasks += 1.0
+//            DispatchQueue.main.async {
+//                delegate.progressUpdate(completedTasks: self.completedTasks)
+//            }
         }
         
     }

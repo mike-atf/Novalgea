@@ -19,7 +19,7 @@ import SwiftData
     var uuid: UUID = UUID()
     
     @Relationship(deleteRule: .nullify, inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
-    @Relationship(inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
+    @Relationship(deleteRule: .nullify, inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
     
     public init(date: Date?, category: String, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = [], notes: String = "") { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
         self.date = date ?? .now

@@ -1141,6 +1141,9 @@
         }
       }
     },
+    "Delete all" : {
+
+    },
     "delete with all related events" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1875,6 +1878,12 @@
         }
       }
     },
+    "Discontinued" : {
+
+    },
+    "Dismiss" : {
+
+    },
     "Done" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1919,9 +1928,6 @@
           }
         }
       }
-    },
-    "drugs:" : {
-
     },
     "EDC.notificationError" : {
       "extractionState" : "stale",
@@ -3491,9 +3497,6 @@
         }
       }
     },
-    "events:" : {
-
-    },
     "Events.missingName" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4474,6 +4477,9 @@
         }
       }
     },
+    "Export" : {
+
+    },
     "Export as Backup file" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -4501,6 +4507,12 @@
           }
         }
       }
+    },
+    "Export Diary Archive" : {
+
+    },
+    "Export Diary Database file" : {
+
     },
     "Export options" : {
       "extractionState" : "stale",
@@ -7339,13 +7351,28 @@
     "Import" : {
 
     },
+    "Import a Novalgea Diary Archive" : {
+
+    },
+    "Import Archive" : {
+
+    },
+    "Import complete" : {
+
+    },
     "Import diary data" : {
 
     },
     "Import options" : {
 
     },
+    "Import process ended" : {
+
+    },
     "Internal errors will be listed here." : {
+
+    },
+    "It's recommended to make a local Backup before proceeding" : {
 
     },
     "Keep" : {
@@ -11438,6 +11465,9 @@
         }
       }
     },
+    "Planned" : {
+
+    },
     "Please select" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -11456,6 +11486,7 @@
       }
     },
     "Preparing new backup" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -11565,6 +11596,7 @@
       }
     },
     "Ratings" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15642,9 +15674,6 @@
         }
       }
     },
-    "symptoms:" : {
-
-    },
     "Tap on backup to restore" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -15683,6 +15712,9 @@
           }
         }
       }
+    },
+    "This will replace your existing diary." : {
+
     },
     "To" : {
       "extractionState" : "manual",

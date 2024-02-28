@@ -16,7 +16,7 @@ import SwiftData
     var uuid: UUID = UUID()
     var medicine: Medicine?
     
-    @Relationship(inverse: \Rating.relatedPRNMedEvents) var relatedRatings: [Rating]?
+    @Relationship(deleteRule: .nullify, inverse: \Rating.relatedPRNMedEvents) var relatedRatings: [Rating]?
     
     init(endDate: Date? = nil, startDate: Date = .now, uuid: UUID = UUID(), medicine: Medicine, relatedRatings: [Rating]? = []) {
         self.startDate = startDate

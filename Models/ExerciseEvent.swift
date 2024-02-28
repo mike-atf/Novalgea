@@ -18,7 +18,7 @@ import SwiftData
     var uuid: UUID = UUID()
     var value: Double = 0.0
     
-    @Relationship(inverse: \Rating.relatedExerciseEvents) var relatedRatings: [Rating]?
+    @Relationship(deleteRule: .nullify, inverse: \Rating.relatedExerciseEvents) var relatedRatings: [Rating]?
     
     public init(exercise: String, date: Date = .now, unit: String, value: Double) {
         self.exerciseName = exercise

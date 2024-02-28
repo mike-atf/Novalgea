@@ -26,3 +26,21 @@ extension Data? {
     }
 
 }
+
+extension Array where Element == Data {
+    
+    func convertToDoses() -> [Dose]? {
+        
+        var doses = [Dose]()
+        
+        for data in self {
+            if let dose  = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSDate.self, NSData.self, NSNumber.self], from: data) as? Dose {
+                doses.append(dose)
+            }
+        }
+        return doses
+        
+    }
+
+    
+}

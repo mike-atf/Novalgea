@@ -21,7 +21,7 @@ struct RatingsListView: View {
                 ForEach(ratings) { rating in
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(rating.ratedSymptom?.name ?? "no symptom")
+                            Text(rating.ratedUserText())
                             Spacer()
                             Text(rating.vas.formatted())
                         }

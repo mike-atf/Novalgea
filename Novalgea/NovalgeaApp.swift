@@ -12,26 +12,50 @@ import OSLog
 @main
 struct NovalgeaApp: App {
     
+    //call with '@EnvironmentObject private var appDelegate: MyAppDelegate'
+    @UIApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
+    
+    
     // container and init are essential for CloudKit to work; without it crashes
-    var container: ModelContainer
-
-    init() {
+    @State var container: ModelContainer = {
         do {
-            let storeURL = URL.documentsDirectory.appending(path: "Novalgea.database.sqlite")
-            let config3 = ModelConfiguration(url: storeURL, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
-            container = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self, configurations: config3)
+            let modelFolder = URL.applicationSupportDirectory.appending(path: "ModelData")
+            try FileManager.default.createDirectory(at: modelFolder, withIntermediateDirectories: true)
+            
+            let storeURL = modelFolder.appending(path: "Novalgea.database.sqlite")
+            let config = ModelConfiguration(url: storeURL, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
+            //WARNING: - Model changes must be reflected and checked against importing and replacing the modelContainer in ImportView.decompressArchive()
+            return try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self, configurations: config)
         } catch {
             fatalError("Failed to configure SwiftData container.")
         }
-        
-    }
-    // container and init are essential for CloudKit to work
+    }()
 
+//    init() {
+//        do {
+//            let modelFolder = URL.applicationSupportDirectory.appending(path: "ModelData")
+//            try FileManager.default.createDirectory(at: modelFolder, withIntermediateDirectories: true)
+//            
+//            let storeURL = modelFolder.appending(path: "Novalgea.database.sqlite")
+//            let config = ModelConfiguration(url: storeURL, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
+//            //WARNING: - Model changes must be reflected and checked against importing and replacing the modelContainer in ImportView.decompressArchive()
+//            container = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self, configurations: config)
+//        } catch {
+//            fatalError("Failed to configure SwiftData container.")
+//        }
+//        
+//    }
+    // container and init are essential for CloudKit to work
     
     var body: some Scene {
 
         WindowGroup {
             TabView {
+                ImportView(modelContainer: $container)
+                    .tabItem {
+                        Label("Import", systemImage: "arrow.down.app.fill")
+                    }
+
                 AlogeaFileImportView()
                     .tabItem {
                         Label("Import", systemImage: "square.and.arrow.down")
@@ -42,17 +66,18 @@ struct NovalgeaApp: App {
                         Label("Errors", systemImage: "ant.circle")
                     }
 
-                RatingsListView()
-                    .tabItem {
-                        Label("Ratings", systemImage: "number.circle")
-                    }
-//                    .onAppear {
-//                        Logger().info("Document directory at \(URL.documentsDirectory)")
+//                RatingsListView()
+//                    .tabItem {
+//                        Label("Ratings", systemImage: "number.circle")
 //                    }
                 
                 MedicinesListView()
                     .tabItem {
                         Label("Medicine", systemImage: "pills.circle")
+                    }
+                ExportView()
+                    .tabItem {
+                        Label("Export", systemImage: "square.and.arrow.up.on.square.fill")
                     }
 
             } 
@@ -60,6 +85,16 @@ struct NovalgeaApp: App {
         .modelContainer(container)
 //        .modelContainer(for: [Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self], isUndoEnabled: true)
         //        .modelContainer(DataController.samplesContainer)
+
+    }
+    
+    public mutating func resetModelContainer(to: URL) {
+        do {
+            let config = ModelConfiguration(url: to, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
+            self.container = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self, configurations: config)
+        } catch {
+            fatalError("Failed to configure SwiftData container.")
+        }
 
     }
 }

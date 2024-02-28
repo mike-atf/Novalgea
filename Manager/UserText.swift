@@ -9,9 +9,9 @@ import Foundation
 
 class UserText {
     
-    class func term(english: String) -> String {
+    class func term(e: String) -> String {
         
-        return NSLocalizedString(english, comment: "")
+        return NSLocalizedString(e, comment: "")
         
     }
 }

@@ -17,6 +17,7 @@ import SwiftData
     var file: String = ""
     var function: String = ""
     var osError: String?
+    var maxDate: Date = Date()
     
     
     public init(file: String, function: String, appError: String, osError: String?=nil, count: Int64?=1, dates:[Date]?=nil) {
@@ -26,6 +27,7 @@ import SwiftData
         self.count = count ?? 1
         self.osError = osError
         self.appError = appError
+        maxDate = dates?.max() ?? .now
     }
     
     public func datesText() -> String {
@@ -34,6 +36,10 @@ import SwiftData
             text.append(date.formatted(date: .abbreviated, time: .shortened)+"\n")
         }
         return text
+    }
+    
+    public func maxDates() -> Date {
+        return dates.max()!
     }
 }
 

@@ -47,12 +47,6 @@ struct DiaryEventsListView: View {
                     Label("Add event", systemImage: "plus")
                 }
             }
-//            .sheet(isPresented: $showAddMedicine) {
-//                NavigationStack {
-//                    NewMedicineView()
-//                }
-//                .presentationDetents([.medium, .large])
-//            }
 
         }
         detail: {
