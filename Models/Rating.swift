@@ -57,7 +57,7 @@ import SwiftData
         
         if ratedSymptom != nil { return ratedSymptom!.name }
         else if ratedMedicine != nil {
-            return UserText.term(e: "Effect of ") + ratedMedicine!.name
+            return UserText.term("Effect of ") + ratedMedicine!.name
         }
         else {
             let ierror = InternalError(file: "Rating", function: "ratedUserText()", appError: "rating with neither ratedSymptom nor ratedMedicine")

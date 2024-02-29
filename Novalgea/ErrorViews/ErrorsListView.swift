@@ -61,12 +61,6 @@ struct ErrorsListView: View {
                 } label: {
                     Label("Delete all", systemImage: "trash.fill")
                 }
-//                Spacer()
-//                Button {
-//                    addError()
-//                } label: {
-//                    Label("Errors", systemImage: "plus")
-//                }
             }
         } content: {
             NavigationStack {

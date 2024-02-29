@@ -1878,6 +1878,9 @@
         }
       }
     },
+    "Dimiss" : {
+
+    },
     "Discontinued" : {
 
     },
@@ -7369,6 +7372,9 @@
     "Import process ended" : {
 
     },
+    "Importing, please wait..." : {
+
+    },
     "Internal errors will be listed here." : {
 
     },
@@ -11321,6 +11327,9 @@
         }
       }
     },
+    "Must be an Alogea Backup file of type .abf" : {
+
+    },
     "Name, Dates & Symptoms" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11439,9 +11448,6 @@
           }
         }
       }
-    },
-    "Open Diary file" : {
-
     },
     "Open Settings" : {
       "extractionState" : "stale",
@@ -12673,6 +12679,9 @@
           }
         }
       }
+    },
+    "Select a file for import" : {
+
     },
     "Select an edit option" : {
       "extractionState" : "stale",

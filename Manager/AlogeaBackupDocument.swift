@@ -15,6 +15,7 @@ import OSLog
 
 @Observable class AlogeaBackupDocument: UIDocument {
     
+    var fileName = "AlogeaBackupDocument"
     var eventsDictionaryData: Data?
     var drugsDictionaryData: Data?
     var recordTypesDictionaryData: Data?
@@ -245,12 +246,12 @@ import OSLog
         
         for symptom in recordTypes {
             if existingSymptoms?.count ?? 0 < 1 {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term(e: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
                 
             } else if !(existingSymptoms!.compactMap { $0.name }.contains(symptom.name)) {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term(e: "Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
             }
@@ -281,13 +282,13 @@ import OSLog
                 
                 switch effect {
                     // TODO: - test this for correct function in translations
-                case UserText.term(e: "General.none"):
+                case UserText.term("General.none"):
                     vas = 0
-                case UserText.term(e: "General.minimal"):
+                case UserText.term("General.minimal"):
                     vas = 2.0
-                case UserText.term(e: "General.moderate"):
+                case UserText.term("General.moderate"):
                     vas = 4.0
-                case UserText.term(e: "General.good"):
+                case UserText.term("General.good"):
                     vas = 7.0
                 default:
                     let ierror = InternalError(file: "Alogea backup Document", function: "importAlogeaRecords", appError: "unrecognised Alogea Medicine effect term encountered and ignored")
@@ -357,7 +358,7 @@ import OSLog
                             }
                             else  {
                                 // no existing symptom - create new
-                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term(e: "Symptom"), creatingDevice: UIDevice.current.name)
+                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term("Symptom"), creatingDevice: UIDevice.current.name)
                                 treatedSymptoms.append(newSymptom)
                                 existingSymptoms?.append(newSymptom)
                             }
@@ -366,7 +367,7 @@ import OSLog
                     else {
                         // no existing symptoms - create new
                         for symptom in unarchivedSymptoms {
-                            let newSymptom = Symptom(name: symptom, type: UserText.term(e: "Symptom"), creatingDevice: UIDevice.current.name)
+                            let newSymptom = Symptom(name: symptom, type: UserText.term("Symptom"), creatingDevice: UIDevice.current.name)
                             treatedSymptoms.append(newSymptom)
                             existingSymptoms?.append(newSymptom)
                         }
@@ -409,17 +410,17 @@ import OSLog
                     var sideEffects = [Symptom]()
                     for sideEffect in unarchivedSideEffects {
                         // no existing symptom - create new
-                        let newSE = Symptom(name: UserText.term(e: "Unspecified side effect of ") + drug.name, type: UserText.term(e: "Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
+                        let newSE = Symptom(name: UserText.term("Unspecified side effect of ") + drug.name, type: UserText.term("Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
                         // the side effect is 'reversely' added the the new Medicine by including it in the RelationShip causingMeds in this SideEffect-Symptom; this should create a reverse RelationShip in new medicine adding the SideEffect-Symptom
                         var vas: Double
                         switch sideEffect {
-                        case UserText.term(e: "Meds.sideEffect.none"):
+                        case UserText.term("Meds.sideEffect.none"):
                             vas = 0.0
-                        case UserText.term(e: "Meds.sideEffect.minimal"):
+                        case UserText.term("Meds.sideEffect.minimal"):
                             vas = 1.5
-                        case UserText.term(e: "Meds.sideEffect.moderate"):
+                        case UserText.term("Meds.sideEffect.moderate"):
                             vas = 5.0
-                        case UserText.term(e: "Meds.sideEffect.strong"):
+                        case UserText.term("Meds.sideEffect.strong"):
                             vas = 8.0
                         default:
                             vas = 0.0
@@ -466,7 +467,7 @@ import OSLog
                     }).first!
                 }
                 else {
-                    let newSymptom = Symptom(name: event.name, type: UserText.term(e: "Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                    let newSymptom = Symptom(name: event.name, type: UserText.term("Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
                     context.insert(newSymptom)
                     context.insert(newSymptom)
                     existingSymptoms?.append(newSymptom)

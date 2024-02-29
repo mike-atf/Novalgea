@@ -178,7 +178,7 @@ class Alogea_Drug {
             return "\(min) - \(max) \(self.doseUnit)"
             
         } else {
-            return UserText.term(e: "no dose")
+            return UserText.term("no dose")
         }
     }
 

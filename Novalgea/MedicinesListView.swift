@@ -42,9 +42,6 @@ struct MedicinesListView: View {
         NavigationSplitView {
             List {
                 Section {
-//                    if currentMedicines.count > 0 {
-//                        Text("Current").font(.title).bold()
-//                    }
                     ForEach(currentMedicines) { medicine in
                         VStack(alignment: .leading) {
                             HStack {
