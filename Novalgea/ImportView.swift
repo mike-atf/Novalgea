@@ -114,5 +114,5 @@ struct ImportView: View {
 }
 
 //#Preview {
-//    ImportView(modelContext: .constant(ModelContainerPreview.container.mainContext)
+//    ImportView(modelContainer: ModelContainerPreview().container)
 //}

@@ -936,9 +936,6 @@
         }
       }
     },
-    "Cancel import" : {
-
-    },
     "CantMakePayments" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -966,6 +963,9 @@
           }
         }
       }
+    },
+    "Category" : {
+
     },
     "Change category name" : {
       "extractionState" : "manual",
@@ -1029,6 +1029,9 @@
         }
       }
     },
+    "Charts" : {
+
+    },
     "Close" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1083,7 +1086,6 @@
 
     },
     "Date" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1884,9 +1886,6 @@
     "Discontinued" : {
 
     },
-    "Dismiss" : {
-
-    },
     "Done" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -2032,6 +2031,9 @@
           }
         }
       }
+    },
+    "End" : {
+
     },
     "Ended on" : {
       "extractionState" : "stale",
@@ -7358,9 +7360,6 @@
 
     },
     "Import Archive" : {
-
-    },
-    "Import complete" : {
 
     },
     "Import diary data" : {
@@ -13078,6 +13077,9 @@
         }
       }
     },
+    "Show" : {
+
+    },
     "Side effects" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -13094,6 +13096,9 @@
           }
         }
       }
+    },
+    "Start" : {
+
     },
     "Started" : {
       "extractionState" : "stale",
@@ -15638,6 +15643,9 @@
         }
       }
     },
+    "Symptom" : {
+
+    },
     "Symptom reminders" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -16391,6 +16399,9 @@
           }
         }
       }
+    },
+    "VAS" : {
+
     },
     "will be renamed to" : {
       "extractionState" : "stale",

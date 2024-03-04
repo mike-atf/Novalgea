@@ -1407,5 +1407,225 @@
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Manager/AlogeaBackupDocument.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "448"
+            endingLineNumber = "448"
+            landmarkName = "importAlogeaRecords(container:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "448"
+                  endingLineNumber = "448"
+                  offsetFromSymbolStart = "29196">
+               </Location>
+               <Location
+                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "448"
+                  endingLineNumber = "448"
+                  offsetFromSymbolStart = "29664">
+               </Location>
+               <Location
+                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "448"
+                  endingLineNumber = "448"
+                  offsetFromSymbolStart = "29872">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2D9A1FA6-4330-441D-97FB-0DD7E1019FE6"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Manager/AlogeaBackupDocument.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "247"
+            endingLineNumber = "247"
+            landmarkName = "importAlogeaRecords(container:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "2D9A1FA6-4330-441D-97FB-0DD7E1019FE6 - 228e002d9bf87110"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "1428">
+               </Location>
+               <Location
+                  uuid = "2D9A1FA6-4330-441D-97FB-0DD7E1019FE6 - 228e002d9bf87110"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "247"
+                  endingLineNumber = "247"
+                  offsetFromSymbolStart = "1640">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Alogea File Import/ABFImportDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "importRecords(replaceExisting:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - a62a82debd5c21de"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "159"
+                  endingLineNumber = "159"
+                  offsetFromSymbolStart = "180">
+               </Location>
+               <Location
+                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 86680d1c12b9a918"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "104">
+               </Location>
+               <Location
+                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 47753dc4c5531d0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 4a37683ff69e64e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "36">
+               </Location>
+               <Location
+                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 30e5c6af0483c6e5"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
+                  moduleName = "Novalgea"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "176"
+                  endingLineNumber = "176"
+                  offsetFromSymbolStart = "84">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8F8415FE-1DDB-48EE-ACCE-176D18F4538C"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Alogea File Import/ABFImportDetail.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
+            landmarkName = "importRecords(replaceExisting:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

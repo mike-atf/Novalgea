@@ -50,10 +50,16 @@
 		FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */; };
 		FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A12B877B6500E942E8 /* ExportView.swift */; };
 		FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A52B879B2000E942E8 /* BackupManager.swift */; };
+		FAEB129E2B9395A8000FC32E /* RatingsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB129D2B9395A8000FC32E /* RatingsChartView.swift */; };
+		FAEB12A02B939610000FC32E /* EventsChartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAEB129F2B939610000FC32E /* EventsChartView.swift */; };
 		FAFD67112B8F4F2D00BC2EA7 /* Extension UTType.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */; };
 		FAFD67132B8F509500BC2EA7 /* Userdefaults.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */; };
 		FAFD67152B8FCDC300BC2EA7 /* ABFImportList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67142B8FCDC300BC2EA7 /* ABFImportList.swift */; };
 		FAFD67172B8FCFFD00BC2EA7 /* ABFImportDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67162B8FCFFD00BC2EA7 /* ABFImportDetail.swift */; };
+		FAFD671A2B90DFDD00BC2EA7 /* GraphicDiaryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */; };
+		FAFD671E2B90E66C00BC2EA7 /* Globals.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD671D2B90E66C00BC2EA7 /* Globals.swift */; };
+		FAFD67202B910A7900BC2EA7 /* Extension Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFD671F2B910A7900BC2EA7 /* Extension Date.swift */; };
+		FAFEC7FF2B9115BF00593550 /* DiarySelectionSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -122,10 +128,16 @@
 		FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProgressView.swift; sourceTree = "<group>"; };
 		FAE888A12B877B6500E942E8 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		FAE888A52B879B2000E942E8 /* BackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupManager.swift; sourceTree = "<group>"; };
-		FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension UTType.swift"; path = "Extension/Extension UTType.swift"; sourceTree = "<group>"; };
+		FAEB129D2B9395A8000FC32E /* RatingsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingsChartView.swift; sourceTree = "<group>"; };
+		FAEB129F2B939610000FC32E /* EventsChartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsChartView.swift; sourceTree = "<group>"; };
+		FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension UTType.swift"; sourceTree = "<group>"; };
 		FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Userdefaults.swift; sourceTree = "<group>"; };
 		FAFD67142B8FCDC300BC2EA7 /* ABFImportList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABFImportList.swift; sourceTree = "<group>"; };
 		FAFD67162B8FCFFD00BC2EA7 /* ABFImportDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ABFImportDetail.swift; sourceTree = "<group>"; };
+		FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphicDiaryView.swift; sourceTree = "<group>"; };
+		FAFD671D2B90E66C00BC2EA7 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
+		FAFD671F2B910A7900BC2EA7 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = SOURCE_ROOT; };
+		FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySelectionSection.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -167,11 +179,11 @@
 		FA56B62F2B6D3C60003ED5FF = {
 			isa = PBXGroup;
 			children = (
-				FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */,
 				FA56B6772B6D527C003ED5FF /* Localizable.xcstrings */,
 				FAE8889D2B877ACE00E942E8 /* Models */,
 				FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */,
 				FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */,
+				FAFD671D2B90E66C00BC2EA7 /* Globals.swift */,
 				FAE8889E2B877AE400E942E8 /* Models Alogea */,
 				FABEBEFF2B6E954E007AE48C /* Manager */,
 				FAE8889C2B877AA000E942E8 /* Extension */,
@@ -198,11 +210,13 @@
 			children = (
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
 				FA975AF52B8E4832003802A4 /* AppDelegate.swift */,
+				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
+				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
+				FAEB129D2B9395A8000FC32E /* RatingsChartView.swift */,
+				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
 				FAE888A12B877B6500E942E8 /* ExportView.swift */,
 				FA975AF32B8E3937003802A4 /* ImportView.swift */,
-				FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */,
-				FAFD67142B8FCDC300BC2EA7 /* ABFImportList.swift */,
-				FAFD67162B8FCFFD00BC2EA7 /* ABFImportDetail.swift */,
+				FAFD67182B90D56000BC2EA7 /* Alogea File Import */,
 				FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */,
 				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
 				FAB7DC082B752CBE009793CF /* MedicinesListView.swift */,
@@ -269,6 +283,8 @@
 		FAE8889C2B877AA000E942E8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				FAFD671F2B910A7900BC2EA7 /* Extension Date.swift */,
+				FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */,
 				FA6FBC452B8367E5007F0946 /* Extension Doses.swift */,
 				FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */,
 				FA6FBC432B836235007F0946 /* Extension Data.swift */,
@@ -298,6 +314,16 @@
 				FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */,
 			);
 			path = "Models Alogea";
+			sourceTree = "<group>";
+		};
+		FAFD67182B90D56000BC2EA7 /* Alogea File Import */ = {
+			isa = PBXGroup;
+			children = (
+				FA27CB3B2B7D5F0900D2FB7B /* AlogeaFileImportView.swift */,
+				FAFD67142B8FCDC300BC2EA7 /* ABFImportList.swift */,
+				FAFD67162B8FCFFD00BC2EA7 /* ABFImportDetail.swift */,
+			);
+			path = "Alogea File Import";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -432,8 +458,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAEB12A02B939610000FC32E /* EventsChartView.swift in Sources */,
 				FA1425FA2B6FF0FB00B2C622 /* ExerciseEvent.swift in Sources */,
 				FA29F3792B796FEA00BA5956 /* ModelContainerPreview.swift in Sources */,
+				FAFEC7FF2B9115BF00593550 /* DiarySelectionSection.swift in Sources */,
 				FA27CB442B7E997F00D2FB7B /* ReviewDates.swift in Sources */,
 				FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */,
 				FAFD67132B8F509500BC2EA7 /* Userdefaults.swift in Sources */,
@@ -443,8 +471,10 @@
 				FA27CB482B7F961C00D2FB7B /* Extension String Array.swift in Sources */,
 				FA27CB422B7E389E00D2FB7B /* Algea_RecordType.swift in Sources */,
 				FA6FBC422B836097007F0946 /* Medicine.swift in Sources */,
+				FAFD671A2B90DFDD00BC2EA7 /* GraphicDiaryView.swift in Sources */,
 				FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */,
 				FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */,
+				FAFD67202B910A7900BC2EA7 /* Extension Date.swift in Sources */,
 				FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */,
 				FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */,
 				FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */,
@@ -458,10 +488,12 @@
 				FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
 				FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */,
+				FAEB129E2B9395A8000FC32E /* RatingsChartView.swift in Sources */,
 				FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */,
 				FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */,
 				FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
+				FAFD671E2B90E66C00BC2EA7 /* Globals.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
 				FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */,

@@ -258,11 +258,6 @@ import OSLog
 //            completedTasks += 1.0
         }
         
-//        DispatchQueue.main.async {
-//            delegate.progressUpdate(completedTasks: self.completedTasks)
-//        }
-
-        
         for drug in drugs {
             let newMedicine = Medicine(name: "Sample medicine",doses: [Dose(unit: "mg", value1: 1000)])
             context.insert(newMedicine)
@@ -397,7 +392,7 @@ import OSLog
             }
             
             if let maxDailyDosesData = drug.maxDailyDoses as? Data {
-                if let maxDailyDoses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSNumber.self, from: maxDailyDosesData) as? [Double] {
+                if let maxDailyDoses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSNumber.self, NSData.self], from: maxDailyDosesData) as? [Double] {
                     newMedicine.maxDailyDose = maxDailyDoses.max()
                 }
             }
@@ -405,7 +400,7 @@ import OSLog
             // TODO: - the effect/success of this needs to be checked
             if let sideEffectsData = drug.sideEffects as? Data {
                 
-                if let unarchivedSideEffects = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSString.self, from: sideEffectsData) as? [String] {
+                if let unarchivedSideEffects = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSString.self,NSData.self], from: sideEffectsData) as? [String] { // expected to contain only one element
                     
                     var sideEffects = [Symptom]()
                     for sideEffect in unarchivedSideEffects {
@@ -446,14 +441,9 @@ import OSLog
             }
 //            completedTasks += 1.0
         }
-        
-//        DispatchQueue.main.async { [self] in
-//            delegate.progressUpdate(completedTasks: completedTasks)
-//        }
 
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
         let existingMedicines = try? context.fetch(fetchDescriptorM)
-        
 
         for event in events {
             
@@ -477,10 +467,10 @@ import OSLog
                 context.insert(newRating)
             case "Diary Entry":
                 let newDiaryEvent = DiaryEvent(date: event.date, category: event.name, notes: event.note ?? "")
-                context.insert(newDiaryEvent)
                 if let duration = event.duration?.doubleValue {
                     newDiaryEvent.endDate = newDiaryEvent.date.addingTimeInterval(duration)
                 }
+                context.insert(newDiaryEvent)
             case "Medicine Event":
                 let matchingMedicines = (existingMedicines ?? []).filter { medicine in
                     if medicine.name == event.name { return true }
@@ -494,10 +484,10 @@ import OSLog
                 context.insert(newMedEvent)
             case "Exercise Event":
                 let newExEvent = ExerciseEvent(exercise: event.name, date: event.date, unit: event.note ?? "-", value: event.vas?.doubleValue ?? 0)
-                context.insert(newExEvent)
                 if let duration = event.duration?.doubleValue {
                     newExEvent.endDate = newExEvent.startDate.addingTimeInterval(duration)
                 }
+                context.insert(newExEvent)
             default:
                 let ierror = InternalError(file: "Alogea Backup Document", function: "importAlogeaRecords()", appError: "unexpcted imported event type: \(event.type)")
                 context.insert(ierror)

@@ -22,8 +22,9 @@ import SwiftData
     
     var diaryEvents: [DiaryEvent]?
     @Relationship(deleteRule: .cascade, inverse: \Rating.ratedSymptom) var ratingEvents: [Rating]?
-    var treatingMeds: [Medicine]?
-    var causingMeds: [Medicine]?
+    var treatingMeds: [Medicine]? // optional to-many relationShips not supported in @Query #Predicate
+    var causingMeds: [Medicine]? // optional to-many relationShips not supported in @Query #Predicate
+    var isSideEffect: Bool = false // because of the above limitation
     
     init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String, maxVAS: Double = 10, minVAS: Double = 0, uuid: UUID = UUID(), diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = []) {
         
@@ -37,6 +38,7 @@ import SwiftData
         self.ratingEvents = ratingEvents
         self.treatingMeds = treatingMeds
         self.causingMeds = causingMeds
+        if causingMeds?.count ?? 0 > 0 { isSideEffect = true }
     }
 }
 

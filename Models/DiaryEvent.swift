@@ -27,6 +27,26 @@ import SwiftData
         self.notes = notes
         self.relatedRatings = relatedRatings
     }
+    
+    public func duration() -> TimeInterval? {
+        guard let end = endDate else { return nil }
+        
+        return end.timeIntervalSince(date)
+    }
+    
+    public func chartDisplayEndDate(defaultDuration: TimeInterval) -> Date {
+        
+        guard let end = endDate else { return date.addingTimeInterval(defaultDuration) }
+        
+        guard end > date else { return date.addingTimeInterval(defaultDuration) }
+        
+        return end
+    }
+
+    
+    public func endDate(defaultDuration: TimeInterval) -> Date {
+        return endDate ?? date.addingTimeInterval(defaultDuration)
+    }
 }
 
 extension DiaryEvent {

@@ -150,22 +150,27 @@ struct ABFImportDetail: View {
             }
     }
     
-    private func importRecords(replaceExisting: Bool) {
+    @MainActor private func importRecords(replaceExisting: Bool) {
         
         showProgressBar = true
         
-        Task {
-            
-            if replaceExisting {
-                 // TODO: - make a safety backup here
+        if replaceExisting {
+             // TODO: - make a safety backup here
+            do {
                 try modelContext.delete(model: DiaryEvent.self)
                 try modelContext.delete(model: ExerciseEvent.self)
                 try modelContext.delete(model: Medicine.self)
                 try modelContext.delete(model: PRNMedEvent.self)
                 try modelContext.delete(model: Rating.self)
                 try modelContext.delete(model: Symptom.self)
+            } catch {
+                let ierror = InternalError(file: "Alogea File ImportView", function: "importRecords", appError: "delete current records failure while trying to import Alogea archive records", osError: error.localizedDescription)
+                ErrorManager.addError(error: ierror, container: modelContext.container)
             }
-
+        }
+        
+        Task {
+            
             do {
                 try await alogeaDocument?.importAlogeaRecords(container: modelContext.container)
                 DispatchQueue.main.async {
@@ -175,7 +180,7 @@ struct ABFImportDetail: View {
                 }
             } catch {
                 let ierror = InternalError(file: "Alogea File ImportView", function: "importRecords", appError: "failure while trying to import Alogea archive records", osError: error.localizedDescription)
-                await ErrorManager.addError(error: ierror, container: modelContext.container)
+                ErrorManager.addError(error: ierror, container: modelContext.container)
                 DispatchQueue.main.async {
                     importErrorMessage = UserText.term("Import errors: ") + error.localizedDescription
                     showProgressBar = false

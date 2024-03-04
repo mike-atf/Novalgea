@@ -66,6 +66,13 @@ import SwiftData
         }
     }
     
+    public func ratedSymptomIsAmong(symptoms: [Symptom]) -> Bool {
+        
+        guard let rSymptom = ratedSymptom else { return false }
+        
+        return symptoms.contains(rSymptom)
+    }
+    
     
     
 }

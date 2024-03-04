@@ -25,9 +25,6 @@ struct ABFImportList: View {
         List {
             if alogeaDocument != nil {
                 Section {
-//                    NavigationLink(value: alogeaDocument) {
-//                        Text("\(importFileName ?? UserText.term( "none"))")
-//                    }
                     NavigationLink("\(alogeaDocument?.fileName ?? UserText.term( "none"))") {
                         ABFImportDetail(alogeaDocument: alogeaDocument)
                     }
@@ -74,35 +71,6 @@ struct ABFImportList: View {
                 showCompletion = true
             }
         }
-//        .toolbar {
-//            Button("Select Diary file") {
-//                importFile = true
-//            }
-//        }
-        .confirmationDialog("Import options", isPresented: $showOptionsDialog) {
-            
-            Button("Add records to diary", action: {
-                showProgressBar = true
-                importRecords(replaceExisting: false)
-            })
-            
-            Button("Replace current diary", role: .destructive, action: {
-                showProgressBar = true
-                importRecords(replaceExisting: true)
-            })
-            
-            Button("Cancel import", role: .cancel, action: {
-                
-            })
-            
-        }
-        .alert(UserText.term( "Import complete"), isPresented: $showCompletion) {
-            Button("Dismiss") {
-                
-            }
-        } message: {
-            Text(importErrorMessage)
-        }
 
     }
     
@@ -132,40 +100,6 @@ struct ABFImportList: View {
         }
 
     }
-    
-    private func importRecords(replaceExisting: Bool) {
-        
-        showProgressBar = true
-        
-        Task {
-            
-            if replaceExisting {
-                 // TODO: - make a safety backup here
-                try modelContext.delete(model: DiaryEvent.self)
-                try modelContext.delete(model: ExerciseEvent.self)
-                try modelContext.delete(model: Medicine.self)
-                try modelContext.delete(model: PRNMedEvent.self)
-                try modelContext.delete(model: Rating.self)
-                try modelContext.delete(model: Symptom.self)
-            }
-
-            do {
-                try await alogeaDocument?.importAlogeaRecords(container: modelContext.container)
-                DispatchQueue.main.async {
-                    showProgressBar = false
-                    showCompletion = true
-                }
-            } catch {
-                let ierror = InternalError(file: "Alogea File ImportView", function: "importRecords", appError: "failure while trying to import Alogea archive records", osError: error.localizedDescription)
-                await ErrorManager.addError(error: ierror, container: modelContext.container)
-                DispatchQueue.main.async {
-                    importErrorMessage = UserText.term( "Import errors: \(error.localizedDescription)")
-                    showProgressBar = false
-                    showCompletion = true
-                }
-            }
-        }
-   }
 
 }
 
