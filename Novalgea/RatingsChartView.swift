@@ -15,8 +15,6 @@ struct RatingsChartView: View {
     @Environment(\.modelContext) private var modelContext
 
     @Query(sort: \Rating.date) var symptomRatings: [Rating]
-    @Query(sort: \DiaryEvent.date) var events: [DiaryEvent]
-    @Query(sort: \PRNMedEvent.startDate) var medEvents: [PRNMedEvent]
 
     @Binding var selectedSymptom: Symptom?
     var symptoms: [Symptom]
@@ -47,9 +45,10 @@ struct RatingsChartView: View {
         
         self.fromDate = from
         self.toDate = to
-        self.symptoms = symptoms
         
+        self.symptoms = symptoms
         _selectedSymptom = symptom
+        
         
     }
 
