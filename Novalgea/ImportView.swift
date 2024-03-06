@@ -71,7 +71,7 @@ struct ImportView: View {
             try modelContainer.mainContext.delete(model: DiaryEvent.self)
             try modelContainer.mainContext.delete(model: ExerciseEvent.self)
             try modelContainer.mainContext.delete(model: Medicine.self)
-            try modelContainer.mainContext.delete(model: PRNMedEvent.self)
+            try modelContainer.mainContext.delete(model: MedicineEvent.self)
             try modelContainer.mainContext.delete(model: Rating.self)
             try modelContainer.mainContext.delete(model: Symptom.self)
             
@@ -94,7 +94,7 @@ struct ImportView: View {
                     
                     let storeURL = URL.applicationSupportDirectory.appending(path: "ModelData").appending(path: "Novalgea.database.sqlite")
                     let config = ModelConfiguration(url: storeURL, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
-                    modelContainer = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self, configurations: config)
+                    modelContainer = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, MedicineEvent.self, Rating.self, InternalError.self, configurations: config)
 
                     alertMessage = "Import of archive successful"
                     showImportAlert = true

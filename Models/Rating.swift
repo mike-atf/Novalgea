@@ -21,9 +21,9 @@ import SwiftData
 
     var relatedDiaryEvents: [DiaryEvent]? = []
     var relatedExerciseEvents: ExerciseEvent?
-    var relatedPRNMedEvents: [PRNMedEvent]?
+    var relatedMedEvents: [MedicineEvent]?
     
-    init(vas: Double, ratedSymptom: Symptom?, date: Date? = nil, note: String? = nil, uuid: UUID = UUID(), relatedDiaryEvents: [DiaryEvent]? = [], relatedExerciseEvents: ExerciseEvent? = nil, relatedPRNMedEvents: [PRNMedEvent]? = [], ratedMedicine: Medicine? = nil) {
+    init(vas: Double, ratedSymptom: Symptom?, date: Date? = nil, note: String? = nil, uuid: UUID = UUID(), relatedDiaryEvents: [DiaryEvent]? = [], relatedExerciseEvents: ExerciseEvent? = nil, relatedMedEvents: [MedicineEvent]? = [], ratedMedicine: Medicine? = nil) {
         // the relatedDiaryEvents: [DiaryEvent]? = [] (not = nil) is essential to prevent preview crashes!
         self.date = date ?? .now
         self.note = note
@@ -32,7 +32,7 @@ import SwiftData
         self.ratedSymptom = ratedSymptom
         self.relatedDiaryEvents = relatedDiaryEvents
         self.relatedExerciseEvents = relatedExerciseEvents
-        self.relatedPRNMedEvents = relatedPRNMedEvents
+        self.relatedMedEvents = relatedMedEvents
         self.ratedMedicine = ratedMedicine
     }
     

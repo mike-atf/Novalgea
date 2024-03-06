@@ -439,7 +439,9 @@ import OSLog
                     newMedicine.reviewDates = ReviewDates(proposedReviewDate: proposedReviewDate, proposedStopDate: proposedStopDate, nextMildSevereReviewDate: nextMildSevereReviewDate, nextOverdoseCheckDate: nextOverdoseCheckDate, nextEffectCheckDate: nextEffectCheckDate).convertToData()
                 }
             }
-//            completedTasks += 1.0
+            
+            let regularMedEvent = MedicineEvent(endDate: drug.endDate, startDate: drug.startDate ,medicine: newMedicine)
+            context.insert(regularMedEvent)
         }
 
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
@@ -480,7 +482,7 @@ import OSLog
                     continue
                 }
                 let endDate = event.date.addingTimeInterval(match.effectDuration)
-                let newMedEvent = PRNMedEvent(endDate: endDate, startDate: event.date, medicine: match)
+                let newMedEvent = MedicineEvent(endDate: endDate, startDate: event.date, medicine: match)
                 context.insert(newMedEvent)
             case "Exercise Event":
                 let newExEvent = ExerciseEvent(exercise: event.name, date: event.date, unit: event.note ?? "-", value: event.vas?.doubleValue ?? 0)

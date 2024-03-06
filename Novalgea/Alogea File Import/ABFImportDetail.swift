@@ -160,7 +160,7 @@ struct ABFImportDetail: View {
                 try modelContext.delete(model: DiaryEvent.self)
                 try modelContext.delete(model: ExerciseEvent.self)
                 try modelContext.delete(model: Medicine.self)
-                try modelContext.delete(model: PRNMedEvent.self)
+                try modelContext.delete(model: MedicineEvent.self)
                 try modelContext.delete(model: Rating.self)
                 try modelContext.delete(model: Symptom.self)
             } catch {

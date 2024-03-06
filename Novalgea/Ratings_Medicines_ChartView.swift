@@ -14,7 +14,7 @@ struct Ratings_Medicines_ChartView: View {
     @Environment(\.modelContext) private var modelContext
 
     @Query(sort: \Rating.date) var symptomRatings: [Rating]
-    @Query(sort: \PRNMedEvent.startDate) var medEvents: [PRNMedEvent]
+    @Query(sort: \MedicineEvent.startDate) var medEvents: [MedicineEvent]
 
     @Binding var selectedSymptoms: Set<Symptom>?
     @Binding var selectedMedicines: Set<Medicine>?
@@ -38,7 +38,7 @@ struct Ratings_Medicines_ChartView: View {
         }
     }
     
-    private var filteredMedicines: [PRNMedEvent] {
+    private var filteredMedicines: [MedicineEvent] {
         
         guard selectedMedicines != nil else { return medEvents }
         
@@ -60,11 +60,11 @@ struct Ratings_Medicines_ChartView: View {
         }, sort:\Rating.date, order: .reverse)
         
 
-        _medEvents = Query(filter: #Predicate<PRNMedEvent> { medEvent in
+        _medEvents = Query(filter: #Predicate<MedicineEvent> { medEvent in
             medEvent.medicine != nil &&
             medEvent.startDate >= from &&
             medEvent.startDate <= to
-        }, sort:\PRNMedEvent.startDate)
+        }, sort:\MedicineEvent.startDate)
         
         self.fromDate = from
         self.toDate = to
@@ -89,18 +89,18 @@ struct Ratings_Medicines_ChartView: View {
                 ForEach(filteredRatings) {
                     AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
                         .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                        .interpolationMethod(.linear)
+                        .interpolationMethod(.monotone)
                         .opacity(0.25)
                     LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
                         .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                        .interpolationMethod(.linear)
+                        .interpolationMethod(.monotone)
                 }
 
                 // 2 - above 1 : medicine events
                 ForEach(filteredMedicines) {
                     RectangleMark(
                         xStart: .value("Start", $0.startDate),
-                        xEnd: .value("End", $0.endDate),
+                        xEnd: .value("End", $0.endDateForChart()),
                         yStart: .value("", 0),
                         yEnd: .value("", 10)
                     )

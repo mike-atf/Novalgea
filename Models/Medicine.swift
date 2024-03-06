@@ -33,7 +33,7 @@ import SwiftData
     var reviewDates: Data?
     var uuid: UUID = UUID()
 
-    @Relationship(deleteRule: .cascade, inverse: \PRNMedEvent.medicine) var prnMedEvents: [PRNMedEvent]?
+    @Relationship(deleteRule: .cascade, inverse: \MedicineEvent.medicine) var prnMedEvents: [MedicineEvent]?
     @Relationship(deleteRule: .nullify ,inverse: \Symptom.treatingMeds) var treatedSymptoms: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Symptom.causingMeds) var sideEffects: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Rating.ratedMedicine) var effectRatings: [Rating]?
