@@ -29,11 +29,14 @@ struct GraphicDiaryView: View {
     @State var categoriesDisplayed: [String]?
     @State var selectedDisplayTime: DisplayTimeOption = .month
     
-    @State private var eventCategories = [String]() // filled in .onAppear, with inserting 'All'
+    @State private var allEventCategories = [String]() // filled in .onAppear, with inserting 'All'
     @State private var symptomNames = [String]() // filled in .onAppear, with inserting 'All'
     @State private var selectedSingleCategory: String?
-    @State private var selectedSymptoms: Set<Symptom>? // in order for Chart view @Query filtering to work dynamically, the selection needs to happen outside the Chart view
+    
+    // in order for Chart view @Query filtering to work dynamically selections needs to happen outside the Chart view
+    @State private var selectedSymptoms: Set<Symptom>?
     @State private var selectedMedicines: Set<Medicine>?
+    @State private var selectedEventCategories: Set<String>?
 
     @State var startDisplayDate: Date = (Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
     @State var endDisplayDate: Date = Date().setDate(day: 1, month: 1, year: 2020) ?? .now
@@ -64,18 +67,18 @@ struct GraphicDiaryView: View {
                     }
                     .frame(height: geometry.size.height * 0.4)
                     VStack(alignment: .leading) {
-                        EventsChartView(selectedCategory: $selectedSingleCategory, allCategories: eventCategories, from: startDisplayDate, to: endDisplayDate)
+                        EventsChartView(selectedCategories: $selectedEventCategories, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
                     }
                 }
             }
             .onAppear {
                 let allCategories = Set(events.compactMap { $0.category })
-                eventCategories = Array(allCategories)
-                eventCategories.insert(UserText.term("All"), at: 0)
+                allEventCategories = Array(allCategories)
+//                allEventCategories.insert(UserText.term("All"), at: 0)
                 
                 let allSymptoms = Set(symptomsList.compactMap { $0.name })
                 symptomNames = Array(allSymptoms)
-                symptomNames.insert(UserText.term("All"), at: 0)
+//                symptomNames.insert(UserText.term("All"), at: 0)
             }
             .padding(.horizontal)
         }

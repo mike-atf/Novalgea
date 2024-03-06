@@ -16,33 +16,38 @@ struct EventsChartView: View {
 
     @Query(sort: \DiaryEvent.date) var events: [DiaryEvent]
     
-    @Binding var selectedCategory: String?
+    @Binding var selectedCategories: Set<String>?
+    
+    @State var showSelectionList = false
     var allCategories: [String]
+    
+    private var filteredEvents: [DiaryEvent] {
+        
+        guard selectedCategories != nil else { return events }
+        
+        guard (selectedCategories?.count ?? 0) > 0 else { return events }
+        
+        return events.filter { event in
+            if selectedCategories!.contains(event.category) { return true }
+            else { return false }
+        }
+    }
+
 
     var fromDate: Date
     var toDate: Date
     
-    init(selectedCategory: Binding<String?>, allCategories: [String], from: Date, to: Date) {
+    init(selectedCategories: Binding<Set<String>?>, allCategories: [String], from: Date, to: Date) {
         
-        if let cat = selectedCategory.wrappedValue {
-            _events = Query(filter: #Predicate<DiaryEvent> {
-                $0.category == cat &&
-                $0.date >= from &&
-                $0.date <= to
-            }, sort:\DiaryEvent.date)
-            
-        } else {
-            _events = Query(filter: #Predicate<DiaryEvent> {
-                $0.date >= from &&
-                $0.date <= to
-            }, sort:\DiaryEvent.date)
-        }
-                
-        _selectedCategory = selectedCategory
+        _events = Query(filter: #Predicate<DiaryEvent> {
+            $0.date >= from &&
+            $0.date <= to
+        }, sort:\DiaryEvent.date)
+
+        _selectedCategories = selectedCategories
         self.fromDate = from
         self.toDate = to
-        self.allCategories = Array(allCategories.dropFirst())
-        
+        self.allCategories = allCategories        
     }
 
 
@@ -50,39 +55,71 @@ struct EventsChartView: View {
         
         ZStack {
             VStack(alignment: .leading) {
-                Menu {
-                    ForEach(allCategories.sorted(), id: \.self) {
-                        category in
-                        
+                
+                HStack {
+                    //MARK: - category selection button
+                    Button {
+                        showSelectionList = true
+                    } label: {
                         HStack {
-                            
-                            Button(action: {
-                                if selectedCategory == category {
-                                    selectedCategory = nil
-                                } else {
-                                    selectedCategory = category
-                                }
-                            }, label: {
-                                HStack {
-                                    Text(category)
-                                    if selectedCategory == category {
-                                        Spacer()
-                                        Image(systemName: "checkmark")
-                                    }
-                                }
-                            })
+                            Image(systemName: "line.3.horizontal.circle")
+                            if selectedCategories?.count ?? 0 > 0 {
+                                Text(UserText.term("Categories: ") + "\(selectedCategories!.count)")
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            } else {
+                                Text(UserText.term("Categories: ") + UserText.term("All"))
+                                    .font(.footnote)
+                                    .foregroundColor(.gray)
+                            }
+                        }
+                        .padding(5)
+                        .background {
+                            RoundedRectangle(cornerRadius:6)
+                                .foregroundColor(.white)
+                                .opacity(0.6)
                         }
                     }
-                    
-                } label: {
-                    HStack {
-                        Text(UserText.term("Show: ") + (selectedCategory ?? UserText.term("All")))
-                        Image(systemName: "ellipsis.circle")
+                    .popover(isPresented: $showSelectionList) {
+                        
+                        VStack(alignment: .leading) {
+                            
+                            ForEach(allCategories.indices, id: \.self) { index in
+                                Button {
+                                    if selectedCategories == nil {
+                                        selectedCategories = Set<String>()
+                                        selectedCategories!.insert(allCategories[index])
+                                    }
+                                    else if selectedCategories!.contains(allCategories[index]) {
+                                        selectedCategories!.remove(allCategories[index])
+                                    } else {
+                                        selectedCategories!.insert(allCategories[index])
+                                    }
+                                } label: {
+                                    HStack {
+                                        if (selectedCategories == nil) {
+                                            Image(systemName: "circle")
+                                        } else if selectedCategories!.contains(allCategories[index]) {
+                                            Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
+                                        } else {
+                                            Image(systemName: "circle")
+                                        }
+                                        Text(allCategories[index]).font(.footnote)
+                                    }
+                                    .foregroundStyle(.black)
+                                }
+                                Divider()
+                                
+                            }
+                        }
+                        .padding()
+                        .presentationCompactAdaptation(.none)
                     }
+                    
                 }
 
-                let _ = print("\(events.count) events filtered")
-                Chart(events) { event in
+                //MARK: - chart
+                Chart(filteredEvents) { event in
                     RectangleMark(
                         xStart: .value("Start", event.date),
                         xEnd: .value("End", event.chartDisplayEndDate(defaultDuration: 1*3600)),
