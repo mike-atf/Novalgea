@@ -32,8 +32,8 @@ struct GraphicDiaryView: View {
     @State private var eventCategories = [String]() // filled in .onAppear, with inserting 'All'
     @State private var symptomNames = [String]() // filled in .onAppear, with inserting 'All'
     @State private var selectedSingleCategory: String?
-    @State private var selectedSymptom: Symptom? // in order for Chart view @Query filtering to work dynamically, the selection needs to happen outside the Chart view
-    @State private var selectedMedicine: Medicine?
+    @State private var selectedSymptoms: Set<Symptom>? // in order for Chart view @Query filtering to work dynamically, the selection needs to happen outside the Chart view
+    @State private var selectedMedicines: Set<Medicine>?
 
     @State var startDisplayDate: Date = (Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
     @State var endDisplayDate: Date = Date().setDate(day: 1, month: 1, year: 2020) ?? .now
@@ -49,26 +49,18 @@ struct GraphicDiaryView: View {
                     
                     HStack {
                         
-//                        Button("", systemImage: "chevron.left") {}
-//                            .onTapGesture { // required for two buttons in same List row to work
-//                                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-//                                endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-//                            }
                         Button("", systemImage: "chevron.left") {
                             startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                             endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                         }
-//                        Spacer()
-                        
                         Text(startDisplayDate.formatted(.dateTime.day().month()) + " - " + endDisplayDate.formatted(date: .abbreviated, time: .omitted)).font(.title2).bold()
-//                        Spacer()
                         Button("", systemImage: "chevron.right") {
                             startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
                             endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
                         }
                     }
                     VStack(alignment: .leading) {
-                        Ratings_Medicines_ChartView(symptom: $selectedSymptom, symptoms: symptomsList, selectedMedicine: $selectedMedicine, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate)
+                        Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate)
                     }
                     .frame(height: geometry.size.height * 0.4)
                     VStack(alignment: .leading) {
