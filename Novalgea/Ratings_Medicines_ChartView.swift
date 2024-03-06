@@ -79,7 +79,39 @@ struct Ratings_Medicines_ChartView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading) {
+        ZStack(alignment: .top) {
+            // combined chart
+            Chart {
+                // 2 - above 1: Symptoms ratings
+                ForEach(symptomRatings) {
+                    AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                        .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
+                        .interpolationMethod(.linear)
+                        .opacity(0.25)
+                    LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                        .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
+                        .interpolationMethod(.linear)
+                }
+
+                // 1 - medicine events
+                ForEach(medEvents) {
+                    RectangleMark(
+                        xStart: .value("Start", $0.startDate),
+                        xEnd: .value("End", $0.endDate),
+                        yStart: .value("", 0),
+                        yEnd: .value("", 10)
+                    )
+                    .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
+                    .opacity(0.3)
+                }
+                
+            }
+            .chartXScale(domain: fromDate...toDate)
+            .chartYScale(domain: 0...10)
+            .chartYAxis {
+                AxisMarks(values: .automatic(desiredCount: 5))
+            }
+            
             HStack {
                 Menu {
                     ForEach(symptoms, id: \.self) {
@@ -107,8 +139,22 @@ struct Ratings_Medicines_ChartView: View {
                     
                 } label: {
                     HStack {
-                        Text(UserText.term("Symptoms: ") + (selectedSymptom?.name ?? "All"))
-                        Image(systemName: "ellipsis.circle")
+                        Image(systemName: "line.3.horizontal.circle")
+                        if let name = selectedSymptom?.name {
+                            Text(name)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        } else {
+                            Text(UserText.term("Symptoms: ") + (selectedSymptom?.name ?? "All"))
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        }
+                    }
+                    .padding(5)
+                    .background {
+                        RoundedRectangle(cornerRadius:6)
+                            .foregroundColor(.white)
+                            .opacity(0.6)
                     }
                 }
                 Spacer()
@@ -117,7 +163,6 @@ struct Ratings_Medicines_ChartView: View {
                         medicine in
                         
                         HStack {
-                            
                             Button(action: {
                                 if selectedMedicine == medicine {
                                     selectedMedicine = nil
@@ -138,40 +183,29 @@ struct Ratings_Medicines_ChartView: View {
                     
                 } label: {
                     HStack {
-                        Text(UserText.term("Meds: ") + (selectedMedicine?.name ?? "All"))
-                        Image(systemName: "ellipsis.circle")
+                        if let name = selectedMedicine?.name {
+                            Text(name)
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        } else {
+                            Text(UserText.term("Meds: ") + (selectedMedicine?.name ?? "All"))
+                                .font(.footnote)
+                                .foregroundColor(.gray)
+                        }
+                        Image(systemName: "line.3.horizontal.circle")
                     }
+                    .padding(5)
+                    .background {
+                        RoundedRectangle(cornerRadius: 6)
+                            .foregroundColor(.white)
+                            .opacity(0.6)
+                    }
+
                 }
             }
+            .padding()
         }
 
-        // combined chart
-        Chart {
-            // 1 - medicine events
-            ForEach(medEvents) {
-                RectangleMark(
-                    xStart: .value("Start", $0.startDate),
-                    xEnd: .value("End", $0.endDate),
-                    yStart: .value("", 0),
-                    yEnd: .value("", 10)
-                )
-                .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
-                .opacity(0.5)
-            }
-            
-            // 2 - above 1: Symptoms ratings
-            ForEach(symptomRatings) {
-                AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
-                    .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                    .interpolationMethod(.linear)
-                    .opacity(0.25)
-                LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
-                    .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                    .interpolationMethod(.linear)
-            }
-        }
-        .chartXScale(domain: fromDate...toDate)
-        .chartYScale(domain: 0...10)
     }
 }
 
