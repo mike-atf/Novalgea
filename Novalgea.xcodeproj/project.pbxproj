@@ -48,6 +48,7 @@
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
 		FAC7A6442B98CE03002EDB57 /* MedicineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */; };
+		FAC7A6462B98DBE0002EDB57 /* DatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */; };
 		FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */; };
 		FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A12B877B6500E942E8 /* ExportView.swift */; };
 		FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A52B879B2000E942E8 /* BackupManager.swift */; };
@@ -126,6 +127,7 @@
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineEvent.swift; sourceTree = "<group>"; };
+		FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesManager.swift; sourceTree = "<group>"; };
 		FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProgressView.swift; sourceTree = "<group>"; };
 		FAE888A12B877B6500E942E8 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		FAE888A52B879B2000E942E8 /* BackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupManager.swift; sourceTree = "<group>"; };
@@ -270,6 +272,7 @@
 		FABEBEFF2B6E954E007AE48C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */,
 				FAE888A52B879B2000E942E8 /* BackupManager.swift */,
 				FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */,
 				FA8606712B73DFEE00C52D81 /* DataController.swift */,
@@ -295,11 +298,11 @@
 		FAE8889D2B877ACE00E942E8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */,
 				FA6FBC412B836097007F0946 /* Medicine.swift */,
 				FA1425F62B6FF0FB00B2C622 /* Rating.swift */,
 				FA1425F82B6FF0FB00B2C622 /* Symptom.swift */,
 				FA1425F42B6FF0FB00B2C622 /* DiaryEvent.swift */,
+				FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */,
 				FA1425F52B6FF0FB00B2C622 /* ExerciseEvent.swift */,
 				FA1425F72B6FF0FB00B2C622 /* InternalError.swift */,
 			);
@@ -483,6 +486,7 @@
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
 				FA27CB1B2B7D09A400D2FB7B /* AlogeaBackupDocument.swift in Sources */,
 				FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */,
+				FAC7A6462B98DBE0002EDB57 /* DatesManager.swift in Sources */,
 				FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */,
 				FAFD67152B8FCDC300BC2EA7 /* ABFImportList.swift in Sources */,
 				FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */,

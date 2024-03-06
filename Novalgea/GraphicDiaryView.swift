@@ -56,7 +56,7 @@ struct GraphicDiaryView: View {
                             startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                             endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                         }
-                        Text(startDisplayDate.formatted(.dateTime.day().month()) + " - " + endDisplayDate.formatted(date: .abbreviated, time: .omitted)).font(.title2).bold()
+                        Text(DatesManager.displayPeriodTerm(_for: selectedDisplayTime, start: startDisplayDate, end: endDisplayDate)).font(.title2).bold()
                         Button("", systemImage: "chevron.right") {
                             startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
                             endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)

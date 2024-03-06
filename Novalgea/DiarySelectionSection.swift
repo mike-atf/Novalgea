@@ -25,7 +25,30 @@ struct DiarySelectionSection: View {
             }
             .pickerStyle(.segmented)
             .onChange(of: selectedDisplayTime) { oldValue, newValue in
-                startDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
+                
+                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
+                switch selectedDisplayTime {
+                case .day:
+                    let dates = DatesManager.dayStartAndEnd(ofDate: startDisplayDate)
+                    startDisplayDate = dates.first!
+                    endDisplayDate = dates.last!
+                case .week:
+                    let dates = DatesManager.weekStartAndEnd(ofDate: startDisplayDate)
+                    startDisplayDate = dates.first!
+                    endDisplayDate = dates.last!
+                case .month:
+                    let dates = DatesManager.monthStartAndEnd(ofDate: startDisplayDate)
+                    startDisplayDate = dates.first!
+                    endDisplayDate = dates.last!
+                case .quarter:
+                    let dates = DatesManager.quarterStartAndEnd(ofDate: startDisplayDate)
+                    startDisplayDate = dates.first!
+                    endDisplayDate = dates.last!
+                case .year:
+                    let dates = DatesManager.quarterStartAndEnd(ofDate: startDisplayDate)
+                    startDisplayDate = dates.first!
+                    endDisplayDate = dates.last!
+                }
             }
 
         }
