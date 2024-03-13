@@ -548,6 +548,9 @@
         }
       }
     },
+    "average VAS" : {
+
+    },
     "AverageSymptomVAS" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -1055,7 +1058,6 @@
       }
     },
     "Count" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1930,6 +1932,9 @@
           }
         }
       }
+    },
+    "doses" : {
+
     },
     "EDC.notificationError" : {
       "extractionState" : "stale",
@@ -8552,6 +8557,9 @@
     "Medicines you create will appear here." : {
 
     },
+    "Meds" : {
+
+    },
     "Meds.1hr" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11601,7 +11609,6 @@
       }
     },
     "Ratings" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15690,6 +15697,9 @@
           }
         }
       }
+    },
+    "Symptoms" : {
+
     },
     "Tap on backup to restore" : {
       "extractionState" : "manual",

@@ -90,6 +90,33 @@ class DatesManager {
         return [qStart, qStart.addingTimeInterval((365*24*3600)/4-1)]
 
     }
+    
+    class func yearStartAndEnd(ofDate: Date) -> [Date] {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute]
+
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: ofDate)
+        dateComponents.second = 0
+        dateComponents.minute = 0
+        dateComponents.hour = 0
+        dateComponents.day = 1
+        dateComponents.month = 1
+
+        let yearStart = Calendar.autoupdatingCurrent.date(from: dateComponents)!
+        
+        dateComponents.second = 59
+        dateComponents.minute = 59
+        dateComponents.hour = 23
+        dateComponents.day = 1
+        dateComponents.month = 1
+        dateComponents.year! += 1
+
+        let yearEnd = (Calendar.autoupdatingCurrent.date(from: dateComponents)!).addingTimeInterval(-24*3600)
+        
+        return [yearStart, yearEnd]
+
+    }
+
 
     class func displayPeriodTerm(_for option: DisplayTimeOption, start: Date, end: Date) -> String {
                 

@@ -45,10 +45,13 @@
 		FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8606712B73DFEE00C52D81 /* DataController.swift */; };
 		FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF32B8E3937003802A4 /* ImportView.swift */; };
 		FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF52B8E4832003802A4 /* AppDelegate.swift */; };
+		FAB308FC2BA1FBE80063179A /* EventsChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */; };
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
 		FAC7A6442B98CE03002EDB57 /* MedicineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */; };
 		FAC7A6462B98DBE0002EDB57 /* DatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */; };
+		FAD99B3F2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */; };
+		FAD99B412BA0A261008771CA /* Average_in_TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */; };
 		FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */; };
 		FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A12B877B6500E942E8 /* ExportView.swift */; };
 		FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE888A52B879B2000E942E8 /* BackupManager.swift */; };
@@ -124,10 +127,13 @@
 		FA8606712B73DFEE00C52D81 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FA975AF32B8E3937003802A4 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		FA975AF52B8E4832003802A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsChartView2.swift; sourceTree = "<group>"; };
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineEvent.swift; sourceTree = "<group>"; };
 		FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesManager.swift; sourceTree = "<group>"; };
+		FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ratings_Medicines_ChartView2.swift; sourceTree = "<group>"; };
+		FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average_in_TimePeriod.swift; sourceTree = "<group>"; };
 		FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProgressView.swift; sourceTree = "<group>"; };
 		FAE888A12B877B6500E942E8 /* ExportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExportView.swift; sourceTree = "<group>"; };
 		FAE888A52B879B2000E942E8 /* BackupManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackupManager.swift; sourceTree = "<group>"; };
@@ -215,7 +221,10 @@
 				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
 				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
 				FA2D07602B975B5B00A9156C /* Ratings_Medicines_ChartView.swift */,
+				FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */,
+				FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */,
 				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
+				FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */,
 				FAE888A12B877B6500E942E8 /* ExportView.swift */,
 				FA975AF32B8E3937003802A4 /* ImportView.swift */,
 				FAFD67182B90D56000BC2EA7 /* Alogea File Import */,
@@ -476,6 +485,7 @@
 				FA27CB482B7F961C00D2FB7B /* Extension String Array.swift in Sources */,
 				FA27CB422B7E389E00D2FB7B /* Algea_RecordType.swift in Sources */,
 				FA6FBC422B836097007F0946 /* Medicine.swift in Sources */,
+				FAD99B3F2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift in Sources */,
 				FAFD671A2B90DFDD00BC2EA7 /* GraphicDiaryView.swift in Sources */,
 				FA1425FE2B6FF0FB00B2C622 /* Symptom.swift in Sources */,
 				FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */,
@@ -493,10 +503,12 @@
 				FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
 				FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */,
+				FAB308FC2BA1FBE80063179A /* EventsChartView2.swift in Sources */,
 				FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */,
 				FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */,
 				FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
+				FAD99B412BA0A261008771CA /* Average_in_TimePeriod.swift in Sources */,
 				FAFD671E2B90E66C00BC2EA7 /* Globals.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
@@ -674,7 +686,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -718,7 +730,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -760,7 +772,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -784,7 +796,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -807,7 +819,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -830,7 +842,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 4;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;

@@ -55,10 +55,10 @@ struct NovalgeaApp: App {
                         Label("Errors", systemImage: "ant.circle")
                     }
 
-//                RatingsListView()
-//                    .tabItem {
-//                        Label("Ratings", systemImage: "number.circle")
-//                    }
+                RatingsListView()
+                    .tabItem {
+                        Label("Ratings", systemImage: "number.circle")
+                    }
                 
                 MedicinesListView()
                     .tabItem {

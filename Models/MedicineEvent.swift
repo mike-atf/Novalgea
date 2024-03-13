@@ -24,9 +24,10 @@ import SwiftData
         self.relatedRatings = relatedRatings
     }
     
-    public func endDateForChart() -> Date {
-        return endDate ?? Date().addingTimeInterval(24*3600)
+    public func endDateForChart(chartEndDate: Date) -> Date {
+        return endDate ?? chartEndDate.addingTimeInterval(24*3600)
     }
+    
 }
 
 extension MedicineEvent {

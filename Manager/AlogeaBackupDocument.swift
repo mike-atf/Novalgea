@@ -440,13 +440,17 @@ import OSLog
                 }
             }
             
-            let regularMedEvent = MedicineEvent(endDate: drug.endDate, startDate: drug.startDate ,medicine: newMedicine)
-            context.insert(regularMedEvent)
+            if drug.regularly {
+                let regularMedEvent = MedicineEvent(endDate: drug.endDate, startDate: drug.startDate ,medicine: newMedicine)
+                context.insert(regularMedEvent)
+            }
         }
 
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
         let existingMedicines = try? context.fetch(fetchDescriptorM)
-
+        
+//        var uniqueRatingDates = [String]() // TODO: - remove; to account for own faulty diary data with lots of duplicate ratings from May 19 and earlier
+//        let checkDate = Date().setDate(day: 31, month: 05, year: 2019)!
         for event in events {
             
             switch event.type {
@@ -466,7 +470,14 @@ import OSLog
                     ratedSymptom = newSymptom
                 }
                 let newRating = Rating(vas: event.vas?.doubleValue ?? 0, ratedSymptom: ratedSymptom, date: event.date)
-                context.insert(newRating)
+//                if event.date < checkDate {
+//                    Logger().info("\(event.date.formatted(.dateTime.day().month().year().hour().minute().second()))")
+//                }
+//                if !uniqueRatingDates.contains(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second())) {
+//                    uniqueRatingDates.append(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second()))
+                    context.insert(newRating)
+//                }
+                
             case "Diary Entry":
                 let newDiaryEvent = DiaryEvent(date: event.date, category: event.name, notes: event.note ?? "")
                 if let duration = event.duration?.doubleValue {
@@ -494,11 +505,8 @@ import OSLog
                 let ierror = InternalError(file: "Alogea Backup Document", function: "importAlogeaRecords()", appError: "unexpcted imported event type: \(event.type)")
                 context.insert(ierror)
             }
-//            completedTasks += 1.0
-//            DispatchQueue.main.async {
-//                delegate.progressUpdate(completedTasks: self.completedTasks)
-//            }
         }
+        
         
     }
     

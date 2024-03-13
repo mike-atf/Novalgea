@@ -33,7 +33,7 @@ import SwiftData
     var reviewDates: Data?
     var uuid: UUID = UUID()
 
-    @Relationship(deleteRule: .cascade, inverse: \MedicineEvent.medicine) var prnMedEvents: [MedicineEvent]?
+    @Relationship(deleteRule: .cascade, inverse: \MedicineEvent.medicine) var medEvents: [MedicineEvent]?
     @Relationship(deleteRule: .nullify ,inverse: \Symptom.treatingMeds) var treatedSymptoms: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Symptom.causingMeds) var sideEffects: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Rating.ratedMedicine) var effectRatings: [Rating]?
@@ -53,50 +53,32 @@ import SwiftData
         self.reviewDates = nil
         self.effectRatings = effectRatings
     }
-    
-//    public func copy() -> Medicine {
-//        
-//        var copy = Medicine(doses: self.doses.convertToDoses() ?? [Dose(unit: "mg", value1: 0.0)])
-//        copy.name = self.name
-//        copy.startDate = self.startDate
-//        copy.endDate = self.endDate
-//        copy.effectDuration = self.effectDuration
-//        copy.isRegular = self.isRegular
-//        copy.drugClass = self.drugClass
-//        copy.creatingDevice = self.creatingDevice
-//        copy.ratingRemindersOn = self.ratingRemindersOn
-//        copy.currentStatus = self.currentStatus
-//        copy.reviewDates = self.reviewDates
-//        copy.notes = self.notes
-//        copy.maxDailyDose = self.maxDailyDose
-//        copy.maxSingleDose = self.maxSingleDose
-//        copy.effectRatings = self.effectRatings
-//        copy.prnMedEvents = self.prnMedEvents
-//        copy.treatedSymptoms = self.treatedSymptoms
-//        copy.sideEffects = self.sideEffects
-//        
-//        return copy
-//    }
-    
-//    public func copy(original: Medicine) {
-//        self.name = original.name
-//        self.startDate = original.startDate
-//        self.endDate = original.endDate
-//        self.effectDuration = original.effectDuration
-//        self.isRegular = original.isRegular
-//        self.drugClass = original.drugClass
-//        self.creatingDevice = original.creatingDevice
-//        self.ratingRemindersOn = original.ratingRemindersOn
-//        self.currentStatus = original.currentStatus
-//        self.reviewDates = original.reviewDates
-//        self.notes = original.notes
-//        self.maxDailyDose = original.maxDailyDose
-//        self.maxSingleDose = original.maxSingleDose
-//        self.effectRatings = original.effectRatings
-//        self.prnMedEvents = original.prnMedEvents
-//        self.treatedSymptoms = original.treatedSymptoms
-//        self.sideEffects = original.sideEffects
-//    }
+
+    public func dosesTaken(from:Date, to: Date) -> Int {
+        
+        if isRegular {
+            if startDate > to { return 0 }
+            else if endDate ?? Date.distantFuture < from { return 0 }
+            
+            let startCountingDate = max(startDate, from)
+            let endCountingDate = min(endDate!, to)
+            
+            let interval = endCountingDate.timeIntervalSince(startCountingDate)
+            
+            return Int(interval / effectDuration)
+            
+        } else {
+            guard medEvents != nil else { return 0 }
+            let inDateEvents = medEvents!.filter({ event in
+                if event.endDate! < from { return false }
+                else if event.startDate > to { return false }
+                else { return true }
+            })
+            
+            return inDateEvents.count
+        }
+    }
+
 
 }
 extension Medicine {

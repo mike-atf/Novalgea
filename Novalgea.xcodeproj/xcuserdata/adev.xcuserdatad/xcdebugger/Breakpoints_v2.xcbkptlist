@@ -18,53 +18,6 @@
             endingLineNumber = "55"
             landmarkName = "addError(error:container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b5adeb285edcb579"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "5808">
-               </Location>
-               <Location
-                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b4d6959fcd792e64"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError, container: SwiftData.ModelContainer) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "6200">
-               </Location>
-               <Location
-                  uuid = "0B9837AE-F9D5-4068-9D51-66A321BA469B - b4d6959fcd792c54"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.ErrorManager.addError(error: Novalgea.InternalError, container: SwiftData.ModelContainer) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/ErrorManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "54"
-                  endingLineNumber = "54"
-                  offsetFromSymbolStart = "6200">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -81,53 +34,6 @@
             endingLineNumber = "144"
             landmarkName = "extractEvents(container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "43A6B99B-2F78-438B-8FA6-52DD8B25F359 - 313ec9b824cc267a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.AlogeaBackupDocument.extractEvents(container: SwiftData.ModelContainer) throws -&gt; Swift.Optional&lt;Swift.Array&lt;Novalgea.Alogea_Event&gt;&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "124"
-                  endingLineNumber = "124"
-                  offsetFromSymbolStart = "820">
-               </Location>
-               <Location
-                  uuid = "43A6B99B-2F78-438B-8FA6-52DD8B25F359 - 313ec9b824cc27bc"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.AlogeaBackupDocument.extractEvents(container: SwiftData.ModelContainer) throws -&gt; Swift.Optional&lt;Swift.Array&lt;Novalgea.Alogea_Event&gt;&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "122"
-                  endingLineNumber = "122"
-                  offsetFromSymbolStart = "1552">
-               </Location>
-               <Location
-                  uuid = "43A6B99B-2F78-438B-8FA6-52DD8B25F359 - 313ec9b824cc26d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.AlogeaBackupDocument.extractEvents(container: SwiftData.ModelContainer) throws -&gt; Swift.Optional&lt;Swift.Array&lt;Novalgea.Alogea_Event&gt;&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "127"
-                  endingLineNumber = "127"
-                  offsetFromSymbolStart = "1552">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -192,38 +98,6 @@
             endingLineNumber = "82"
             landmarkName = "propertiesFromData(data:container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "19A5806A-B6D9-4B98-A6AA-33202C93A11E - f5361ea3505386d8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "6612">
-               </Location>
-               <Location
-                  uuid = "19A5806A-B6D9-4B98-A6AA-33202C93A11E - 54ef3101ee324934"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "80"
-                  endingLineNumber = "80"
-                  offsetFromSymbolStart = "6920">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -240,68 +114,6 @@
             endingLineNumber = "83"
             landmarkName = "propertiesFromData(data:container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "47CD3F47-D497-4EE5-BAF8-473695DB8EAB - 54ef3101ee32465a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "102"
-                  endingLineNumber = "102"
-                  offsetFromSymbolStart = "2112">
-               </Location>
-               <Location
-                  uuid = "47CD3F47-D497-4EE5-BAF8-473695DB8EAB - 54ef3101ee3249d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "7788">
-               </Location>
-               <Location
-                  uuid = "47CD3F47-D497-4EE5-BAF8-473695DB8EAB - 54ef3101ee324989"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "85"
-                  endingLineNumber = "85"
-                  offsetFromSymbolStart = "7840">
-               </Location>
-               <Location
-                  uuid = "47CD3F47-D497-4EE5-BAF8-473695DB8EAB - 54ef3101ee3249d7"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Event.propertiesFromData(data: Foundation.Data, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Event.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "83"
-                  endingLineNumber = "83"
-                  offsetFromSymbolStart = "7840">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -382,38 +194,6 @@
             endingLineNumber = "169"
             landmarkName = "dosesText()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "97C8C06B-BD95-4A3E-BF84-5E9DC1595F4C - e3ddf1543b43a345"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Drug.dosesText() -&gt; Swift.String"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Drug.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "100">
-               </Location>
-               <Location
-                  uuid = "97C8C06B-BD95-4A3E-BF84-5E9DC1595F4C - e3ddf1543b43a345"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Novalgea.Alogea_Drug.dosesText() -&gt; Swift.String"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea_Drug.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "169"
-                  endingLineNumber = "169"
-                  offsetFromSymbolStart = "512">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -478,203 +258,6 @@
             endingLineNumber = "48"
             landmarkName = "compressAndExport()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1dd81756dbe3a323"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "124">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1e2ec3bafdcd6f21"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "120">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9f94682b10d9c92e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "128">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9d41bdc8eef00d01"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9d41bdc8eef00d20"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1e2ec3bafdcd6f00"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "69"
-                  endingLineNumber = "69"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1e2ec3bafdcd6f21"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9f94682b10d9c92e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "70"
-                  endingLineNumber = "70"
-                  offsetFromSymbolStart = "388">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9d41bdc8eef00f57"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "20">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9d41bdc8eef00f76"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "48">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1e2ec3bafdcd6d56"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "55"
-                  endingLineNumber = "55"
-                  offsetFromSymbolStart = "44">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 1e2ec3bafdcd6d77"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(5) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "99F90AAB-AD22-4A92-9CAA-3AF2A33930D3 - 9f94682b10d9cb78"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(6) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ExportView.compressModelFolder() -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/ExportView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "388">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -691,53 +274,6 @@
             endingLineNumber = "111"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "9507CDD8-6907-4108-8996-A1D6063DB845 - 5a05c3e6e2c44729"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1120">
-               </Location>
-               <Location
-                  uuid = "9507CDD8-6907-4108-8996-A1D6063DB845 - 5a05c3e6e2c44729"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1160">
-               </Location>
-               <Location
-                  uuid = "9507CDD8-6907-4108-8996-A1D6063DB845 - 5a05c3e6e2c44729"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "1124">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -770,83 +306,6 @@
             endingLineNumber = "200"
             landmarkName = "BackupManager"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "8F7F7CED-374D-45C1-8100-8FC9832EE98B - ca09028fe5ee28d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "2608">
-               </Location>
-               <Location
-                  uuid = "8F7F7CED-374D-45C1-8100-8FC9832EE98B - ca09028fe5ee28d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "2372">
-               </Location>
-               <Location
-                  uuid = "8F7F7CED-374D-45C1-8100-8FC9832EE98B - ca09028fe5ee28d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "2592">
-               </Location>
-               <Location
-                  uuid = "8F7F7CED-374D-45C1-8100-8FC9832EE98B - ca09028fe5ee28d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "2432">
-               </Location>
-               <Location
-                  uuid = "8F7F7CED-374D-45C1-8100-8FC9832EE98B - ca09028fe5ee28d9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "146"
-                  endingLineNumber = "146"
-                  offsetFromSymbolStart = "2652">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -879,68 +338,6 @@
             endingLineNumber = "197"
             landmarkName = "BackupManager"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "AB8545F4-5074-45A1-91E8-CE6C1F30F2CE - 83b1369ccf3b1c3d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "2000">
-               </Location>
-               <Location
-                  uuid = "AB8545F4-5074-45A1-91E8-CE6C1F30F2CE - 83b1369ccf3b1c3d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "2132">
-               </Location>
-               <Location
-                  uuid = "AB8545F4-5074-45A1-91E8-CE6C1F30F2CE - 83b1369ccf3b1c3d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "1980">
-               </Location>
-               <Location
-                  uuid = "AB8545F4-5074-45A1-91E8-CE6C1F30F2CE - 83b1369ccf3b1c3d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "154"
-                  endingLineNumber = "154"
-                  offsetFromSymbolStart = "2112">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -973,38 +370,6 @@
             endingLineNumber = "216"
             landmarkName = "BackupManager"
             landmarkType = "3">
-            <Locations>
-               <Location
-                  uuid = "69EF8A97-756A-4DEA-A71E-AB3333E3F4CB - 83b1369ccf3b1f15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "7508">
-               </Location>
-               <Location
-                  uuid = "69EF8A97-756A-4DEA-A71E-AB3333E3F4CB - 83b1369ccf3b1f15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "static Novalgea.BackupManager.importRecords(url: Foundation.URL, container: SwiftData.ModelContainer) throws -&gt; Swift.Set&lt;Novalgea.Medicine&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "178"
-                  endingLineNumber = "178"
-                  offsetFromSymbolStart = "7544">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1037,38 +402,6 @@
             endingLineNumber = "119"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5FB544E0-B421-4CA6-BF07-5C3067403D96 - 306a888d49bcfe3"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "116"
-                  endingLineNumber = "116"
-                  offsetFromSymbolStart = "7352">
-               </Location>
-               <Location
-                  uuid = "5FB544E0-B421-4CA6-BF07-5C3067403D96 - 306a888d49bcf4e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "119"
-                  endingLineNumber = "119"
-                  offsetFromSymbolStart = "5852">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1085,38 +418,6 @@
             endingLineNumber = "126"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "99AA8386-A382-4C1E-8ECF-A91327631C68 - 306a888d49bd0ca"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "123"
-                  endingLineNumber = "123"
-                  offsetFromSymbolStart = "8044">
-               </Location>
-               <Location
-                  uuid = "99AA8386-A382-4C1E-8ECF-A91327631C68 - 306a888d49bd0a9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "126"
-                  endingLineNumber = "126"
-                  offsetFromSymbolStart = "6544">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1133,38 +434,6 @@
             endingLineNumber = "134"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "EF749F09-CDF4-4DA9-93E7-A9DFDF42F7D1 - 306a888d49bd035"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "130"
-                  endingLineNumber = "130"
-                  offsetFromSymbolStart = "3728">
-               </Location>
-               <Location
-                  uuid = "EF749F09-CDF4-4DA9-93E7-A9DFDF42F7D1 - 306a888d49bd1b1"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "134"
-                  endingLineNumber = "134"
-                  offsetFromSymbolStart = "3256">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1181,38 +450,6 @@
             endingLineNumber = "144"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "87D566BB-418E-414B-97C4-30057599DBDC - 306a888d49bd2b9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "142"
-                  endingLineNumber = "142"
-                  offsetFromSymbolStart = "8724">
-               </Location>
-               <Location
-                  uuid = "87D566BB-418E-414B-97C4-30057599DBDC - 306a888d49bd207"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "144"
-                  endingLineNumber = "144"
-                  offsetFromSymbolStart = "7224">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1229,38 +466,6 @@
             endingLineNumber = "101"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "E0D43308-CED7-4C29-8160-6DCAD8DC043F - 306a888d49bcc15"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "98"
-                  endingLineNumber = "98"
-                  offsetFromSymbolStart = "2200">
-               </Location>
-               <Location
-                  uuid = "E0D43308-CED7-4C29-8160-6DCAD8DC043F - 306a888d49bcdf0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "101"
-                  endingLineNumber = "101"
-                  offsetFromSymbolStart = "3708">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1277,38 +482,6 @@
             endingLineNumber = "93"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "5E8ED5FC-C12B-47FB-B6B9-356C9C0243C7 - 306a888d49bcb0d"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "90"
-                  endingLineNumber = "90"
-                  offsetFromSymbolStart = "2068">
-               </Location>
-               <Location
-                  uuid = "5E8ED5FC-C12B-47FB-B6B9-356C9C0243C7 - 306a888d49bcce8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "93"
-                  endingLineNumber = "93"
-                  offsetFromSymbolStart = "4092">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1325,38 +498,6 @@
             endingLineNumber = "86"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "64028FB9-C232-4F87-BFD3-302A1F119875 - 306a888d49bca05"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "82"
-                  endingLineNumber = "82"
-                  offsetFromSymbolStart = "1916">
-               </Location>
-               <Location
-                  uuid = "64028FB9-C232-4F87-BFD3-302A1F119875 - 306a888d49bcb81"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "86"
-                  endingLineNumber = "86"
-                  offsetFromSymbolStart = "4456">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1373,38 +514,6 @@
             endingLineNumber = "78"
             landmarkName = "decompressArchive(url:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "C7985100-833A-413C-879E-8FBF92FAA9F2 - 306a888d49bc91a"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "75"
-                  endingLineNumber = "75"
-                  offsetFromSymbolStart = "1784">
-               </Location>
-               <Location
-                  uuid = "C7985100-833A-413C-879E-8FBF92FAA9F2 - 306a888d49bcaf9"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for static Novalgea.BackupManager.decompressArchive(url: Foundation.URL) async throws -&gt; Swift.Optional&lt;Foundation.URL&gt;"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/BackupManager.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "78"
-                  endingLineNumber = "78"
-                  offsetFromSymbolStart = "4784">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1417,57 +526,10 @@
             filePath = "Manager/AlogeaBackupDocument.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "450"
-            endingLineNumber = "450"
+            startingLineNumber = "454"
+            endingLineNumber = "454"
             landmarkName = "importAlogeaRecords(container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "448"
-                  endingLineNumber = "448"
-                  offsetFromSymbolStart = "29196">
-               </Location>
-               <Location
-                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "448"
-                  endingLineNumber = "448"
-                  offsetFromSymbolStart = "29664">
-               </Location>
-               <Location
-                  uuid = "47830741-8D30-4071-BCD6-6A94CDEA5062 - 228e002d9bf86f09"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "448"
-                  endingLineNumber = "448"
-                  offsetFromSymbolStart = "29872">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1484,38 +546,6 @@
             endingLineNumber = "247"
             landmarkName = "importAlogeaRecords(container:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2D9A1FA6-4330-441D-97FB-0DD7E1019FE6 - 228e002d9bf87110"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "247"
-                  endingLineNumber = "247"
-                  offsetFromSymbolStart = "1428">
-               </Location>
-               <Location
-                  uuid = "2D9A1FA6-4330-441D-97FB-0DD7E1019FE6 - 228e002d9bf87110"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for Novalgea.AlogeaBackupDocument.importAlogeaRecords(container: SwiftData.ModelContainer) async throws -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Manager/AlogeaBackupDocument.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "247"
-                  endingLineNumber = "247"
-                  offsetFromSymbolStart = "1640">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1532,83 +562,6 @@
             endingLineNumber = "174"
             landmarkName = "importRecords(replaceExisting:)"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - a62a82debd5c21de"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async throws -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "159"
-                  endingLineNumber = "159"
-                  offsetFromSymbolStart = "180">
-               </Location>
-               <Location
-                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 86680d1c12b9a918"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "104">
-               </Location>
-               <Location
-                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 47753dc4c5531d0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(2) await resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 4a37683ff69e64e6"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(3) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "36">
-               </Location>
-               <Location
-                  uuid = "29813DD8-7D9E-489C-994C-4039E8DFE318 - 30e5c6af0483c6e5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(4) suspend resume partial function for closure #1 @Sendable () async -&gt; () in Novalgea.ABFImportDetail.importRecords(replaceExisting: Swift.Bool) -&gt; ()"
-                  moduleName = "Novalgea"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/adev/Dropbox/IOS%20Xcode%20Projects/Novalgea/Novalgea/Alogea%20File%20Import/ABFImportDetail.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "176"
-                  endingLineNumber = "176"
-                  offsetFromSymbolStart = "84">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -1630,22 +583,6 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "E6D39AC5-FFD2-4242-93F2-5F27B2AC8B7E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Novalgea/EventsChartView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
             uuid = "F8939015-2B00-426E-9F33-DF70742D9832"
             shouldBeEnabled = "No"
             ignoreCount = "0"
@@ -1653,8 +590,8 @@
             filePath = "Novalgea/EventsChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "26"
-            endingLineNumber = "26"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
             landmarkName = "filteredEvents"
             landmarkType = "24">
          </BreakpointContent>
@@ -1672,6 +609,87 @@
             startingLineNumber = "50"
             endingLineNumber = "50"
             landmarkName = "dayStartAndEnd(ofDate:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "9F8CAC3C-39D8-4A3F-8F57-A34A2E069755"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "244"
+            endingLineNumber = "244"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "19786AEE-CFA3-4D25-9C3F-ED787B91F9DD"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "272"
+            endingLineNumber = "272"
+            landmarkName = "body"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "4C4CB4EA-E5FC-4662-80EC-5A314F907FD8"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "filteredRatings"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "EBC8F7C7-B81F-4180-8A55-787BE93FA8AB"
+            shouldBeEnabled = "No"
+            condition = "newRating.date &lt; checkDate"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Manager/AlogeaBackupDocument.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
+            landmarkName = "importAlogeaRecords(container:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "7D5A903B-DB38-4D19-962D-5274021E24E7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "111"
+            endingLineNumber = "111"
+            landmarkName = "init(selectedSymptoms:symptoms:selectedMedicines:medicines:selectedEvent:from:to:displayTime:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

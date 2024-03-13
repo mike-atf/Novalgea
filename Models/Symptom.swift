@@ -40,6 +40,35 @@ import SwiftData
         self.causingMeds = causingMeds
         if causingMeds?.count ?? 0 > 0 { isSideEffect = true }
     }
+    
+    
+    public func ratingAverage(from: Date, to: Date) -> Double? {
+        guard let ratings = ratingEvents else { return nil }
+        
+        let inDateRatings = ratings.filter { rating in
+            if rating.date < from { return false }
+            else if rating.date > to { return false }
+            else { return true }
+        }
+        
+        guard inDateRatings.count > 0 else { return nil }
+        
+        return inDateRatings.compactMap { $0.vas }.reduce(0, +) / Double(inDateRatings.count)
+    }
+    
+    public func ratingsCount(from: Date, to: Date) -> Int {
+        guard let ratings = ratingEvents else { return 0 }
+        
+        let inDateRatings = ratings.filter { rating in
+            if rating.date < from { return false }
+            else if rating.date > to { return false }
+            else { return true }
+        }
+        
+        return inDateRatings.count
+        
+    }
+
 }
 
 
