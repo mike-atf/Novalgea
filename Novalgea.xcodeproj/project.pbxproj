@@ -46,6 +46,7 @@
 		FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF32B8E3937003802A4 /* ImportView.swift */; };
 		FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF52B8E4832003802A4 /* AppDelegate.swift */; };
 		FAB308FC2BA1FBE80063179A /* EventsChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */; };
+		FAB309002BA322910063179A /* RatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB308FF2BA322910063179A /* RatingButton.swift */; };
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
 		FAC7A6442B98CE03002EDB57 /* MedicineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */; };
@@ -128,6 +129,7 @@
 		FA975AF32B8E3937003802A4 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		FA975AF52B8E4832003802A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsChartView2.swift; sourceTree = "<group>"; };
+		FAB308FF2BA322910063179A /* RatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingButton.swift; sourceTree = "<group>"; };
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
 		FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineEvent.swift; sourceTree = "<group>"; };
@@ -221,6 +223,7 @@
 				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
 				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
 				FA2D07602B975B5B00A9156C /* Ratings_Medicines_ChartView.swift */,
+				FAB308FF2BA322910063179A /* RatingButton.swift */,
 				FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */,
 				FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */,
 				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
@@ -492,6 +495,7 @@
 				FAFD67202B910A7900BC2EA7 /* Extension Date.swift in Sources */,
 				FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */,
 				FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */,
+				FAB309002BA322910063179A /* RatingButton.swift in Sources */,
 				FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */,
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
 				FA27CB1B2B7D09A400D2FB7B /* AlogeaBackupDocument.swift in Sources */,
@@ -686,7 +690,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -730,7 +734,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -772,7 +776,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -796,7 +800,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -819,7 +823,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -842,7 +846,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 4;
+				CURRENT_PROJECT_VERSION = 5;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;

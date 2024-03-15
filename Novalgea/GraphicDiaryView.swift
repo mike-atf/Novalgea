@@ -42,6 +42,7 @@ struct GraphicDiaryView: View {
     @State var startDisplayDate: Date = (Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
     @State var endDisplayDate: Date = Date().setDate(day: 1, month: 1, year: 2020) ?? .now
     @State var dragOffset = CGSizeZero
+    @State var showRatingButton = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -64,15 +65,28 @@ struct GraphicDiaryView: View {
                         }
                     }.padding(.bottom, -5)
                 }
-                ScrollView {
-//                    Section {
+                    ScrollView {
                         VStack(alignment: .leading) {
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
                                     .frame(height: geometry.size.height * 0.8)
                             } else {
-                                Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
-                                    .frame(height: geometry.size.height * 0.5)
+//                                ZStack(alignment: .center) {
+                                   Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
+                                        .frame(height: geometry.size.height * 0.5)
+                                    
+                                    if showRatingButton {
+//                                        withAnimation {
+                                            Divider()
+                                            RatingButton()
+                                                .frame(height: min(geometry.size.height/4, geometry.size.width))
+//                                                .foregroundStyle(.secondary)
+//                                                .background(.ultraThinMaterial)
+//                                        }
+                                        Divider()
+                                    }
+//
+//                                }
                             }
                         }
                         .gesture(
@@ -100,12 +114,12 @@ struct GraphicDiaryView: View {
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 EventsChartView2(selectedCategories: $selectedEventCategories, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
                                     .frame(height: geometry.size.height * 0.4)
-
+                                
                             }
                             else {
                                 EventsChartView(selectedCategories: $selectedEventCategories, selectedDiaryEvent: $selectedDiaryEvent, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
                                     .frame(height: geometry.size.height * 0.3)
-
+                                
                             }
                         }
                         if selectedDiaryEvent != nil {
@@ -127,7 +141,7 @@ struct GraphicDiaryView: View {
                             }
                         }
                     }
-//                }
+                
             }
             .onAppear {
                 let allCategories = Set(events.compactMap { $0.category })

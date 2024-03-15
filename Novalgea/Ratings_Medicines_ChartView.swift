@@ -24,7 +24,8 @@ struct Ratings_Medicines_ChartView: View {
 
     @State var showSymptomList = false
     @State var showMedicinesList = false
-    
+    @Binding var showRatingButton: Bool
+
     var medicines: [Medicine]
     var symptoms: [Symptom]
 
@@ -67,7 +68,7 @@ struct Ratings_Medicines_ChartView: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>) {
         
         // to include ratings before and after so line chart extends beyond chart boundaries
         var timeBeforeAndAfter: TimeInterval = 0
@@ -109,186 +110,193 @@ struct Ratings_Medicines_ChartView: View {
         _selectedMedicines = selectedMedicines
         
         _selectedDiaryEvent = selectedEvent
+        
+        _showRatingButton = showRatingButton
     }
 
     
     var body: some View {
         
-        VStack {
+        VStack(alignment: .leading) {
+            //MARK: - header
+            Text(UserText.term("VAS & medicines effect")).font(.title3).bold()
+            Text(UserText.term("curves show VAS - boxes/ bars show medicine effect times")).foregroundStyle(.secondary).font(.caption)
+                .padding(.bottom, 5)
+            Divider()
+            HStack {
+                //MARK: - symptom selection button
+                Button {
+                    showSymptomList = true
+                } label: {
+                    HStack {
+                        Image(systemName: "line.3.horizontal.circle")
+                        if selectedSymptoms?.count ?? 0 > 0 {
+                            Text(UserText.term("Symptoms: ") + "\(selectedSymptoms!.count)")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        } else {
+                            Text(UserText.term("Symptoms: ") + UserText.term("All"))
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        }
+                    }
+                }
+                .popover(isPresented: $showSymptomList) {
+                    VStack(alignment: .leading) {
+                        ForEach(symptoms) { s0 in
+                            Button {
+                                if selectedSymptoms == nil {
+                                    selectedSymptoms = Set<Symptom>()
+                                    selectedSymptoms!.insert(s0)
+                                }
+                                else if selectedSymptoms!.contains(s0) {
+                                    selectedSymptoms!.remove(s0)
+                                } else {
+                                    selectedSymptoms!.insert(s0)
+                                }
+                            } label: {
+                                HStack {
+                                    if (selectedSymptoms == nil) {
+                                        Image(systemName: "circle")
+                                    } else if selectedSymptoms!.contains(s0) {
+                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
+                                    } else {
+                                        Image(systemName: "circle")
+                                    }
+                                    Text(s0.name).font(.footnote)
+                                }
+                            }
+                            Divider()
+
+                        }
+                    }
+                    .presentationCompactAdaptation(.none)
+                    .padding() // popover VStack padding
+                }
+
+                Spacer()
+                
+                Button {
+                    withAnimation {
+                        showRatingButton = true
+                    }
+                } label: {
+                    Image(systemName: "plus.circle.fill")
+                }
+
+                Spacer()
+                
+                //MARK: - medicines selection button
+                Button {
+                    showMedicinesList = true
+                } label: {
+                    HStack {
+                        if selectedMedicines?.count ?? 0 > 0 {
+                            Text(UserText.term("Meds: ") + "\(selectedMedicines!.count)")
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        } else {
+                            Text(UserText.term("Meds: ") + UserText.term("All"))
+                                .font(.footnote)
+                                .foregroundColor(.secondary)
+                        }
+                        Image(systemName: "line.3.horizontal.circle")
+                    }
+                }
+                .popover(isPresented: $showMedicinesList) {
+                    VStack(alignment: .leading) {
+                        ForEach(medicines) { m0 in
+                            Button {
+                                if selectedMedicines == nil {
+                                    selectedMedicines = Set<Medicine>()
+                                    selectedMedicines!.insert(m0)
+                                }
+                                else if selectedMedicines!.contains(m0) {
+                                    selectedMedicines!.remove(m0)
+                                } else {
+                                    selectedMedicines!.insert(m0)
+                                }
+                            } label: {
+                                HStack {
+                                    if (selectedMedicines == nil) {
+                                        Image(systemName: "circle")
+                                    } else if selectedMedicines!.contains(m0) {
+                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
+                                    } else {
+                                        Image(systemName: "circle")
+                                    }
+                                    Text(m0.name).font(.footnote)
+                                }
+                            }
+                            Divider()
+
+                        }
+                    }
+                    .presentationCompactAdaptation(.none)
+                    .padding() // popover VStack padding
+
+                }
+            }
+            .padding(.bottom, -5)
+            Divider()
 
             
-            VStack(alignment: .leading) {
-                //MARK: - header
-                Text(UserText.term("VAS & medicines effect")).font(.title3).bold()
-                Text(UserText.term("curves show VAS - boxes/ bars show medicine effect times")).foregroundStyle(.secondary).font(.caption)
-//                Text(UserText.term("boxes/ bars show medicine effect times")).foregroundStyle(.secondary).font(.caption)
-                    .padding(.bottom, 5)
-                Divider()
-                HStack {
-                    //MARK: - symptom selection button
-                    Button {
-                        showSymptomList = true
-                    } label: {
-                        HStack {
-                            Image(systemName: "line.3.horizontal.circle")
-                            if selectedSymptoms?.count ?? 0 > 0 {
-                                Text(UserText.term("Symptoms: ") + "\(selectedSymptoms!.count)")
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            } else {
-                                Text(UserText.term("Symptoms: ") + UserText.term("All"))
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                        }
-                    }
-                    .popover(isPresented: $showSymptomList) {
-                        VStack(alignment: .leading) {
-                            ForEach(symptoms) { s0 in
-                                Button {
-                                    if selectedSymptoms == nil {
-                                        selectedSymptoms = Set<Symptom>()
-                                        selectedSymptoms!.insert(s0)
-                                    }
-                                    else if selectedSymptoms!.contains(s0) {
-                                        selectedSymptoms!.remove(s0)
-                                    } else {
-                                        selectedSymptoms!.insert(s0)
-                                    }
-                                } label: {
-                                    HStack {
-                                        if (selectedSymptoms == nil) {
-                                            Image(systemName: "circle")
-                                        } else if selectedSymptoms!.contains(s0) {
-                                            Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                        } else {
-                                            Image(systemName: "circle")
-                                        }
-                                        Text(s0.name).font(.footnote)
-                                    }
-                                }
-                                Divider()
-
-                            }
-                        }
-                        .presentationCompactAdaptation(.none)
-                        .padding() // popover VStack padding
-                    }
-
-                    Spacer()
-                    
-                    //MARK: - medicines selection button
-                    Button {
-                        showMedicinesList = true
-                    } label: {
-                        HStack {
-                            if selectedMedicines?.count ?? 0 > 0 {
-                                Text(UserText.term("Meds: ") + "\(selectedMedicines!.count)")
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            } else {
-                                Text(UserText.term("Meds: ") + UserText.term("All"))
-                                    .font(.footnote)
-                                    .foregroundColor(.secondary)
-                            }
-                            Image(systemName: "line.3.horizontal.circle")
-                        }
-                    }
-                    .popover(isPresented: $showMedicinesList) {
-                        VStack(alignment: .leading) {
-                            ForEach(medicines) { m0 in
-                                Button {
-                                    if selectedMedicines == nil {
-                                        selectedMedicines = Set<Medicine>()
-                                        selectedMedicines!.insert(m0)
-                                    }
-                                    else if selectedMedicines!.contains(m0) {
-                                        selectedMedicines!.remove(m0)
-                                    } else {
-                                        selectedMedicines!.insert(m0)
-                                    }
-                                } label: {
-                                    HStack {
-                                        if (selectedMedicines == nil) {
-                                            Image(systemName: "circle")
-                                        } else if selectedMedicines!.contains(m0) {
-                                            Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                        } else {
-                                            Image(systemName: "circle")
-                                        }
-                                        Text(m0.name).font(.footnote)
-                                    }
-                                }
-                                Divider()
-
-                            }
-                        }
-                        .presentationCompactAdaptation(.none)
-                        .padding() // popover VStack padding
-
-                    }
-                }
-                .padding(.bottom, -5)
-                Divider()
-
+            //MARK: - combined chart
+            Chart {
                 
-                //MARK: - combined chart
-                Chart {
-                    
-                    // 2 - above 1 : medicine events
-                    ForEach(medEventsWithEnd) {
-                        RectangleMark(
-                            xStart: .value("Start", $0.startDate),
-                            xEnd: .value("End", $0.endDateForChart(chartEndDate: toDate)),
-                            yStart: .value("", 0),
-                            yEnd: .value("", 10)
-                        )
-                        .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
-                        .opacity(0.5)
-                    }
-                    
-                    ForEach(openEndedMedEvents) {
-                        let _ = print($0.medicine!.name, $0.startDate, $0.endDateForChart(chartEndDate: toDate))
-                        
-                        RectangleMark(
-                            xStart: .value("Start", $0.startDate),
-                            xEnd: .value("End", $0.endDateForChart(chartEndDate: toDate)),
-                            yStart: .value("", 0),
-                            yEnd: .value("", 5)
-                        )
-                        .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
-                        .opacity(0.5)
-                    }
-                    
-                    
-                    // 1 -
-                    ForEach(filteredRatings) {
-                        AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
-                            .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                            .interpolationMethod(.monotone)
-                            .opacity(0.4)
-                        LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
-                            .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
-                            .interpolationMethod(.monotone)
-                    }
-                    
-                    // 3 - selected event line
-                    if selectedDiaryEvent != nil {
-                        RuleMark(x: .value("", selectedDiaryEvent!.date))
-                            .opacity(0.8)
-                            .foregroundStyle(.gray)
-                    }
-                    
+                // 2 - above 1 : medicine events
+                ForEach(medEventsWithEnd) {
+                    RectangleMark(
+                        xStart: .value("Start", $0.startDate),
+                        xEnd: .value("End", $0.endDateForChart(chartEndDate: toDate)),
+                        yStart: .value("", 0),
+                        yEnd: .value("", 10)
+                    )
+                    .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
+                    .opacity(0.5)
                 }
-                .chartXScale(domain: fromDate...toDate)
-                .chartYScale(domain: 0...10)
-                .chartYAxis {
-                    AxisMarks(values: .automatic(desiredCount: 5))
+                
+                ForEach(openEndedMedEvents) {
+                    let _ = print($0.medicine!.name, $0.startDate, $0.endDateForChart(chartEndDate: toDate))
+                    
+                    RectangleMark(
+                        xStart: .value("Start", $0.startDate),
+                        xEnd: .value("End", $0.endDateForChart(chartEndDate: toDate)),
+                        yStart: .value("", 0),
+                        yEnd: .value("", 5)
+                    )
+                    .foregroundStyle(by: .value("Medicine", $0.medicine!.name))
+                    .opacity(0.5)
                 }
-                .chartLegend(position: .top)
-                //            .chartForegroundStyleScale([selectedDiaryEvent!.category: Color.teal])
-                .clipped()
+                
+                
+                // 1 -
+                ForEach(filteredRatings) {
+                    AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                        .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
+                        .interpolationMethod(.monotone)
+                        .opacity(0.4)
+                    LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                        .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
+                        .interpolationMethod(.monotone)
+                }
+                
+                // 3 - selected event line
+                if selectedDiaryEvent != nil {
+                    RuleMark(x: .value("", selectedDiaryEvent!.date))
+                        .opacity(0.8)
+                        .foregroundStyle(.gray)
+                }
+                
             }
+            .chartXScale(domain: fromDate...toDate)
+            .chartYScale(domain: 0...10)
+            .chartYAxis {
+                AxisMarks(values: .automatic(desiredCount: 5))
+            }
+            .chartLegend(position: .top)
+            //            .chartForegroundStyleScale([selectedDiaryEvent!.category: Color.teal])
+            .clipped()
         }
     }
 }

@@ -622,8 +622,8 @@
             filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "244"
-            endingLineNumber = "244"
+            startingLineNumber = "253"
+            endingLineNumber = "253"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -638,8 +638,8 @@
             filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "272"
-            endingLineNumber = "272"
+            startingLineNumber = "281"
+            endingLineNumber = "281"
             landmarkName = "body"
             landmarkType = "24">
          </BreakpointContent>
@@ -654,8 +654,8 @@
             filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
             landmarkName = "filteredRatings"
             landmarkType = "24">
          </BreakpointContent>
@@ -687,9 +687,9 @@
             filePath = "Novalgea/Ratings_Medicines_ChartView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "111"
-            endingLineNumber = "111"
-            landmarkName = "init(selectedSymptoms:symptoms:selectedMedicines:medicines:selectedEvent:from:to:displayTime:)"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
+            landmarkName = "init(selectedSymptoms:symptoms:selectedMedicines:medicines:selectedEvent:from:to:displayTime:showRatingButton:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
