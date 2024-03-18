@@ -50,9 +50,16 @@ struct MedicinesListView: View {
                                 Text(medicine.startDate.formatted())
                             }
                             Text(medicine.currentStatus).font(.footnote)
+                        }            
+                        .swipeActions {
+                            Button("Delete", role: .destructive) {
+                                deleteMedicine(medToDelete: medicine)
+                            }
                         }
+
                     }
-                } header: { 
+                    
+                } header: {
                     if currentMedicines.count > 0 {
                         Text("Current")
                     }
@@ -69,6 +76,12 @@ struct MedicinesListView: View {
                             }
                             Text(medicine.currentStatus).font(.footnote)
                         }
+                        .swipeActions {
+                            Button("Delete", role: .destructive) {
+                                deleteMedicine(medToDelete: medicine)
+                            }
+                        }
+
                     }
                 } header: {
                     if plannedMedicines.count > 0 {
@@ -87,6 +100,12 @@ struct MedicinesListView: View {
                             }
                             Text(medicine.currentStatus).font(.footnote)
                         }
+                        .swipeActions {
+                            Button("Delete", role: .destructive) {
+                                deleteMedicine(medToDelete: medicine)
+                            }
+                        }
+
                     }
                 } header: { 
                     if endedMedicines.count > 0 {
@@ -125,19 +144,35 @@ struct MedicinesListView: View {
         .onAppear {
             let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
             let existingMedicines = try? modelContext.fetch(fetchDescriptorM)
-            
-            print("on appear there are \(existingMedicines?.count ?? 0 ) medicines in the context")
         }
     }
     
     private func addMedicine() {
+        let newMedicine = Medicine(name: "Ami", doses: [Dose(unit: "mg", value1: 1000)])
         withAnimation {
-            let newMedicine = Medicine(name: "Ami", doses: [Dose(unit: "mg", value1: 1000)])
-            modelContext.insert(newMedicine)
-//            selection = newMedicine
-//            try! modelContext.save()
+             modelContext.insert(newMedicine)
+        }
+        saveContext()
+    }
+    
+    private func deleteMedicine(medToDelete: Medicine) {
+        withAnimation {
+            modelContext.delete(medToDelete)
+        }
+        saveContext()
+    }
+    
+    private func saveContext() {
+        DispatchQueue.main.async {
+            do {
+                try modelContext.save()
+            } catch {
+                let ierror = InternalError(file: "MedicinesListView", function: "saveContext", appError: error.localizedDescription)
+                ErrorManager.addError(error: ierror, container: modelContext.container)
+            }
         }
     }
+
 }
 
 #Preview {

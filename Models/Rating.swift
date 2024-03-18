@@ -60,7 +60,8 @@ import SwiftData
             return UserText.term("Effect of ") + ratedMedicine!.name
         }
         else {
-            let ierror = InternalError(file: "Rating", function: "ratedUserText()", appError: "rating with neither ratedSymptom nor ratedMedicine")
+            let rDate = self.date.formatted()
+            let ierror = InternalError(file: "Rating", function: "ratedUserText()", appError: "rating with date \(rDate) with neither ratedSymptom nor ratedMedicine")
             ErrorManager.addError(error: ierror, container: self.modelContext!.container)
             return ""
         }

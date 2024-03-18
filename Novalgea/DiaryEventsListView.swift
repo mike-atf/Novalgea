@@ -42,7 +42,6 @@ struct DiaryEventsListView: View {
             .toolbar {
                 Spacer()
                 Button {
-//                    showAddMedicine = true
                 } label: {
                     Label("Add event", systemImage: "plus")
                 }

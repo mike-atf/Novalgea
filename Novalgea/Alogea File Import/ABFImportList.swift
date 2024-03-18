@@ -51,11 +51,11 @@ struct ABFImportList: View {
                         Button {
                             importFile = true
                         } label: {
-                            Text("Select a file for import").bold()
+                            Text(UserText.term("Select an '.abf' file for import")).bold()
                         }.buttonStyle(.borderedProminent)
                     }
                 } description: {
-                    Text("Must be an Alogea Backup file of type .abf")
+                    Text("Must be an Alogea Backup file")
                         .padding(.top)
                 }
             }

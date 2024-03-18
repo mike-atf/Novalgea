@@ -26,30 +26,30 @@ struct DiarySelectionSection: View {
             .pickerStyle(.segmented)
             .onChange(of: selectedDisplayTime) { oldValue, newValue in
                 
-                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                 withAnimation {
                     switch selectedDisplayTime {
                     case .day:
-                        let dates = DatesManager.dayStartAndEnd(ofDate: startDisplayDate)
-                        startDisplayDate = dates.first!
-                        endDisplayDate = dates.last!
+                        startDisplayDate = DatesManager.startOfDay(from: startDisplayDate, _by: 0)
+                        endDisplayDate = startDisplayDate.addingTimeInterval(24*3600-1)
                     case .week:
-                        let dates = DatesManager.weekStartAndEnd(ofDate: startDisplayDate)
-                        startDisplayDate = dates.first!
-                        endDisplayDate = dates.last!
+                        startDisplayDate = DatesManager.startOfWeek(from: startDisplayDate, _by: 0)
+                        endDisplayDate = DatesManager.startOfWeek(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
                     case .month:
-                        let dates = DatesManager.monthStartAndEnd(ofDate: startDisplayDate)
-                        startDisplayDate = dates.first!
-                        endDisplayDate = dates.last!
+                        startDisplayDate = DatesManager.startOfMonth(from: startDisplayDate, _by: 0)
+                        endDisplayDate = DatesManager.startOfMonth(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
                     case .quarter:
-                        let dates = DatesManager.quarterStartAndEnd(ofDate: startDisplayDate)
-                        startDisplayDate = dates.first!
-                        endDisplayDate = dates.last!
+                        startDisplayDate = DatesManager.startOfQuarter(from: startDisplayDate, _by: 0)
+                        endDisplayDate = DatesManager.startOfQuarter(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
                     case .year:
-                        let dates = DatesManager.yearStartAndEnd(ofDate: startDisplayDate)
-                        startDisplayDate = dates.first!
-                        endDisplayDate = dates.last!
+                        startDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 0)
+                        endDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
                     }
+                    
+                    Logger().info("new interval \(selectedDisplayTime.rawValue)")
+                    Logger().info("new start \(startDisplayDate.formatted())")
+                    Logger().info("new end \(endDisplayDate.formatted())")
+                    Logger().info("=============")
+
                 }
             }
 

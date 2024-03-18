@@ -29,6 +29,7 @@ import SwiftData
     init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String, maxVAS: Double = 10, minVAS: Double = 0, uuid: UUID = UUID(), diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = []) {
         
         self.averages = averages
+        self.type = type
         self.creatingDevice = creatingDevice
         self.maxVAS = maxVAS
         self.minVAS = minVAS

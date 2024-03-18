@@ -20,6 +20,7 @@ struct Ratings_Medicines_ChartView2: View {
     @State var showSymptomList = false
     @State var showMedicinesList = false
     @State var chartYScaleLimit: Int
+    @State var showRatingButton = false
 
     var medicines: [Medicine]
     var allMedicines: [Medicine]
@@ -61,111 +62,8 @@ struct Ratings_Medicines_ChartView2: View {
     var body: some View {
         
         VStack {
-
-            HStack {
-                //MARK: - symptom selection button
-                Button {
-                    showSymptomList = true
-                } label: {
-                    HStack {
-                        Image(systemName: "line.3.horizontal.circle")
-                        if selectedSymptoms?.count ?? 0 > 0 {
-                            Text(UserText.term("Symptoms: ") + "\(selectedSymptoms!.count)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        } else {
-                            Text(UserText.term("Symptoms: ") + UserText.term("All"))
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                }
-                .popover(isPresented: $showSymptomList) {
-                    VStack(alignment: .leading) {
-                        ForEach(allSymptoms) { s0 in
-                            Button {
-                                if selectedSymptoms == nil {
-                                    selectedSymptoms = Set<Symptom>()
-                                    selectedSymptoms!.insert(s0)
-                                }
-                                else if selectedSymptoms!.contains(s0) {
-                                    selectedSymptoms!.remove(s0)
-                                } else {
-                                    selectedSymptoms!.insert(s0)
-                                }
-                            } label: {
-                                HStack {
-                                    if (selectedSymptoms == nil) {
-                                        Image(systemName: "circle")
-                                    } else if selectedSymptoms!.contains(s0) {
-                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                    } else {
-                                        Image(systemName: "circle")
-                                    }
-                                    Text(s0.name).font(.footnote)
-                                }
-                            }
-                            Divider()
-
-                        }
-                    }
-                    .presentationCompactAdaptation(.none)
-                    .padding() // popover VStack padding
-                }
-
-                Spacer()
-                
-                //MARK: - medicines selection button
-                Button {
-                    showMedicinesList = true
-                } label: {
-                    HStack {
-                        if selectedMedicines?.count ?? 0 > 0 {
-                            Text(UserText.term("Meds: ") + "\(selectedMedicines!.count)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        } else {
-                            Text(UserText.term("Meds: ") + UserText.term("All"))
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                        Image(systemName: "line.3.horizontal.circle")
-                    }
-                }
-                .popover(isPresented: $showMedicinesList) {
-                    VStack(alignment: .leading) {
-                        ForEach(allMedicines) { m0 in
-                            Button {
-                                if selectedMedicines == nil {
-                                    selectedMedicines = Set<Medicine>()
-                                    selectedMedicines!.insert(m0)
-                                }
-                                else if selectedMedicines!.contains(m0) {
-                                    selectedMedicines!.remove(m0)
-                                } else {
-                                    selectedMedicines!.insert(m0)
-                                }
-                            } label: {
-                                HStack {
-                                    if (selectedMedicines == nil) {
-                                        Image(systemName: "circle")
-                                    } else if selectedMedicines!.contains(m0) {
-                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                    } else {
-                                        Image(systemName: "circle")
-                                    }
-                                    Text(m0.name).font(.footnote)
-                                }
-                            }
-                            Divider()
-
-                        }
-                    }
-                    .presentationCompactAdaptation(.none)
-                    .padding() // popover VStack padding
-
-                }
-            }
+            
+            
             Divider()
             
             //MARK: - combined chart
@@ -174,6 +72,21 @@ struct Ratings_Medicines_ChartView2: View {
                 Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
                     .padding(.bottom, -5)
 
+                ZStack(alignment: .center) {
+                    
+                    HStack {
+                        //MARK: - symptom selection button
+                        ListPopoverButton(showSymptomList: $showSymptomList, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
+                        
+                        Spacer()
+                    }
+                    
+                    //MARK: - small ratings button
+                    SmallRatingButton(showRatingButton: $showRatingButton)
+                        .frame(width: 35, height: 35)
+                }
+                .padding(.bottom, -5)
+                                
                 Chart {
                     
                     ForEach(symptoms) {
@@ -201,6 +114,15 @@ struct Ratings_Medicines_ChartView2: View {
                 Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
                     .padding(.bottom, -5)
 
+                Divider()
+                
+                HStack{
+                     //MARK: - medicines selection button
+                    ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines, iconPosition: .leading)
+                }
+                
+                Divider()
+                
                 Chart {
                     ForEach(medicines) {
                         let dosesTaken = $0.dosesTaken(from: fromDate, to: toDate)

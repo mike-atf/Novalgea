@@ -135,64 +135,23 @@ struct EventsChartView: View {
             }
                 
             Divider()
-            HStack {
-                //MARK: - category selection button
-                Button {
-                    showSelectionList = true
-                } label: {
-                    HStack {
-                        Image(systemName: "line.3.horizontal.circle")
-                        if selectedCategories?.count ?? 0 > 0 {
-                            Text(UserText.term("Categories: ") + "\(selectedCategories!.count)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        } else {
-                            Text(UserText.term("Categories: ") + UserText.term("All"))
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                }
-                .popover(isPresented: $showSelectionList) {
-                    
-                    VStack(alignment: .leading) {
-                        
-                        ForEach(allCategories.indices, id: \.self) { index in
-                            Button {
-                                if selectedCategories == nil {
-                                    selectedCategories = Set<String>()
-                                    selectedCategories!.insert(allCategories[index])
-                                }
-                                else if selectedCategories!.contains(allCategories[index]) {
-                                    selectedCategories!.remove(allCategories[index])
-                                } else {
-                                    selectedCategories!.insert(allCategories[index])
-                                }
-                            } label: {
-                                HStack {
-                                    if (selectedCategories == nil) {
-                                        Image(systemName: "circle")
-                                    } else if selectedCategories!.contains(allCategories[index]) {
-                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                    } else {
-                                        Image(systemName: "circle")
-                                    }
-                                    Text(allCategories[index]).font(.footnote)
-                                }
-                            }
-                            Divider()
-                            
-                        }
-                    }
-                    .padding()
-                    .presentationCompactAdaptation(.none)
-                }
+            
+            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, allCategories: allCategories)
 
-            }
             Divider()
 
             
         }
+        .overlay {
+            if filteredEvents.isEmpty {
+                ContentUnavailableView {
+                    Label("No events yet", systemImage: "chart.line.downtrend.xyaxis.circle.fill")
+                } description: {
+                    Text("")
+                }
+            }
+        }
+
     }
     
 }

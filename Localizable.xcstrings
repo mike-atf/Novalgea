@@ -34,6 +34,9 @@
         }
       }
     },
+    "1 h ago" : {
+
+    },
     "1 week" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -67,6 +70,9 @@
           }
         }
       }
+    },
+    "2 h ago" : {
+
     },
     "2 weeks" : {
       "extractionState" : "manual",
@@ -136,6 +142,9 @@
         }
       }
     },
+    "30 min ago" : {
+
+    },
     "ABFInfo" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -157,6 +166,9 @@
 
     },
     "Add records to diary" : {
+
+    },
+    "Add Symptom" : {
 
     },
     "Add trip" : {
@@ -929,7 +941,6 @@
       }
     },
     "Cancel" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -1144,6 +1155,9 @@
           }
         }
       }
+    },
+    "Delete" : {
+
     },
     "Delete all" : {
 
@@ -11334,7 +11348,7 @@
         }
       }
     },
-    "Must be an Alogea Backup file of type .abf" : {
+    "Must be an Alogea Backup file" : {
 
     },
     "Name, Dates & Symptoms" : {
@@ -11377,10 +11391,19 @@
     "No Events" : {
 
     },
+    "No events yet" : {
+
+    },
     "No Medicines" : {
 
     },
     "No Ratings" : {
+
+    },
+    "No records yet" : {
+
+    },
+    "No Symptoms" : {
 
     },
     "Notes" : {
@@ -11445,6 +11468,9 @@
         }
       }
     },
+    "Now" : {
+
+    },
     "Off" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -11466,6 +11492,9 @@
           }
         }
       }
+    },
+    "Other date..." : {
+
     },
     "Password" : {
       "extractionState" : "stale",
@@ -11617,6 +11646,9 @@
           }
         }
       }
+    },
+    "Ratings and medication events will be charted here." : {
+
     },
     "Ratingwords.all" : {
       "extractionState" : "stale",
@@ -12686,9 +12718,6 @@
         }
       }
     },
-    "Select a file for import" : {
-
-    },
     "Select an edit option" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -13088,7 +13117,6 @@
 
     },
     "Side effects" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15699,6 +15727,9 @@
       }
     },
     "Symptoms" : {
+
+    },
+    "Symptoms you create will appear here." : {
 
     },
     "Tap on backup to restore" : {

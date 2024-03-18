@@ -405,7 +405,7 @@ import OSLog
                     var sideEffects = [Symptom]()
                     for sideEffect in unarchivedSideEffects {
                         // no existing symptom - create new
-                        let newSE = Symptom(name: UserText.term("Unspecified side effect of ") + drug.name, type: UserText.term("Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
+                        let newSE = Symptom(name: drug.name + UserText.term(" side effect"), type: UserText.term("Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
                         // the side effect is 'reversely' added the the new Medicine by including it in the RelationShip causingMeds in this SideEffect-Symptom; this should create a reverse RelationShip in new medicine adding the SideEffect-Symptom
                         var vas: Double
                         switch sideEffect {

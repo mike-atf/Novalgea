@@ -49,13 +49,25 @@ class ErrorManager {
                 container.mainContext.insert(error)
                 logger.info("\("new error encountered and stored")")
             }
-            try container.mainContext.save()
+            saveContext(context: container.mainContext)
+//            try container.mainContext.save()
         } catch {
             message = "Error in ErrorManager.addError in ErrorManager: \(error.localizedDescription)"
             logger.error("\(message)")
         }
-            
-
     }
+    
+    class func saveContext(context: ModelContext) {
+        
+        DispatchQueue.main.async {
+            do {
+                try context.save()
+            } catch {
+                let ierror = InternalError(file: "RatingButton", function: "addRatingEvent", appError: error.localizedDescription)
+                ErrorManager.addError(error: ierror, container: context.container)
+            }
+        }
+    }
+
     
 }

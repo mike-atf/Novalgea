@@ -64,6 +64,12 @@ struct EventsChartView2: View {
             Text(UserText.term("Events")).font(.title2).bold()
             Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
                 .padding(.bottom, -5)
+            Divider()
+               
+            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, allCategories: allCategories)
+
+            Divider()
+            
             Chart(categoriesShown, id: \.self) { category in
                 let events = filteredEvents.filter { event in
                     if event.category == category { return true }
@@ -75,69 +81,14 @@ struct EventsChartView2: View {
                 
             }
             .padding(.trailing)
-            .chartOverlay { proxy in
-                Rectangle().fill(.clear).contentShape(Rectangle())
-                    .onTapGesture { location in
-                        guard let value: (Date, Int) = proxy.value(at: location) else {
-                            return
-                        }
-                    }
-            }
-                
-            HStack {
-                //MARK: - category selection button
-                Button {
-                    showSelectionList = true
-                } label: {
-                    HStack {
-                        Image(systemName: "line.3.horizontal.circle")
-                        if selectedCategories?.count ?? 0 > 0 {
-                            Text(UserText.term("Categories: ") + "\(selectedCategories!.count)")
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        } else {
-                            Text(UserText.term("Categories: ") + UserText.term("All"))
-                                .font(.footnote)
-                                .foregroundColor(.secondary)
-                        }
-                    }
-                }
-                .popover(isPresented: $showSelectionList) {
-                    
-                    VStack(alignment: .leading) {
-                        
-                        ForEach(allCategories.indices, id: \.self) { index in
-                            Button {
-                                if selectedCategories == nil {
-                                    selectedCategories = Set<String>()
-                                    selectedCategories!.insert(allCategories[index])
-                                }
-                                else if selectedCategories!.contains(allCategories[index]) {
-                                    selectedCategories!.remove(allCategories[index])
-                                } else {
-                                    selectedCategories!.insert(allCategories[index])
-                                }
-                            } label: {
-                                HStack {
-                                    if (selectedCategories == nil) {
-                                        Image(systemName: "circle")
-                                    } else if selectedCategories!.contains(allCategories[index]) {
-                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
-                                    } else {
-                                        Image(systemName: "circle")
-                                    }
-                                    Text(allCategories[index]).font(.footnote)
-                                }
-                            }
-                            Divider()
-                            
-                        }
-                    }
-                    .padding()
-                    .presentationCompactAdaptation(.none)
-                }
-
-            }
+//            .chartOverlay { proxy in
+//                Rectangle().fill(.clear).contentShape(Rectangle())
+//                    .onTapGesture { location in
+//                        guard let value: (Date, Int) = proxy.value(at: location) else {
+//                            return
+//                        }
+//                    }
+//            }
             
         }
     }

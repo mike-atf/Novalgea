@@ -39,58 +39,67 @@ struct GraphicDiaryView: View {
     @State private var selectedEventCategories: Set<String>?
     @State private var selectedDiaryEvent: DiaryEvent?
 
-    @State var startDisplayDate: Date = (Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
-    @State var endDisplayDate: Date = Date().setDate(day: 1, month: 1, year: 2020) ?? .now
+    @State var startDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).first! //(Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
+    @State var endDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).last! // Date().setDate(day: 1, month: 1, year: 2020) ?? .now
     @State var dragOffset = CGSizeZero
     @State var showRatingButton = false
+    @State var selectedVAS: Double?
 
     var body: some View {
         GeometryReader { geometry in
             VStack {
+                //MARK: - Date selector
                 Section {
                     DiarySelectionSection(selectedDisplayTime: $selectedDisplayTime, startDisplayDate: $startDisplayDate, endDisplayDate: $endDisplayDate)
                     HStack {
                         Button("", systemImage: "chevron.left") {
                             withAnimation {
-                                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-                                endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
+                                stepDisplayTime(option: .backwards)
+//                                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
+//                                endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                             }
                         }
                         Text(DatesManager.displayPeriodTerm(_for: selectedDisplayTime, start: startDisplayDate, end: endDisplayDate)).font(.title2).bold()
                         Button("", systemImage: "chevron.right") {
                             withAnimation {
-                                startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
-                                endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
+                                stepDisplayTime(option: .forwards)
+//                                startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
+//                                endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
                             }
                         }
-                    }.padding(.bottom, -5)
+                    }
+                    .padding(.bottom, -5)
                 }
                     ScrollView {
                         VStack(alignment: .leading) {
+                            //MARK: - Ratings and Med event charts
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
-                                    .frame(height: geometry.size.height * 0.8)
-                            } else {
-//                                ZStack(alignment: .center) {
-                                   Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
-                                        .frame(height: geometry.size.height * 0.5)
-                                    
-                                    if showRatingButton {
-//                                        withAnimation {
-                                            Divider()
-                                            RatingButton()
-                                                .frame(height: min(geometry.size.height/4, geometry.size.width))
-//                                                .foregroundStyle(.secondary)
-//                                                .background(.ultraThinMaterial)
-//                                        }
+                                    .frame(height: geometry.size.height * 0.6)
+                                
+                                if showRatingButton {
                                         Divider()
-                                    }
-//
-//                                }
+                                    RatingButton(showView: $showRatingButton, vas: $selectedVAS)
+                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
+                                    Divider()
+                                }
+                            } else {
+                               Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
+                                    .frame(height: geometry.size.height * 0.5)
+                                
+                                if showRatingButton {
+                                        Divider()
+                                    RatingButton(showView: $showRatingButton, vas: $selectedVAS)
+                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
+                                    Divider()
+                                }
                             }
                         }
                         .gesture(
-                            DragGesture()
+                            
+                            //MARK: - Swiping Gesture
+                            // edge swiping gesture
+                            DragGesture(minimumDistance: 50)
                                 .onChanged({ value in
                                     dragOffset = value.translation
                                 })
@@ -111,9 +120,10 @@ struct GraphicDiaryView: View {
                             
                         )
                         VStack(alignment: .leading) {
+                            //MARK: - Events Charts
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 EventsChartView2(selectedCategories: $selectedEventCategories, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                    .frame(height: geometry.size.height * 0.4)
+                                    .frame(height: geometry.size.height * 0.5)
                                 
                             }
                             else {
@@ -122,6 +132,7 @@ struct GraphicDiaryView: View {
                                 
                             }
                         }
+                        //MARK: - Selected Diary event view
                         if selectedDiaryEvent != nil {
                             withAnimation {
                                 VStack(alignment: .leading) {
@@ -141,6 +152,7 @@ struct GraphicDiaryView: View {
                             }
                         }
                     }
+                    .scrollDisabled(showRatingButton)
                 
             }
             .onAppear {
@@ -155,18 +167,33 @@ struct GraphicDiaryView: View {
         }
     }
     
-    func back() {
-        let newStart = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-        let newEnd = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-        startDisplayDate = newStart
-        endDisplayDate = newEnd
-    }
-    
-    func forward() {
-        startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
-        endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
-    }
-    
+    private func stepDisplayTime(option: ChangeDisplayTime) {
+        
+        let step = option == .backwards ? -1 : 1
+        
+        switch selectedDisplayTime {
+        case .day:
+            startDisplayDate = DatesManager.startOfDay(from: startDisplayDate, _by: step)
+            endDisplayDate = startDisplayDate.addingTimeInterval(24*3600-1)
+        case .week:
+            startDisplayDate = DatesManager.startOfWeek(from: startDisplayDate, _by: step)
+            endDisplayDate = DatesManager.startOfWeek(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
+        case .month:
+            startDisplayDate = DatesManager.startOfMonth(from: startDisplayDate, _by: step)
+            endDisplayDate = DatesManager.startOfMonth(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
+        case .quarter:
+            startDisplayDate = DatesManager.startOfQuarter(from: startDisplayDate, _by: step)
+            endDisplayDate = DatesManager.startOfQuarter(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
+        case .year:
+            startDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: step)
+            endDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
+        }
+        
+        Logger().info("new start \(startDisplayDate.formatted())")
+        Logger().info("new end \(endDisplayDate.formatted())")
+        Logger().info("=============")
+   }
+        
 //    func cleanRatingDuplicates() {
 //        
 //        let fetchDescriptorS = FetchDescriptor<Rating>(sortBy: [SortDescriptor(\Rating.date)])

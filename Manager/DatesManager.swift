@@ -51,6 +51,111 @@ class DatesManager {
 
     }
     
+    
+    /// returns beginning of day offset by 'days' from a given date, or .now as default; for end of a day use this function and add timeInterval -1
+    class func startOfDay(from: Date = .now, _by days: Int) -> Date {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        dateComponents.day! += days
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+    }
+    
+    class func startOfWeek(from: Date = .now, _by weeks: Int) -> Date {
+        
+        let components: Set<Calendar.Component> = [.year,.weekOfYear ,.month, .weekday, .hour, .minute]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        dateComponents.weekOfYear! += weeks
+        
+        if dateComponents.weekOfYear! < 0 {
+            dateComponents.weekOfYear! += 52
+            dateComponents.year! -= 1
+        } else if dateComponents.weekOfYear! > 52 {
+            dateComponents.weekOfYear! -= 52
+            dateComponents.year! += 1
+        }
+        
+        dateComponents.weekday! = 1
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+    }
+
+    
+    class func startOfMonth(from: Date = .now, _by months: Int) -> Date {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        dateComponents.month! += months
+        dateComponents.day = 1
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+    }
+    
+    /// returns beginning of quarter offset by 'quarters' from a given date, or .now as default; for end of a quarter use this function and add timeInterval -1
+    class func startOfQuarter(from: Date = .now, _by quarters: Int) -> Date {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        
+        var quarterStartMonth: Int
+        
+        switch dateComponents.month! {
+            case 1,2,3:
+            quarterStartMonth = 1
+            case 4,5,6:
+            quarterStartMonth = 4
+            case 7,8,9:
+            quarterStartMonth = 7
+            case 10,11,12:
+            quarterStartMonth = 10
+            default: quarterStartMonth = 1
+        }
+        quarterStartMonth += (quarters * 3)
+        
+        if quarterStartMonth < 0 {
+            quarterStartMonth += 12
+            dateComponents.year! -= 1
+        } else if quarterStartMonth > 12 {
+            quarterStartMonth -= 12
+            dateComponents.year! += 1
+        }
+        
+        dateComponents.month = quarterStartMonth
+        dateComponents.day = 1
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+
+        return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+    }
+
+    class func startOfYear(from: Date = .now, _by years: Int) -> Date {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day, .hour, .minute]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        
+        dateComponents.year! += years
+        dateComponents.month = 1
+        dateComponents.day = 1
+        dateComponents.hour = 0
+        dateComponents.minute = 0
+        dateComponents.second = 0
+        
+        return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+    }
+
+
+    
     /// returns the Sunday - Saturday or equivalent or the week of the date provided
     class func weekStartAndEnd(ofDate: Date) -> [Date] {
                 
