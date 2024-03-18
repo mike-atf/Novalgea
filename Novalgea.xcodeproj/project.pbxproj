@@ -230,18 +230,7 @@
 			children = (
 				FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */,
 				FA975AF52B8E4832003802A4 /* AppDelegate.swift */,
-				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
-				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
-				FA2D07602B975B5B00A9156C /* Ratings_Medicines_ChartView.swift */,
-				FAD39CFA2BA760F70099AF62 /* ListPopoverButton.swift */,
-				FAD39CFC2BA762420099AF62 /* ListPopoverButton_M.swift */,
-				FAD39CF82BA75FE10099AF62 /* SmallRatingButton.swift */,
-				FAB308FF2BA322910063179A /* RatingButton.swift */,
-				FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */,
-				FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */,
-				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
-				FAF6DA872BA8C17B0070A5DD /* ListPopoverButton_E.swift */,
-				FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */,
+				FAF6DA8B2BA8C5380070A5DD /* Main Charts View */,
 				FAE888A12B877B6500E942E8 /* ExportView.swift */,
 				FA975AF32B8E3937003802A4 /* ImportView.swift */,
 				FAFD67182B90D56000BC2EA7 /* Alogea File Import */,
@@ -344,6 +333,41 @@
 				FA27CB412B7E389E00D2FB7B /* Algea_RecordType.swift */,
 			);
 			path = "Models Alogea";
+			sourceTree = "<group>";
+		};
+		FAF6DA892BA8C4CF0070A5DD /* Ratings_Meds_Charts View */ = {
+			isa = PBXGroup;
+			children = (
+				FA2D07602B975B5B00A9156C /* Ratings_Medicines_ChartView.swift */,
+				FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */,
+				FAD39CFA2BA760F70099AF62 /* ListPopoverButton.swift */,
+				FAD39CFC2BA762420099AF62 /* ListPopoverButton_M.swift */,
+				FAD39CF82BA75FE10099AF62 /* SmallRatingButton.swift */,
+			);
+			path = "Ratings_Meds_Charts View";
+			sourceTree = "<group>";
+		};
+		FAF6DA8A2BA8C5050070A5DD /* Events_Charts Views */ = {
+			isa = PBXGroup;
+			children = (
+				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
+				FAF6DA872BA8C17B0070A5DD /* ListPopoverButton_E.swift */,
+				FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */,
+			);
+			path = "Events_Charts Views";
+			sourceTree = "<group>";
+		};
+		FAF6DA8B2BA8C5380070A5DD /* Main Charts View */ = {
+			isa = PBXGroup;
+			children = (
+				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
+				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
+				FAB308FF2BA322910063179A /* RatingButton.swift */,
+				FAF6DA892BA8C4CF0070A5DD /* Ratings_Meds_Charts View */,
+				FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */,
+				FAF6DA8A2BA8C5050070A5DD /* Events_Charts Views */,
+			);
+			path = "Main Charts View";
 			sourceTree = "<group>";
 		};
 		FAFD67182B90D56000BC2EA7 /* Alogea File Import */ = {
