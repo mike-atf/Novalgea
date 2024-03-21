@@ -204,12 +204,13 @@ struct Ratings_Medicines_ChartView: View {
             .overlay {
                 if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty{
                     ContentUnavailableView {
-                        Label("No records yet", systemImage: "chart.line.uptrend.xyaxis.circle")
+                        Label("No records", systemImage: "chart.line.uptrend.xyaxis.circle")
                     } description: {
                         Text("Ratings and medication events will be charted here.")
                     }
                 }
             }
+            .transition(.move(edge: .leading))
 
         }
     }

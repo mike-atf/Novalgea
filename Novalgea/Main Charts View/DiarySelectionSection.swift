@@ -44,11 +44,6 @@ struct DiarySelectionSection: View {
                         startDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 0)
                         endDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
                     }
-                    
-                    Logger().info("new interval \(selectedDisplayTime.rawValue)")
-                    Logger().info("new start \(startDisplayDate.formatted())")
-                    Logger().info("new end \(endDisplayDate.formatted())")
-                    Logger().info("=============")
 
                 }
             }

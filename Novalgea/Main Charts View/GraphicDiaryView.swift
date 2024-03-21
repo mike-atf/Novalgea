@@ -55,16 +55,12 @@ struct GraphicDiaryView: View {
                         Button("", systemImage: "chevron.left") {
                             withAnimation {
                                 stepDisplayTime(option: .backwards)
-//                                startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-//                                endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
                             }
                         }
                         Text(DatesManager.displayPeriodTerm(_for: selectedDisplayTime, start: startDisplayDate, end: endDisplayDate)).font(.title2).bold()
                         Button("", systemImage: "chevron.right") {
                             withAnimation {
                                 stepDisplayTime(option: .forwards)
-//                                startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
-//                                endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
                             }
                         }
                     }
@@ -75,22 +71,25 @@ struct GraphicDiaryView: View {
                             //MARK: - Ratings and Med event charts
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
-                                    .frame(height: geometry.size.height * 0.6)
+                                    .frame(minHeight: 600)
+//                                   .frame(height: geometry.size.height * 0.8)
                                 
                                 if showRatingButton {
                                         Divider()
                                     RatingButton(showView: $showRatingButton, vas: $selectedVAS)
-                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
+                                        .frame(minHeight: 300)
+//                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
                                     Divider()
                                 }
                             } else {
                                Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
-                                    .frame(height: geometry.size.height * 0.5)
+                                    .frame(minHeight: 300)
+//                                    .frame(height: geometry.size.height * 0.6)
                                 
                                 if showRatingButton {
                                         Divider()
                                     RatingButton(showView: $showRatingButton, vas: $selectedVAS)
-                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
+                                       .frame(height: min(geometry.size.height/4, geometry.size.width))
                                     Divider()
                                 }
                             }
@@ -107,28 +106,25 @@ struct GraphicDiaryView: View {
                                     selectedDiaryEvent = nil
                                     if dragOffset.width > 0 {
                                         withAnimation {
-                                            startDisplayDate = startDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
-                                            endDisplayDate = endDisplayDate.addingTimeInterval(-selectedDisplayTime.timeValue)
+                                            stepDisplayTime(option: .backwards)
                                         }
                                     } else if dragOffset.width < 0 {
                                         withAnimation {
-                                            startDisplayDate = startDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
-                                            endDisplayDate = endDisplayDate.addingTimeInterval(selectedDisplayTime.timeValue)
+                                            stepDisplayTime(option: .forwards)
                                         }
                                     }
                                 })
-                            
                         )
                         VStack(alignment: .leading) {
                             //MARK: - Events Charts
                             if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                                 EventsChartView2(selectedCategories: $selectedEventCategories, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                    .frame(height: geometry.size.height * 0.5)
+                                    .frame(minHeight: 300)
                                 
                             }
                             else {
                                 EventsChartView(selectedCategories: $selectedEventCategories, selectedDiaryEvent: $selectedDiaryEvent, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                    .frame(height: geometry.size.height * 0.3)
+                                    .frame(minHeight: 200)
                                 
                             }
                         }
@@ -188,36 +184,32 @@ struct GraphicDiaryView: View {
             startDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: step)
             endDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
         }
-        
-        Logger().info("new start \(startDisplayDate.formatted())")
-        Logger().info("new end \(endDisplayDate.formatted())")
-        Logger().info("=============")
    }
         
-//    func cleanRatingDuplicates() {
-//        
-//        let fetchDescriptorS = FetchDescriptor<Rating>(sortBy: [SortDescriptor(\Rating.date)])
-//        if let existingSymptoms = try? modelContext.fetch(fetchDescriptorS) {
-//            var ratingsToDelete = [Rating]()
-//            for i in 1..<existingSymptoms.count {
-//                let current = existingSymptoms[i]
-//                let previous = existingSymptoms[i-1]
-//                
-//                if current.vas == previous.vas {
-//                    if (current.ratedSymptom?.name ?? "none") == (previous.ratedSymptom?.name ?? "none") {
-//                        if current.date.timeIntervalSince(previous.date) < 60 {
-//                            ratingsToDelete.append(current)
-//                        }
-//                    }
-//                }
-//                
-//                for rating in ratingsToDelete {
-//                    modelContext.delete(rating)
-//                }
-//            }
-//        }
+    func cleanRatingDuplicates() {
         
-//    }
+        let fetchDescriptorS = FetchDescriptor<Rating>(sortBy: [SortDescriptor(\Rating.date)])
+        if let existingSymptoms = try? modelContext.fetch(fetchDescriptorS) {
+            var ratingsToDelete = [Rating]()
+            for i in 1..<existingSymptoms.count {
+                let current = existingSymptoms[i]
+                let previous = existingSymptoms[i-1]
+                
+                if current.vas == previous.vas {
+                    if (current.ratedSymptom?.name ?? "none") == (previous.ratedSymptom?.name ?? "none") {
+                        if current.date.timeIntervalSince(previous.date) < 60 {
+                            ratingsToDelete.append(current)
+                        }
+                    }
+                }
+                
+                for rating in ratingsToDelete {
+                    modelContext.delete(rating)
+                }
+            }
+        }
+        
+    }
 }
 
 #Preview {

@@ -81,6 +81,7 @@ struct EventsChartView2: View {
                 
             }
             .padding(.trailing)
+            .transition(.move(edge: .leading))
 //            .chartOverlay { proxy in
 //                Rectangle().fill(.clear).contentShape(Rectangle())
 //                    .onTapGesture { location in

@@ -133,6 +133,8 @@ struct EventsChartView: View {
                         }
                     }
             }
+            .transition(.move(edge: .leading))
+
                 
             Divider()
             
@@ -145,7 +147,7 @@ struct EventsChartView: View {
         .overlay {
             if filteredEvents.isEmpty {
                 ContentUnavailableView {
-                    Label("No events yet", systemImage: "chart.line.downtrend.xyaxis.circle.fill")
+                    Label("No events", systemImage: "chart.line.downtrend.xyaxis.circle.fill")
                 } description: {
                     Text("")
                 }

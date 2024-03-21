@@ -36,6 +36,8 @@ struct RatingButton: View {
     @State var selectedVAS: Double?
     
     private let segment = Angle(degrees: 5)
+    private let angularGradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]
+
         
     var body: some View {
         GeometryReader { reader in
@@ -60,7 +62,6 @@ struct RatingButton: View {
                                     }
                                 }
                             }
-
                         }
                     }
                     .environment(\.defaultMinListRowHeight, 30)
@@ -96,34 +97,55 @@ struct RatingButton: View {
 
                 }
                 
-                //MARK: - Circular slider and button
                 if !(showMedicineList || showSymptomsList) {
                     ZStack(alignment: .center) {
+                            //MARK: - Circular slider with Triangle overlay
+                            ZStack(alignment: .top)
+                            {
+                                Circle()
+                                    .stroke(Color.black, style: StrokeStyle(lineWidth:5))
+                                    .strokeBorder(angulargradient, style: StrokeStyle(lineWidth: reader.size.height * 0.25))
+                                    .gesture(
+                                        DragGesture(minimumDistance: 10)
+                                            .onChanged({ value in
+                                                let center = CGPoint(x: reader.frame(in: .local).midX, y:reader.frame(in: .local).midY)
+                                                let distance = CGPoint(x: value.location.x - center.x, y: value.location.y - center.y)
+                                                vasUpdate(location: distance)
+                                            })
+                                            .onEnded({ _ in
+                                                vas = selectedVAS
+                                                showSymptomsList = true
+                                            })
+                                    )
+                                    .sensoryFeedback(.increase, trigger: selectedVAS)
+                                Triangle()
+                                    .fill(gradientRed)
+                                    .frame(width: 16, height: reader.size.height * 0.25)
+                                    .offset(CGSize(width: -8, height: 0)) //- 27
+                                                                
+                            }
+                            .scaleEffect(circleSize)
+                        
+                        //MARK: - VAS indicator on outside of circle
                         ZStack(alignment: .top) {
                             Circle()
-                                .fill(Color.white)
-                                .stroke(Color.secondary, style: StrokeStyle(lineWidth:5))
-                                .strokeBorder(angulargradient, style: StrokeStyle(lineWidth: reader.size.height * 0.25))
-                                .gesture(
-                                    DragGesture(minimumDistance: 10)
-                                        .onChanged({ value in
-                                            let center = CGPoint(x: reader.frame(in: .local).midX, y:reader.frame(in: .local).midY)
-                                            let distance = CGPoint(x: value.location.x - center.x, y: value.location.y - center.y)
-                                            vasUpdate(location: distance)
-                                        })
-                                        .onEnded({ _ in
-                                            vas = selectedVAS
-                                            showSymptomsList = true
-                                            print("vas = \(vas!.formatted())")
-                                        })
-                                )
-                            Triangle()
-                                .fill(gradientRed)
-                                .frame(width: 16, height: reader.size.height * 0.25)
-                                .offset(CGSize(width: -8, height: 0)) //- 27
+                                .hidden()
+                                Indicator()
+                                    .stroke(Color.black, lineWidth: 1)
+                                    .fill(getColor(vas: (selectedVAS ?? 0)))
+                                    .frame(width: 35, height: 25)
+                                    .offset(y: -20)
+                                
+                                Text((selectedVAS ?? 0.0),format: .number.precision(.fractionLength(1)))
+                                    .foregroundStyle(indicatorTextColor(vas: selectedVAS ?? 0))
+                                    .font(.system(size: 14))
+                                    .bold()
+                                    .offset(y:-15)
                         }
                         .scaleEffect(circleSize)
-                        
+                        .rotationEffect(Angle(radians: (selectedVAS ?? 0.0)/10 * (-2 * .pi)))
+
+                        //MARK: - Round button
                         Button {
                             withAnimation(.easeInOut) {
                                 circleSize = 0.0
@@ -142,6 +164,7 @@ struct RatingButton: View {
                             }
                         }
                         .frame(width: min * 0.48,height: min * 0.48)
+                        
                     }
                 }
                 
@@ -155,37 +178,37 @@ struct RatingButton: View {
                                 showView = false
                             }
                         } label: {
-                            Text("Cancel").font(.caption).foregroundStyle(.red)
+                            Text(UserText.term("Cancel")).font(.caption).foregroundStyle(.red)
                         }
                         Button {
                             selectedEventDate = .now
                             addEvent()
                         } label: {
-                            Text("Now").font(.caption)
+                            Text(UserText.term("Now")).font(.caption)
                         }
 
                         Button {
                             selectedEventDate = .now.addingTimeInterval(-1800)
                             addEvent()
                         } label: {
-                            Text("30 min ago").font(.caption)
+                            Text(UserText.term("30 min ago")).font(.caption)
                         }
                         Button {
                             selectedEventDate = .now.addingTimeInterval(-3600)
                             addEvent()
                         } label: {
-                            Text("1 h ago").font(.caption)
+                            Text(UserText.term("1 h ago")).font(.caption)
                         }
                         Button {
                             selectedEventDate = .now.addingTimeInterval(-2*3600)
                             addEvent()
                         } label: {
-                            Text("2 h ago").font(.caption)
+                            Text(UserText.term("2 h ago")).font(.caption)
                         }
                         Button {
                             showDateSelector = true
                         } label: {
-                            Text(customDate$ ?? "Other date...").font(.caption)
+                            Text(customDate$ ?? UserText.term("Other date...")).font(.caption)
                         }
                         .popover(isPresented: $showDateSelector) {
                             VStack {
@@ -249,19 +272,26 @@ struct RatingButton: View {
         }
         selectedSymptom = nil
     }
-
     
     func vasUpdate(location: CGPoint) {
         
         let vector = CGVector(dx: location.x, dy: location.y)
-//        print(vector)
         let rawAngle = atan2(vector.dx, vector.dy) + .pi
         let angle = rawAngle < 0.0 ? rawAngle + 2 * .pi : rawAngle
-//        print(angle * 180 / .pi)
-//        print(angle / (2 * .pi) * 10)
         selectedVAS = angle / (2 * .pi) * 10 // TODO: - add in current symptom minVAS and maxVAS
-
     }
+    
+    func getColor(vas: Double) -> Color {
+        return angularGradientColors.getColor(_for: vas)
+    }
+    
+    
+    func indicatorTextColor(vas: Double) -> Color {
+        
+        if vas > 5 { return .white }
+        else { return .black }
+    }
+
     
     private func saveContext() {
         DispatchQueue.main.async {
@@ -291,5 +321,25 @@ struct Triangle: Shape {
         
         return path
     }
+}
+
+struct Indicator: Shape {
+    
+    func path(in rect: CGRect) -> Path {
+        
+        var path = Path()
+        path.move(to: CGPoint(x: rect.midX, y: rect.maxY))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.maxY-rect.height/4))
+        path.addLine(to: CGPoint(x: rect.minX, y: rect.minY))
+//        path.move(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.minY))
+        path.addLine(to: CGPoint(x: rect.maxX, y: rect.maxY-rect.height/4))
+        path.addLine(to: CGPoint(x: rect.midX, y: rect.maxY))
+
+        return path
+    }
+    
+    
+    
 }
 

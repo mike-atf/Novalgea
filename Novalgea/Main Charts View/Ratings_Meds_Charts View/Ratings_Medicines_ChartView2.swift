@@ -109,6 +109,7 @@ struct Ratings_Medicines_ChartView2: View {
                 }
                 .chartLegend(position: .top)
                 .clipped()
+                .transition(.move(edge: .leading))
                 
                 Text(UserText.term("Medication doses")).font(.title2).bold()
                 Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
