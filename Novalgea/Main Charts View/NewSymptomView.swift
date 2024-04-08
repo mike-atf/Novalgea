@@ -16,7 +16,8 @@ struct NewSymptomView: View {
     @Query(sort: \Medicine.name) var medicinesList: [Medicine]
     
     @Binding var showView: Bool
-    
+    @FocusState private var focused: Bool
+
     @State var type = SymptomType.symptom
     @State var name = UserText.term("")
     @State var nonunique = String()
@@ -50,8 +51,8 @@ struct NewSymptomView: View {
                     Text(UserText.term("Name of new ") + UserText.term(type.rawValue)).font(.title).bold()
                 }
                 TextField(UserText.term("Name"), text: $name)
+                    .focused($focused)
                     .onSubmit {
-                        
                         //TODO: - check extension requried
                         
                         if symptomsList.compactMap({ $0.name }).contains(name) {
@@ -124,6 +125,9 @@ struct NewSymptomView: View {
                 }
             }
             
+        }
+        .onAppear {
+            focused = true
         }
         .navigationTitle(UserText.term("Add a symptom to track"))
         .alert(UserText.term("Can't save this"), isPresented: $showAlert) {

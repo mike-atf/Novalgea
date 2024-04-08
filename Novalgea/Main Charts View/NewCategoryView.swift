@@ -15,7 +15,10 @@ struct NewCategoryView: View {
     @Query(sort: \EventCategory.name) var categories: [EventCategory]
     
     @Binding var showView: Bool
+    @Binding var newCategorySelection: EventCategory?
     
+    @FocusState private var focused: Bool
+
     @State var newCategory = String()
     @State var nonunique = String()
     @State var alertMessage = String()
@@ -29,8 +32,8 @@ struct NewCategoryView: View {
                 Text(UserText.term("New event category")).font(.title).bold()
                 Text(UserText.term("Please chose a unique new name"))
                 TextField(UserText.term("Name"), text: $newCategory)
+                    .focused($focused)
                     .onSubmit {
-                        
                         if categories.compactMap({ $0.name }).contains(newCategory) {
                             nonunique = newCategory
                             newCategory = String()
@@ -74,15 +77,18 @@ struct NewCategoryView: View {
             }
 
         }
+        .onAppear {
+            focused = true
+        }
         
     }
         
     private func save() {
         
         guard newCategory != "" else { return }
-        
         let new = EventCategory(name: newCategory)
         modelContext.insert(new)
+        newCategorySelection = new
         showView = false
     }
     
@@ -94,5 +100,5 @@ struct NewCategoryView: View {
 }
 
 #Preview {
-    NewCategoryView(showView: .constant(true)).modelContainer(DataController.previewContainer)
+    NewCategoryView(showView: .constant(true), newCategorySelection: .constant(EventCategory.preview)).modelContainer(DataController.previewContainer)
 }

@@ -31,14 +31,15 @@ struct GraphicDiaryView: View {
     
 //    @State private var allEventCategories = [String]() // filled in .onAppear, with inserting 'All'
     @State private var symptomNames = [String]() // filled in .onAppear, with inserting 'All'
-    @State private var selectedSingleCategory: String?
+//    @State private var selectedSingleCategory: String?
     
     // in order for Chart view @Query filtering to work dynamically selections needs to happen outside the Chart view
     @State private var selectedSymptoms: Set<Symptom>?
     @State private var selectedMedicines: Set<Medicine>?
     @State private var selectedEventCategories: Set<EventCategory>?
     @State private var selectedDiaryEvent: DiaryEvent?
-
+    @State var selectedEventCategory: EventCategory?
+    
     @State var startDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).first! //(Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
     @State var endDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).last! // Date().setDate(day: 1, month: 1, year: 2020) ?? .now
     @State var dragOffset = CGSizeZero
@@ -169,21 +170,16 @@ struct GraphicDiaryView: View {
                     .padding()
             })
             .sheet(isPresented: $showNewCategoryView, content: {
-                NewCategoryView(showView: $showNewCategoryView)
+                NewCategoryView(showView: $showNewCategoryView, newCategorySelection: $selectedEventCategory)
             })
             .sheet(isPresented: $showNewEventView, content: {
-                if !allEventCategories.isEmpty {
-                    NewEventView(categories: allEventCategories, showView: $showNewEventView, category: allEventCategories.first!)
-                }
+                NewEventView(categories: allEventCategories, showView: $showNewEventView, category: allEventCategories.first)
             })
             .sheet(isPresented: $showNewMedicineEventView, content: {
                 NewMedicineEventView(showView: $showNewMedicineEventView)
             })
 
             .onAppear {
-                
-//                SampleData.createSampleData(checkIfExist: false, _in: modelContext.container)
-                
                 let allSymptoms = Set(symptomsList.compactMap { $0.name })
                 symptomNames = Array(allSymptoms)
 //                cleanRatingDuplicates()

@@ -73,8 +73,8 @@ struct CircularSliderView: View {
                     VStack {
                         Button("Medicine", systemImage: "pills.circle.fill") {
                             withAnimation {
-                                showNewMedicineEventView = true
                                 showView = false
+                                showNewMedicineEventView = true
                             }
                         }
                         .font(.system(size: diameter/20)).bold()
@@ -83,8 +83,8 @@ struct CircularSliderView: View {
                         
                         Button("Event", systemImage: "square.and.pencil.circle.fill") {
                             withAnimation {
-                                showNewEventView = true
                                 showView = false
+                                showNewEventView = true
                             }
                         }
                         .font(.system(size: diameter/20)).bold()

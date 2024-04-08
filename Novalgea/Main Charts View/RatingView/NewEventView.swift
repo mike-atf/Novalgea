@@ -12,6 +12,7 @@ import SwiftData
 struct NewEventView: View {
     
     @Environment(\.modelContext) private var modelContext
+    
     var categories: [EventCategory]
     @Binding var showView:Bool
     
@@ -20,6 +21,7 @@ struct NewEventView: View {
     @State var startDate: Date = .now
     @State var endDate: Date? = nil
     @State var backdatingOption = BackdatingTimeOptions.isNow
+    @State var showNewCategoryView = false
 
     @State var showDateSelector = false
 
@@ -48,16 +50,33 @@ struct NewEventView: View {
                 }
                 .frame(minHeight: 100)
                 
-                
-                Picker(selection: $category) {
-                    ForEach(categories) {
-                        Text($0.name).tag($0 as EventCategory?)
+                if !categories.isEmpty {
+                    Picker(selection: $category) {
+                        ForEach(categories) {
+                            Text($0.name).tag($0 as EventCategory?)
+                        }
+                    } label: {
+                        HStack {
+                            Image(systemName: "list.bullet.circle.fill").foregroundStyle(.orange).imageScale(.large)
+                            Text("Category")
+                        }
                     }
-                } label: {
-                    HStack {
-                        Image(systemName: "list.bullet.circle.fill").foregroundStyle(.orange).imageScale(.large)
-                        Text("Category")
+                } else {
+                    VStack {
+                        ContentUnavailableView {
+                            Label("", systemImage: "square.and.pencil.circle.fill")
+                        } description: {
+                            Text(UserText.term("No event category yet"))
+                        }
+                        
+                        Button(UserText.term("Add a category")) {
+                            showNewCategoryView = true
+                        }
+                        .buttonStyle(BorderedButtonStyle())
                     }
+                    .presentationCompactAdaptation(.none)
+                    .padding()
+
                 }
                 
                 Section {
@@ -132,11 +151,15 @@ struct NewEventView: View {
                 .padding()
             }
             .onAppear {
-                focused = true
                 if !categories.isEmpty {
-                    category = categories.first!
+                    focused = true
+                    category = categories.first
                 }
             }
+            .sheet(isPresented: $showNewCategoryView) {
+                NewCategoryView(showView: $showNewCategoryView, newCategorySelection: $category)
+            }
+        
 //            .toolbar {
 //                ToolbarItemGroup(placement: .keyboard) {
 //                    Button("Done") {

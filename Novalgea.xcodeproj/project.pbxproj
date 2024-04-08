@@ -185,7 +185,7 @@
 		FAFD671D2B90E66C00BC2EA7 /* Globals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Globals.swift; sourceTree = "<group>"; };
 		FAFD671F2B910A7900BC2EA7 /* Extension Date.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Date.swift"; sourceTree = SOURCE_ROOT; };
 		FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DiarySelectionSection.swift; sourceTree = "<group>"; };
-		FAFF5C9E2BBEB588005FF6B0 /* NewMedicineEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewMedicineEventView.swift; path = Novalgea/NewMedicineEventView.swift; sourceTree = SOURCE_ROOT; };
+		FAFF5C9E2BBEB588005FF6B0 /* NewMedicineEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = NewMedicineEventView.swift; path = "Novalgea/Main Charts View/RatingView/NewMedicineEventView.swift"; sourceTree = SOURCE_ROOT; };
 		FAFF5CA02BBEB84C005FF6B0 /* BackdatingOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackdatingOptionView.swift; sourceTree = "<group>"; };
 		FAFF5CA22BBF02F4005FF6B0 /* CircularSliderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircularSliderView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -331,6 +331,20 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		FACA85242BC44CFA00755E79 /* RatingView */ = {
+			isa = PBXGroup;
+			children = (
+				FAB308FF2BA322910063179A /* RatingButton.swift */,
+				FACA85222BC43DB700755E79 /* SymptomListPickerView.swift */,
+				FAB2F4E42BC05C620042045A /* FacialRatingView.swift */,
+				FAFF5CA22BBF02F4005FF6B0 /* CircularSliderView.swift */,
+				FAFF5CA02BBEB84C005FF6B0 /* BackdatingOptionView.swift */,
+				FAFF5C9E2BBEB588005FF6B0 /* NewMedicineEventView.swift */,
+				FA8831A22BBD58ED002DF057 /* NewEventView.swift */,
+			);
+			path = RatingView;
+			sourceTree = "<group>";
+		};
 		FAE8889C2B877AA000E942E8 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -398,13 +412,7 @@
 			children = (
 				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
 				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
-				FAB308FF2BA322910063179A /* RatingButton.swift */,
-				FACA85222BC43DB700755E79 /* SymptomListPickerView.swift */,
-				FAB2F4E42BC05C620042045A /* FacialRatingView.swift */,
-				FAFF5CA22BBF02F4005FF6B0 /* CircularSliderView.swift */,
-				FAFF5C9E2BBEB588005FF6B0 /* NewMedicineEventView.swift */,
-				FAFF5CA02BBEB84C005FF6B0 /* BackdatingOptionView.swift */,
-				FA8831A22BBD58ED002DF057 /* NewEventView.swift */,
+				FACA85242BC44CFA00755E79 /* RatingView */,
 				FA0B3F572BB2D4010031330C /* NewSymptomView.swift */,
 				FA3D20452BB5AEC100243BE4 /* NewCategoryView.swift */,
 				FAF1F8512BAC515F009B660C /* VerbalRatingView.swift */,
