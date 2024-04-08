@@ -34,10 +34,26 @@ enum ChangeDisplayTime {
     case backwards
 }
 
+enum BackdatingTimeOptions: String, CaseIterable, Identifiable {
+    case isNow = "now"
+    case halfHourAgo = "30 min ago"
+    case oneHourAgo = "one hour ago"
+    case twoHoursAgo = "two hours ago"
+    case custom = "custom date"
+    var id: String { rawValue }
+}
+
 enum Position {
     case leading
     case trailing
 }
 
-let gradientRed = Color(red: 151/255, green: 60/255, blue: 56/255)
-let angulargradient = AngularGradient(colors: [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)], center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
+enum SymptomType: String, CaseIterable, Identifiable {
+    case symptom = "Symptom"
+    case sideEffect = "Side effect"
+    var id: String { rawValue }
+}
+
+
+//let gradientRed = Color(red: 151/255, green: 60/255, blue: 56/255)
+let gradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]

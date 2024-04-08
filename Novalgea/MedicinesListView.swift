@@ -141,10 +141,10 @@ struct MedicinesListView: View {
                 }
             }
         }
-        .onAppear {
-            let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
-            let existingMedicines = try? modelContext.fetch(fetchDescriptorM)
-        }
+//        .onAppear {
+//            let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
+//            let existingMedicines = try? modelContext.fetch(fetchDescriptorM)
+//        }
     }
     
     private func addMedicine() {

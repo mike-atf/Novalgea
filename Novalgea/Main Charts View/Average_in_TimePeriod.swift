@@ -39,15 +39,3 @@ struct Average_In_TimePeriod: Identifiable {
     }
     
 }
-
-//struct LabelledValue: Identifiable {
-//    var value: Double
-//    var label: String
-//    var id = UUID().uuidString
-//    
-//    init(value: Double, label: String) {
-//        self.value = value
-//        self.label = label
-//    }
-//    
-//}

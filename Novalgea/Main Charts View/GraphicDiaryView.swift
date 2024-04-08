@@ -24,19 +24,19 @@ struct GraphicDiaryView: View {
         $0.isSideEffect
     }, sort: \Symptom.name) var sideEffects: [Symptom]
     @Query(sort: \Medicine.name) var medicinesList: [Medicine]
-
+    @Query(sort: \EventCategory.name) var allEventCategories: [EventCategory]
 
     @State var categoriesDisplayed: [String]?
     @State var selectedDisplayTime: DisplayTimeOption = .month
     
-    @State private var allEventCategories = [String]() // filled in .onAppear, with inserting 'All'
+//    @State private var allEventCategories = [String]() // filled in .onAppear, with inserting 'All'
     @State private var symptomNames = [String]() // filled in .onAppear, with inserting 'All'
     @State private var selectedSingleCategory: String?
     
     // in order for Chart view @Query filtering to work dynamically selections needs to happen outside the Chart view
     @State private var selectedSymptoms: Set<Symptom>?
     @State private var selectedMedicines: Set<Medicine>?
-    @State private var selectedEventCategories: Set<String>?
+    @State private var selectedEventCategories: Set<EventCategory>?
     @State private var selectedDiaryEvent: DiaryEvent?
 
     @State var startDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).first! //(Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
@@ -44,6 +44,11 @@ struct GraphicDiaryView: View {
     @State var dragOffset = CGSizeZero
     @State var showRatingButton = false
     @State var selectedVAS: Double?
+    @State var addRatingOrEventSubtitle = UserText.term("Rate symptom or record an event\n(Chose the rated symptom in the next step)")
+
+    @State var showNewCategoryView = false
+    @State var showNewEventView = false
+    @State var showNewMedicineEventView = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -66,100 +71,123 @@ struct GraphicDiaryView: View {
                     }
                     .padding(.bottom, -5)
                 }
-                    ScrollView {
-                        VStack(alignment: .leading) {
-                            //MARK: - Ratings and Med event charts
-                            if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
-                                Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
-                                    .frame(minHeight: 600)
-//                                   .frame(height: geometry.size.height * 0.8)
-                                
-                                if showRatingButton {
-                                        Divider()
-                                    RatingButton(showView: $showRatingButton, vas: $selectedVAS)
-                                        .frame(minHeight: 300)
-//                                            .frame(height: min(geometry.size.height/4, geometry.size.width))
+                
+                ScrollView {
+                    VStack(alignment: .leading) {
+                        //MARK: - Ratings and Med event charts
+                        if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
+                            Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
+                                .frame(minHeight: 600)
+                                .padding(.horizontal)
+
+                            if showRatingButton {
                                     Divider()
-                                }
-                            } else {
-                               Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
+                                RatingButton(showView: $showRatingButton, vas: $selectedVAS, headerSubtitle: $addRatingOrEventSubtitle, showNewEventView: $showNewEventView, showNewMedicineEventView: $showNewMedicineEventView)
                                     .frame(minHeight: 300)
-//                                    .frame(height: geometry.size.height * 0.6)
-                                
-                                if showRatingButton {
-                                        Divider()
-                                    RatingButton(showView: $showRatingButton, vas: $selectedVAS)
-                                       .frame(height: min(geometry.size.height/4, geometry.size.width))
-                                    Divider()
-                                }
+                                    .padding(.horizontal)
+
+                                Divider()
                             }
-                        }
-                        .gesture(
+                        } else {
+                           Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
+                                .frame(minHeight: 300)
+                                .padding(.horizontal)
                             
-                            //MARK: - Swiping Gesture
-                            // edge swiping gesture
-                            DragGesture(minimumDistance: 50)
-                                .onChanged({ value in
-                                    dragOffset = value.translation
-                                })
-                                .onEnded({ _ in
-                                    selectedDiaryEvent = nil
-                                    if dragOffset.width > 0 {
-                                        withAnimation {
-                                            stepDisplayTime(option: .backwards)
-                                        }
-                                    } else if dragOffset.width < 0 {
-                                        withAnimation {
-                                            stepDisplayTime(option: .forwards)
-                                        }
-                                    }
-                                })
-                        )
-                        VStack(alignment: .leading) {
-                            //MARK: - Events Charts
-                            if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
-                                EventsChartView2(selectedCategories: $selectedEventCategories, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                    .frame(minHeight: 300)
-                                
-                            }
-                            else {
-                                EventsChartView(selectedCategories: $selectedEventCategories, selectedDiaryEvent: $selectedDiaryEvent, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                    .frame(minHeight: 200)
-                                
-                            }
-                        }
-                        //MARK: - Selected Diary event view
-                        if selectedDiaryEvent != nil {
-                            withAnimation {
-                                VStack(alignment: .leading) {
-                                    Divider()
-                                    HStack {
-                                        Text("\(selectedDiaryEvent!.date.formatted())").font(.subheadline).bold()
-                                        Button {
-                                            selectedDiaryEvent = nil
-                                        } label: {
-                                            Image(systemName: "x.circle.fill")
-                                        }
-                                        
-                                    }
-                                    Text(selectedDiaryEvent!.notes).font(.footnote)
-                                        .lineLimit(nil)
-                                }
-                            }
                         }
                     }
-                    .scrollDisabled(showRatingButton)
+                    .gesture(
+                        
+                        //MARK: - Swiping Gesture
+                        // edge swiping gesture
+                        DragGesture(minimumDistance: 50)
+                            .onChanged({ value in
+                                dragOffset = value.translation
+                            })
+                            .onEnded({ _ in
+                                selectedDiaryEvent = nil
+                                if dragOffset.width > 0 {
+                                    withAnimation {
+                                        stepDisplayTime(option: .backwards)
+                                    }
+                                } else if dragOffset.width < 0 {
+                                    withAnimation {
+                                        stepDisplayTime(option: .forwards)
+                                    }
+                                }
+                            })
+                    )
+                    VStack(alignment: .leading) {
+                        //MARK: - Events Charts
+                        if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
+                            EventsChartView2(selectedCategories: $selectedEventCategories, showNewCategoryView: $showNewCategoryView, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
+                                .frame(minHeight: 300)
+                                .padding(.horizontal)
+
+                        }
+                        else {
+                            EventsChartView(selectedCategories: $selectedEventCategories, showNewCategoryView: $showNewCategoryView, selectedDiaryEvent: $selectedDiaryEvent, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
+                                .frame(minHeight: 250)
+                                .padding(.horizontal)
+
+                        }
+                    }
+                    //MARK: - Selected Diary event view
+                    if selectedDiaryEvent != nil {
+                        withAnimation {
+                            VStack(alignment: .leading) {
+                                Divider()
+                                HStack {
+                                    Text("\(selectedDiaryEvent!.date.formatted())").font(.subheadline).bold()
+                                    Button {
+                                        selectedDiaryEvent = nil
+                                    } label: {
+                                        Image(systemName: "x.circle.fill")
+                                    }
+                                    
+                                }
+                                Text(selectedDiaryEvent!.notes).font(.footnote)
+                                    .lineLimit(nil)
+                            }
+                            .padding(.horizontal)
+
+                        }
+                    }
+                }
+                .scrollDisabled(showRatingButton)
                 
             }
+            .sheet(isPresented: $showRatingButton, content: {
+                VStack {
+                    Text(UserText.term("Add a diary entry")).font(.title).bold()
+                    Text(UserText.term(addRatingOrEventSubtitle)).foregroundStyle(.gray)
+                    Divider()
+                    RatingButton(showView: $showRatingButton, vas: $selectedVAS, headerSubtitle: $addRatingOrEventSubtitle, showNewEventView: $showNewEventView, showNewMedicineEventView: $showNewMedicineEventView)
+                        .padding(.horizontal)
+                    
+                    Divider()
+                }.navigationTitle("Add a symptom rating or event")
+                    .padding()
+            })
+            .sheet(isPresented: $showNewCategoryView, content: {
+                NewCategoryView(showView: $showNewCategoryView)
+            })
+            .sheet(isPresented: $showNewEventView, content: {
+                if !allEventCategories.isEmpty {
+                    NewEventView(categories: allEventCategories, showView: $showNewEventView, category: allEventCategories.first!)
+                }
+            })
+            .sheet(isPresented: $showNewMedicineEventView, content: {
+                NewMedicineEventView(showView: $showNewMedicineEventView)
+            })
+
             .onAppear {
-                let allCategories = Set(events.compactMap { $0.category })
-                allEventCategories = Array(allCategories)
+                
+//                SampleData.createSampleData(checkIfExist: false, _in: modelContext.container)
                 
                 let allSymptoms = Set(symptomsList.compactMap { $0.name })
                 symptomNames = Array(allSymptoms)
 //                cleanRatingDuplicates()
             }
-            .padding(.horizontal)
         }
     }
     

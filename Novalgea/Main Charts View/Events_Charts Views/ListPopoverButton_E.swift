@@ -13,9 +13,10 @@ import SwiftUI
 struct ListPopoverButton_E: View {
     
     @Binding var showSelectionList: Bool
-    @Binding var selectedCategories: Set<String>?
+    @Binding var selectedCategories: Set<EventCategory>?    
+    @Binding var showNewCategoryView: Bool
     
-    var allCategories: [String]
+    var allCategories: [EventCategory]
 
     var body: some View {
         
@@ -62,7 +63,7 @@ struct ListPopoverButton_E: View {
                         ForEach(allCategories.indices, id: \.self) { index in
                             Button {
                                 if selectedCategories == nil {
-                                    selectedCategories = Set<String>()
+                                    selectedCategories = Set<EventCategory>()
                                     selectedCategories!.insert(allCategories[index])
                                 }
                                 else if selectedCategories!.contains(allCategories[index]) {
@@ -79,14 +80,15 @@ struct ListPopoverButton_E: View {
                                     } else {
                                         Image(systemName: "circle")
                                     }
-                                    Text(allCategories[index]).font(.footnote)
+                                    Text(allCategories[index].name).font(.footnote)
                                 }
                             }
                             Divider()
                             
                         }
                         Button(UserText.term("Add category")) {
-                            print("new event category")
+                            showSelectionList = false
+                            showNewCategoryView = true
                         }
                         .buttonStyle(BorderedButtonStyle())
                     }
@@ -101,5 +103,5 @@ struct ListPopoverButton_E: View {
 }
 
 #Preview {
-    ListPopoverButton_E(showSelectionList: .constant(true), selectedCategories: .constant(["Cat1, Cat2"]), allCategories: ["Cat1, Cat2, Cat3"])
+    ListPopoverButton_E(showSelectionList: .constant(true), selectedCategories: .constant([EventCategory.preview]), showNewCategoryView: .constant(true), allCategories: [EventCategory.preview])
 }

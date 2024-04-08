@@ -12,7 +12,7 @@ import SwiftData
 
 @Model final class DiaryEvent: Identifiable {
     
-    var category: String = "Category"
+//    var category: String = "Category"
     var date: Date = Date()
     var endDate: Date?
     var notes: String = ""
@@ -20,12 +20,17 @@ import SwiftData
     
     @Relationship(deleteRule: .nullify, inverse: \Rating.relatedDiaryEvents) var relatedRatings: [Rating]?
     @Relationship(deleteRule: .nullify, inverse: \Symptom.diaryEvents) var relatedSymptoms: [Symptom]?
-    
-    public init(date: Date?, category: String, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = [], notes: String = "") { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
+    @Relationship(deleteRule: .nullify, inverse: \EventCategory.relatedDiaryEvents) var category: EventCategory?
+
+    public init(date: Date?, endDate: Date?=nil, category: EventCategory, relatedRatings: [Rating]? = [], relatedSymptoms: [Symptom]? = [], notes: String = "") { // the relatedRatings: [Rating]? = [] is essential to prevent preview crashes!
         self.date = date ?? .now
+        if let end = endDate {
+            if end > self.date { self.endDate = end }
+        }
         self.category = category
         self.notes = notes
         self.relatedRatings = relatedRatings
+        self.relatedSymptoms = relatedSymptoms
     }
     
     public func duration() -> TimeInterval? {
@@ -52,7 +57,7 @@ import SwiftData
 extension DiaryEvent {
     
     static var preview: DiaryEvent {
-        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: "Default event category")
+        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: EventCategory.preview)
             
     }
 

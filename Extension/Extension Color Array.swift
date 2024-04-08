@@ -13,14 +13,12 @@ extension Array where Element == Color {
         
         let vas0_1 = vas/10.0
         
-        let angularGradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]
-        
-        let cgColors: [CGColor] = angularGradientColors.compactMap { color in
+        let cgColors: [CGColor] = gradientColors.compactMap { color in
             color.cgColor
         }
         
-        if vas0_1 <= 0.0 { return angularGradientColors[0] }
-        else if vas0_1 >= 1.0 { return angularGradientColors[3] }
+        if vas0_1 <= 0.0 { return gradientColors[0] }
+        else if vas0_1 >= 1.0 { return gradientColors[3] }
         
                     
         guard let rgbComponents1 = cgColors[0].components else { return Color.white }

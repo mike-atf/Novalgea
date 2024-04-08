@@ -16,13 +16,15 @@ struct EventsChartView2: View {
 
     @Query(sort: \DiaryEvent.date) var events: [DiaryEvent]
     
-    @Binding var selectedCategories: Set<String>?
+    @Binding var selectedCategories: Set<EventCategory>?
+    @Binding var showNewCategoryView: Bool
 
     @State var showSelectionList = false
     @State var rawSelectedDate: Date?
     @State var showSelectedEventPopover = false
-    var allCategories: [String]
-    var categoriesShown: [String]
+    
+    var allCategories: [EventCategory]
+    var categoriesShown: [EventCategory]
     
     private var filteredEvents: [DiaryEvent] {
         
@@ -30,16 +32,24 @@ struct EventsChartView2: View {
         
         guard (selectedCategories?.count ?? 0) > 0 else { return events }
         
-        return events.filter { event in
-            if selectedCategories!.contains(event.category) { return true }
-            else { return false }
+        var eventsInScope = [DiaryEvent]()
+        
+        for category in selectedCategories ?? [] {
+            eventsInScope.append(contentsOf: category.relatedDiaryEvents ?? [])
         }
+        
+        return eventsInScope
+        
+//        return events.filter { event in
+//            if selectedCategories!.contains(event.category) { return true }
+//            else { return false }
+//        }
     }
 
     var fromDate: Date
     var toDate: Date
     
-    init(selectedCategories: Binding<Set<String>?>, allCategories: [String], from: Date, to: Date) {
+    init(selectedCategories: Binding<Set<EventCategory>?>, showNewCategoryView: Binding<Bool> ,allCategories: [EventCategory], from: Date, to: Date) {
         
         _events = Query(filter: #Predicate<DiaryEvent> {
             $0.date >= from &&
@@ -47,12 +57,13 @@ struct EventsChartView2: View {
         }, sort:\DiaryEvent.date)
 
         _selectedCategories = selectedCategories
+        _showNewCategoryView = showNewCategoryView
         
         self.fromDate = from
         self.toDate = to
         self.allCategories = allCategories
         self.categoriesShown = selectedCategories.wrappedValue == nil ? allCategories : Array(selectedCategories.wrappedValue!)
-        
+
     }
 
 
@@ -66,7 +77,7 @@ struct EventsChartView2: View {
                 .padding(.bottom, -5)
             Divider()
                
-            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, allCategories: allCategories)
+            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
 
             Divider()
             
@@ -76,8 +87,8 @@ struct EventsChartView2: View {
                     else { return false }
                 }
                 
-                BarMark(x: .value("Category", category),y: .value("Count", events.count))
-                    .foregroundStyle(by: .value("Category", category))
+                BarMark(x: .value("Category", category.name),y: .value("Count", events.count))
+                    .foregroundStyle(by: .value("Category", category.name))
                 
             }
             .padding(.trailing)

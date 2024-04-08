@@ -25,7 +25,7 @@ struct NovalgeaApp: App {
             let storeURL = modelFolder.appending(path: "Novalgea.database.sqlite")
             let config = ModelConfiguration(url: storeURL, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
             //WARNING: - Model changes must be reflected and checked against importing and replacing the modelContainer in ImportView.decompressArchive()
-            return try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, MedicineEvent.self, Rating.self, InternalError.self, configurations: config)
+            return try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, MedicineEvent.self, Rating.self, InternalError.self, EventCategory.self, configurations: config)
         } catch {
             fatalError("Failed to configure SwiftData container.")
         }
@@ -68,6 +68,15 @@ struct NovalgeaApp: App {
                     .tabItem {
                         Label("Medicine", systemImage: "pills.circle")
                     }
+                CategoryListView()
+                    .tabItem {
+                        Label("Categories", systemImage: "line.horizontal.star.fill.line.horizontal")
+                    }
+                DiaryEventsListView()
+                    .tabItem {
+                        Label("Events", systemImage: "calendar")
+                    }
+
                 ExportView()
                     .tabItem {
                         Label("Export", systemImage: "square.and.arrow.up.on.square.fill")
@@ -84,7 +93,7 @@ struct NovalgeaApp: App {
     public mutating func resetModelContainer(to: URL) {
         do {
             let config = ModelConfiguration(url: to, cloudKitDatabase: .private("iCloud.co.uk.apptoolfactory.Novalgea"))
-            self.container = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, MedicineEvent.self, Rating.self, InternalError.self, configurations: config)
+            self.container = try ModelContainer(for: Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, MedicineEvent.self, Rating.self, InternalError.self, EventCategory.self, configurations: config)
         } catch {
             fatalError("Failed to configure SwiftData container.")
         }
@@ -92,7 +101,7 @@ struct NovalgeaApp: App {
     }
 }
 
-public let defaultSymptom = NSLocalizedString("defaultSymptom", comment: "")
+public let defaultSymptom = UserText.term("defaultSymptom")
 
 
 enum User_Default_Keys: String {

@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 
-@Model final class Symptom: Identifiable  {
+@Model final class Symptom: Identifiable, Equatable, Hashable  {
     
     var name: String = "Default symptom"
     var type: String = "Symptom" // the other option is Side effect
@@ -26,7 +26,7 @@ import SwiftData
     var causingMeds: [Medicine]? // optional to-many relationShips not supported in @Query #Predicate
     var isSideEffect: Bool = false // because of the above limitation
     
-    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String, maxVAS: Double = 10, minVAS: Double = 0, uuid: UUID = UUID(), diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = []) {
+    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String, maxVAS: Double = 10, minVAS: Double = 0, diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = []) {
         
         self.averages = averages
         self.type = type
@@ -34,13 +34,25 @@ import SwiftData
         self.maxVAS = maxVAS
         self.minVAS = minVAS
         self.name = name
-        self.uuid = uuid
         self.diaryEvents = diaryEvents
         self.ratingEvents = ratingEvents
         self.treatingMeds = treatingMeds
         self.causingMeds = causingMeds
         if causingMeds?.count ?? 0 > 0 { isSideEffect = true }
     }
+    
+    static func == (lhs: Symptom, rhs: Symptom) -> Bool {
+        
+        if lhs.uuid != rhs.uuid { return false }
+
+        
+//        if lhs.name != rhs.name { return false }
+//        else if lhs.type != rhs.type { return false }
+
+        return true
+        
+    }
+
     
     
     public func ratingAverage(from: Date, to: Date) -> Double? {

@@ -16,13 +16,15 @@ struct EventsChartView: View {
 
     @Query(sort: \DiaryEvent.date) var events: [DiaryEvent]
     
-    @Binding var selectedCategories: Set<String>?
+    @Binding var selectedCategories: Set<EventCategory>?
     @Binding var selectedEvent: DiaryEvent?
+    @Binding var showNewCategoryView: Bool
 
     @State var showSelectionList = false
     @State var rawSelectedDate: Date?
     @State var showSelectedEventPopover = false
-    var allCategories: [String]
+    
+    var allCategories: [EventCategory]
     
     private var filteredEvents: [DiaryEvent] {
         
@@ -30,10 +32,19 @@ struct EventsChartView: View {
         
         guard (selectedCategories?.count ?? 0) > 0 else { return events }
         
-        return events.filter { event in
-            if selectedCategories!.contains(event.category) { return true }
-            else { return false }
+        //not sure what's quicker - doesn't look like much dfference
+//        return events.filter { event in
+//            if event.category == nil { return false }
+//            else if selectedCategories!.contains(event.category!) { return true }
+//            else { return false }
+//        }
+        
+        var eventsInScope = [DiaryEvent]()
+        for category in selectedCategories ?? [] {
+            eventsInScope.append(contentsOf: category.relatedDiaryEvents ?? [])
         }
+        
+        return eventsInScope
     }
 
     var fromDate: Date
@@ -52,7 +63,7 @@ struct EventsChartView: View {
         }
     }
     
-    init(selectedCategories: Binding<Set<String>?>, selectedDiaryEvent: Binding<DiaryEvent?>,allCategories: [String], from: Date, to: Date) {
+    init(selectedCategories: Binding<Set<EventCategory>?>, showNewCategoryView: Binding<Bool> ,selectedDiaryEvent: Binding<DiaryEvent?>, allCategories: [EventCategory], from: Date, to: Date) {
         
         _events = Query(filter: #Predicate<DiaryEvent> {
             $0.date >= from &&
@@ -61,6 +72,7 @@ struct EventsChartView: View {
 
         _selectedCategories = selectedCategories
         _selectedEvent = selectedDiaryEvent
+        _showNewCategoryView = showNewCategoryView
         
         self.fromDate = from
         self.toDate = to
@@ -69,7 +81,7 @@ struct EventsChartView: View {
         var line = 1
         categoryChartLines = [String: Int]()
         for cat  in allCategories {
-            categoryChartLines[cat] = line
+            categoryChartLines[cat.name] = line
             line += 1
         }
     }
@@ -80,22 +92,21 @@ struct EventsChartView: View {
         VStack(alignment: .leading) {
             Text(UserText.term("Diary events")).font(.title3).bold()
             Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary).font(.caption)
-//                .padding(.bottom, -5)
 
             //MARK: - chart
             Chart(filteredEvents) { event in
                 
                 if selectedEvent != nil {
                     RuleMark(x: .value("", selectedEvent!.date))
-//                        .opacity(0.25)
-                        .foregroundStyle(.gray)
+                        .foregroundStyle(.primary)
+                        .lineStyle(StrokeStyle(lineWidth: 1))
                 }
-                if event.endDate == event.date {
-                    PointMark(x: .value("Date", event.date),y: .value("", categoryChartLines[event.category] ?? 0))
-                        .foregroundStyle(by: .value("Category", event.category))
+                if event.endDate == event.date || event.endDate == nil {
+                    PointMark(x: .value("Date", event.date),y: .value("", categoryChartLines[event.category!.name] ?? 0))
+                        .foregroundStyle(by: .value("Category", event.category!.name))
                         .symbolSize(400)
                         .annotation(position: .overlay, alignment: .center, spacing: 0) {
-                            Text(verbatim: String(event.category.first!))
+                            Text(verbatim: String(event.category!.name.first!))
                                 .font(.caption).bold()
                                 .foregroundStyle(.white)
                         }
@@ -104,15 +115,20 @@ struct EventsChartView: View {
                     RectangleMark(
                         xStart: .value("Start", event.date),
                         xEnd: .value("End", event.chartDisplayEndDate(defaultDuration: 1*3600)),
-                        yStart: .value("", categoryChartLines[event.category] ?? 0),
-                        yEnd: .value("", categoryChartLines[event.category]!+1)
+                        yStart: .value("", categoryChartLines[event.category!.name] ?? 0),
+                        yEnd: .value("", categoryChartLines[event.category!.name]!+1)
                     )
-                    .foregroundStyle(by: .value("Category", event.category))
+                    .foregroundStyle(by: .value("Category", event.category!.name))
+                    .annotation(position: .overlay, alignment: .center, spacing: 0) {
+                        Text(verbatim: String(event.category!.name.first!))
+                            .font(.caption).bold()
+//                                    .foregroundStyle(by: .value("Category", event.category!.name))
+                    }
+
                 }
                 
             }
             .chartYAxis(.hidden)
-//            .chartXAxis(.hidden)
             .chartXScale(domain: fromDate...toDate)
             .padding(.trailing)
             .chartOverlay { proxy in
@@ -124,7 +140,7 @@ struct EventsChartView: View {
                         //Check if value is included in the data from the chart
                         for event in filteredEvents {
                             if (event.date.addingTimeInterval(-eventSelectionTimeAdjustment) ... event.date.addingTimeInterval(eventSelectionTimeAdjustment)).contains(value.0) {
-                                if categoryChartLines[event.category] == value.1 {
+                                if categoryChartLines[event.category!.name] == value.1 {
                                     selectedEvent = event
                                     showSelectedEventPopover = true
                                     return
@@ -138,7 +154,7 @@ struct EventsChartView: View {
                 
             Divider()
             
-            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, allCategories: allCategories)
+            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
 
             Divider()
 
@@ -147,7 +163,7 @@ struct EventsChartView: View {
         .overlay {
             if filteredEvents.isEmpty {
                 ContentUnavailableView {
-                    Label("No events", systemImage: "chart.line.downtrend.xyaxis.circle.fill")
+                    Label(UserText.term("No events for this time period"), systemImage: "chart.line.downtrend.xyaxis.circle.fill")
                 } description: {
                     Text("")
                 }

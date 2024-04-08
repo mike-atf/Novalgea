@@ -4,10 +4,9 @@
 //
 //  Created by aDev on 14/02/2024.
 //
-
+#if canImport(UIKit)
 import UIKit
-
-import UIKit
+#endif
 import SwiftUI
 import SwiftData
 import OSLog
@@ -449,8 +448,23 @@ import OSLog
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
         let existingMedicines = try? context.fetch(fetchDescriptorM)
         
-//        var uniqueRatingDates = [String]() // TODO: - remove; to account for own faulty diary data with lots of duplicate ratings from May 19 and earlier
-//        let checkDate = Date().setDate(day: 31, month: 05, year: 2019)!
+        var uniqueRatingDates = [String]() // TODO: - remove; to account for own faulty diary data with lots of duplicate ratings from May 19 and earlier
+        let checkDate = Date().setDate(day: 31, month: 05, year: 2019)!
+        
+        let diaryEvents = events.filter { event in
+            if event.type == "Diary Entry" { return true } // this is the term used in Alogea for all languages
+            else { return false }
+        }
+        
+        let categoryNames = Set(diaryEvents.compactMap { $0.name })
+        var importedCategories = [EventCategory]()
+        for name in categoryNames {
+            let new = EventCategory(name: name)
+            importedCategories.append(new)
+            context.insert(new)
+        }
+        let unkown = EventCategory(name: UserText.term("Unknown category"))
+
         for event in events {
             
             switch event.type {
@@ -470,16 +484,22 @@ import OSLog
                     ratedSymptom = newSymptom
                 }
                 let newRating = Rating(vas: event.vas?.doubleValue ?? 0, ratedSymptom: ratedSymptom, date: event.date)
-//                if event.date < checkDate {
-//                    Logger().info("\(event.date.formatted(.dateTime.day().month().year().hour().minute().second()))")
-//                }
-//                if !uniqueRatingDates.contains(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second())) {
-//                    uniqueRatingDates.append(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second()))
-                    context.insert(newRating)
-//                }
+                //TODO: - remove
+                if event.date < checkDate {
+                    Logger().info("\(event.date.formatted(.dateTime.day().month().year().hour().minute().second()))")
+                }
+                if !uniqueRatingDates.contains(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second())) {
+                    uniqueRatingDates.append(newRating.date.formatted(.dateTime.day().month().year().hour().minute().second()))
+                    context.insert(newRating) // <- KEEP THIS
+                }
                 
             case "Diary Entry":
-                let newDiaryEvent = DiaryEvent(date: event.date, category: event.name, notes: event.note ?? "")
+                var matchingCategory = importedCategories.category(named: event.name)
+                if matchingCategory == nil {
+                    context.insert(unkown)
+                    matchingCategory = unkown
+                }
+                let newDiaryEvent = DiaryEvent(date: event.date, category: matchingCategory!, notes: event.note ?? "")
                 if let duration = event.duration?.doubleValue {
                     newDiaryEvent.endDate = newDiaryEvent.date.addingTimeInterval(duration)
                 }

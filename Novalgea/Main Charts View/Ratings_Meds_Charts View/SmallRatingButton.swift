@@ -11,6 +11,8 @@ struct SmallRatingButton: View {
     
     @Binding var showRatingButton: Bool
     
+    let angulargradient = AngularGradient(colors: gradientColors, center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
+
     
     var body: some View {
         

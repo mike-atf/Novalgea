@@ -10,7 +10,7 @@ import Foundation
 import SwiftData
 
 
-@Model class Rating: Identifiable  {
+@Model class Rating: Identifiable, Equatable  {
     
     var date: Date = Date()
     var vas: Double = 0.0
@@ -35,6 +35,18 @@ import SwiftData
         self.relatedMedEvents = relatedMedEvents
         self.ratedMedicine = ratedMedicine
     }
+    
+    static func == (lhs: Rating, rhs: Rating) -> Bool {
+        
+        if lhs.note != rhs.note { return false }
+        if abs(lhs.date.timeIntervalSince(lhs.date)) > 5 { return false }
+        if lhs.ratedSymptom != rhs.ratedSymptom { return false }
+        if lhs.vas != rhs.vas { return false }
+        
+        return true
+        
+    }
+
     
     /// converts Alogea effectiveness (String) to VAS for medicine rating on import
     public func effectAsVAS(effect: MedicineEffectRating, medicine: Medicine) {
@@ -90,7 +102,7 @@ extension Rating {
     
     static var preview: Rating {
         
-        Rating(vas: 5.5, ratedSymptom: Symptom(name: "Sample symptom", type: "Symptom", creatingDevice: "Sample device"))
+        Rating(vas: 5.5, ratedSymptom: Symptom(name: "Sample symptom created in sample rating", type: "Symptom", creatingDevice: "Sample device"))
     }
 
 }

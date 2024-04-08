@@ -11,7 +11,7 @@ import SwiftUI
 import SwiftData
 
 
-@Model final class Medicine: Identifiable  {
+@Model final class Medicine: Identifiable, Equatable, Hashable  {
     
     @Attribute(.transformable(by: "NSSecureUnarchiveFromData")) var alerts: [String]?
     var creatingDevice: String = "Device name"
@@ -38,7 +38,7 @@ import SwiftData
     @Relationship(deleteRule: .cascade ,inverse: \Symptom.causingMeds) var sideEffects: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Rating.ratedMedicine) var effectRatings: [Rating]?
     
-    public init(name: String = "New medicine \(Date.now)", doses: [Dose], startDate: Date = .now, endDate: Date?=nil,drugClass: String?=nil, effectDuration: TimeInterval = 24*3600, isRegular: Bool=true, treatedSymptoms: [Symptom]? = [], effectRatings: [Rating]? = [], creatingDevice: String?=nil) {
+    public init(name: String = "New medicine \(Date.now)", currentStatus: String? = "Current" ,doses: [Dose], startDate: Date = .now, endDate: Date?=nil,drugClass: String?=nil, effectDuration: TimeInterval = 24*3600, isRegular: Bool=true, treatedSymptoms: [Symptom]? = [], effectRatings: [Rating]? = [], creatingDevice: String?=nil) {
         self.name = name
         self.startDate = startDate
         self.creatingDevice = creatingDevice ?? UIDevice.current.name
@@ -48,10 +48,22 @@ import SwiftData
         self.effectDuration = effectDuration
         self.isRegular = isRegular
         self.ratingRemindersOn = true
-        self.currentStatus = "Current"
+        self.currentStatus = currentStatus ?? "Current"
         self.treatedSymptoms = treatedSymptoms
         self.reviewDates = nil
         self.effectRatings = effectRatings
+    }
+    
+    static func == (lhs: Medicine, rhs: Medicine) -> Bool {
+        
+        if lhs.name != rhs.name { return false }
+        if lhs.startDate != rhs.startDate { return false }
+        if lhs.doses != rhs.doses { return false }
+        if lhs.effectDuration != rhs.effectDuration { return false }
+        if lhs.isRegular != rhs.isRegular { return false }
+        
+        return true
+        
     }
 
     public func dosesTaken(from:Date, to: Date) -> Int {

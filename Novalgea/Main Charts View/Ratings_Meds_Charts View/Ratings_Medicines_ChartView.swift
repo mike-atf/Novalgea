@@ -184,6 +184,7 @@ struct Ratings_Medicines_ChartView: View {
                     LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
                         .foregroundStyle(by: .value("Symptom", $0.ratedSymptom!.name))
                         .interpolationMethod(.monotone)
+                        .symbol(Circle())
                 }
                 
                 // 3 - selected event line
@@ -204,7 +205,7 @@ struct Ratings_Medicines_ChartView: View {
             .overlay {
                 if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty{
                     ContentUnavailableView {
-                        Label("No records", systemImage: "chart.line.uptrend.xyaxis.circle")
+                        Label(UserText.term("No records for this time period"), systemImage: "chart.line.uptrend.xyaxis.circle")
                     } description: {
                         Text("Ratings and medication events will be charted here.")
                     }
