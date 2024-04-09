@@ -26,8 +26,8 @@ struct ListPopoverButton_E: View {
                 showSelectionList = true
             } label: {
                 HStack {
-                    Image(systemName: "line.3.horizontal.circle")
-                        .imageScale(.large)
+                    Image(systemName: "eye.circle.fill")
+                        .imageScale(.medium)
                     if selectedCategories?.count ?? 0 > 0 {
                         Text(UserText.term("Categories: ") + "\(selectedCategories!.count)")
                             .font(.footnote)
@@ -44,13 +44,14 @@ struct ListPopoverButton_E: View {
                 if allCategories.count == 0 {
                     VStack {
                         ContentUnavailableView {
-                            Label("", systemImage: "pills.circle.fill")
+                            Label("", systemImage: "square.and.pencil.circle.fill")
                         } description: {
                             Text(UserText.term("No event categories yet"))
                         }
                         
                         Button(UserText.term("Add one")) {
-                            print("new event category")
+                            showSelectionList = false
+                            showNewCategoryView = true
                         }
                         .buttonStyle(BorderedButtonStyle())
                     }

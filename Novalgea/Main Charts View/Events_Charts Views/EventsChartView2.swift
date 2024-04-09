@@ -73,11 +73,12 @@ struct EventsChartView2: View {
                 
             //MARK: - chart
             Text(UserText.term("Events")).font(.title2).bold()
-            Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
-                .padding(.bottom, -5)
-            Divider()
-               
-            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
+            HStack {
+                ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
+                Spacer()
+                Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
+                    .padding(.bottom, -5).font(.footnote)
+            }
 
             Divider()
             
@@ -90,6 +91,11 @@ struct EventsChartView2: View {
                 BarMark(x: .value("Category", category.name),y: .value("Count", events.count))
                     .foregroundStyle(by: .value("Category", category.name))
                 
+            }
+            .chartPlotStyle { plotArea in
+               plotArea
+                   .frame(minHeight: 150)
+                   .frame(maxHeight: 300)
             }
             .padding(.trailing)
             .transition(.move(edge: .leading))

@@ -90,8 +90,9 @@ struct EventsChartView: View {
     var body: some View {
         
         VStack(alignment: .leading) {
-            Text(UserText.term("Diary events")).font(.title3).bold()
-            Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary).font(.caption)
+            Text(UserText.term("Diary events")).font(.title2).bold()
+//            Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary).font(.caption)
+            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
 
             //MARK: - chart
             Chart(filteredEvents) { event in
@@ -128,6 +129,11 @@ struct EventsChartView: View {
                 }
                 
             }
+            .chartPlotStyle { plotArea in
+               plotArea
+                   .frame(minHeight: 150)
+                   .frame(maxHeight: 250)
+            }
             .chartYAxis(.hidden)
             .chartXScale(domain: fromDate...toDate)
             .padding(.trailing)
@@ -150,20 +156,12 @@ struct EventsChartView: View {
                     }
             }
             .transition(.move(edge: .leading))
-
-                
-            Divider()
-            
-            ListPopoverButton_E(showSelectionList: $showSelectionList, selectedCategories: $selectedCategories, showNewCategoryView: $showNewCategoryView, allCategories: allCategories)
-
-            Divider()
-
             
         }
         .overlay {
             if filteredEvents.isEmpty {
                 ContentUnavailableView {
-                    Label(UserText.term("No events for this time period"), systemImage: "chart.line.downtrend.xyaxis.circle.fill")
+                    Label(UserText.term("No events for this time period"), systemImage: "square.and.pencil.circle").imageScale(.medium).font(.body)
                 } description: {
                     Text("")
                 }

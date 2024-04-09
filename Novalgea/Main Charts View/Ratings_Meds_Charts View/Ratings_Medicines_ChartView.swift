@@ -22,7 +22,8 @@ struct Ratings_Medicines_ChartView: View {
     @Binding var selectedMedicines: Set<Medicine>?
     @Binding var selectedDiaryEvent: DiaryEvent?
     @Binding var showRatingButton: Bool
-    
+    @Binding var showNewSymptomView: Bool
+ 
     @State var showSymptomList = false
     @State var showMedicinesList = false
 
@@ -68,7 +69,7 @@ struct Ratings_Medicines_ChartView: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
         
         // to include ratings before and after so line chart extends beyond chart boundaries
         var timeBeforeAndAfter: TimeInterval = 0
@@ -111,6 +112,7 @@ struct Ratings_Medicines_ChartView: View {
         _selectedDiaryEvent = selectedEvent
         
         _showRatingButton = showRatingButton
+        _showNewSymptomView = showNewSymptomView
     }
 
     
@@ -118,34 +120,14 @@ struct Ratings_Medicines_ChartView: View {
         
         VStack(alignment: .leading) {
             //MARK: - header
-            Text(UserText.term("VAS & medication events")).font(.title3).bold()
-            Text(UserText.term("curves show VAS - boxes show medicine effect times")).foregroundStyle(.secondary).font(.caption)
-                .padding(.bottom, 5)
-            
             Divider()
-            
-            ZStack(alignment: .center) {
-                HStack {
-                    //MARK: - symptom selection button
-                    ListPopoverButton(showSymptomList: $showSymptomList, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
-                    
-                    Spacer()
-                }
-                
-                //MARK: - small ratings button
-                SmallRatingButton(showRatingButton: $showRatingButton)
-                    .frame(width: 35, height: 35)
-                HStack{
-                    Spacer()
-                    
-                    //MARK: - medicines selection button
-                    ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines)
-                }
+            Text(UserText.term("VAS & medication")).font(.title2).bold()
+            HStack {
+                ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
+                Spacer()
+                ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines)
             }
-            .padding(.bottom, -5)
-            
-            Divider()
-            
+
             //MARK: - combined chart
             Chart {
                 
@@ -195,23 +177,40 @@ struct Ratings_Medicines_ChartView: View {
                 }
                 
             }
+            .chartPlotStyle { plotArea in
+               plotArea
+                   .frame(minHeight: 150)
+                   .frame(maxHeight: 250)
+            }
             .chartXScale(domain: fromDate...toDate)
             .chartYScale(domain: 0...10)
             .chartYAxis {
                 AxisMarks(values: .automatic(desiredCount: 5))
             }
-            .chartLegend(position: .top)
             .clipped()
             .overlay {
-                if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty{
+                if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty {
                     ContentUnavailableView {
-                        Label(UserText.term("No records for this time period"), systemImage: "chart.line.uptrend.xyaxis.circle")
+                        Label(UserText.term("No records for this time period"), systemImage: "chart.line.uptrend.xyaxis.circle").imageScale(.medium).font(.body)
                     } description: {
-                        Text("Ratings and medication events will be charted here.")
+                        //Text("Ratings and medication events will be plotted here.").font(.footnote)
                     }
                 }
             }
             .transition(.move(edge: .leading))
+            .frame(minHeight: 150)
+            
+            Divider()
+            
+            HStack {
+                Spacer()
+                SmallRatingButton(showRatingButton: $showRatingButton)
+                    .frame(width: 45, height: 45)
+                Spacer()
+
+            }
+            
+            Divider()
 
         }
     }

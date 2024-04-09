@@ -16,11 +16,12 @@ struct Ratings_Medicines_ChartView2: View {
 
     @Binding var selectedSymptoms: Set<Symptom>?
     @Binding var selectedMedicines: Set<Medicine>?
+    @Binding var showRatingButton: Bool
+    @Binding var showNewSymptomView: Bool
 
     @State var showSymptomList = false
     @State var showMedicinesList = false
     @State var chartYScaleLimit: Int
-    @State var showRatingButton = false
 
     var medicines: [Medicine]
     var allMedicines: [Medicine]
@@ -34,7 +35,7 @@ struct Ratings_Medicines_ChartView2: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine],from: Date, to: Date, displayTime: DisplayTimeOption) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine],from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
         
         self.fromDate = from
         self.toDate = to
@@ -49,6 +50,9 @@ struct Ratings_Medicines_ChartView2: View {
         
         self.displayTime = displayTime
         
+        _showRatingButton = showRatingButton
+        _showNewSymptomView = showNewSymptomView
+
         if displayTime == .quarter {
             chartYScaleLimit = 50
         } else if displayTime == .year {
@@ -62,33 +66,19 @@ struct Ratings_Medicines_ChartView2: View {
     var body: some View {
         
         VStack {
-            
-            
             Divider()
             
             //MARK: - combined chart
             VStack(alignment: .leading) {
                 Text(UserText.term("Symptom VAS averages")).font(.title2).bold()
-                Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
-                    .padding(.bottom, -5)
-
-                ZStack(alignment: .center) {
-                    
-                    HStack {
-                        //MARK: - symptom selection button
-                        ListPopoverButton(showSymptomList: $showSymptomList, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
-                        
-                        Spacer()
-                    }
-                    
-                    //MARK: - small ratings button
-                    SmallRatingButton(showRatingButton: $showRatingButton)
-                        .frame(width: 35, height: 35)
+                HStack {
+                    ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
+                    Spacer()
+                    Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
+                        .font(.footnote)
                 }
-                .padding(.bottom, -5)
                                 
                 Chart {
-                    
                     ForEach(symptoms) {
                         let average = $0.ratingAverage(from: fromDate, to: toDate) ?? 0
                         BarMark(x: .value("Symptoms", $0.name), y: .value("average VAS", average))
@@ -103,23 +93,55 @@ struct Ratings_Medicines_ChartView2: View {
                     
                     
                 }
+                .chartPlotStyle { plotArea in
+                   plotArea
+                       .frame(minHeight: 150)
+                       .frame(maxHeight: 300)
+                }
                 .chartYScale(domain: 0...10)
                 .chartYAxis {
                     AxisMarks(values: .automatic(desiredCount: 5))
                 }
-                .chartLegend(position: .top)
+//                .chartLegend(position: .top)
                 .clipped()
                 .transition(.move(edge: .leading))
+                .padding(.bottom)
+                
+                Divider()
+
+//                ZStack(alignment: .center) {
+//                    
+//                    HStack {
+//                        //MARK: - symptom selection button
+//                        ListPopoverButton(showSymptomList: $showSymptomList, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
+//                        
+//                        Spacer()
+//                    }
+//                    
+//                    //MARK: - small ratings button
+//                    SmallRatingButton(showRatingButton: $showRatingButton)
+//                        .frame(width: 35, height: 35)
+//                }
+                HStack {
+                    Spacer()
+                    //MARK: - small ratings button
+                    SmallRatingButton(showRatingButton: $showRatingButton)
+                        .frame(width: 40, height: 40)
+
+                    Spacer()
+                }
+//                .padding(.bottom, -5)
+                
+                Divider()
                 
                 Text(UserText.term("Medication doses")).font(.title2).bold()
-                Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
-                    .padding(.bottom, -5)
-
-                Divider()
                 
                 HStack{
                      //MARK: - medicines selection button
                     ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines, iconPosition: .leading)
+                    Spacer()
+                    Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
+                        .padding(.bottom, -5).font(.footnote)
                 }
                 
                 Divider()
@@ -138,9 +160,17 @@ struct Ratings_Medicines_ChartView2: View {
                     }
 
                 }
+                .chartPlotStyle { plotArea in
+                   plotArea
+                       .frame(minHeight: 150)
+                       .frame(maxHeight: 300)
+                }
                 .chartYScale(domain: 0...chartYScaleLimit)
-                .chartLegend(position: .top)
+//                .chartLegend(position: .top)
                 .clipped()
+                .padding(.bottom)
+                
+                Divider()
 
             }
         }

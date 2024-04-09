@@ -10,6 +10,7 @@ import SwiftUI
 struct ListPopoverButton: View {
     
     @Binding var showSymptomList: Bool
+    @Binding var showNewSymptomView: Bool
     @Binding var selectedSymptoms: Set<Symptom>?
     
     var symptoms: [Symptom]
@@ -20,7 +21,7 @@ struct ListPopoverButton: View {
             showSymptomList = true
         } label: {
             HStack {
-                Image(systemName: "line.3.horizontal.circle").imageScale(.large)
+                Image(systemName: "eye.circle.fill").imageScale(.medium)
                 if selectedSymptoms?.count ?? 0 > 0 {
                     Text(UserText.term("Symptoms: ") + "\(selectedSymptoms!.count)")
                         .font(.footnote)
@@ -43,7 +44,8 @@ struct ListPopoverButton: View {
                         }
                         
                         Button(UserText.term("Add one")) {
-                            print("new symptom")
+                            showSymptomList = false
+                            showNewSymptomView = true
                         }
                         .buttonStyle(BorderedButtonStyle())
                     }
@@ -79,6 +81,13 @@ struct ListPopoverButton: View {
                         Divider()
                         
                     }
+                    Divider()
+                    Button(UserText.term("Add symptom")) {
+                        showSymptomList = false
+                        showNewSymptomView = true
+                    }
+                    .buttonStyle(BorderedButtonStyle())
+
                 }
                 .presentationCompactAdaptation(.none)
                 .padding() // popover VStack padding

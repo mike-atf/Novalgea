@@ -16,6 +16,8 @@ struct NewSymptomView: View {
     @Query(sort: \Medicine.name) var medicinesList: [Medicine]
     
     @Binding var showView: Bool
+    @Binding var selectedSymptom: Symptom?
+  
     @FocusState private var focused: Bool
 
     @State var type = SymptomType.symptom
@@ -24,7 +26,7 @@ struct NewSymptomView: View {
     @State var maxVAS: Double = 10.0
     @State var showAlert = false
     @State var alertMessage = String()
-    @State var saveDisabled = true
+//    @State var saveDisabled = true
     @State var selectedMedicine: Medicine?
 
     var body: some View {
@@ -60,8 +62,6 @@ struct NewSymptomView: View {
                             name = String()
                             alertMessage = UserText.term("\(nonunique) as \(type.rawValue) already exists. Consider chosing another.")
                             showAlert = true
-                        } else if maxVAS >= 10.0 && name != "" {
-                            saveDisabled = false
                         }
                     }
                 
@@ -110,8 +110,8 @@ struct NewSymptomView: View {
                             .font(Font.title2.bold())
                             .foregroundColor(.white)
                     }
-                    .listRowBackground(saveDisabled ? Color.gray: Color.blue)
-                    .disabled(saveDisabled)
+                    .listRowBackground((name == "" && maxVAS > 10) ? Color.gray: Color.blue)
+                    .disabled((name == "" && maxVAS > 10))
             }
             
             Section {
@@ -142,6 +142,7 @@ struct NewSymptomView: View {
         
         let new = Symptom(name: name, type: type.rawValue, creatingDevice: UIDevice.current.name, maxVAS: maxVAS)
         modelContext.insert(new)
+        selectedSymptom = new
         showView = false
     }
     
@@ -152,5 +153,5 @@ struct NewSymptomView: View {
 }
 
 #Preview {
-    NewSymptomView(showView: .constant(true)).modelContainer(DataController.previewContainer)
+    NewSymptomView(showView: .constant(true), selectedSymptom: .constant(Symptom.preview)).modelContainer(DataController.previewContainer)
 }

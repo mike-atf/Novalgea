@@ -12,10 +12,22 @@ import OSLog
 struct SymptomListPickerView: View {
     
     @Environment(\.modelContext) private var modelContext
-    @Query(sort: \Symptom.name) var symptoms: [Symptom]
+//    @Query(sort: \Symptom.name) var symptoms: [Symptom]
 
     @Binding var selectedSymptom: Symptom?
     @Binding var showSymptomEntry: Bool
+    
+    var symptoms: [Symptom]
+    
+    init(symptoms:[Symptom] ,selectedSymptom: Binding<Symptom?>, showSymptomEntry: Binding<Bool>) {
+        _selectedSymptom = selectedSymptom
+        _showSymptomEntry = showSymptomEntry
+        self.symptoms = symptoms
+        
+        if symptoms.count > 0 { // if 0 then the nicer 'Add new' VStack is shown
+            self.symptoms.append(Symptom(name: "Add new", type: "Symptom"))
+        }
+    }
 
     var body: some View {
         
@@ -36,10 +48,16 @@ struct SymptomListPickerView: View {
                 }
             })
             .pickerStyle(.inline)
+            .onChange(of: selectedSymptom) { oldValue, newValue in
+                if selectedSymptom?.name == "Add new" {
+                    showSymptomEntry = true
+                    selectedSymptom = symptoms.first
+                }
+            }
         } else {
             VStack {
                 ContentUnavailableView {
-                    Label("", systemImage: "pills.circle.fill")
+                    Label("", systemImage: "bolt.circle.fill")
                 } description: {
                     Text(UserText.term("No symptom yet"))
                 }
@@ -55,5 +73,5 @@ struct SymptomListPickerView: View {
 }
 
 #Preview {
-    SymptomListPickerView(selectedSymptom: .constant(Symptom.preview), showSymptomEntry: .constant(false)).modelContainer(DataController.previewContainer)
+    SymptomListPickerView(symptoms: [Symptom.preview], selectedSymptom: .constant(Symptom.preview), showSymptomEntry: .constant(false)).modelContainer(DataController.previewContainer)
 }

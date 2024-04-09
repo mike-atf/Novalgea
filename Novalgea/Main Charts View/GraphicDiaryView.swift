@@ -29,19 +29,19 @@ struct GraphicDiaryView: View {
     @State var categoriesDisplayed: [String]?
     @State var selectedDisplayTime: DisplayTimeOption = .month
     
-//    @State private var allEventCategories = [String]() // filled in .onAppear, with inserting 'All'
     @State private var symptomNames = [String]() // filled in .onAppear, with inserting 'All'
-//    @State private var selectedSingleCategory: String?
     
     // in order for Chart view @Query filtering to work dynamically selections needs to happen outside the Chart view
     @State private var selectedSymptoms: Set<Symptom>?
-    @State private var selectedMedicines: Set<Medicine>?
+    @State private var selectedSingleSymptom: Symptom?
+   @State private var selectedMedicines: Set<Medicine>?
     @State private var selectedEventCategories: Set<EventCategory>?
     @State private var selectedDiaryEvent: DiaryEvent?
     @State var selectedEventCategory: EventCategory?
     
-    @State var startDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).first! //(Date().setDate(day: 1, month: 1, year: 2020) ?? .now).addingTimeInterval(-30*24*3600)
-    @State var endDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).last! // Date().setDate(day: 1, month: 1, year: 2020) ?? .now
+    @State var startDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).first!
+    @State var endDisplayDate: Date = DatesManager.monthStartAndEnd(ofDate: .now).last!
+    
     @State var dragOffset = CGSizeZero
     @State var showRatingButton = false
     @State var selectedVAS: Double?
@@ -50,6 +50,7 @@ struct GraphicDiaryView: View {
     @State var showNewCategoryView = false
     @State var showNewEventView = false
     @State var showNewMedicineEventView = false
+    @State var showNewSymptomView = false
 
     var body: some View {
         GeometryReader { geometry in
@@ -63,7 +64,7 @@ struct GraphicDiaryView: View {
                                 stepDisplayTime(option: .backwards)
                             }
                         }
-                        Text(DatesManager.displayPeriodTerm(_for: selectedDisplayTime, start: startDisplayDate, end: endDisplayDate)).font(.title2).bold()
+                        Text(DatesManager.displayPeriodTerm(_for: selectedDisplayTime, start: startDisplayDate, end: endDisplayDate)).bold()
                         Button("", systemImage: "chevron.right") {
                             withAnimation {
                                 stepDisplayTime(option: .forwards)
@@ -77,7 +78,8 @@ struct GraphicDiaryView: View {
                     VStack(alignment: .leading) {
                         //MARK: - Ratings and Med event charts
                         if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
-                            Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime)
+                            
+                            Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
                                 .frame(minHeight: 600)
                                 .padding(.horizontal)
 
@@ -90,8 +92,9 @@ struct GraphicDiaryView: View {
                                 Divider()
                             }
                         } else {
-                           Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton)
+                            Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
                                 .frame(minHeight: 300)
+                                .frame(maxHeight: 450)
                                 .padding(.horizontal)
                             
                         }
@@ -121,7 +124,8 @@ struct GraphicDiaryView: View {
                         //MARK: - Events Charts
                         if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                             EventsChartView2(selectedCategories: $selectedEventCategories, showNewCategoryView: $showNewCategoryView, allCategories: allEventCategories, from: startDisplayDate, to: endDisplayDate)
-                                .frame(minHeight: 300)
+//                                .frame(minHeight: 300)
+//                                .frame(maxHeight: 450)
                                 .padding(.horizontal)
 
                         }
@@ -178,6 +182,10 @@ struct GraphicDiaryView: View {
             .sheet(isPresented: $showNewMedicineEventView, content: {
                 NewMedicineEventView(showView: $showNewMedicineEventView)
             })
+            .sheet(isPresented: $showNewSymptomView, content: {
+                NewSymptomView(showView: $showNewSymptomView, selectedSymptom: $selectedSingleSymptom)
+            })
+
 
             .onAppear {
                 let allSymptoms = Set(symptomsList.compactMap { $0.name })

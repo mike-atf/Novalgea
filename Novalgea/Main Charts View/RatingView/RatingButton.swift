@@ -19,7 +19,7 @@ struct RatingButton: View {
 //        medicine.currentStatus == "Current"
 //    }, sort: \Medicine.name, order: .reverse) var prnMedicines: [Medicine]
     
-//    @Query(sort: \Symptom.name) var symptoms: [Symptom]
+    @Query(sort: \Symptom.name) var symptoms: [Symptom]
     @Query() var events: [DiaryEvent]
     @Query(sort: \EventCategory.name) var eventCategories: [EventCategory]
 
@@ -56,7 +56,7 @@ struct RatingButton: View {
                 
                 List {
                     Section {
-                        SymptomListPickerView(selectedSymptom: $selectedSymptom, showSymptomEntry: $showSymptomEntry)
+                        SymptomListPickerView(symptoms: symptoms, selectedSymptom: $selectedSymptom, showSymptomEntry: $showSymptomEntry)
                     }
                     Spacer()
                     Section {
@@ -87,7 +87,7 @@ struct RatingButton: View {
                    }
                 }
                 .sheet(isPresented: $showSymptomEntry, content: {
-                    NewSymptomView(showView: $showSymptomEntry)
+                    NewSymptomView(showView: $showSymptomEntry, selectedSymptom: $selectedSymptom)
                 })
                 .sheet(isPresented: $showNewCategory, content: {
                     NewCategoryView(showView: $showNewCategory, newCategorySelection: $selectedEventCategory)
@@ -126,41 +126,9 @@ struct RatingButton: View {
                 }
             }
         }
-            
     }
     
-//    func addEvent() {
-//        
-//        if selectedMedicine != nil { addMedicineEvent() }
-//        else if selectedEventCategory != nil { addDiaryEvent() }
-//        else if selectedSymptom != nil { addRatingEvent() }
-//    }
-    
-//    func addMedicineEvent() {
-//        
-//        guard selectedMedicine != nil else { return }
-//
-//        let newMedEvent = MedicineEvent(endDate: selectedEventDate.addingTimeInterval(selectedMedicine!.effectDuration), startDate: selectedEventDate, medicine: selectedMedicine!)
-//        modelContext.insert(newMedEvent)
-//        saveContext()
-//        withAnimation {
-//            showView = false
-//        }
-//        selectedMedicine = nil
-//    }
-    
-//    func addDiaryEvent() {
-//        
-//        let newEvent = DiaryEvent(date: selectedEventDate, category: selectedEventCategory!)
-//        modelContext.insert(newEvent)
-//        saveContext()
-//        withAnimation {
-//            showView = false
-//        }
-//        selectedEventCategory = nil
-//
-//    }
-    
+
     func addRatingEvent() {
         
         guard selectedSymptom != nil else { return }

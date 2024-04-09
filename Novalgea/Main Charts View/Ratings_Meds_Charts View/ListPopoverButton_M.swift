@@ -21,7 +21,7 @@ struct ListPopoverButton_M: View {
         } label: {
             HStack {
                 if iconPosition == .leading {
-                    Image(systemName: "line.3.horizontal.circle").imageScale(.large)
+                    Image(systemName: "eye.circle.fill").imageScale(.medium)
                 }
 
                 if selectedMedicines?.count ?? 0 > 0 {
@@ -35,7 +35,7 @@ struct ListPopoverButton_M: View {
                 }
                 
                 if iconPosition == .trailing {
-                    Image(systemName: "line.3.horizontal.circle").imageScale(.large)
+                    Image(systemName: "eye.circle.fill").imageScale(.medium)
                 }
             }
         }

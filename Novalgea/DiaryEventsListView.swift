@@ -22,7 +22,7 @@ struct DiaryEventsListView: View {
                 ForEach(events) { event in
                     VStack(alignment: .leading) {
                         HStack {
-                            Text(event.category!.name)
+                            Text(event.category?.name ?? UserText.term("no category"))
                             Spacer()
                             Text(event.date.formatted())
                         }

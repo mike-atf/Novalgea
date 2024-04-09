@@ -22,12 +22,6 @@ struct VerbalRatingView: View {
         ZStack {
             
             ZStack {
-//                Circle()
-//                    .fill(Color.duskBlue)
-//                    .strokeBorder(lineWidth: 3)
-//                RoundedRectangle(cornerRadius: 6)
-//                .fill(Color.duskBlue)
-//                .strokeBorder(lineWidth: 3)
                 
                 GeometryReader { reader  in
                     
@@ -50,24 +44,6 @@ struct VerbalRatingView: View {
             .background(Color.duskBlue)
             .clipShape(RoundedRectangle(cornerRadius: 6))
             
-            //MARK: - VAS indicator on outside of circle
-//            ZStack(alignment: .top) {
-//                Circle()
-//                    .hidden()
-//                Indicator()
-//                    .stroke(Color.black, lineWidth: 1)
-//                    .fill(getColor(vas: (vas ?? 0)))
-//                    .frame(width: 35, height: 25)
-//                    .offset(y: -20)
-//                
-//                Text((vas ?? 0.0),format: .number.precision(.fractionLength(1)))
-//                    .foregroundStyle(indicatorTextColor(vas: vas ?? 0))
-//                    .font(.system(size: 14))
-//                    .bold()
-//                    .offset(y:-15)
-//            }
-//            .rotationEffect(Angle(radians: (vas ?? 0.0)/10 * (-2 * .pi)))
-
         }
     }
     

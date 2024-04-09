@@ -14,6 +14,7 @@ struct NewEventView: View {
     @Environment(\.modelContext) private var modelContext
     
     var categories: [EventCategory]
+    
     @Binding var showView:Bool
     
     @State var category: EventCategory?
@@ -24,9 +25,24 @@ struct NewEventView: View {
     @State var showNewCategoryView = false
 
     @State var showDateSelector = false
+    @State var addNewCategory = EventCategory(name: "Add")
+    
+    @State var showAlert = false
+    @State var alertMessage = String()
+
 
     @FocusState private var focused: Bool
-
+    
+    init(categories: [EventCategory], showView: Binding<Bool>, category: EventCategory? = nil) {
+        self.categories = categories
+        _showView = showView
+        self.category = category
+        
+        if categories.count > 0 { // if 0 then the nicer 'Add new' VStack is shown
+            self.categories.append(EventCategory(name: "Add new"))
+        }
+    }
+    
     var body: some View {
         
             List {
@@ -51,6 +67,7 @@ struct NewEventView: View {
                 .frame(minHeight: 100)
                 
                 if !categories.isEmpty {
+
                     Picker(selection: $category) {
                         ForEach(categories) {
                             Text($0.name).tag($0 as EventCategory?)
@@ -61,6 +78,12 @@ struct NewEventView: View {
                             Text("Category")
                         }
                     }
+                    .onChange(of: category) { oldValue, newValue in
+                        if category?.name == "Add new" {
+                            showNewCategoryView = true
+                            category = categories.first // in case user cancels new category
+                        }
+                   }
                 } else {
                     VStack {
                         ContentUnavailableView {
@@ -117,6 +140,13 @@ struct NewEventView: View {
                 
                 Section {
                     Button {
+                        
+                        guard category != nil else {
+                            alertMessage = UserText.term("Please select a category before saving")
+                            showAlert = true
+                            return
+                        }
+                        
                         save()
                     } label: {
                         Text("Save")
@@ -159,6 +189,11 @@ struct NewEventView: View {
             .sheet(isPresented: $showNewCategoryView) {
                 NewCategoryView(showView: $showNewCategoryView, newCategorySelection: $category)
             }
+            .alert(UserText.term("There's a problem"), isPresented: $showAlert) {
+                
+            } message: {
+                Text(alertMessage)
+            }
         
 //            .toolbar {
 //                ToolbarItemGroup(placement: .keyboard) {
@@ -171,11 +206,7 @@ struct NewEventView: View {
     }
     
     private func save() {
-        
-        if categories.isEmpty {
-            modelContext.insert(category!) // save default
-        }
-                        
+                                
         let new = DiaryEvent(date: startDate, endDate: endDate, category: category!, notes: notes)
         modelContext.insert(new)
         showView = false

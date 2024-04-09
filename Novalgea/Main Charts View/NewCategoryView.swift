@@ -30,7 +30,7 @@ struct NewCategoryView: View {
         Form {
             Section {
                 Text(UserText.term("New event category")).font(.title).bold()
-                Text(UserText.term("Please chose a unique new name"))
+                Text(UserText.term("Please chose a unique name"))
                 TextField(UserText.term("Name"), text: $newCategory)
                     .focused($focused)
                     .onSubmit {
@@ -44,14 +44,16 @@ struct NewCategoryView: View {
                         }
                     }
             }
-//            Divider()
-            Section {
-                Text(UserText.term("Existing categories")).font(.title3).bold()
-                ForEach(categories) {
-                    Text($0.name)
+            
+            if !categories.isEmpty {
+                Section {
+                    Text(UserText.term("Existing categories")).font(.title3).bold()
+                    ForEach(categories) {
+                        Text($0.name)
+                    }
                 }
             }
-//            Divider()
+
             Section {
                     Button {
                         save()
@@ -61,8 +63,8 @@ struct NewCategoryView: View {
                             .font(Font.title2.bold())
                             .foregroundColor(.white)
                     }
-                    .listRowBackground(saveDisabled ? Color.gray: Color.blue)
-                    .disabled(saveDisabled)
+                    .listRowBackground(newCategory == "" ? Color.gray: Color.blue)
+                    .disabled(newCategory == "")
             }
             
             Section {

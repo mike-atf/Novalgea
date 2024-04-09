@@ -17,7 +17,7 @@ struct FacialRatingView: View {
     }
     private func emoji() -> String {
         
-        let expressions = ["🙂","😐","🫤","😕","🙁","☹️","😣","😩","😖","😫"]
+        let expressions = ["🙂","😐","🫤","😕","🙁","☹️","😣","😖","😩","😫"]
 
         var i = Int(vas ?? 0)
         if i > expressions.count-1 { i = expressions.count-1 }
