@@ -12,29 +12,32 @@ struct ListPopoverButton: View {
     @Binding var showSymptomList: Bool
     @Binding var showNewSymptomView: Bool
     @Binding var selectedSymptoms: Set<Symptom>?
-    
+    @Binding var selectedSideEffects: Set<Symptom>?
+
     var symptoms: [Symptom]
-    
+    var sideEffects: [Symptom]
+
     var body: some View {
         
+        // Label of the button in surrounding UI
         Button {
             showSymptomList = true
         } label: {
             HStack {
                 Image(systemName: "eye.circle.fill").imageScale(.medium)
                 if selectedSymptoms?.count ?? 0 > 0 {
-                    Text(UserText.term("Symptoms: ") + "\(selectedSymptoms!.count)")
+                    Text(UserText.term("Symptoms: show ") + "\(selectedSymptoms!.count)")
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 } else {
-                    Text(UserText.term("Symptoms: ") + UserText.term("All"))
+                    Text(UserText.term("Symptoms: ") + UserText.term("Show all"))
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 }
             }
         }
         .popover(isPresented: $showSymptomList) {
-
+            // View revealed when button clicked
                 if symptoms.count == 0 {
                     VStack {
                         ContentUnavailableView {
@@ -53,6 +56,9 @@ struct ListPopoverButton: View {
                     .padding() // popover VStack padding
             } else {
                 VStack(alignment: .leading) {
+                    
+                    Text(UserText.term("Show only...")).font(.callout).bold()
+                    Divider()
 
                     ForEach(symptoms) { s0 in
                         Button {
@@ -76,12 +82,21 @@ struct ListPopoverButton: View {
                                 }
                                 Text(s0.name).font(.footnote)
                             }
-                            
+                            .foregroundColor(.primary)
                         }
                         Divider()
                         
                     }
-                    Divider()
+                    
+                    if selectedSymptoms?.count ?? 0 > 0 {
+                        Button(UserText.term("Show all")) {
+                            selectedSymptoms = nil
+                            showSymptomList = false
+                        }
+                        .buttonStyle(BorderedButtonStyle())
+                        Divider()
+                    }
+                    
                     Button(UserText.term("Add symptom")) {
                         showSymptomList = false
                         showNewSymptomView = true

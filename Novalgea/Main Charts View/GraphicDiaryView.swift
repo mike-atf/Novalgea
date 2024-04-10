@@ -19,11 +19,11 @@ struct GraphicDiaryView: View {
     }) var symptomRatings: [Rating]
     @Query(filter: #Predicate<Symptom> {
         !$0.isSideEffect
-    }, sort: \Symptom.name) var symptomsList: [Symptom]
+    }, sort: \Symptom.name) var allSymptoms: [Symptom]
     @Query(filter: #Predicate<Symptom> {
         $0.isSideEffect
-    }, sort: \Symptom.name) var sideEffects: [Symptom]
-    @Query(sort: \Medicine.name) var medicinesList: [Medicine]
+    }, sort: \Symptom.name) var allSideEffects: [Symptom]
+    @Query(sort: \Medicine.name) var allMedicines: [Medicine]
     @Query(sort: \EventCategory.name) var allEventCategories: [EventCategory]
 
     @State var categoriesDisplayed: [String]?
@@ -33,8 +33,9 @@ struct GraphicDiaryView: View {
     
     // in order for Chart view @Query filtering to work dynamically selections needs to happen outside the Chart view
     @State private var selectedSymptoms: Set<Symptom>?
+    @State private var selectedSideEffects: Set<Symptom>?
     @State private var selectedSingleSymptom: Symptom?
-   @State private var selectedMedicines: Set<Medicine>?
+    @State private var selectedMedicines: Set<Medicine>?
     @State private var selectedEventCategories: Set<EventCategory>?
     @State private var selectedDiaryEvent: DiaryEvent?
     @State var selectedEventCategory: EventCategory?
@@ -51,6 +52,14 @@ struct GraphicDiaryView: View {
     @State var showNewEventView = false
     @State var showNewMedicineEventView = false
     @State var showNewSymptomView = false
+    
+//    init() {
+//
+//        selectedSymptoms = Set(allSymptoms)
+//        selectedMedicines = Set(allMedicines)
+//        selectedEventCategories = Set(allEventCategories)
+//        symptomNames = allSymptoms.compactMap{ $0.name }
+//    }
 
     var body: some View {
         GeometryReader { geometry in
@@ -79,7 +88,7 @@ struct GraphicDiaryView: View {
                         //MARK: - Ratings and Med event charts
                         if selectedDisplayTime == DisplayTimeOption.quarter || selectedDisplayTime == DisplayTimeOption.year {
                             
-                            Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
+                            Ratings_Medicines_ChartView2(selectedSymptoms: $selectedSymptoms, symptoms: allSymptoms, selectedSideEffects: $selectedSideEffects,  sideEffects: allSideEffects, selectedMedicines: $selectedMedicines, medicines: allMedicines, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
                                 .frame(minHeight: 600)
                                 .padding(.horizontal)
 
@@ -92,7 +101,7 @@ struct GraphicDiaryView: View {
                                 Divider()
                             }
                         } else {
-                            Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: symptomsList, selectedMedicines: $selectedMedicines, medicines: medicinesList, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
+                            Ratings_Medicines_ChartView(selectedSymptoms: $selectedSymptoms, symptoms: allSymptoms, selectedSideEffects: $selectedSideEffects,  sideEffects: allSideEffects, selectedMedicines: $selectedMedicines, medicines: allMedicines, selectedEvent: $selectedDiaryEvent, from: startDisplayDate, to: endDisplayDate, displayTime: selectedDisplayTime, showRatingButton: $showRatingButton, showNewSymptomView: $showNewSymptomView)
                                 .frame(minHeight: 300)
                                 .frame(maxHeight: 450)
                                 .padding(.horizontal)
@@ -185,13 +194,18 @@ struct GraphicDiaryView: View {
             .sheet(isPresented: $showNewSymptomView, content: {
                 NewSymptomView(showView: $showNewSymptomView, selectedSymptom: $selectedSingleSymptom)
             })
-
-
             .onAppear {
-                let allSymptoms = Set(symptomsList.compactMap { $0.name })
-                symptomNames = Array(allSymptoms)
-//                cleanRatingDuplicates()
+                symptomNames = allSymptoms.compactMap{ $0.name }
+                
+                //                cleanRatingDuplicates()
             }
+            .onChange(of: selectedSymptoms) { _, _ in
+                adjustSelectedSymptomsForCharts()
+            }
+//            .onChange(of: selectedMedicines) { _, _ in
+//                adjustSelectedMedicinesForCharts()
+//            }
+
         }
     }
     
@@ -217,6 +231,50 @@ struct GraphicDiaryView: View {
             endDisplayDate = DatesManager.startOfYear(from: startDisplayDate, _by: 1).addingTimeInterval(-1)
         }
    }
+    
+    private func adjustSelectedSymptomsForCharts() {
+        
+        if selectedSymptoms == nil {
+            selectedMedicines = nil
+            return
+        }
+        
+        selectedMedicines = Set<Medicine>()
+        
+        var symptomRelatedMeds = Set<Medicine>()
+        if let validSelectedSymptoms = selectedSymptoms {
+            for symptom in validSelectedSymptoms {
+                for med in symptom.treatingMeds ?? [] {
+                    selectedMedicines?.insert(med)
+                    for se in med.sideEffects ?? [] {
+                        selectedSymptoms?.insert(se)
+                    }
+                }
+            }
+        } else {
+            selectedMedicines = Set(allMedicines)
+        }
+        
+    }
+    
+//    private func adjustSelectedMedicinesForCharts() {
+//        
+//        selectedSymptoms = Set<Symptom>()
+//        if let validSelectedMeds = selectedMedicines {
+//            for med in validSelectedMeds {
+//                for symptom in med.treatedSymptoms ?? [] {
+//                    selectedSymptoms?.insert(symptom)
+//                }
+//                for se in med.sideEffects ?? [] {
+//                    selectedSymptoms?.insert(se)
+//                }
+//            }
+//        } else {
+//            selectedSymptoms = Set(allSymptoms)
+//        }
+//        
+//    }
+
         
     func cleanRatingDuplicates() {
         

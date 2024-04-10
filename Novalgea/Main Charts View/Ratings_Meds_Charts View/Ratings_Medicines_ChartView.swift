@@ -19,6 +19,7 @@ struct Ratings_Medicines_ChartView: View {
     @Query(sort: \MedicineEvent.startDate) var inCompleteMedEvents: [MedicineEvent] // without an end date set = prn med events or regular events that have ended
 
     @Binding var selectedSymptoms: Set<Symptom>?
+    @Binding var selectedSideEffects: Set<Symptom>?
     @Binding var selectedMedicines: Set<Medicine>?
     @Binding var selectedDiaryEvent: DiaryEvent?
     @Binding var showRatingButton: Bool
@@ -29,6 +30,7 @@ struct Ratings_Medicines_ChartView: View {
 
     var medicines: [Medicine]
     var symptoms: [Symptom]
+    var sideEffects: [Symptom]
 
     var fromDate: Date
     var toDate: Date
@@ -69,7 +71,7 @@ struct Ratings_Medicines_ChartView: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedSideEffects: Binding<Set<Symptom>?> , sideEffects: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
         
         // to include ratings before and after so line chart extends beyond chart boundaries
         var timeBeforeAndAfter: TimeInterval = 0
@@ -106,6 +108,9 @@ struct Ratings_Medicines_ChartView: View {
         self.symptoms = symptoms
         _selectedSymptoms = selectedSymptoms
         
+        self.sideEffects = sideEffects
+        _selectedSideEffects = selectedSideEffects
+
         self.medicines = medicines
         _selectedMedicines = selectedMedicines
         
@@ -123,9 +128,9 @@ struct Ratings_Medicines_ChartView: View {
             Divider()
             Text(UserText.term("VAS & medication")).font(.title2).bold()
             HStack {
-                ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
-                Spacer()
-                ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines)
+                ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, selectedSideEffects: $selectedSideEffects, symptoms: symptoms, sideEffects: sideEffects)
+//                Spacer()
+//                ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines)
             }
 
             //MARK: - combined chart

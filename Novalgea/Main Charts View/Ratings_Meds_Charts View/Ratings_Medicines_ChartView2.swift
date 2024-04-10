@@ -15,6 +15,7 @@ struct Ratings_Medicines_ChartView2: View {
     @Environment(\.modelContext) private var modelContext
 
     @Binding var selectedSymptoms: Set<Symptom>?
+    @Binding var selectedSideEffects: Set<Symptom>?
     @Binding var selectedMedicines: Set<Medicine>?
     @Binding var showRatingButton: Bool
     @Binding var showNewSymptomView: Bool
@@ -23,11 +24,12 @@ struct Ratings_Medicines_ChartView2: View {
     @State var showMedicinesList = false
     @State var chartYScaleLimit: Int
 
-    var medicines: [Medicine]
+    var medicinesPlotted: [Medicine]
     var allMedicines: [Medicine]
     
-    var symptoms: [Symptom]
+    var symptomsPlotted: [Symptom]
     var allSymptoms: [Symptom]
+    var allSideEffects: [Symptom]
 
     var fromDate: Date
     var toDate: Date
@@ -35,17 +37,22 @@ struct Ratings_Medicines_ChartView2: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine],from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedSideEffects: Binding<Set<Symptom>?>, sideEffects: [Symptom],  selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
         
         self.fromDate = from
         self.toDate = to
         
         self.allSymptoms = symptoms
-        self.symptoms = selectedSymptoms.wrappedValue == nil ? symptoms : Array(selectedSymptoms.wrappedValue!)
+        self.symptomsPlotted = selectedSymptoms.wrappedValue == nil ? symptoms : Array(selectedSymptoms.wrappedValue!)
         _selectedSymptoms = selectedSymptoms
         
+        self.allSideEffects = sideEffects
+//        self.symptoms = selectedSymptoms.wrappedValue == nil ? symptoms : Array(selectedSymptoms.wrappedValue!)
+        _selectedSideEffects = selectedSideEffects
+
+        
         self.allMedicines = medicines
-        self.medicines = selectedMedicines.wrappedValue == nil ? medicines : Array(selectedMedicines.wrappedValue!)
+        self.medicinesPlotted = selectedMedicines.wrappedValue == nil ? medicines : Array(selectedMedicines.wrappedValue!)
         _selectedMedicines = selectedMedicines
         
         self.displayTime = displayTime
@@ -72,14 +79,14 @@ struct Ratings_Medicines_ChartView2: View {
             VStack(alignment: .leading) {
                 Text(UserText.term("Symptom VAS averages")).font(.title2).bold()
                 HStack {
-                    ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
+                    ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, selectedSideEffects: $selectedSideEffects, symptoms: allSymptoms, sideEffects: allSideEffects)
                     Spacer()
                     Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
                         .font(.footnote)
                 }
                                 
                 Chart {
-                    ForEach(symptoms) {
+                    ForEach(symptomsPlotted) {
                         let average = $0.ratingAverage(from: fromDate, to: toDate) ?? 0
                         BarMark(x: .value("Symptoms", $0.name), y: .value("average VAS", average))
                             .foregroundStyle(by: .value("Symptoms", $0.name))
@@ -138,7 +145,7 @@ struct Ratings_Medicines_ChartView2: View {
                 
                 HStack{
                      //MARK: - medicines selection button
-                    ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines, iconPosition: .leading)
+                    ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicinesPlotted, iconPosition: .leading)
                     Spacer()
                     Text(fromDate.formatted(.dateTime.day().month()) + " - " + toDate.formatted(date: .abbreviated, time: .omitted)).foregroundStyle(.secondary)
                         .padding(.bottom, -5).font(.footnote)
@@ -147,7 +154,7 @@ struct Ratings_Medicines_ChartView2: View {
                 Divider()
                 
                 Chart {
-                    ForEach(medicines) {
+                    ForEach(medicinesPlotted) {
                         let dosesTaken = $0.dosesTaken(from: fromDate, to: toDate)
                         BarMark(x: .value("Meds", $0.name), y: .value("doses", dosesTaken))
                             .foregroundStyle(by: .value("Meds", $0.name))

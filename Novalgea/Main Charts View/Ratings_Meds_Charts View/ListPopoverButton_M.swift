@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import OSLog
 
 struct ListPopoverButton_M: View {
     
@@ -16,6 +17,7 @@ struct ListPopoverButton_M: View {
     var iconPosition: Position = .trailing
     
     var body: some View {
+        
         Button {
             showMedicinesList = true
         } label: {
@@ -25,11 +27,11 @@ struct ListPopoverButton_M: View {
                 }
 
                 if selectedMedicines?.count ?? 0 > 0 {
-                    Text(UserText.term("Meds: ") + "\(selectedMedicines!.count)")
+                    Text(UserText.term("Meds: ") + "show \(selectedMedicines!.count)")
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 } else {
-                    Text(UserText.term("Meds: ") + UserText.term("All"))
+                    Text(UserText.term("Meds: ") + UserText.term("Show all"))
                         .font(.footnote)
                         .foregroundColor(.secondary)
                 }
@@ -58,6 +60,9 @@ struct ListPopoverButton_M: View {
                 .padding()
             } else {
                 VStack(alignment: .leading) {
+                    Text(UserText.term("Show only...")).font(.callout).bold()
+                    Divider()
+
                     ForEach(medicines) { m0 in
                         Button {
                             if selectedMedicines == nil {
@@ -84,6 +89,20 @@ struct ListPopoverButton_M: View {
                         Divider()
                         
                     }
+                    
+                    if selectedMedicines?.count ?? 0 > 0 {
+                        Button(UserText.term("Show all")) {
+                            selectedMedicines = nil
+                            showMedicinesList = false
+                        }
+                        .buttonStyle(BorderedButtonStyle())
+                    }
+                    
+                    Button(UserText.term("Add category")) {
+                        Logger().error("Show new medicine view")
+                    }
+                    .buttonStyle(BorderedButtonStyle())
+
                 }
                 .presentationCompactAdaptation(.none)
                 .padding() // popover VStack padding

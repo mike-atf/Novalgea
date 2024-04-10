@@ -22,6 +22,7 @@ struct ListPopoverButton_E: View {
         
         HStack {
             //MARK: - category selection button
+                // visible in surrounding UI
             Button {
                 showSelectionList = true
             } label: {
@@ -29,18 +30,18 @@ struct ListPopoverButton_E: View {
                     Image(systemName: "eye.circle.fill")
                         .imageScale(.medium)
                     if selectedCategories?.count ?? 0 > 0 {
-                        Text(UserText.term("Categories: ") + "\(selectedCategories!.count)")
+                        Text(UserText.term("Categories: show ") + "\(selectedCategories!.count)")
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     } else {
-                        Text(UserText.term("Categories: ") + UserText.term("All"))
+                        Text(UserText.term("Categories: ") + UserText.term("Show all"))
                             .font(.footnote)
                             .foregroundColor(.secondary)
                     }
                 }
             }
             .popover(isPresented: $showSelectionList) {
-                
+                // visible when popped over
                 if allCategories.count == 0 {
                     VStack {
                         ContentUnavailableView {
@@ -59,7 +60,11 @@ struct ListPopoverButton_E: View {
                     .presentationCompactAdaptation(.none)
                 } else {
                     
+                    
                     VStack(alignment: .leading) {
+                        
+                        Text(UserText.term("Show only...")).font(.callout).bold()
+                        Divider()
                         
                         ForEach(allCategories.indices, id: \.self) { index in
                             Button {
@@ -87,6 +92,15 @@ struct ListPopoverButton_E: View {
                             Divider()
                             
                         }
+                        
+                        if selectedCategories?.count ?? 0 > 0 {
+                            Button(UserText.term("Show all")) {
+                                selectedCategories = nil
+                                showSelectionList = false
+                            }
+                            .buttonStyle(BorderedButtonStyle())
+                        }
+                        
                         Button(UserText.term("Add category")) {
                             showSelectionList = false
                             showNewCategoryView = true
