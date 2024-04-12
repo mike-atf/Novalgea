@@ -24,7 +24,7 @@ struct CircularSliderView: View {
         GeometryReader { reader in
 
             let diameter = min(reader.size.width, reader.size.height)
-            let rimWidth = diameter/4
+            let rimWidth = diameter/5
             let topOfCircle = (reader.size.height - diameter)/2
             
             ZStack(alignment: .center) {
@@ -77,9 +77,9 @@ struct CircularSliderView: View {
                                 showNewMedicineEventView = true
                             }
                         }
-                        .font(.system(size: diameter/20)).bold()
+                        .font(.system(size: diameter/18)).bold()
                         .foregroundStyle(.white)
-                        .padding(.bottom,diameter/50)
+                        .padding(.bottom,diameter/40)
                         
                         Button("Event", systemImage: "square.and.pencil.circle.fill") {
                             withAnimation {
@@ -87,12 +87,12 @@ struct CircularSliderView: View {
                                 showNewEventView = true
                             }
                         }
-                        .font(.system(size: diameter/20)).bold()
+                        .font(.system(size: diameter/18)).bold()
                         .foregroundStyle(.white)
                         .padding(.top,diameter/50)
                     }
                 }
-                .padding(diameter/4 + 6)
+                .padding(diameter/5 + diameter/40)
             }
             .padding()
         }

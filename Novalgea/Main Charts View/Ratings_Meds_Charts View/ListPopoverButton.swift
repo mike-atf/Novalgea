@@ -12,10 +12,10 @@ struct ListPopoverButton: View {
     @Binding var showSymptomList: Bool
     @Binding var showNewSymptomView: Bool
     @Binding var selectedSymptoms: Set<Symptom>?
-    @Binding var selectedSideEffects: Set<Symptom>?
+//    @Binding var selectedSideEffects: Set<Symptom>?
 
     var symptoms: [Symptom]
-    var sideEffects: [Symptom]
+//    var sideEffects: [Symptom]
 
     var body: some View {
         

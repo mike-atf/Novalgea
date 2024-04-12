@@ -20,17 +20,20 @@ struct NewCategoryView: View {
     @FocusState private var focused: Bool
 
     @State var newCategory = String()
+    @State var selectedSymbol = String()
     @State var nonunique = String()
     @State var alertMessage = String()
     @State var showAlert = false
     @State var saveDisabled = true
-
+    
     var body: some View {
         
         Form {
             Section {
-                Text(UserText.term("New event category")).font(.title).bold()
-                Text(UserText.term("Please chose a unique name"))
+                VStack(alignment: .leading) {
+                    Text(UserText.term("New event category")).font(.title).bold()
+                    Text(UserText.term("Enter a unique name"))
+                }
                 TextField(UserText.term("Name"), text: $newCategory)
                     .focused($focused)
                     .onSubmit {
@@ -44,6 +47,20 @@ struct NewCategoryView: View {
                         }
                     }
             }
+            
+            Section {
+                VStack(alignment: .leading) {
+                    Text(UserText.term("Chose a symbol")).font(.title).bold()
+                    Text(UserText.term("Should be unique as well"))
+                }
+                Picker("Symbol", selection: $selectedSymbol) {
+                    ForEach(eventSymbolOptions, id:\.self) {
+                        Text($0)
+                    }
+                }
+            
+            }
+
             
             if !categories.isEmpty {
                 Section {

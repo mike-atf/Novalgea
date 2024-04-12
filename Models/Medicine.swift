@@ -80,7 +80,9 @@ import SwiftData
             return Int(interval / effectDuration)
             
         } else {
-            guard medEvents != nil else { return 0 }
+            guard medEvents != nil else { 
+                return 0
+            }
             let inDateEvents = medEvents!.filter({ event in
                 if event.endDate! < from { return false }
                 else if event.startDate > to { return false }

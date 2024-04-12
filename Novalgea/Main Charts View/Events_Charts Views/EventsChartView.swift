@@ -107,6 +107,7 @@ struct EventsChartView: View {
                         .foregroundStyle(by: .value("Category", event.category!.name))
                         .symbolSize(400)
                         .annotation(position: .overlay, alignment: .center, spacing: 0) {
+//                            Text(event.category!.symbol)
                             Text(verbatim: String(event.category!.name.first!))
                                 .font(.caption).bold()
                                 .foregroundStyle(.white)

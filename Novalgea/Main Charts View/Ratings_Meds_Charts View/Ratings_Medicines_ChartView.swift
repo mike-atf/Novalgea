@@ -24,13 +24,15 @@ struct Ratings_Medicines_ChartView: View {
     @Binding var selectedDiaryEvent: DiaryEvent?
     @Binding var showRatingButton: Bool
     @Binding var showNewSymptomView: Bool
- 
+    @Binding var showSideEffects: Bool
+
     @State var showSymptomList = false
     @State var showMedicinesList = false
+    @State var sideEffectRatings = [Rating]() // extracted from symptomRatings
+
 
     var medicines: [Medicine]
     var symptoms: [Symptom]
-    var sideEffects: [Symptom]
 
     var fromDate: Date
     var toDate: Date
@@ -40,10 +42,30 @@ struct Ratings_Medicines_ChartView: View {
         guard selectedSymptoms != nil else { return symptomRatings }
         
         return symptomRatings.filter { rating in
+            if rating.ratedSymptom!.isSideEffect { return false }
             if selectedSymptoms!.contains(rating.ratedSymptom!) { return true }
             else { return false }
         }.sorted { $0.date < $1.date }
     }
+    
+    private var filteredSideEffects: [Rating] { // will only be applied once selectedSideEffects != nil!
+        
+        guard selectedSideEffects != nil else {
+            
+            return symptomRatings.filter { rating in
+                if !rating.ratedSymptom!.isSideEffect { return false }
+                else { return true }
+            }//.sorted { $0.date < $1.date }
+
+        }
+        
+        return symptomRatings.filter { rating in
+            if !rating.ratedSymptom!.isSideEffect { return false }
+            if selectedSideEffects!.contains(rating.ratedSymptom!) { return true }
+            else { return false }
+        }//.sorted { $0.date < $1.date }
+    }
+
     
     private var medEventsWithEnd: [MedicineEvent] { // will only be applied once selectedSymptoms != nil!
         
@@ -71,7 +93,7 @@ struct Ratings_Medicines_ChartView: View {
 
     // dynamic filtering of events - for this the symptom selection must happen outside this view, so the view is re-created when a selection is made
     // instead of .contains use .localizedStandardContains
-    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedSideEffects: Binding<Set<Symptom>?> , sideEffects: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>) {
+    init(selectedSymptoms: Binding<Set<Symptom>?>, symptoms: [Symptom], selectedSideEffects: Binding<Set<Symptom>?> , sideEffects: [Symptom], selectedMedicines: Binding<Set<Medicine>?>, medicines: [Medicine], selectedEvent: Binding<DiaryEvent?> ,from: Date, to: Date, displayTime: DisplayTimeOption, showRatingButton: Binding<Bool>, showNewSymptomView: Binding<Bool>, showSideEffects: Binding<Bool>) {
         
         // to include ratings before and after so line chart extends beyond chart boundaries
         var timeBeforeAndAfter: TimeInterval = 0
@@ -91,7 +113,8 @@ struct Ratings_Medicines_ChartView: View {
             aRating.date >= start &&
             aRating.date <= end
         }, sort: \Rating.date)
-
+        
+        
         _completedMedEvents = Query(filter: #Predicate<MedicineEvent> { medEvent in
             medEvent.medicine != nil
         }, sort: \MedicineEvent.startDate)
@@ -108,7 +131,7 @@ struct Ratings_Medicines_ChartView: View {
         self.symptoms = symptoms
         _selectedSymptoms = selectedSymptoms
         
-        self.sideEffects = sideEffects
+//        self.sideEffects = sideEffects
         _selectedSideEffects = selectedSideEffects
 
         self.medicines = medicines
@@ -118,17 +141,18 @@ struct Ratings_Medicines_ChartView: View {
         
         _showRatingButton = showRatingButton
         _showNewSymptomView = showNewSymptomView
+        _showSideEffects = showSideEffects
+        
     }
-
     
     var body: some View {
         
         VStack(alignment: .leading) {
             //MARK: - header
             Divider()
-            Text(UserText.term("VAS & medication")).font(.title2).bold()
+            Text(UserText.term("Symptom VAS & medication")).font(.title2).bold()
             HStack {
-                ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, selectedSideEffects: $selectedSideEffects, symptoms: symptoms, sideEffects: sideEffects)
+                ListPopoverButton(showSymptomList: $showSymptomList, showNewSymptomView: $showNewSymptomView, selectedSymptoms: $selectedSymptoms, symptoms: symptoms)
 //                Spacer()
 //                ListPopoverButton_M(showMedicinesList: $showMedicinesList, selectedMedicines: $selectedMedicines, medicines: medicines)
             }
@@ -161,6 +185,20 @@ struct Ratings_Medicines_ChartView: View {
                     .opacity(0.5)
                 }
                 
+                if showSideEffects {
+                    // 1 -
+                    ForEach(filteredSideEffects) {
+                        AreaMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                            .foregroundStyle(by: .value("Side effect", $0.ratedSymptom!.name))
+                            .interpolationMethod(.monotone)
+                            .opacity(0.2)
+                        LineMark(x: .value("Date", $0.date), y: .value("VAS", $0.vas))
+                            .foregroundStyle(by: .value("Side effect", $0.ratedSymptom!.name))
+                            .interpolationMethod(.monotone)
+//                            .symbol(Circle())
+                    }
+                }
+
                 
                 // 1 -
                 ForEach(filteredRatings) {
@@ -178,7 +216,7 @@ struct Ratings_Medicines_ChartView: View {
                 if selectedDiaryEvent != nil {
                     RuleMark(x: .value("", selectedDiaryEvent!.date))
                         .opacity(0.8)
-                        .foregroundStyle(.gray)
+                        .lineStyle(StrokeStyle(lineWidth: 1))
                 }
                 
             }
@@ -194,7 +232,7 @@ struct Ratings_Medicines_ChartView: View {
             }
             .clipped()
             .overlay {
-                if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty {
+                if filteredRatings.isEmpty && completedMedEvents.isEmpty && inCompleteMedEvents.isEmpty && filteredSideEffects.isEmpty {
                     ContentUnavailableView {
                         Label(UserText.term("No records for this time period"), systemImage: "chart.line.uptrend.xyaxis.circle").imageScale(.medium).font(.body)
                     } description: {

@@ -28,6 +28,7 @@ struct NewSymptomView: View {
     @State var alertMessage = String()
 //    @State var saveDisabled = true
     @State var selectedMedicine: Medicine?
+    @State var treatingMedicines = Set<Medicine>()
 
     var body: some View {
         
@@ -35,7 +36,7 @@ struct NewSymptomView: View {
             
             if !medicinesList.isEmpty {
                 Section {
-                    Picker("Show", selection: $type) {
+                    Picker(UserText.term("Type"), selection: $type) {
                         
                         ForEach(SymptomType.allCases) { option in
                             Text(option.rawValue).tag(option)
@@ -50,7 +51,7 @@ struct NewSymptomView: View {
                     Image(systemName: "bolt.circle.fill")
                     .imageScale(.large)
                     .foregroundColor(.orange)
-                    Text(UserText.term("Name of new ") + UserText.term(type.rawValue)).font(.title).bold()
+                    Text(UserText.term("New ") + UserText.term(type.rawValue)).font(.title).bold()
                 }
                 TextField(UserText.term("Name"), text: $name)
                     .focused($focused)
@@ -67,20 +68,20 @@ struct NewSymptomView: View {
                 
             }
             
-            Section {
-                VStack(alignment: .leading) {
-                    Text(UserText.term("Maximum score ")).font(.title).bold()
-                    Text(UserText.term("Must be 10.0 or higher"))
-                }
-               TextField("Top Score number", value: $maxVAS, format: .number)
-                    .onSubmit {
-                        if maxVAS < 10 {
-                            maxVAS = 10
-                            alertMessage = UserText.term("Max score must be 10.0 or greater")
-                            showAlert = true
-                        }
-                   }
-            }
+//            Section {
+//                VStack(alignment: .leading) {
+//                    Text(UserText.term("Maximum score ")).font(.title).bold()
+//                    Text(UserText.term("Must be 10.0 or higher"))
+//                }
+//               TextField("Top Score number", value: $maxVAS, format: .number)
+//                    .onSubmit {
+//                        if maxVAS < 10 {
+//                            maxVAS = 10
+//                            alertMessage = UserText.term("Max score must be 10.0 or greater")
+//                            showAlert = true
+//                        }
+//                   }
+//            }
             
             if type == .sideEffect {
                 Section {
@@ -88,9 +89,9 @@ struct NewSymptomView: View {
                         Image(systemName: "pills.circle.fill")
                         .imageScale(.large)
                         .foregroundColor(.orange)
-                        Text(UserText.term("Select related medicine")).font(.title).bold()
+                        Text(UserText.term("Triggering medicine")).font(.title).bold()
                     }
-                    Picker("Select medicine", selection: $selectedMedicine) {
+                    Picker("Select one", selection: $selectedMedicine) {
                         List {
                             ForEach(medicinesList) { med in
                                 Text(med.name)
@@ -99,9 +100,45 @@ struct NewSymptomView: View {
                     }
                 }
             }
+            else {
+                Section {
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: "pills.circle.fill")
+                                .imageScale(.large)
+                                .foregroundColor(.orange)
+                            Text(UserText.term("Treating medicine(s)")).font(.title).bold()
+                        }
+                        Text(UserText.term("Optional but recommended")).font(.footnote)
+                    }
+                    List {
+                        ForEach(medicinesList) { med in
+                            Button {
+                                if treatingMedicines.contains(med) {
+                                    treatingMedicines.remove(med)
+                                } else {
+                                    treatingMedicines.insert(med)
+                                }
+                            } label: {
+                                HStack {
+                                    if (treatingMedicines.count == 0) {
+                                        Image(systemName: "circle")
+                                    } else if treatingMedicines.contains(med) {
+                                        Image(systemName: "checkmark.circle.fill").symbolRenderingMode(.multicolor)
+                                    } else {
+                                        Image(systemName: "circle")
+                                    }
+                                    Text(med.name).font(.footnote)
+                                }
+                            }
+                        }
+                    }
+                    .foregroundStyle(.primary)
+                }
+            }
             
             Section {
-                
+                if type == .symptom {
                     Button {
                         save()
                     } label: {
@@ -110,8 +147,21 @@ struct NewSymptomView: View {
                             .font(Font.title2.bold())
                             .foregroundColor(.white)
                     }
-                    .listRowBackground((name == "" && maxVAS > 10) ? Color.gray: Color.blue)
-                    .disabled((name == "" && maxVAS > 10))
+                    .listRowBackground(name == "" ? Color.gray: Color.blue)
+                    .disabled(name == "")
+                }
+                else {
+                    Button {
+                        save()
+                    } label: {
+                        Text("Save")
+                            .frame(maxWidth: .infinity, alignment: .center)
+                            .font(Font.title2.bold())
+                            .foregroundColor(.white)
+                    }
+                    .listRowBackground((name == "" && selectedMedicine == nil) ? Color.gray: Color.blue)
+                    .disabled((name == "" && selectedMedicine == nil))
+                }
             }
             
             Section {
@@ -140,9 +190,16 @@ struct NewSymptomView: View {
     
     private func save() {
         
-        let new = Symptom(name: name, type: type.rawValue, creatingDevice: UIDevice.current.name, maxVAS: maxVAS)
-        modelContext.insert(new)
-        selectedSymptom = new
+        var newSymptom: Symptom
+        
+        if type == .sideEffect {
+            newSymptom = Symptom(name: name, type: type.rawValue, creatingDevice: UIDevice.current.name, maxVAS: 10.0, causingMeds: [selectedMedicine!])
+        } else {
+            newSymptom = Symptom(name: name, type: type.rawValue, creatingDevice: UIDevice.current.name, maxVAS: 10.0, treatingMeds: Array(treatingMedicines))
+
+        }
+        modelContext.insert(newSymptom)
+        selectedSymptom = newSymptom
         showView = false
     }
     

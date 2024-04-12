@@ -28,7 +28,7 @@ import SwiftData
     var causingMeds: [Medicine]? // optional to-many relationShips not supported in @Query #Predicate
     var isSideEffect: Bool = false // because of the above limitation
     
-    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String?=nil, maxVAS: Double = 10, minVAS: Double = 0, diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = []) {
+    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String?=nil, maxVAS: Double = 10, minVAS: Double = 0, diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = [], isSideEffect: Bool?=false) {
         
         self.averages = averages
         self.type = type
@@ -40,7 +40,8 @@ import SwiftData
         self.ratingEvents = ratingEvents
         self.treatingMeds = treatingMeds
         self.causingMeds = causingMeds
-        if causingMeds?.count ?? 0 > 0 { isSideEffect = true }
+        if causingMeds?.count ?? 0 > 0 { self.isSideEffect = true }
+        if isSideEffect != nil { self.isSideEffect = isSideEffect! }
     }
     
     static func == (lhs: Symptom, rhs: Symptom) -> Bool {

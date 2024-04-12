@@ -54,6 +54,8 @@ enum SymptomType: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
+let eventSymbolOptions = ["⚪️","🔶","⬜️","🤍","🛑","⚠️","🆘","✴️","📒","❇️","💊","🦠"]
+
 
 //let gradientRed = Color(red: 151/255, green: 60/255, blue: 56/255)
 let gradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]

@@ -12741,7 +12741,7 @@
         }
       }
     },
-    "Select medicine" : {
+    "Select one" : {
 
     },
     "Select or add a medicine" : {
@@ -13112,6 +13112,9 @@
       }
     },
     "Show" : {
+
+    },
+    "Side effect" : {
 
     },
     "Side effects" : {
@@ -15676,6 +15679,9 @@
         }
       }
     },
+    "Symbol" : {
+
+    },
     "Symptom" : {
 
     },
@@ -15788,9 +15794,6 @@
           }
         }
       }
-    },
-    "Top Score number" : {
-
     },
     "Trend.description.fail" : {
       "extractionState" : "stale",

@@ -69,8 +69,12 @@ struct NewEventView: View {
                 if !categories.isEmpty {
 
                     Picker(selection: $category) {
-                        ForEach(categories) {
-                            Text($0.name).tag($0 as EventCategory?)
+                        ForEach(categories) { cat in
+                            HStack {
+                                Text(cat.name).tag(cat as EventCategory?)
+                                Spacer()
+                                Text(cat.symbol)
+                            }
                         }
                     } label: {
                         HStack {

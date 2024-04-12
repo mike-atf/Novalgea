@@ -28,33 +28,32 @@ struct EventsChartView2: View {
     
     private var filteredEvents: [DiaryEvent] {
         
-        guard selectedCategories != nil else { return events }
-        
+        Logger().info("fetched events \(events.count)")
+
         guard (selectedCategories?.count ?? 0) > 0 else { return events }
         
         var eventsInScope = [DiaryEvent]()
         
         for category in selectedCategories ?? [] {
-            eventsInScope.append(contentsOf: category.relatedDiaryEvents ?? [])
+            eventsInScope.append(contentsOf: category.relatedDiaryEvents ?? []) //TODO: - check the relatedDiaryEvents
         }
-        
+        Logger().info("filtered events \(eventsInScope.count) with selection of \(selectedCategories?.count ?? 0)")
+
         return eventsInScope
-        
-//        return events.filter { event in
-//            if selectedCategories!.contains(event.category) { return true }
-//            else { return false }
-//        }
     }
 
     var fromDate: Date
     var toDate: Date
     
     init(selectedCategories: Binding<Set<EventCategory>?>, showNewCategoryView: Binding<Bool> ,allCategories: [EventCategory], from: Date, to: Date) {
-        
+
         _events = Query(filter: #Predicate<DiaryEvent> {
             $0.date >= from &&
             $0.date <= to
         }, sort:\DiaryEvent.date)
+        
+        Logger().info("from \(from.formatted())")
+        Logger().info("to \(to.formatted())")
 
         _selectedCategories = selectedCategories
         _showNewCategoryView = showNewCategoryView
@@ -63,7 +62,7 @@ struct EventsChartView2: View {
         self.toDate = to
         self.allCategories = allCategories
         self.categoriesShown = selectedCategories.wrappedValue == nil ? allCategories : Array(selectedCategories.wrappedValue!)
-
+        
     }
 
 
@@ -83,6 +82,7 @@ struct EventsChartView2: View {
             Divider()
             
             Chart(categoriesShown, id: \.self) { category in
+                
                 let events = filteredEvents.filter { event in
                     if event.category == category { return true }
                     else { return false }
