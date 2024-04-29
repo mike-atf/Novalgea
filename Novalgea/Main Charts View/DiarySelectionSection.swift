@@ -13,7 +13,9 @@ struct DiarySelectionSection: View {
     @Binding var selectedDisplayTime: DisplayTimeOption
     @Binding var startDisplayDate: Date
     @Binding var endDisplayDate: Date
-
+    @Binding var selectedEvent: DiaryEvent?
+    @Binding var selectedEventIndex: Int?
+    
     var body: some View {
         
         VStack {
@@ -46,6 +48,9 @@ struct DiarySelectionSection: View {
                     }
 
                 }
+                
+                selectedEvent = nil
+                selectedEventIndex = nil
             }
 
         }

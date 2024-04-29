@@ -7,18 +7,35 @@
 
 import SwiftUI
 
-struct NewMedicineView: View {
+struct NewMedicineView: View, Hashable {
     
-    var medicine: Medicine
-    
+    @Binding var medicine: Medicine
+    @Binding var option: MedicineViewOption
+    @Binding var path: NavigationPath
+    @Binding var columnVisibility: NavigationSplitViewVisibility
+
     var body: some View {
+        
         NewMedicineForm {
             Text(medicine.name)
             Text(medicine.startDate.formatted(date: .abbreviated, time: .shortened))
         }
+        .onAppear {
+            columnVisibility = .doubleColumn
+        }
     }
+    
+    static func == (lhs: NewMedicineView, rhs: NewMedicineView) -> Bool {
+        return lhs.medicine == rhs.medicine
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(medicine.uuid)
+    }
+    
+
 }
 
 #Preview {
-    NewMedicineView(medicine: (Medicine.preview))
+    NewMedicineView(medicine: .constant(Medicine.preview), option: .constant(.name), path: .constant(NavigationPath()), columnVisibility: .constant(.doubleColumn))
 }

@@ -63,6 +63,7 @@ struct ImportView: View {
             }
         }
         .navigationTitle("Export Diary Archive")
+        .padding(.horizontal)
     }
     
     @MainActor private func decompressArchive(fileURL: URL) {

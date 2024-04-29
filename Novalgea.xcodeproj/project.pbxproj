@@ -31,8 +31,8 @@
 		FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43FB922B7AA077007A9638 /* UIHelper.swift */; };
 		FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43FB942B7AA0C5007A9638 /* NewMedicineView.swift */; };
 		FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA43FB962B7BB039007A9638 /* ErrorDatesView.swift */; };
+		FA496CCE2BD53DE30089DB99 /* EventsSplitView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA496CCD2BD53DE30089DB99 /* EventsSplitView.swift */; };
 		FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */; };
-		FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6422B6D3C60003ED5FF /* ContentView.swift */; };
 		FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6442B6D3C61003ED5FF /* Assets.xcassets */; };
 		FA56B6492B6D3C61003ED5FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA56B6482B6D3C61003ED5FF /* Preview Assets.xcassets */; };
 		FA56B6542B6D3C62003ED5FF /* NovalgeaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA56B6532B6D3C62003ED5FF /* NovalgeaTests.swift */; };
@@ -47,15 +47,26 @@
 		FA6FBC422B836097007F0946 /* Medicine.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC412B836097007F0946 /* Medicine.swift */; };
 		FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC432B836235007F0946 /* Extension Data.swift */; };
 		FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA6FBC452B8367E5007F0946 /* Extension Doses.swift */; };
+		FA7058362BDBE2DF00F9EE7B /* ColorModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7058352BDBE2DF00F9EE7B /* ColorModel.swift */; };
+		FA70583A2BDD795F00F9EE7B /* MultiSelectionPicker_M.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7058392BDD795F00F9EE7B /* MultiSelectionPicker_M.swift */; };
+		FA70583E2BDE7E5100F9EE7B /* RatingEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA70583D2BDE7E5100F9EE7B /* RatingEditView.swift */; };
+		FA7058412BDECB7100F9EE7B /* MedicinesContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA7058402BDECB7100F9EE7B /* MedicinesContentView.swift */; };
 		FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8606712B73DFEE00C52D81 /* DataController.swift */; };
 		FA8831A32BBD58EE002DF057 /* NewEventView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8831A22BBD58ED002DF057 /* NewEventView.swift */; };
 		FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF32B8E3937003802A4 /* ImportView.swift */; };
 		FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA975AF52B8E4832003802A4 /* AppDelegate.swift */; };
+		FAB2025D2BC96DEC006B319F /* ColorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2025C2BC96DEC006B319F /* ColorManager.swift */; };
+		FAB202612BC9A7C9006B319F /* Extension Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB202602BC9A7C9006B319F /* Extension Color.swift */; };
+		FAB202652BCAEC85006B319F /* Extension CGF Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB202642BCAEC85006B319F /* Extension CGF Array.swift */; };
+		FAB202672BCAF1DF006B319F /* ColorSelectionPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB202662BCAF1DF006B319F /* ColorSelectionPicker.swift */; };
+		FAB202692BCAFE04006B319F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB202682BCAFE04006B319F /* Colors.xcassets */; };
 		FAB2F4E52BC05C620042045A /* FacialRatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB2F4E42BC05C620042045A /* FacialRatingView.swift */; };
 		FAB308FC2BA1FBE80063179A /* EventsChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */; };
 		FAB309002BA322910063179A /* RatingButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB308FF2BA322910063179A /* RatingButton.swift */; };
 		FAB7DC092B752CBE009793CF /* MedicinesListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7DC082B752CBE009793CF /* MedicinesListView.swift */; };
 		FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */; };
+		FAC449112BD2E6330091E719 /* EventEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC449102BD2E6330091E719 /* EventEditView.swift */; };
+		FAC527D92BCC50680011283B /* EventDescriptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC527D82BCC50680011283B /* EventDescriptionView.swift */; };
 		FAC7A6442B98CE03002EDB57 /* MedicineEvent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */; };
 		FAC7A6462B98DBE0002EDB57 /* DatesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */; };
 		FACA85232BC43DB700755E79 /* SymptomListPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACA85222BC43DB700755E79 /* SymptomListPickerView.swift */; };
@@ -63,6 +74,9 @@
 		FAD39CFB2BA760F70099AF62 /* ListPopoverButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD39CFA2BA760F70099AF62 /* ListPopoverButton.swift */; };
 		FAD39CFD2BA762420099AF62 /* ListPopoverButton_M.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD39CFC2BA762420099AF62 /* ListPopoverButton_M.swift */; };
 		FAD39CFF2BA772E90099AF62 /* SymptomsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD39CFE2BA772E90099AF62 /* SymptomsListView.swift */; };
+		FAD3B7C02BD7EE2D00959FA6 /* MonthYearPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3B7BF2BD7EE2D00959FA6 /* MonthYearPicker.swift */; };
+		FAD3B7C22BD918BB00959FA6 /* CalendarTileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3B7C12BD918BB00959FA6 /* CalendarTileView.swift */; };
+		FAD3B7C62BD9962C00959FA6 /* Extension Double Array.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD3B7C52BD9962C00959FA6 /* Extension Double Array.swift */; };
 		FAD99B3F2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */; };
 		FAD99B412BA0A261008771CA /* Average_in_TimePeriod.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */; };
 		FAE8889B2B862A5700E942E8 /* ModalProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */; };
@@ -129,9 +143,9 @@
 		FA43FB922B7AA077007A9638 /* UIHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIHelper.swift; sourceTree = "<group>"; };
 		FA43FB942B7AA0C5007A9638 /* NewMedicineView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMedicineView.swift; sourceTree = "<group>"; };
 		FA43FB962B7BB039007A9638 /* ErrorDatesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorDatesView.swift; sourceTree = "<group>"; };
+		FA496CCD2BD53DE30089DB99 /* EventsSplitView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsSplitView.swift; sourceTree = "<group>"; };
 		FA56B6382B6D3C60003ED5FF /* Novalgea.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Novalgea.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA56B63B2B6D3C60003ED5FF /* NovalgeaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NovalgeaApp.swift; sourceTree = "<group>"; };
-		FA56B6422B6D3C60003ED5FF /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		FA56B6442B6D3C61003ED5FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FA56B6462B6D3C61003ED5FF /* Novalgea.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Novalgea.entitlements; sourceTree = "<group>"; };
 		FA56B6482B6D3C61003ED5FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -150,15 +164,26 @@
 		FA6FBC412B836097007F0946 /* Medicine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Medicine.swift; sourceTree = "<group>"; };
 		FA6FBC432B836235007F0946 /* Extension Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Data.swift"; sourceTree = "<group>"; };
 		FA6FBC452B8367E5007F0946 /* Extension Doses.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Doses.swift"; sourceTree = "<group>"; };
+		FA7058352BDBE2DF00F9EE7B /* ColorModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorModel.swift; sourceTree = "<group>"; };
+		FA7058392BDD795F00F9EE7B /* MultiSelectionPicker_M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiSelectionPicker_M.swift; sourceTree = "<group>"; };
+		FA70583D2BDE7E5100F9EE7B /* RatingEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingEditView.swift; sourceTree = "<group>"; };
+		FA7058402BDECB7100F9EE7B /* MedicinesContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesContentView.swift; sourceTree = "<group>"; };
 		FA8606712B73DFEE00C52D81 /* DataController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataController.swift; sourceTree = "<group>"; };
 		FA8831A22BBD58ED002DF057 /* NewEventView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEventView.swift; sourceTree = "<group>"; };
 		FA975AF32B8E3937003802A4 /* ImportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportView.swift; sourceTree = "<group>"; };
 		FA975AF52B8E4832003802A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		FAB2025C2BC96DEC006B319F /* ColorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ColorManager.swift; path = Manager/ColorManager.swift; sourceTree = SOURCE_ROOT; };
+		FAB202602BC9A7C9006B319F /* Extension Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Color.swift"; sourceTree = "<group>"; };
+		FAB202642BCAEC85006B319F /* Extension CGF Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Extension CGF Array.swift"; path = "Extension/Extension CGF Array.swift"; sourceTree = SOURCE_ROOT; };
+		FAB202662BCAF1DF006B319F /* ColorSelectionPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionPicker.swift; sourceTree = "<group>"; };
+		FAB202682BCAFE04006B319F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
 		FAB2F4E42BC05C620042045A /* FacialRatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FacialRatingView.swift; sourceTree = "<group>"; };
 		FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventsChartView2.swift; sourceTree = "<group>"; };
 		FAB308FF2BA322910063179A /* RatingButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingButton.swift; sourceTree = "<group>"; };
 		FAB7DC082B752CBE009793CF /* MedicinesListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicinesListView.swift; sourceTree = "<group>"; };
 		FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorManager.swift; sourceTree = "<group>"; };
+		FAC449102BD2E6330091E719 /* EventEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventEditView.swift; sourceTree = "<group>"; };
+		FAC527D82BCC50680011283B /* EventDescriptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDescriptionView.swift; sourceTree = "<group>"; };
 		FAC7A6432B98CE03002EDB57 /* MedicineEvent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineEvent.swift; sourceTree = "<group>"; };
 		FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatesManager.swift; sourceTree = "<group>"; };
 		FACA85222BC43DB700755E79 /* SymptomListPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomListPickerView.swift; sourceTree = "<group>"; };
@@ -166,6 +191,9 @@
 		FAD39CFA2BA760F70099AF62 /* ListPopoverButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPopoverButton.swift; sourceTree = "<group>"; };
 		FAD39CFC2BA762420099AF62 /* ListPopoverButton_M.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListPopoverButton_M.swift; sourceTree = "<group>"; };
 		FAD39CFE2BA772E90099AF62 /* SymptomsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymptomsListView.swift; sourceTree = "<group>"; };
+		FAD3B7BF2BD7EE2D00959FA6 /* MonthYearPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonthYearPicker.swift; sourceTree = "<group>"; };
+		FAD3B7C12BD918BB00959FA6 /* CalendarTileView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalendarTileView.swift; sourceTree = "<group>"; };
+		FAD3B7C52BD9962C00959FA6 /* Extension Double Array.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension Double Array.swift"; sourceTree = "<group>"; };
 		FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ratings_Medicines_ChartView2.swift; sourceTree = "<group>"; };
 		FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Average_in_TimePeriod.swift; sourceTree = "<group>"; };
 		FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalProgressView.swift; sourceTree = "<group>"; };
@@ -234,9 +262,11 @@
 				FA27CB432B7E997F00D2FB7B /* ReviewDates.swift */,
 				FAFD67122B8F509500BC2EA7 /* Userdefaults.swift */,
 				FAFD671D2B90E66C00BC2EA7 /* Globals.swift */,
+				FAB202682BCAFE04006B319F /* Colors.xcassets */,
 				FAE8889E2B877AE400E942E8 /* Models Alogea */,
 				FABEBEFF2B6E954E007AE48C /* Manager */,
 				FAE8889C2B877AA000E942E8 /* Extension */,
+				FA7058342BDBE22500F9EE7B /* Unused */,
 				FA56B63A2B6D3C60003ED5FF /* Novalgea */,
 				FA56B6522B6D3C62003ED5FF /* NovalgeaTests */,
 				FA56B65C2B6D3C62003ED5FF /* NovalgeaUITests */,
@@ -265,13 +295,13 @@
 				FA975AF32B8E3937003802A4 /* ImportView.swift */,
 				FAFD67182B90D56000BC2EA7 /* Alogea File Import */,
 				FAE8889A2B862A5700E942E8 /* ModalProgressView.swift */,
-				FA56B6422B6D3C60003ED5FF /* ContentView.swift */,
 				FAB7DC082B752CBE009793CF /* MedicinesListView.swift */,
-				FAD39CFE2BA772E90099AF62 /* SymptomsListView.swift */,
-				FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */,
-				FA3D20412BB56F0200243BE4 /* CategoryListView.swift */,
-				FA6FBC3F2B82A684007F0946 /* RatingsListView.swift */,
+				FA7058402BDECB7100F9EE7B /* MedicinesContentView.swift */,
 				FA43FB942B7AA0C5007A9638 /* NewMedicineView.swift */,
+				FA70583B2BDE7D7C00F9EE7B /* Symptoms List and Edit */,
+				FA7058332BDBE1DC00F9EE7B /* Events List and Edit */,
+				FA70583C2BDE7DB900F9EE7B /* Categories List and Edit */,
+				FA70583F2BDE84F600F9EE7B /* Ratings List and Edit */,
 				FA43FB922B7AA077007A9638 /* UIHelper.swift */,
 				FA43FB982B7BF5AD007A9638 /* ErrorViews */,
 				FA56B66C2B6D3EC6003ED5FF /* Dose.swift */,
@@ -316,9 +346,57 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		FA7058332BDBE1DC00F9EE7B /* Events List and Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FA6FBC3D2B8284DC007F0946 /* DiaryEventsListView.swift */,
+				FA8831A22BBD58ED002DF057 /* NewEventView.swift */,
+			);
+			path = "Events List and Edit";
+			sourceTree = "<group>";
+		};
+		FA7058342BDBE22500F9EE7B /* Unused */ = {
+			isa = PBXGroup;
+			children = (
+				FA496CCD2BD53DE30089DB99 /* EventsSplitView.swift */,
+				FA7058352BDBE2DF00F9EE7B /* ColorModel.swift */,
+				FAC449102BD2E6330091E719 /* EventEditView.swift */,
+			);
+			path = Unused;
+			sourceTree = "<group>";
+		};
+		FA70583B2BDE7D7C00F9EE7B /* Symptoms List and Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FAD39CFE2BA772E90099AF62 /* SymptomsListView.swift */,
+				FA0B3F572BB2D4010031330C /* NewSymptomView.swift */,
+				FA7058392BDD795F00F9EE7B /* MultiSelectionPicker_M.swift */,
+			);
+			path = "Symptoms List and Edit";
+			sourceTree = "<group>";
+		};
+		FA70583C2BDE7DB900F9EE7B /* Categories List and Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FA3D20412BB56F0200243BE4 /* CategoryListView.swift */,
+				FA3D20452BB5AEC100243BE4 /* NewCategoryView.swift */,
+			);
+			path = "Categories List and Edit";
+			sourceTree = "<group>";
+		};
+		FA70583F2BDE84F600F9EE7B /* Ratings List and Edit */ = {
+			isa = PBXGroup;
+			children = (
+				FA6FBC3F2B82A684007F0946 /* RatingsListView.swift */,
+				FA70583D2BDE7E5100F9EE7B /* RatingEditView.swift */,
+			);
+			path = "Ratings List and Edit";
+			sourceTree = "<group>";
+		};
 		FABEBEFF2B6E954E007AE48C /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				FAB2025C2BC96DEC006B319F /* ColorManager.swift */,
 				FAC7A6452B98DBE0002EDB57 /* DatesManager.swift */,
 				FAE888A52B879B2000E942E8 /* BackupManager.swift */,
 				FABEBEFC2B6E952C007AE48C /* ErrorManager.swift */,
@@ -340,7 +418,7 @@
 				FAFF5CA22BBF02F4005FF6B0 /* CircularSliderView.swift */,
 				FAFF5CA02BBEB84C005FF6B0 /* BackdatingOptionView.swift */,
 				FAFF5C9E2BBEB588005FF6B0 /* NewMedicineEventView.swift */,
-				FA8831A22BBD58ED002DF057 /* NewEventView.swift */,
+				FAF1F8512BAC515F009B660C /* VerbalRatingView.swift */,
 			);
 			path = RatingView;
 			sourceTree = "<group>";
@@ -353,9 +431,12 @@
 				FAFD67102B8F4F2D00BC2EA7 /* Extension UTType.swift */,
 				FA6FBC452B8367E5007F0946 /* Extension Doses.swift */,
 				FA27CB472B7F961C00D2FB7B /* Extension String Array.swift */,
+				FAD3B7C52BD9962C00959FA6 /* Extension Double Array.swift */,
 				FAF1F8532BADCFA8009B660C /* Extension String.swift */,
 				FA6FBC432B836235007F0946 /* Extension Data.swift */,
 				FAF1F84F2BAB435B009B660C /* Extension Color Array.swift */,
+				FAB202602BC9A7C9006B319F /* Extension Color.swift */,
+				FAB202642BCAEC85006B319F /* Extension CGF Array.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -385,26 +466,29 @@
 			path = "Models Alogea";
 			sourceTree = "<group>";
 		};
-		FAF6DA892BA8C4CF0070A5DD /* Ratings_Meds_Charts View */ = {
+		FAF6DA892BA8C4CF0070A5DD /* Charts - Symptoms Meds */ = {
 			isa = PBXGroup;
 			children = (
+				FAD3B7C12BD918BB00959FA6 /* CalendarTileView.swift */,
+				FAD3B7BF2BD7EE2D00959FA6 /* MonthYearPicker.swift */,
 				FA2D07602B975B5B00A9156C /* Ratings_Medicines_ChartView.swift */,
 				FAD99B3E2BA0A15E008771CA /* Ratings_Medicines_ChartView2.swift */,
 				FAD39CFA2BA760F70099AF62 /* ListPopoverButton.swift */,
 				FAD39CFC2BA762420099AF62 /* ListPopoverButton_M.swift */,
 				FAD39CF82BA75FE10099AF62 /* SmallRatingButton.swift */,
 			);
-			path = "Ratings_Meds_Charts View";
+			path = "Charts - Symptoms Meds";
 			sourceTree = "<group>";
 		};
-		FAF6DA8A2BA8C5050070A5DD /* Events_Charts Views */ = {
+		FAF6DA8A2BA8C5050070A5DD /* Charts - Events */ = {
 			isa = PBXGroup;
 			children = (
 				FAEB129F2B939610000FC32E /* EventsChartView.swift */,
 				FAF6DA872BA8C17B0070A5DD /* ListPopoverButton_E.swift */,
+				FAC527D82BCC50680011283B /* EventDescriptionView.swift */,
 				FAB308FB2BA1FBE80063179A /* EventsChartView2.swift */,
 			);
-			path = "Events_Charts Views";
+			path = "Charts - Events";
 			sourceTree = "<group>";
 		};
 		FAF6DA8B2BA8C5380070A5DD /* Main Charts View */ = {
@@ -413,12 +497,10 @@
 				FAFD67192B90DFDD00BC2EA7 /* GraphicDiaryView.swift */,
 				FAFEC7FE2B9115BF00593550 /* DiarySelectionSection.swift */,
 				FACA85242BC44CFA00755E79 /* RatingView */,
-				FA0B3F572BB2D4010031330C /* NewSymptomView.swift */,
-				FA3D20452BB5AEC100243BE4 /* NewCategoryView.swift */,
-				FAF1F8512BAC515F009B660C /* VerbalRatingView.swift */,
-				FAF6DA892BA8C4CF0070A5DD /* Ratings_Meds_Charts View */,
+				FAB202662BCAF1DF006B319F /* ColorSelectionPicker.swift */,
+				FAF6DA892BA8C4CF0070A5DD /* Charts - Symptoms Meds */,
 				FAD99B402BA0A261008771CA /* Average_in_TimePeriod.swift */,
-				FAF6DA8A2BA8C5050070A5DD /* Events_Charts Views */,
+				FAF6DA8A2BA8C5050070A5DD /* Charts - Events */,
 			);
 			path = "Main Charts View";
 			sourceTree = "<group>";
@@ -539,6 +621,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA56B6492B6D3C61003ED5FF /* Preview Assets.xcassets in Resources */,
+				FAB202692BCAFE04006B319F /* Colors.xcassets in Resources */,
 				FA56B6452B6D3C61003ED5FF /* Assets.xcassets in Resources */,
 				FA56B6782B6D527C003ED5FF /* Localizable.xcstrings in Resources */,
 			);
@@ -573,6 +656,7 @@
 				FAF1F8542BADCFA8009B660C /* Extension String.swift in Sources */,
 				FAFEC7FF2B9115BF00593550 /* DiarySelectionSection.swift in Sources */,
 				FA27CB442B7E997F00D2FB7B /* ReviewDates.swift in Sources */,
+				FA70583E2BDE7E5100F9EE7B /* RatingEditView.swift in Sources */,
 				FA3D20462BB5AEC100243BE4 /* NewCategoryView.swift in Sources */,
 				FA6FBC442B836235007F0946 /* Extension Data.swift in Sources */,
 				FAFD67132B8F509500BC2EA7 /* Userdefaults.swift in Sources */,
@@ -580,6 +664,7 @@
 				FAC7A6442B98CE03002EDB57 /* MedicineEvent.swift in Sources */,
 				FAB2F4E52BC05C620042045A /* FacialRatingView.swift in Sources */,
 				FACA85232BC43DB700755E79 /* SymptomListPickerView.swift in Sources */,
+				FAB2025D2BC96DEC006B319F /* ColorManager.swift in Sources */,
 				FA56B63C2B6D3C60003ED5FF /* NovalgeaApp.swift in Sources */,
 				FABEBEFD2B6E952C007AE48C /* ErrorManager.swift in Sources */,
 				FAF1F8502BAB435B009B660C /* Extension Color Array.swift in Sources */,
@@ -594,8 +679,12 @@
 				FA43FB952B7AA0C5007A9638 /* NewMedicineView.swift in Sources */,
 				FAFD67202B910A7900BC2EA7 /* Extension Date.swift in Sources */,
 				FA43FB932B7AA077007A9638 /* UIHelper.swift in Sources */,
+				FA70583A2BDD795F00F9EE7B /* MultiSelectionPicker_M.swift in Sources */,
 				FA975AF62B8E4832003802A4 /* AppDelegate.swift in Sources */,
 				FAB309002BA322910063179A /* RatingButton.swift in Sources */,
+				FAD3B7C62BD9962C00959FA6 /* Extension Double Array.swift in Sources */,
+				FAC449112BD2E6330091E719 /* EventEditView.swift in Sources */,
+				FA7058412BDECB7100F9EE7B /* MedicinesContentView.swift in Sources */,
 				FA27CB3C2B7D5F0900D2FB7B /* AlogeaFileImportView.swift in Sources */,
 				FAFF5CA32BBF02F4005FF6B0 /* CircularSliderView.swift in Sources */,
 				FA1426002B6FF0FB00B2C622 /* InternalError.swift in Sources */,
@@ -605,19 +694,26 @@
 				FA8606722B73DFEE00C52D81 /* DataController.swift in Sources */,
 				FAFD67152B8FCDC300BC2EA7 /* ABFImportList.swift in Sources */,
 				FA29F3772B79327E00BA5956 /* ErrorDetailView.swift in Sources */,
+				FAC527D92BCC50680011283B /* EventDescriptionView.swift in Sources */,
+				FA496CCE2BD53DE30089DB99 /* EventsSplitView.swift in Sources */,
 				FA6FBC402B82A684007F0946 /* RatingsListView.swift in Sources */,
 				FAD39CF92BA75FE10099AF62 /* SmallRatingButton.swift in Sources */,
 				FA1425FC2B6FF0FB00B2C622 /* Rating.swift in Sources */,
+				FAD3B7C02BD7EE2D00959FA6 /* MonthYearPicker.swift in Sources */,
 				FA3D20422BB56F0200243BE4 /* CategoryListView.swift in Sources */,
+				FAB202652BCAEC85006B319F /* Extension CGF Array.swift in Sources */,
 				FA43FB972B7BB039007A9638 /* ErrorDatesView.swift in Sources */,
 				FAB308FC2BA1FBE80063179A /* EventsChartView2.swift in Sources */,
 				FAE888A62B879B2000E942E8 /* BackupManager.swift in Sources */,
 				FA27CB402B7E37F600D2FB7B /* Alogea_Drug.swift in Sources */,
 				FAFF5CA12BBEB84C005FF6B0 /* BackdatingOptionView.swift in Sources */,
 				FA975AF42B8E3937003802A4 /* ImportView.swift in Sources */,
+				FAB202672BCAF1DF006B319F /* ColorSelectionPicker.swift in Sources */,
 				FAF8FF682BB446B500B4A17D /* SampleData.swift in Sources */,
 				FA0B3F5C2BB318710031330C /* Extension EventCategory.swift in Sources */,
 				FAD39CFB2BA760F70099AF62 /* ListPopoverButton.swift in Sources */,
+				FAB202612BC9A7C9006B319F /* Extension Color.swift in Sources */,
+				FAD3B7C22BD918BB00959FA6 /* CalendarTileView.swift in Sources */,
 				FA56B66D2B6D3EC6003ED5FF /* Dose.swift in Sources */,
 				FAD39CFD2BA762420099AF62 /* ListPopoverButton_M.swift in Sources */,
 				FAF6DA882BA8C17B0070A5DD /* ListPopoverButton_E.swift in Sources */,
@@ -625,7 +721,6 @@
 				FAFD671E2B90E66C00BC2EA7 /* Globals.swift in Sources */,
 				FA1425FD2B6FF0FB00B2C622 /* DiaryEvent.swift in Sources */,
 				FA0B3F582BB2D4010031330C /* NewSymptomView.swift in Sources */,
-				FA56B6432B6D3C60003ED5FF /* ContentView.swift in Sources */,
 				FAF1F8522BAC515F009B660C /* VerbalRatingView.swift in Sources */,
 				FAE888A22B877B6500E942E8 /* ExportView.swift in Sources */,
 				FAFF5C9F2BBEB588005FF6B0 /* NewMedicineEventView.swift in Sources */,
@@ -633,6 +728,7 @@
 				FA6FBC3E2B8284DC007F0946 /* DiaryEventsListView.swift in Sources */,
 				FA29F3752B7929C300BA5956 /* ErrorsListView.swift in Sources */,
 				FA27CB3E2B7E374300D2FB7B /* Alogea_Event.swift in Sources */,
+				FA7058362BDBE2DF00F9EE7B /* ColorModel.swift in Sources */,
 				FAFD67112B8F4F2D00BC2EA7 /* Extension UTType.swift in Sources */,
 				FA6FBC462B8367E5007F0946 /* Extension Doses.swift in Sources */,
 				FA56B6712B6D4D95003ED5FF /* UserText.swift in Sources */,
@@ -802,7 +898,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -846,7 +942,7 @@
 				CODE_SIGN_ENTITLEMENTS = Novalgea/Novalgea.entitlements;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_ASSET_PATHS = "\"Novalgea/Preview Content\"";
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
@@ -888,7 +984,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -912,7 +1008,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -935,7 +1031,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -958,7 +1054,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 13;
+				CURRENT_PROJECT_VERSION = 15;
 				DEAD_CODE_STRIPPING = YES;
 				DEVELOPMENT_TEAM = 9T25ACNCQ7;
 				GENERATE_INFOPLIST_FILE = YES;

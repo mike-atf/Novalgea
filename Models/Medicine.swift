@@ -31,6 +31,7 @@ import SwiftData
     var startDate: Date = Date()
     var summaryScore: Double?
     var reviewDates: Data?
+    var colorName: String?
     var uuid: UUID = UUID()
 
     @Relationship(deleteRule: .cascade, inverse: \MedicineEvent.medicine) var medEvents: [MedicineEvent]?
@@ -38,7 +39,7 @@ import SwiftData
     @Relationship(deleteRule: .cascade ,inverse: \Symptom.causingMeds) var sideEffects: [Symptom]?
     @Relationship(deleteRule: .cascade ,inverse: \Rating.ratedMedicine) var effectRatings: [Rating]?
     
-    public init(name: String = "New medicine \(Date.now)", currentStatus: String? = "Current" ,doses: [Dose], startDate: Date = .now, endDate: Date?=nil,drugClass: String?=nil, effectDuration: TimeInterval = 24*3600, isRegular: Bool=true, treatedSymptoms: [Symptom]? = [], effectRatings: [Rating]? = [], creatingDevice: String?=nil) {
+    public init(name: String = "New medicine \(Date.now)", currentStatus: String? = "Current" , doses: [Dose], startDate: Date = .now, endDate: Date?=nil,drugClass: String?=nil, effectDuration: TimeInterval = 24*3600, isRegular: Bool=true, treatedSymptoms: [Symptom]? = [], sideEffects: [Symptom]? = [] ,effectRatings: [Rating]? = [], creatingDevice: String?=nil, color: Color?=nil, colorName: String?=nil) {
         self.name = name
         self.startDate = startDate
         self.creatingDevice = creatingDevice ?? UIDevice.current.name
@@ -50,8 +51,20 @@ import SwiftData
         self.ratingRemindersOn = true
         self.currentStatus = currentStatus ?? "Current"
         self.treatedSymptoms = treatedSymptoms
+        self.sideEffects = sideEffects
         self.reviewDates = nil
         self.effectRatings = effectRatings
+        
+        if colorName != nil {
+            self.colorName = colorName!
+        } else {
+            for key in ColorScheme.symptomColors.keys {
+                if color == ColorScheme.symptomColors[key] {
+                    self.colorName = key
+                }
+            }
+        }
+
     }
     
     static func == (lhs: Medicine, rhs: Medicine) -> Bool {
@@ -92,6 +105,36 @@ import SwiftData
             return inDateEvents.count
         }
     }
+    
+    public func color() -> Color {
+        
+        guard let colorName else { return Color.primary }
+        
+        return Color(UIColor(named: colorName) ?? UIColor.label)
+    }
+    
+    public func setNewColor(color: Color) {
+        
+        for key in ColorScheme.medicineColors.keys {
+            if color == ColorScheme.medicineColors[key] {
+                self.colorName = key
+            }
+        }
+    }
+    
+    public func dosesDescription() -> String {
+        
+        guard let doses = self.doses.convertToDoses() else { return "-" }
+        guard doses.count > 0 else { return "-" }
+        
+        var dose$ = doses.first!.userText(long: false)
+        for i in 1..<doses.count {
+            dose$ += ", " + doses[i].userText(long: false)
+        }
+        
+        return dose$
+    }
+
 
 
 }
@@ -117,5 +160,15 @@ extension Medicine {
         return Medicine(name: rndName,doses: [Dose(unit: "mg", value1: 1000)])
             
     }
+    
+    static var placeholder: Medicine {
+        return Medicine(name: UserText.term("Placeholder"), doses: [Dose(unit: "mg", value1: 0)])
+    }
+    
+    static var new: Medicine {
+        return Medicine(name: UserText.term("New medicine"), doses: [Dose(unit: "mg", value1: 0)])
+    }
+
+
 
 }

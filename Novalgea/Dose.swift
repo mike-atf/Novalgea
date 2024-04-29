@@ -7,25 +7,8 @@
 
 import Foundation
 
-struct Dose { //: NSObject, NSCoding
-    
-//    public func encode(with coder: NSCoder) {
-//        coder.encode(Double.self, forKey: "value1")
-//        coder.encode(Double?.self, forKey: "value2")
-//        coder.encode(String.self, forKey: "unit")
-//        coder.encode(Date.self, forKey: "time")
-//        coder.encode(Bool.self, forKey: "reminderIsOn")
-//   }
-//    
-//    public required convenience init?(coder: NSCoder) {
-//        let time = coder.decodeObject(forKey: "time") as! Date
-//        let reminderisOn = coder.decodeBool(forKey: "reminderIsOn")
-//        let unit = coder.decodeObject(forKey: "unit") as! String
-//        let value1 = coder.decodeDouble(forKey: "value1")
-//        let value2 = coder.decodeDouble(forKey: "value2")
-//        self.init(time: time, reminderIsOn: reminderisOn ,unit: unit, value1: value1, value2: value2)
-//    }
-    
+struct Dose {
+        
     var time: Date
     var reminderIsOn: Bool
     var unit: String
@@ -46,6 +29,7 @@ struct Dose { //: NSObject, NSCoding
         return try? NSKeyedArchiver.archivedData(withRootObject: self, requiringSecureCoding: false)
     }
     
+    /// 'long' results in longer unit descriptions such as 'milli-liter' rather than 'ml' for long=false
     func userText(long: Bool) -> String {
         
         var unitText = String()

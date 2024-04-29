@@ -2,6 +2,10 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSHealthClinicalHealthRecordsShareUsageDescription</key>
+	<string>Novalgea accesses your medicines to synchronise with your Pain Diary medicines. Data is NOT shared with others. Please check our privacy policy.</string>
+	<key>NSHealthShareUsageDescription</key>
+	<string>Novalgea accesses your stepcount to integrate your activity with your pain diary. Data is NOT shared with third parties. Please check our privacy policy</string>
 	<key>NSAppTransportSecurity</key>
 	<dict>
 		<key>NSExceptionDomains</key>

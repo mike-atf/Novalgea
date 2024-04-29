@@ -25,6 +25,9 @@ import OSLog
     var drugs = [Alogea_Drug]()
     var recordTypes = [Alogea_RecordType]()
     
+    var completedImportTasks: Double = 0
+    var totalImportTasks: Double = 1
+    
     override func handleError(_ error: Error, userInteractionPermitted: Bool) {
         logger.error("Alogea backup file error: \(error.localizedDescription)")
     }
@@ -242,23 +245,26 @@ import OSLog
 
         let fetchDescriptorS = FetchDescriptor<Symptom>(sortBy: [SortDescriptor(\Symptom.name)])
         var existingSymptoms = try? context.fetch(fetchDescriptorS)
-        
+        var index = 0
         for symptom in recordTypes {
+            let colorSchemeIndex = index%ColorScheme.symptomColorsArray.count
             if existingSymptoms?.count ?? 0 < 1 {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name, colorName: "s\(colorSchemeIndex)")
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
                 
             } else if !(existingSymptoms!.compactMap { $0.name }.contains(symptom.name)) {
-                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                let newSymptom = Symptom(name: symptom.name, type: UserText.term("Symptom"), creatingDevice: symptom.urid.components(separatedBy: " ").first ?? UIDevice.current.name, colorName: "s\(colorSchemeIndex)")
                 context.insert(newSymptom)
                 existingSymptoms?.append(newSymptom)
             }
-//            completedTasks += 1.0
+            index += 1
         }
         
+        index = 0
         for drug in drugs {
-            let newMedicine = Medicine(name: "Sample medicine",doses: [Dose(unit: "mg", value1: 1000)])
+            let colorSchemeIndex = index%ColorScheme.medicineColorsArray.count
+            let newMedicine = Medicine(name: "Sample medicine",doses: [Dose(unit: "mg", value1: 1000)], colorName: "m\(colorSchemeIndex)")
             context.insert(newMedicine)
             
             newMedicine.name = drug.name
@@ -298,12 +304,12 @@ import OSLog
                 context.insert(effectRating2)
             }
             
-            if let doses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSNumber.self, from: drug.doses as Data) as? [[Double]] {
+            if let doses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSNumber.self, NSData.self], from: drug.doses as Data) as? [[Double]] {
                 
                 var reminders = [true]
                 
                 if let archivedReminderData = drug.reminders as? Data {
-                    if let archivedReminders = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSNumber.self, from: archivedReminderData) as? [Bool] {
+                    if let archivedReminders = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSNumber.self, NSData.self], from: archivedReminderData) as? [Bool] {
                         reminders = archivedReminders
                     }
                 }
@@ -329,13 +335,13 @@ import OSLog
             }
             
             if let classData = drug.classes as? Data {
-                if let classes = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSString.self, from: classData) as? [String] {
+                if let classes = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSString.self, NSData.self], from: classData) as? [String] {
                     newMedicine.drugClass = classes.combinedString()
                 }
             }
             
             if let symptomData = drug.treatedSymptoms as? Data {
-                if let unarchivedSymptoms = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSString.self, from: symptomData) as? [String] {
+                if let unarchivedSymptoms = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSString.self, NSData.self], from: symptomData) as? [String] {
                     
                     var treatedSymptoms = [Symptom]()
                     
@@ -352,7 +358,9 @@ import OSLog
                             }
                             else  {
                                 // no existing symptom - create new
-                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term("Symptom"), creatingDevice: UIDevice.current.name)
+                                let randomIndex = Int.random(in: 0..<ColorScheme.symptomColorsArray.count)
+                                let colorName = "s\(randomIndex)"
+                                let newSymptom = Symptom(name: "Sample symptom", type: UserText.term("Symptom"), creatingDevice: UIDevice.current.name, colorName: colorName)
                                 treatedSymptoms.append(newSymptom)
                                 existingSymptoms?.append(newSymptom)
                             }
@@ -373,19 +381,19 @@ import OSLog
             }
             
             if let ratingRemindersData = drug.attribute1 as? Data {
-                if let archivedRatingReminderOn = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSNumber.self, from: ratingRemindersData) as? Bool {
+                if let archivedRatingReminderOn = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSNumber.self, NSData.self], from: ratingRemindersData) as? Bool {
                     newMedicine.ratingRemindersOn = archivedRatingReminderOn
                 }
             }
             
             if let recommendedDurationData = drug.attribute2 as? Data {
-                if let recommendedDuration = try? NSKeyedUnarchiver.unarchivedObject(ofClass: NSNumber.self, from: recommendedDurationData) as? Double {
+                if let recommendedDuration = try? NSKeyedUnarchiver.unarchivedObject(ofClasses: [NSNumber.self, NSData.self], from: recommendedDurationData) as? Double {
                     newMedicine.recommendedDuration = recommendedDuration
                 }
             }
             
             if let maxSingleDosesData = drug.maxSingleDoses as? Data {
-                if let maxSingleDoses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSNumber.self, from: maxSingleDosesData) as? [Double] {
+                if let maxSingleDoses = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSNumber.self, NSData.self], from: maxSingleDosesData) as? [Double] {
                     newMedicine.maxSingleDose = maxSingleDoses.max()
                 }
             }
@@ -404,7 +412,8 @@ import OSLog
                     var sideEffects = [Symptom]()
                     for sideEffect in unarchivedSideEffects {
                         // no existing symptom - create new
-                        let newSE = Symptom(name: drug.name + UserText.term(" side effect"), type: UserText.term("Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine])
+                        let seColorIndex = Int.random(in: 0..<ColorScheme.symptomColorsArray.count)
+                        let newSE = Symptom(name: drug.name + UserText.term(" side effect"), type: UserText.term("Side effect"), creatingDevice: UIDevice.current.name, causingMeds: [newMedicine], colorName: "s\(seColorIndex)")
                         // the side effect is 'reversely' added the the new Medicine by including it in the RelationShip causingMeds in this SideEffect-Symptom; this should create a reverse RelationShip in new medicine adding the SideEffect-Symptom
                         var vas: Double
                         switch sideEffect {
@@ -429,7 +438,7 @@ import OSLog
             }
             
             if let reviewDatesData = drug.attribute3 as? Data {
-                if let dates = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClass: NSDate.self, from: reviewDatesData) as? [Date] {
+                if let dates = try? NSKeyedUnarchiver.unarchivedArrayOfObjects(ofClasses: [NSDate.self, NSData.self], from: reviewDatesData) as? [Date] {
                     let proposedReviewDate = dates.first
                     let proposedStopDate = dates.count > 1 ? dates[1] : nil
                     let nextMildSevereReviewDate = dates.count > 2 ? dates[2] : nil
@@ -443,6 +452,8 @@ import OSLog
                 let regularMedEvent = MedicineEvent(endDate: drug.endDate, startDate: drug.startDate ,medicine: newMedicine)
                 context.insert(regularMedEvent)
             }
+            
+            completedImportTasks += 1.0
         }
 
         let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
@@ -459,11 +470,12 @@ import OSLog
         let categoryNames = Set(diaryEvents.compactMap { $0.name })
         var importedCategories = [EventCategory]()
         for name in categoryNames {
-            let new = EventCategory(name: name)
+            let symbol = SymbolScheme.eventCategorySymbols.randomElement()!
+            let new = EventCategory(name: name, symbol: symbol, colorName: ColorScheme.categoryColors.keys.randomElement())
             importedCategories.append(new)
             context.insert(new)
         }
-        let unkown = EventCategory(name: UserText.term("Unknown category"))
+        let unkown = EventCategory(name: UserText.term("Unknown category"), color: Color.primary)
 
         for event in events {
             
@@ -477,7 +489,7 @@ import OSLog
                     }).first!
                 }
                 else {
-                    let newSymptom = Symptom(name: event.name, type: UserText.term("Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name)
+                    let newSymptom = Symptom(name: event.name, type: UserText.term("Symptom"), creatingDevice: event.urid.components(separatedBy: " ").first ?? UIDevice.current.name, colorName: ColorScheme.symptomColors.keys.randomElement())
                     context.insert(newSymptom)
                     context.insert(newSymptom)
                     existingSymptoms?.append(newSymptom)
@@ -525,11 +537,18 @@ import OSLog
                 let ierror = InternalError(file: "Alogea Backup Document", function: "importAlogeaRecords()", appError: "unexpcted imported event type: \(event.type)")
                 context.insert(ierror)
             }
+            
         }
-        
         
     }
     
 }
+
+//class ImportDelegate: ObservableObject {
+//    
+//    @Published var completedTasks: Double = 0
+//    @Published var totalTasks: Double = 1
+//    
+//}
 
 

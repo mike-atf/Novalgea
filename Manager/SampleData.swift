@@ -10,9 +10,9 @@ import UIKit
 #endif
 import SwiftData
 
-class SampleData {
+@MainActor class SampleData {
     
-    @MainActor class func createSampleData(checkIfExist: Bool, _in container: ModelContainer) {
+     class func createSampleData(checkIfExist: Bool, _in container: ModelContainer) {
         
         let context = container.mainContext
         
@@ -101,7 +101,8 @@ class SampleData {
         let names = ["My life S", "Treatment S", "Milestone S", "Work event S"]
         var categories = [EventCategory]()
         for i in 0..<names.count {
-            let new = EventCategory(name: names[i])
+            let color = ColorManager.getNewCategoryColor(container: context.container)
+            let new = EventCategory(name: names[i], color: color)
             context.insert(new)
             categories.append(new)
         }

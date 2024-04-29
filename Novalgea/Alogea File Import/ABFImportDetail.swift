@@ -20,6 +20,10 @@ struct ABFImportDetail: View {
     @State var showProgressBar = false
     @State var showCompletion = false
     @State var importErrorMessage = ""
+//    @State var tasks: Double = 0
+//    @State var completed: Double = 0
+//    
+//    @State var importDelegate = ImportDelegate()
     
     var body: some View {
         
@@ -132,8 +136,12 @@ struct ABFImportDetail: View {
                 }
                 if showProgressBar {
                     Section {
-                        VStack(alignment: .center) {
-                            Text(UserText.term("Importing, please wait...")).bold()
+                        HStack {
+                            VStack(alignment: .leading) {
+                                Text(UserText.term("Importing")).font(.title2).bold()
+                                Text(UserText.term("This may take a while. Please wait..."))
+                            }
+                            Spacer()
                             ProgressView()
                         }
                     }
@@ -148,9 +156,16 @@ struct ABFImportDetail: View {
             } message: {
                 Text(importErrorMessage)
             }
+//            .onReceive(importDelegate.$totalTasks) { tasks in
+//                self.tasks = tasks
+//            }
+//            .onReceive(importDelegate.$completedTasks) { completed in
+//                self.completed = completed
+//            }
+
     }
     
-    @MainActor private func importRecords(replaceExisting: Bool) {
+    private func importRecords(replaceExisting: Bool) {
         
         showProgressBar = true
         
@@ -165,7 +180,9 @@ struct ABFImportDetail: View {
                 try modelContext.delete(model: Symptom.self)
             } catch {
                 let ierror = InternalError(file: "Alogea File ImportView", function: "importRecords", appError: "delete current records failure while trying to import Alogea archive records", osError: error.localizedDescription)
-                ErrorManager.addError(error: ierror, container: modelContext.container)
+                DispatchQueue.main.async {
+                    ErrorManager.addError(error: ierror, container: modelContext.container)
+                }
             }
         }
         
@@ -180,8 +197,8 @@ struct ABFImportDetail: View {
                 }
             } catch {
                 let ierror = InternalError(file: "Alogea File ImportView", function: "importRecords", appError: "failure while trying to import Alogea archive records", osError: error.localizedDescription)
-                ErrorManager.addError(error: ierror, container: modelContext.container)
                 DispatchQueue.main.async {
+                    ErrorManager.addError(error: ierror, container: modelContext.container)
                     importErrorMessage = UserText.term("Import errors: ") + error.localizedDescription
                     showProgressBar = false
                     showCompletion = true

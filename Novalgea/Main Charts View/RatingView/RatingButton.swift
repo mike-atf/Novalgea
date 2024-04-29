@@ -14,16 +14,12 @@ struct RatingButton: View {
     
     @Environment(\.modelContext) private var modelContext
     @Environment(\.verticalSizeClass) var verticalSizeClass
-//    @Query(filter: #Predicate<Medicine> { medicine in
-//        medicine.isRegular == false &&
-//        medicine.currentStatus == "Current"
-//    }, sort: \Medicine.name, order: .reverse) var prnMedicines: [Medicine]
+    @Environment(\.dismiss) private var dismiss
     
     @Query(sort: \Symptom.name) var symptoms: [Symptom]
     @Query() var events: [DiaryEvent]
     @Query(sort: \EventCategory.name) var eventCategories: [EventCategory]
 
-    @Binding var showView: Bool
     @Binding var vas: Double?
     @Binding var headerSubtitle: String
     @Binding var showNewEventView: Bool
@@ -39,12 +35,20 @@ struct RatingButton: View {
     @State var selectedSymptom: Symptom?
     @State var selectedEventDate = Date.now
     @State var customDate$: String?
-    
+
     @State var selectedVAS: Double?
-    @State var selectedEventCategory: EventCategory?
+    @State var selectedEventCategory: EventCategory = EventCategory.addNew
+    // declare above 'var body: some View {
     
+    var optionalSelectedEvent: Binding<EventCategory?> {
+        Binding(
+            get: { selectedEventCategory },
+            set: { selectedEventCategory = $0 ?? EventCategory.addNew }
+        )
+    }
+
     private let segment = Angle(degrees: 5)
-    private let angulargradient = AngularGradient(colors: gradientColors, center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
+    private let angulargradient = AngularGradient(colors: ColorScheme.gradientColors, center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
 
     var body: some View {
         
@@ -76,7 +80,7 @@ struct RatingButton: View {
                         .listRowBackground(selectedSymptom == nil ? Color.gray : Color.blue)
                         
                         Button {
-                            showView = false
+                            dismiss()
                         } label: {
                             Text("Cancel")
                                 .frame(maxWidth: .infinity, alignment: .center)
@@ -87,10 +91,10 @@ struct RatingButton: View {
                    }
                 }
                 .sheet(isPresented: $showSymptomEntry, content: {
-                    NewSymptomView(showView: $showSymptomEntry, selectedSymptom: $selectedSymptom)
+                    NewSymptomView(selectedSymptom: $selectedSymptom, createNew: true)
                 })
                 .sheet(isPresented: $showNewCategory, content: {
-                    NewCategoryView(showView: $showNewCategory, newCategorySelection: $selectedEventCategory)
+                    NewCategoryView(selectedCategory: optionalSelectedEvent, createNew: true)
                 })
                 .listStyle(.plain)
             }
@@ -114,12 +118,12 @@ struct RatingButton: View {
                         .padding(.horizontal)
                         
                         //MARK: - circular slider & button
-                    CircularSliderView(vas: $vas, selectedVAS: $selectedVAS, showNewEventView: $showNewEventView, showNewMedicineEventView: $showNewMedicineEventView, showSymptomsList: $showSymptomsList, showView: $showView, headerSubTitle: $headerSubtitle)
+                    CircularSliderView(vas: $vas, selectedVAS: $selectedVAS, showNewEventView: $showNewEventView, showNewMedicineEventView: $showNewMedicineEventView, showSymptomsList: $showSymptomsList, headerSubTitle: $headerSubtitle)
                     
                     Spacer()
                     
                     Button(UserText.term("Cancel")) {
-                        showView = false
+                        dismiss()
                     }
                     .buttonStyle(BorderedButtonStyle())
 
@@ -134,11 +138,12 @@ struct RatingButton: View {
         guard selectedSymptom != nil else { return }
         guard vas != nil else { return }
 
+        UserDefaults.standard.setValue(selectedSymptom!.uuid.uuidString, forKey: Userdefaults.lastSelectedSymptom.rawValue)
         let newRating = Rating(vas: vas!, ratedSymptom: selectedSymptom!, date: selectedEventDate)
         modelContext.insert(newRating)
         saveContext()
         withAnimation {
-            showView = false
+            dismiss()
         }
         selectedSymptom = nil
     }
@@ -156,7 +161,7 @@ struct RatingButton: View {
 }
 
 #Preview {
-    RatingButton(showView: .constant(true), vas: .constant(nil), headerSubtitle: .constant("Record a symptom rating or an event"), showNewEventView: .constant(false), showNewMedicineEventView: .constant(true)).modelContainer(DataController.previewContainer)
+    RatingButton(vas: .constant(nil), headerSubtitle: .constant("Record a symptom rating or an event"), showNewEventView: .constant(false), showNewMedicineEventView: .constant(true)).modelContainer(DataController.previewContainer)
 }
 
 

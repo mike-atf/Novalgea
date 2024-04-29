@@ -4,6 +4,9 @@
     "" : {
 
     },
+    " - " : {
+
+    },
     "-" : {
 
     },
@@ -14,6 +17,9 @@
 
     },
     "%lld error dates" : {
+
+    },
+    "0" : {
 
     },
     "1 day" : {
@@ -136,6 +142,9 @@
         }
       }
     },
+    "10" : {
+
+    },
     "ABFInfo" : {
       "extractionState" : "stale",
       "localizations" : {
@@ -153,6 +162,9 @@
         }
       }
     },
+    "Add" : {
+
+    },
     "Add a symptom rating or event" : {
 
     },
@@ -163,9 +175,6 @@
 
     },
     "Add Symptom" : {
-
-    },
-    "Add trip" : {
 
     },
     "Alert.forExercises" : {
@@ -905,6 +914,9 @@
           }
         }
       }
+    },
+    "Calendar" : {
+
     },
     "Can't backup to iCloud" : {
       "extractionState" : "stale",
@@ -7388,9 +7400,6 @@
     "Import process ended" : {
 
     },
-    "Importing, please wait..." : {
-
-    },
     "Internal errors will be listed here." : {
 
     },
@@ -8565,9 +8574,6 @@
           }
         }
       }
-    },
-    "Medicines you create will appear here." : {
-
     },
     "Meds" : {
 
@@ -11346,9 +11352,6 @@
         }
       }
     },
-    "Must be an Alogea Backup file" : {
-
-    },
     "Name" : {
 
     },
@@ -11387,6 +11390,9 @@
       }
     },
     "No Errors" : {
+
+    },
+    "No event selected" : {
 
     },
     "No Events" : {
@@ -11487,6 +11493,9 @@
           }
         }
       }
+    },
+    "Options will appear here" : {
+
     },
     "Password" : {
       "extractionState" : "stale",
@@ -12725,7 +12734,6 @@
       }
     },
     "Select an option" : {
-      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -12740,9 +12748,6 @@
           }
         }
       }
-    },
-    "Select one" : {
-
     },
     "Select or add a medicine" : {
       "extractionState" : "manual",
@@ -13118,6 +13123,7 @@
 
     },
     "Side effects" : {
+      "extractionState" : "stale",
       "localizations" : {
         "de" : {
           "stringUnit" : {
@@ -15678,9 +15684,6 @@
           }
         }
       }
-    },
-    "Symbol" : {
-
     },
     "Symptom" : {
 

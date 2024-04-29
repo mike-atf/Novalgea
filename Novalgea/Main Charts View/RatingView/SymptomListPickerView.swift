@@ -66,6 +66,7 @@ struct SymptomListPickerView: View {
                     showSymptomEntry = true
                 }
                 .buttonStyle(BorderedButtonStyle())
+                .font(.body)
             }
             .padding()
         }

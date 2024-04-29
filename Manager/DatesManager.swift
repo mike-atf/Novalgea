@@ -86,6 +86,14 @@ class DatesManager {
         
         return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
     }
+    
+    // 1 = Sunday, 7 = Saturday
+    class func weekday(of: Date) -> Int {
+        let components: Set<Calendar.Component> = [.weekday]
+        let dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: of)
+        return dateComponents.weekday! - 1 // change to 0...6 to match weekDayNames
+    }
+
 
     
     class func startOfMonth(from: Date = .now, _by months: Int) -> Date {
@@ -100,6 +108,23 @@ class DatesManager {
         
         return Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
     }
+    
+    class func daysOfMonth(from: Date) -> Int {
+        
+        let components: Set<Calendar.Component> = [.year, .month, .day]
+        var dateComponents = Calendar.autoupdatingCurrent.dateComponents(components, from: from)
+        dateComponents.day = 1
+        
+        let start = Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+        dateComponents.month! += 1
+        dateComponents.day! -= 1
+        let end = Calendar.autoupdatingCurrent.date(from: dateComponents) ?? from
+        
+        let days = end.timeIntervalSince(start) / (24*3600)
+        
+        return Int(days) + 1
+    }
+
     
     /// returns beginning of quarter offset by 'quarters' from a given date, or .now as default; for end of a quarter use this function and add timeInterval -1
     class func startOfQuarter(from: Date = .now, _by quarters: Int) -> Date {

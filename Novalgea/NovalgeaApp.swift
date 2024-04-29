@@ -81,8 +81,12 @@ struct NovalgeaApp: App {
                     .tabItem {
                         Label("Export", systemImage: "square.and.arrow.up.on.square.fill")
                     }
+                CalendarTileView()
+                    .tabItem {
+                        Label("Calendar", systemImage: "square.grid.3x3.square")
+                    }
 
-            } 
+            }
         }
         .modelContainer(container)
 //        .modelContainer(for: [Symptom.self, Medicine.self, DiaryEvent.self, ExerciseEvent.self, PRNMedEvent.self, Rating.self, InternalError.self], isUndoEnabled: true)

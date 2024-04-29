@@ -13,12 +13,12 @@ extension Array where Element == Color {
         
         let vas0_1 = vas/10.0
         
-        let cgColors: [CGColor] = gradientColors.compactMap { color in
+        let cgColors: [CGColor] = ColorScheme.gradientColors.compactMap { color in
             color.cgColor
         }
         
-        if vas0_1 <= 0.0 { return gradientColors[0] }
-        else if vas0_1 >= 1.0 { return gradientColors[3] }
+        if vas0_1 <= 0.0 { return ColorScheme.gradientColors[0] }
+        else if vas0_1 >= 1.0 { return ColorScheme.gradientColors[3] }
         
                     
         guard let rgbComponents1 = cgColors[0].components else { return Color.white }

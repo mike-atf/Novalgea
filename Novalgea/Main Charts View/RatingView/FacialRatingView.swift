@@ -13,8 +13,11 @@ struct FacialRatingView: View {
     var textSize: CGFloat
     
     var body: some View {
-        Text(emoji()).font(.system(size: textSize)).transition(.move(edge: .trailing))
+        withAnimation {
+            Text(emoji()).font(.system(size: textSize)).transition(.move(edge: .trailing))
+        }
     }
+    
     private func emoji() -> String {
         
         let expressions = ["🙂","😐","🫤","😕","🙁","☹️","😣","😖","😩","😫"]
@@ -22,8 +25,6 @@ struct FacialRatingView: View {
         var i = Int(vas ?? 0)
         if i > expressions.count-1 { i = expressions.count-1 }
         return expressions[i]
-        
-        
     }
 }
 

@@ -57,8 +57,12 @@ import SwiftData
 extension DiaryEvent {
     
     static var preview: DiaryEvent {
-        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: EventCategory.preview)
+        DiaryEvent(date: .now.addingTimeInterval(-TimeInterval.random(in: 0...30*24*3600)), category: EventCategory.preview, notes: "Event description/ notes" )
             
+    }
+    
+    static var placeHolder: DiaryEvent {
+        DiaryEvent(date: .now, category: EventCategory(name: UserText.term("Placeholder"), color: .primary))
     }
 
 }

@@ -8,7 +8,7 @@
 #if canImport(UIKit)
 import UIKit
 #endif
-import Foundation
+import SwiftUI
 import SwiftData
 
 
@@ -20,6 +20,8 @@ import SwiftData
     var creatingDevice: String = "Device"
     var maxVAS: Double = 10.0
     var minVAS: Double = 0.0
+//    var colorModel: [CGFloat]?
+    var colorName: String? // as key in ColorScheme.symptomsColors dictionary
     var uuid: UUID = UUID()
     
     var diaryEvents: [DiaryEvent]?
@@ -28,7 +30,7 @@ import SwiftData
     var causingMeds: [Medicine]? // optional to-many relationShips not supported in @Query #Predicate
     var isSideEffect: Bool = false // because of the above limitation
     
-    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String?=nil, maxVAS: Double = 10, minVAS: Double = 0, diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = [], isSideEffect: Bool?=false) {
+    init(name: String, type: String ,averages: [Double]? = nil, creatingDevice: String?=nil, maxVAS: Double = 10, minVAS: Double = 0, diaryEvents: [DiaryEvent]? = [], ratingEvents: [Rating]? = [], treatingMeds: [Medicine]? = [], causingMeds: [Medicine]? = [], isSideEffect: Bool?=false, color: Color?=nil, colorName: String?=nil) {
         
         self.averages = averages
         self.type = type
@@ -42,21 +44,24 @@ import SwiftData
         self.causingMeds = causingMeds
         if causingMeds?.count ?? 0 > 0 { self.isSideEffect = true }
         if isSideEffect != nil { self.isSideEffect = isSideEffect! }
+        
+        if colorName != nil {
+            self.colorName = colorName!
+        } else {
+            for key in ColorScheme.symptomColors.keys {
+                if color == ColorScheme.symptomColors[key] {
+                    self.colorName = key
+                }
+            }
+        }
     }
     
     static func == (lhs: Symptom, rhs: Symptom) -> Bool {
         
         if lhs.uuid != rhs.uuid { return false }
-
-        
-//        if lhs.name != rhs.name { return false }
-//        else if lhs.type != rhs.type { return false }
-
         return true
         
     }
-
-    
     
     public func ratingAverage(from: Date, to: Date) -> Double? {
         guard let ratings = ratingEvents else { return nil }
@@ -84,6 +89,22 @@ import SwiftData
         return inDateRatings.count
         
     }
+    
+    public func color() -> Color {
+        
+        guard let colorName else { return Color.primary }
+        
+        return Color(UIColor(named: colorName) ?? UIColor.label)
+    }
+    
+    public func setNewColor(color: Color) {
+        
+        for key in ColorScheme.symptomColors.keys {
+            if color == ColorScheme.symptomColors[key] {
+                self.colorName = key
+            }
+        }        
+    }
 
 }
 
@@ -92,7 +113,13 @@ extension Symptom {
     
     static var preview: Symptom {
         
-        Symptom(name: "Sample symptom", type: "Symptom", creatingDevice: "Sample device")
+            Symptom(name: "Sample symptom", type: "Symptom", creatingDevice: "Sample device")
+            
+    }
+    
+    static var placeholder: Symptom {
+        Symptom(name: UserText.term("Default"), type: "Symptom", creatingDevice: "-")
+
     }
 
 }

@@ -35,124 +35,142 @@ struct MedicinesListView: View {
     /// 3. @Query filtering coming
     
     @State private var selection: Medicine?
-    @State private var showAddMedicine = false
+    var nonOptionalSelection: Binding<Medicine> {
+        Binding(
+            get: { selection ?? Medicine.placeholder },
+            set: { selection = $0 }
+        )
+    }
 
+    @State private var medicineViewOption: MedicineViewOption? = nil
+    
+    @State private var showAddMedicine = false
+    @State var path = NavigationPath()
+    
+    @State private var columnVisibility =
+        NavigationSplitViewVisibility.all
     
     var body: some View {
-        NavigationSplitView {
-            List {
-                Section {
-                    ForEach(currentMedicines) { medicine in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(medicine.name)
-                                Spacer()
-                                Text(medicine.startDate.formatted())
-                            }
-                            Text(medicine.currentStatus).font(.footnote)
-                        }            
-                        .swipeActions {
-                            Button("Delete", role: .destructive) {
-                                deleteMedicine(medToDelete: medicine)
-                            }
-                        }
-
-                    }
+        
+        NavigationSplitView(columnVisibility: $columnVisibility) {
+            
+                List(currentMedicines, selection: $selection) { currentmed in
                     
-                } header: {
-                    if currentMedicines.count > 0 {
-                        Text("Current")
+                    NavigationLink(value: currentmed) {
+                        HStack {
+                            Circle()
+                                .fill(currentmed.color()).frame(height: 20)
+                            VStack(alignment: .leading) {
+                                HStack {
+                                    Text(currentmed.name).font(.title3.bold())
+                                    Spacer()
+                                    Text(currentmed.dosesDescription())
+                                }
+                                HStack {
+                                    Text(UserText.term("Started "))
+                                    Text(currentmed.startDate.formatted(date: .abbreviated, time: .omitted))
+                                }
+                            }
+                        }
+                    }
+                    .swipeActions {
+                        Button(UserText.term("Delete"), role: .destructive) {
+                            deleteMedicine(medToDelete: currentmed)
+                        }
                     }
                 }
-                .headerProminence(.increased)
-
-                Section {
-                    ForEach(plannedMedicines) { medicine in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(medicine.name)
-                                Spacer()
-                                Text(medicine.startDate.formatted())
-                            }
-                            Text(medicine.currentStatus).font(.footnote)
+                .overlay {
+                    if medicines.isEmpty {
+                        ContentUnavailableView {
+                            Label(UserText.term("No Medicines"), systemImage: "pills.circle.fill")
+                        } description: {
+                            Text(UserText.term("Medicines you create will appear here"))
                         }
-                        .swipeActions {
-                            Button("Delete", role: .destructive) {
-                                deleteMedicine(medToDelete: medicine)
-                            }
-                        }
-
-                    }
-                } header: {
-                    if plannedMedicines.count > 0 {
-                        Text("Planned")
                     }
                 }
-                    .headerProminence(.increased)
-
-                Section {
-                    ForEach(endedMedicines) { medicine in
-                        VStack(alignment: .leading) {
-                            HStack {
-                                Text(medicine.name)
-                                Spacer()
-                                Text(medicine.startDate.formatted())
-                            }
-                            Text(medicine.currentStatus).font(.footnote)
-                        }
-                        .swipeActions {
-                            Button("Delete", role: .destructive) {
-                                deleteMedicine(medToDelete: medicine)
-                            }
-                        }
-
-                    }
-                } header: { 
-                    if endedMedicines.count > 0 {
-                        Text("Discontinued")
+                .toolbar {
+                    Spacer()
+                    Button {
+                        addMedicine()
+                    } label: {
+                        Label("Add", systemImage: "plus")
                     }
                 }
-                .headerProminence(.increased)
-
-            }
-            .overlay {
-                if medicines.isEmpty {
+                .navigationTitle(UserText.term("Medicines list"))
+        }
+        content: {
+            NavigationStack {
+                if selection != nil {
+                    MedicinesContentView(viewOption: $medicineViewOption, path: $path, medicineName: selection!.name)
+                }
+                else {
                     ContentUnavailableView {
-                        Label("No Medicines", systemImage: "pills.circle.fill")
+                        Label(UserText.term("Select a medcine"), systemImage: "square.and.pencil.circle")
                     } description: {
-                        Text("Medicines you create will appear here.")
+                        Text(UserText.term("View and edit option will be listed here"))
                     }
+
                 }
             }
-            .toolbar {
-                Spacer()
-                Button {
-//                    showAddMedicine = true
-                    addMedicine()
-                } label: {
-                    Label("Add trip", systemImage: "plus")
-                }
-            }
+            
         }
         detail: {
-            if selection != nil {
-                NavigationStack {
-//                    NewMedicineView(medicine: selection!)
+            NavigationStack(path: $path) {
+                if selection != nil && medicineViewOption != nil {
+                    switch medicineViewOption {
+                    case .alerts:
+                        NewMedicineView(medicine: Binding (
+                            get: { selection ?? Medicine.placeholder },
+                            set: { selection = $0 }
+                        ), option: Binding (
+                            get: { medicineViewOption ?? .name },
+                            set: { medicineViewOption = $0 }
+                        ), path: $path, columnVisibility: $columnVisibility)
+                    case .name:
+                        NewMedicineView(medicine: Binding (
+                            get: { selection ?? Medicine.placeholder },
+                            set: { selection = $0 }
+                        ), option: Binding (
+                            get: { medicineViewOption ?? .name },
+                            set: { medicineViewOption = $0 }
+                        ), path: $path, columnVisibility: $columnVisibility)
+                    case .doses:
+                        NewMedicineView(medicine: Binding (
+                            get: { selection ?? Medicine.placeholder },
+                            set: { selection = $0 }
+                        ), option: Binding (
+                            get: { medicineViewOption ?? .name },
+                            set: { medicineViewOption = $0 }
+                        ), path: $path, columnVisibility: $columnVisibility)
+                   case .titration:
+                        NewMedicineView(medicine: Binding (
+                            get: { selection ?? Medicine.placeholder },
+                            set: { selection = $0 }
+                        ), option: Binding (
+                            get: { medicineViewOption ?? .name },
+                            set: { medicineViewOption = $0 }
+                        ), path: $path, columnVisibility: $columnVisibility)
+                    case nil:
+                        ContentUnavailableView {
+                            Label("Select an option", systemImage: "filemenu.and.cursorarrow")
+                        } description: {
+                            Text("Options will appear here")
+                        }
+                    }
                 }
             }
         }
-//        .onAppear {
-//            let fetchDescriptorM = FetchDescriptor<Medicine>(sortBy: [SortDescriptor(\Medicine.name)])
-//            let existingMedicines = try? modelContext.fetch(fetchDescriptorM)
-//        }
     }
     
     private func addMedicine() {
-        let newMedicine = Medicine(name: "Ami", doses: [Dose(unit: "mg", value1: 1000)])
+        saveContext()
+        
+        let newMedicine = Medicine.new
         withAnimation {
              modelContext.insert(newMedicine)
         }
-        saveContext()
+        medicineViewOption = .name
+        selection = newMedicine
     }
     
     private func deleteMedicine(medToDelete: Medicine) {

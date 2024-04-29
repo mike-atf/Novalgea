@@ -9,4 +9,5 @@ import Foundation
 
 enum Userdefaults: String {
     case backupNumber = "backupNumber"
+    case lastSelectedSymptom = "last selected symptom"
 }

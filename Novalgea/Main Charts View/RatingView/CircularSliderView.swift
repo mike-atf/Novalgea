@@ -9,15 +9,16 @@ import SwiftUI
 
 struct CircularSliderView: View {
     
+    @Environment(\.dismiss) private var dismiss
+
     @Binding var vas: Double?
     @Binding var selectedVAS: Double?
     @Binding var showNewEventView: Bool
     @Binding var showNewMedicineEventView: Bool
     @Binding var showSymptomsList: Bool
-    @Binding var showView: Bool
     @Binding var headerSubTitle: String
 
-    private let angulargradient = AngularGradient(colors: gradientColors, center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
+    private let angulargradient = AngularGradient(colors: ColorScheme.gradientColors, center: .center, startAngle: .degrees(270), endAngle: .degrees(-90))
 
     var body: some View {
         
@@ -73,8 +74,8 @@ struct CircularSliderView: View {
                     VStack {
                         Button("Medicine", systemImage: "pills.circle.fill") {
                             withAnimation {
-                                showView = false
                                 showNewMedicineEventView = true
+                                dismiss()
                             }
                         }
                         .font(.system(size: diameter/18)).bold()
@@ -83,8 +84,8 @@ struct CircularSliderView: View {
                         
                         Button("Event", systemImage: "square.and.pencil.circle.fill") {
                             withAnimation {
-                                showView = false
                                 showNewEventView = true
+                                dismiss()
                             }
                         }
                         .font(.system(size: diameter/18)).bold()
@@ -109,7 +110,7 @@ struct CircularSliderView: View {
     }
     
     func getColor(vas: Double) -> Color {
-        return gradientColors.getColor(_for: vas)
+        return ColorScheme.gradientColors.getColor(_for: vas)
     }
     
     
@@ -122,7 +123,7 @@ struct CircularSliderView: View {
 }
 
 #Preview {
-    CircularSliderView(vas: .constant(0.0), selectedVAS: .constant(0.0), showNewEventView: .constant(false), showNewMedicineEventView: .constant(false), showSymptomsList: .constant(false), showView: .constant(true), headerSubTitle: .constant("Subtitle binding"))
+    CircularSliderView(vas: .constant(0.0), selectedVAS: .constant(0.0), showNewEventView: .constant(false), showNewMedicineEventView: .constant(false), showSymptomsList: .constant(false),headerSubTitle: .constant("Subtitle binding"))
 }
 
 

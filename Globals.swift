@@ -54,8 +54,47 @@ enum SymptomType: String, CaseIterable, Identifiable {
     var id: String { rawValue }
 }
 
-let eventSymbolOptions = ["⚪️","🔶","⬜️","🤍","🛑","⚠️","🆘","✴️","📒","❇️","💊","🦠"]
+struct ColorScheme {
+    static let gradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]
+    static let medicineColorsArray = [Color(UIColor(named: "m0")!), Color(UIColor(named: "m1")!), Color(UIColor(named: "m2")!), Color(UIColor(named: "m3")!), Color(UIColor(named: "m4")!), Color(UIColor(named: "m5")!)]
+    static let symptomColorsArray = [Color(UIColor(named: "s0")!), Color(UIColor(named: "s1")!), Color(UIColor(named: "s2")!), Color(UIColor(named: "s3")!), Color(UIColor(named: "s4")!), Color(UIColor(named: "s5")!)]
+    static let eventCategoryColorsArray = [Color(UIColor(named: "e0")!), Color(UIColor(named: "e1")!), Color(UIColor(named: "e2")!), Color(UIColor(named: "e3")!), Color(UIColor(named: "e4")!), Color(UIColor(named: "e5")!)]
+    
+    static let symptomColors: [String:Color] = {
+        
+        var dictionary = [String: Color]()
+        var index = 0
+        for color in symptomColorsArray {
+            dictionary["s\(index)"] = color
+            index += 1
+        }
+        return dictionary
+    }()
+    
+    static let categoryColors: [String:Color] = {
+        
+        var dictionary = [String: Color]()
+        var index = 0
+        for color in eventCategoryColorsArray {
+            dictionary["e\(index)"] = color
+            index += 1
+        }
+        return dictionary
+    }()
+    
+    static let medicineColors: [String:Color] = {
+        
+        var dictionary = [String: Color]()
+        var index = 0
+        for color in medicineColorsArray {
+            dictionary["m\(index)"] = color
+            index += 1
+        }
+        return dictionary
+    }()
 
+}
 
-//let gradientRed = Color(red: 151/255, green: 60/255, blue: 56/255)
-let gradientColors = [.white, Color(red: 251/255, green: 247/255, blue: 118/255), Color(red: 255/255, green: 161/255, blue: 34/255), Color(red: 151/255, green: 60/255, blue: 56/255)]
+struct SymbolScheme {
+    static let eventCategorySymbols = ["🤍","🆘","🛑","⚠️","💤","⚪️","⬜️","🔶","🛄","🦠","🛀","💊","🩻","🌦️"]
+}

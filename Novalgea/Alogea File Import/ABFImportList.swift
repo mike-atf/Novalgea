@@ -14,7 +14,6 @@ struct ABFImportList: View {
     @Binding var path: NavigationPath //[AlogeaBackupDocument]
     @Binding var alogeaDocument: AlogeaBackupDocument?
 
-    @State var showProgressBar = false
     @State var importFile = false
     @State var showProceed = false
     @State var showOptionsDialog = false
@@ -27,15 +26,6 @@ struct ABFImportList: View {
                 Section {
                     NavigationLink("\(alogeaDocument?.fileName ?? UserText.term( "none"))") {
                         ABFImportDetail(alogeaDocument: alogeaDocument)
-                    }
-                    if showProgressBar {
-                        Divider()
-                        HStack {
-                            //TODO: - add cancel function here
-                            Text(UserText.term( "Importing - this may take a moment...")).font(.footnote)
-                            Spacer()
-                            ProgressView()
-                        }
                     }
                 }
             }
@@ -51,11 +41,11 @@ struct ABFImportList: View {
                         Button {
                             importFile = true
                         } label: {
-                            Text(UserText.term("Select an '.abf' file for import")).bold()
+                            Text(UserText.term("Select a file for import")).bold()
                         }.buttonStyle(.borderedProminent)
                     }
                 } description: {
-                    Text("Must be an Alogea Backup file")
+                    Text(UserText.term("This must be an Alogea Backup file of type '.abf'"))
                         .padding(.top)
                 }
             }
@@ -74,24 +64,28 @@ struct ABFImportList: View {
 
     }
     
-    @MainActor private func readAlogeaFile(fileURL: URL) {
+    private func readAlogeaFile(fileURL: URL) {
         
         alogeaDocument = AlogeaBackupDocument(fileURL: fileURL)
 
         guard alogeaDocument != nil else {
             let error = InternalError(file: "ABF_FileView", function: ".readAlogeaFile()", appError: "document file remains nil")
-            ErrorManager.addError(error: error, container: modelContext.container)
+            DispatchQueue.main.async {
+                ErrorManager.addError(error: error, container: modelContext.container)
+            }
             importErrorMessage = "Import failed: the import document could not be initialized"
             showCompletion = true
             return
         }
         alogeaDocument?.fileName = fileURL.lastPathComponent
-        path.append(alogeaDocument)
+        path.append(alogeaDocument) // on finishing import file in 'ABFImportDetail' is set to nil which result in navigation back to root
         
         Task {
             guard await alogeaDocument!.open() else {
                 let error = InternalError(file: "ABF_FileView", function: ".onAppear()", appError: "failed to open UIDocument")
-                ErrorManager.addError(error: error, container: modelContext.container)
+                DispatchQueue.main.async {
+                    ErrorManager.addError(error: error, container: modelContext.container)
+                }
                 importErrorMessage = "Import failed: the import document could not be opened"
                 showCompletion = true
                 return
